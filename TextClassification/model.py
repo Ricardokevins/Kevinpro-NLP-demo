@@ -1,4 +1,5 @@
 import transformer
+import math
 max_length=128
 BaseModel = transformer.Transformer(n_src_vocab=30000,max_length=max_length, n_layers=6, n_head=8, d_word_vec=512, d_model=512, d_inner_hid=1024, dropout=0.1, dim_per_head=None)
 import torch
@@ -7,7 +8,7 @@ from torch.nn import functional as F
 
 
 class BiRNN(nn.Module):
-    def __init__(self, vocab=30000, embed_size=512, num_hiddens=512, num_layers=2):
+    def __init__(self, vocab=30000, embed_size=512, num_hiddens=512, num_layers=1):
         super(BiRNN, self).__init__()
         self.embedding = nn.Embedding(vocab, embed_size)
         
@@ -37,17 +38,17 @@ class TransformerClasssifier(nn.Module):
         sequence_heatmap,sent = self.encoder(input_ids)
         return self.fc(sent)
     
-class BiLSTM_Attention(nn.Module):
+class BiLSTM_Attention1(nn.Module):
 
     def __init__(self, vocab_size, embedding_dim, hidden_dim, n_layers):
 
-        super(BiLSTM_Attention, self).__init__()
+        super(BiLSTM_Attention1, self).__init__()
 
         self.hidden_dim = hidden_dim
         self.n_layers = n_layers
         self.embedding = nn.Embedding(vocab_size, embedding_dim)
         self.rnn = nn.LSTM(embedding_dim, hidden_dim, num_layers=n_layers, bidirectional=True, dropout=0.5)
-        self.fc = nn.Linear(hidden_dim * 2, 1)
+        self.fc = nn.Linear(hidden_dim * 2, 2)
         self.dropout = nn.Dropout(0.5)
 
     #x,query：[batch, seq_len, hidden_dim*2]
@@ -73,17 +74,17 @@ class BiLSTM_Attention(nn.Module):
         logit = self.fc(attn_output)
         return logit
 
-class BiLSTM_Attention(nn.Module):
+class BiLSTM_Attention2(nn.Module):
 
     def __init__(self, vocab_size, embedding_dim, hidden_dim, n_layers):
 
-        super(BiLSTM_Attention, self).__init__()
+        super(BiLSTM_Attention2, self).__init__()
 
         self.hidden_dim = hidden_dim
         self.n_layers = n_layers
         self.embedding = nn.Embedding(vocab_size, embedding_dim)        #单词数，嵌入向量维度
         self.rnn = nn.LSTM(embedding_dim, hidden_dim, num_layers=n_layers, bidirectional=True, dropout=0.5)
-        self.fc = nn.Linear(hidden_dim * 2, 1)
+        self.fc = nn.Linear(hidden_dim * 2, 2)
         self.dropout = nn.Dropout(0.5)
 
         # 初始时间步和最终时间步的隐藏状态作为全连接层输入

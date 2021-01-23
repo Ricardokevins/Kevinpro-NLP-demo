@@ -39,7 +39,7 @@ test_dataset = convert2dataset_origin(test_samples[0], test_samples[1])
 from util import ProgressBar
 USE_CUDA = True
 
-num_epochs = 20
+num_epochs = 30
 batch_size = 64
 net = BiRNN()
 #net = TransformerClasssifier()
@@ -51,7 +51,7 @@ def train_with_FGM():
     fgm = FGM(net)
     #optimizer = optim.SGD(net.parameters(), lr=0.01,weight_decay=0.01)
     #optimizer = optim.Adam(net.parameters(), lr=learning_rate,weight_decay=0)
-    optimizer = AdamW(net.parameters(),lr = 2e-5, eps = 1e-8)
+    optimizer = AdamW(net.parameters(),lr = 2e-4, eps = 1e-8)
     #optimizer = AdamW(net.parameters(), lr=learning_rate)
     #train_dataset, test_dataset = torch.utils.data.random_split(dataset, [train_size, test_size])
     train_iter = torch.utils.data.DataLoader(train_dataset, batch_size, shuffle=True)
@@ -59,7 +59,10 @@ def train_with_FGM():
     crossentropyloss = nn.CrossEntropyLoss()
     total_steps = len(train_iter)*num_epochs
     print("----total step: ",total_steps,"----")
-    print("----warmup step: ",int(total_steps*0.2),"----")
+    print("----warmup step: ", int(total_steps * 0.2), "----")
+    
+    best_acc = 0
+    
     scheduler = get_linear_schedule_with_warmup(optimizer, num_warmup_steps = int(total_steps*0.15), num_training_steps = total_steps)
     for epoch in range(num_epochs):
         correct = 0
@@ -95,14 +98,18 @@ def train_with_FGM():
             optimizer.step()
             scheduler.step()
             optimizer.zero_grad()
-            pbar(iter, {'loss': avg_loss/iter})
+            #pbar(iter, {'loss': avg_loss/iter})
             _, logits = torch.max(logits, 1)
 
             correct += logits.data.eq(label.data).cpu().sum()
             total += batch_size
         loss=loss.detach().cpu()
-        print("\nepoch ", str(epoch)," loss: ", loss.mean().numpy().tolist(),"right", correct.numpy().tolist(), "total", total, "Acc:", correct.numpy().tolist()/total)
-        test()
+        #print("\nepoch ", str(epoch)," loss: ", loss.mean().numpy().tolist(),"Acc:", correct.numpy().tolist()/total)
+        cur_acc = test()
+        if best_acc < cur_acc:
+            best_acc = cur_acc
+    
+    print(best_acc)
     return
 
 
@@ -134,7 +141,7 @@ def test():
             logits = net(train_text)
             loss = crossentropyloss(logits, label)
             avg_loss+=loss.item()     
-            pbar(iter, {'loss': avg_loss/iter})
+            #pbar(iter, {'loss': avg_loss/iter})
             _, logits = torch.max(logits, 1)
             # print(logits)
             # print(label)
@@ -143,13 +150,14 @@ def test():
             correct += logits.data.eq(label.data).cpu().sum()
             total += batch_size
         print("Test Acc : ", correct.numpy().tolist() / total)
+        return correct.numpy().tolist() / total
 
 
 def trainer():
     net.train()
     #optimizer = optim.SGD(net.parameters(), lr=0.01,weight_decay=0.01)
     #optimizer = optim.Adam(net.parameters(), lr=learning_rate,weight_decay=0)
-    optimizer = AdamW(net.parameters(),lr = 2e-5, eps = 1e-8)
+    optimizer = AdamW(net.parameters(),lr = 2e-4, eps = 1e-8)
     #optimizer = AdamW(net.parameters(), lr=learning_rate)
     #train_dataset, test_dataset = torch.utils.data.random_split(dataset, [train_size, test_size])
     train_iter = torch.utils.data.DataLoader(train_dataset, batch_size, shuffle=True)
@@ -157,7 +165,8 @@ def trainer():
     crossentropyloss = nn.CrossEntropyLoss()
     total_steps = len(train_iter)*num_epochs
     print("----total step: ",total_steps,"----")
-    print("----warmup step: ",int(total_steps*0.2),"----")
+    print("----warmup step: ", int(total_steps * 0.2), "----")
+    best_acc=0
     scheduler = get_linear_schedule_with_warmup(optimizer, num_warmup_steps = int(total_steps*0.15), num_training_steps = total_steps)
     for epoch in range(num_epochs):
         correct = 0
@@ -186,7 +195,7 @@ def trainer():
             optimizer.step()
             scheduler.step()
             avg_loss+=loss.item()     
-            pbar(iter, {'loss': avg_loss/iter})
+            #pbar(iter, {'loss': avg_loss/iter})
             _, logits = torch.max(logits, 1)
             # print(logits)
             # print(label)
@@ -195,9 +204,16 @@ def trainer():
             correct += logits.data.eq(label.data).cpu().sum()
             total += batch_size
         loss=loss.detach().cpu()
-        print("\nepoch ", str(epoch)," loss: ", loss.mean().numpy().tolist(),"right", correct.numpy().tolist(), "total", total, "Acc:", correct.numpy().tolist()/total)
-        test()
+        #print("\nepoch ", str(epoch)," loss: ", loss.mean().numpy().tolist(),"Acc:", correct.numpy().tolist()/total)
+        cur_acc = test()
+        if best_acc < cur_acc:
+            best_acc = cur_acc
+    
+    print(best_acc)
     return
+    
+#0.7222222222222222
+trainer()
 
-#trainer()
-train_with_FGM()
+#0.7569444444444444
+#train_with_FGM()
