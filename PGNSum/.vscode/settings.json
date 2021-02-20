@@ -1,0 +1,9 @@
+{
+    "python.pythonPath": "C:\\Users\\asus\\AppData\\Local\\Programs\\Python\\Python37\\python.exe",
+    "python.languageServer": "Jedi",
+    "cSpell.words": [
+        "lstm",
+        "optim",
+        "relu"
+    ]
+}
