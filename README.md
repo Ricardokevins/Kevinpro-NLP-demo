@@ -2,7 +2,7 @@
 
 个人的NLP实践demo。部分来源于其他开源项目。欢迎Star Fork
 
-## ChatBotEnglish
+# ChatBotEnglish
 
 英文对话机器人
 
@@ -14,7 +14,7 @@
 
 
 
-## PGNSum
+# PGNSum
 
 使用PointerGenerator的摘要生成
 
@@ -25,13 +25,13 @@
 
 
 
-## Seq2Seq
+# Seq2Seq
 
 普通的Seq2seq翻译网络
 
 
 
-## TextClassification
+# TextClassification
 
 文本分类demo，还同时作为baseline对比，加上了很多NLP trick实践
 
@@ -49,14 +49,14 @@
 
 
 
-## 更新记录
+# 更新记录
 
-### 2021.1.23
+## 2021.1.23
 
  1. 初次commit 添加句子分类模块，包含Transformer和BiLSTM以及BiLSTM+Attn模型 
  2. 上传基本数据集，句子二分类作为Demo例子
  3. 加上和使用对抗学习思路
 
-### 2021.5.1
+## 2021.5.1
 
 1. 重新整理和更新了很多东西.... 略
