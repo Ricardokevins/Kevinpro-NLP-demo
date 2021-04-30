@@ -1,6 +1,35 @@
 # NLP
 
-个人的NLP实践demo。部分来源于其他开源项目。欢迎Star Fork
+个人的NLP实践demo。部分来源于其他开源项目。欢迎Star Fork。
+
+主要内容
+
+1. 文本分类
+2. 摘要生成
+3. 对话翻译
+4. 其他的NLP炼丹技巧实践
+
+
+
+# TextClassification
+
+文本分类demo，还同时作为baseline对比，加上了很多NLP trick实践
+
+### 模型
+
+1. bert-base-chinese
+2. Base RNN
+3. Base RNN + Attention
+4. Base transformer
+
+### 技术
+
+1. 对抗训练
+2. 模型蒸馏
+
+
+
+
 
 # ChatBotEnglish
 
@@ -30,22 +59,6 @@
 普通的Seq2seq翻译网络
 
 
-
-# TextClassification
-
-文本分类demo，还同时作为baseline对比，加上了很多NLP trick实践
-
-### 模型
-
-1. bert-base-chinese
-2. Base RNN
-3. Base RNN + Attention
-4. Base transformer
-
-### 技术
-
-1. 对抗训练
-2. 模型蒸馏
 
 
 
