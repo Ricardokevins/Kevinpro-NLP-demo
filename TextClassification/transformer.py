@@ -399,7 +399,9 @@ class BasicTokenizer(object):
         # and generally don't have any Chinese data in them (there are Chinese
         # characters in the vocabulary because Wikipedia does have some Chinese
         # words in the English Wikipedia.).
-        text = self._tokenize_chinese_chars(text)
+        
+        # TODO:disabled!!!!!
+        #text = self._tokenize_chinese_chars(text)
         orig_tokens = whitespace_tokenize(text)
         split_tokens = []
         for i,token in enumerate(orig_tokens):
@@ -516,40 +518,61 @@ class Transformer():
         return self.TransformerTokenizer
     
     def get_model(self):
-        self.TransformerModel = TransformerEncoder(self.n_src_vocab, self.n_layers, self.n_head, self.d_word_vec, self.d_model, self.d_inner_hid, self.dropout, self.dim_per_head)
+        self.TransformerModel = TransformerEncoder(self.n_src_vocab, self.n_layers, self.n_head, self.d_word_vec, self.d_model, self.d_inner_hid, self.dropout, dim_per_head=self.dim_per_head)
         return self.TransformerModel
 
 class Tokenizer():
     def __init__(self, max_wordn,max_length,divide,lines):
         self.max_wordn = max_wordn
         self.max_length = max_length
-        self.divide=divide
-        self.build_dict(lines)
-
-    def build_dict(self, sents):
-        words = set([])
-        for sent in sents:
-            sent=self.divide.tokenize(sent)
-            for i in sent:
-                if i not in words:
-                    words.add(i)
-        words = list(words)
-        print("Original Word Num: ",len(words))
-        words = words[:self.max_wordn-2]
+        self.divide = divide
         self.word2idx = {}
         self.idx2word = {}
-        for pos,i in enumerate( words):
-            self.word2idx[i] = pos
-            self.idx2word[pos] = i
-        self.word2idx['[OOV]'] = 1
-        self.idx2word[1] = '[OOV]'
-        self.word2idx['[PAD]'] = 0
-        self.idx2word[0] = '[PAD]'
-        print("Dict len: ", len(self.word2idx))
+        self.build_dict(lines)
+        
+
+    def build_dict(self, sents):
+        import os
+        from collections import Counter
+        if os.path.exists('dict.txt'):
+            print("Using exsit dict")
+            f = open('dict.txt', 'r',encoding='utf-8')
+            lines = f.readlines()
+            index =0 
+            for i in lines:
+                word = i.replace('\n', '')
+                self.word2idx[word] = index
+                self.idx2word[index] = word
+                index+=1
+            print("Dict len: ", len(self.word2idx))
+        else:        
+            all_vocab = []
+            words = set([])
+            for sent in sents:
+                sent=self.divide.tokenize(sent)
+                all_vocab.extend(sent)
+            counter = Counter(all_vocab) 
+            count_pairs = counter.most_common(self.max_wordn-4) 
+            words, _ = list(zip(*count_pairs))
+
+            words = ['<PAD>','[OOV]','[<s>]','[/<s>]'] +  list(words)
+
+            for pos,i in enumerate(words):
+                self.word2idx[i] = pos
+                self.idx2word[pos] = i
+            
+            print("Dict len: ", len(self.word2idx))
+            f = open('dict.txt','w',encoding='utf-8')
+            for i in range(len(self.word2idx)):
+                f.write(self.idx2word[i]+'\n')
+            f.close()
+    
+    def cut(self, sent):
+        return self.divide.tokenize(sent)
         
     def encode(self, sent):
         sent_idx = []
-        sent = sent.split(" ")
+        sent=self.divide.tokenize(sent)
         sent = sent[: self.max_length]
         
         for i in sent:

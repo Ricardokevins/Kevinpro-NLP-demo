@@ -19,7 +19,7 @@ class EncoderRNN(nn.Module):
         # Convert word indexes to embeddings
         embedded = self.embedding(input_seq)
         # Pack padded batch of sequences for RNN module
-        packed = torch.nn.utils.rnn.pack_padded_sequence(embedded, input_lengths)
+        packed = torch.nn.utils.rnn.pack_padded_sequence(embedded, input_lengths,batch_first=True,enforce_sorted=False)
         # Forward pass through GRU
         outputs, hidden = self.gru(packed, hidden)
         # Unpack padding
@@ -110,5 +110,4 @@ class LuongAttnDecoderRNN(nn.Module):
         # Return output and final hidden state
         return output, hidden
 
-embedding = nn.Embedding(config.max_vocab, config.hidden_size)
 

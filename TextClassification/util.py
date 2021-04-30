@@ -1,5 +1,15 @@
 import time
 import numpy as np
+import random
+import torch
+
+def setup_seed(seed):
+    torch.manual_seed(seed)
+    torch.cuda.manual_seed_all(seed)
+    np.random.seed(seed)
+    random.seed(seed)
+
+
 
 def modelsize(model,type_size=4):
     para = sum([np.prod(list(p.size())) for p in model.parameters()])

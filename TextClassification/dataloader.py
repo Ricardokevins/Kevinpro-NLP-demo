@@ -1,7 +1,7 @@
 import transformer
 train_data='trains.txt'
 test_data='tests.txt'
-
+from transformers import BertTokenizer
 import csv
 
 
@@ -31,27 +31,39 @@ def get_dataset(corpur_path):
     
 def build_tokenizer():
     model = transformer.Transformer(max_length=max_length)
-    text,_=get_dataset(train_data)
+    text, _ = get_dataset(train_data)
     tokenizer = model.get_tokenzier(text)
     return tokenizer
 
 tokenzier = build_tokenizer()
-
+bert_tokenizer = BertTokenizer.from_pretrained('./bert-base-chinese')
 def load_train():
     sents = []
+    bert_sent = []
     text,labels = get_dataset(train_data)
 
     for i in text:
         sents.append(tokenzier.encode(i))
+        indexed_tokens = bert_tokenizer.encode(i, add_special_tokens=True)
+        while len(indexed_tokens) <  max_length:
+            indexed_tokens.append(0)  # 0 is id for [PAD]
+        indexed_tokens = indexed_tokens[: max_length]
+        bert_sent.append(indexed_tokens)
 
-    return sents,labels
+    return sents,bert_sent,labels
 
 def load_test():
     sents = []
+    bert_sent = []
     text,labels = get_dataset(test_data)
 
     for i in text:
         sents.append(tokenzier.encode(i))
+        indexed_tokens = bert_tokenizer.encode(i, add_special_tokens=True)
+        while len(indexed_tokens) <  max_length:
+            indexed_tokens.append(0)  # 0 is id for [PAD]
+        indexed_tokens = indexed_tokens[: max_length]
+        bert_sent.append(indexed_tokens)
 
-    return sents, labels
+    return sents,bert_sent,labels
     

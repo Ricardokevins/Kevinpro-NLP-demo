@@ -1,21 +1,26 @@
 import transformer
+from transformers import BertModel
 import math
 max_length=128
 BaseModel = transformer.Transformer(n_src_vocab=30000,max_length=max_length, n_layers=6, n_head=8, d_word_vec=512, d_model=512, d_inner_hid=1024, dropout=0.1, dim_per_head=None)
 import torch
 import torch.nn as nn
 from torch.nn import functional as F
+def setup_seed(seed):
+    torch.manual_seed(seed)
+    torch.cuda.manual_seed_all(seed)
 
+setup_seed(44)
 
 class BiRNN(nn.Module):
-    def __init__(self, vocab=30000, embed_size=512, num_hiddens=512, num_layers=1):
+    def __init__(self, vocab=30000, embed_size=512, num_hiddens=512, num_layers=2):
         super(BiRNN, self).__init__()
         self.embedding = nn.Embedding(vocab, embed_size)
         
         self.encoder = nn.LSTM(input_size=embed_size, 
                                 hidden_size=num_hiddens, 
                                 num_layers=num_layers,
-                                bidirectional=True)
+                                bidirectional=True, dropout=0.5)
     
         self.decoder = nn.Linear(4*num_hiddens, 2)
 
@@ -24,8 +29,23 @@ class BiRNN(nn.Module):
         outputs, _ = self.encoder(embeddings) # output, (h, c)
         encoding = torch.cat((outputs[0], outputs[-1]), -1)
         outs = self.decoder(encoding)
-        return outs
+        return outs,None
 
+class BertClassifier(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.encoder = BertModel.from_pretrained('./bert-base-chinese')
+        self.dropout = nn.Dropout(0.1,inplace=False)
+        self.fc = nn.Linear(768, 2)
+        self.criterion = nn.CrossEntropyLoss()
+    def forward(self, x):
+        pad_id=0
+        mask = ~(x == pad_id)
+        x = self.encoder(x, attention_mask=mask)[0]
+        x = x[:, 0, :]
+        x = self.dropout(x)
+        x = self.fc(x)    
+        return x,None
 
 class TransformerClasssifier(nn.Module):
     def __init__(self):
@@ -36,11 +56,11 @@ class TransformerClasssifier(nn.Module):
     
     def forward(self, input_ids):
         sequence_heatmap,sent = self.encoder(input_ids)
-        return self.fc(sent)
+        return self.fc(sent),None
     
 class BiLSTM_Attention1(nn.Module):
 
-    def __init__(self, vocab_size, embedding_dim, hidden_dim, n_layers):
+    def __init__(self, vocab_size=30000, embedding_dim=512, hidden_dim=512, n_layers=2):
 
         super(BiLSTM_Attention1, self).__init__()
 
@@ -54,15 +74,15 @@ class BiLSTM_Attention1(nn.Module):
     #x,query：[batch, seq_len, hidden_dim*2]
     def attention_net(self, x, query, mask=None):      #软性注意力机制（key=value=x）
 
-        d_k = query.size(-1)                                              #d_k为query的维度
+        d_k = query.size(-1)    
         scores = torch.matmul(query, x.transpose(1, 2)) / math.sqrt(d_k)  #打分机制  scores:[batch, seq_len, seq_len]
-
-        p_attn = F.softmax(scores, dim = -1)                              #对最后一个维度归一化得分
+        p_attn = F.softmax(scores, dim=-1)  #对最后一个维度归一化得分
         context = torch.matmul(p_attn, x).sum(1)       #对权重化的x求和，[batch, seq_len, hidden_dim*2]->[batch, hidden_dim*2]
         return context, p_attn
 
 
     def forward(self, x):
+        x = x.permute(1, 0)
         embedding = self.dropout(self.embedding(x))       #[seq_len, batch, embedding_dim]
 
         # output: [seq_len, batch, hidden_dim*2]     hidden/cell: [n_layers*2, batch, hidden_dim]
@@ -72,11 +92,11 @@ class BiLSTM_Attention1(nn.Module):
         query = self.dropout(output)
         attn_output, attention = self.attention_net(output, query)       #和LSTM的不同就在于这一句
         logit = self.fc(attn_output)
-        return logit
+        return logit,attention
 
 class BiLSTM_Attention2(nn.Module):
 
-    def __init__(self, vocab_size, embedding_dim, hidden_dim, n_layers):
+    def __init__(self, vocab_size=30000, embedding_dim=512, hidden_dim=512, n_layers=2):
 
         super(BiLSTM_Attention2, self).__init__()
 
@@ -104,16 +124,17 @@ class BiLSTM_Attention2(nn.Module):
         scored_x = x * att_score                              #[batch, seq_len, hidden_dim*2]
 
         context = torch.sum(scored_x, dim=1)                  #[batch, hidden_dim*2]
-        return context
+        return context,att_score
 
 
     def forward(self, x):
+        x = x.permute(1, 0)
         embedding = self.dropout(self.embedding(x))       #[seq_len, batch, embedding_dim]
 
         # output: [seq_len, batch, hidden_dim*2]     hidden/cell: [n_layers*2, batch, hidden_dim]
         output, (final_hidden_state, final_cell_state) = self.rnn(embedding)
         output = output.permute(1, 0, 2)                  #[batch, seq_len, hidden_dim*2]
 
-        attn_output = self.attention_net(output)
+        attn_output,attn = self.attention_net(output)
         logit = self.fc(attn_output)
-        return logit
+        return logit,attn
