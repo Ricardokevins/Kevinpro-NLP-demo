@@ -56,7 +56,6 @@ def load_eval():
     total = 0
     iter=0
     crossentropyloss = nn.CrossEntropyLoss()
-    
     with torch.no_grad():
         train_iter = torch.utils.data.DataLoader(test_dataset, batch_size, shuffle=True)
     
@@ -94,15 +93,13 @@ batch_size = 128
 if Trainbert:
     batch_size = 16
 
-teach_model = BertClassifier()
-teach_model=torch.load('./teacher.pth')
-teach_model.eval()
-teach_model = teach_model.cuda()
-# net = BiRNN()
+
+# Choose your model here
+net = BiRNN()
 # net = BertClassifier()
 # net = BiLSTM_Attention1()
 # net = BiLSTM_Attention2()
-net = TransformerClasssifier()
+#net = TransformerClasssifier()
 net = net.cuda()
 
 
@@ -159,7 +156,7 @@ def train_with_FGM():
             optimizer.step()
             scheduler.step()
             optimizer.zero_grad()
-            #pbar(iter, {'loss': avg_loss/iter})
+            pbar(iter, {'loss': avg_loss/iter})
             _, logits = torch.max(logits, 1)
 
             correct += logits.data.eq(label.data).cpu().sum()
@@ -173,9 +170,6 @@ def train_with_FGM():
     
     print(best_acc)
     return
-
-
-
 
 def test():
     net.eval()
@@ -218,6 +212,12 @@ def test():
         return correct.numpy().tolist() / total
 
 def train_Kd():
+    load_eval()
+    teach_model = BertClassifier()
+    teach_model=torch.load('./teacher.pth')
+    teach_model.eval()
+    teach_model = teach_model.cuda()
+    
     optimizer = AdamW(net.parameters(),lr = 2e-3, eps = 1e-8)
     if Trainbert:
         optimizer = AdamW(net.parameters(),lr = 2e-5, eps = 1e-8)
@@ -294,7 +294,7 @@ def train_Kd():
     print(best_acc)
     return
 
-def trainer():
+def train():
     net.train()
     #optimizer = optim.SGD(net.parameters(), lr=0.01,weight_decay=0.01)
     #optimizer = optim.Adam(net.parameters(), lr=learning_rate,weight_decay=0)
@@ -382,9 +382,11 @@ def trainer():
 # Transformer 0.7916666666666666
 # BERT 0.8645833333333334
 
-load_eval()
+
 Trainbert = False
-train_Kd()
+#train()
+#train_Kd()
+train_with_FGM()
 
 # Teacher = 0.8819444444444444
 # base = 0.7881944444444444
