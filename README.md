@@ -7,7 +7,8 @@
 1. **文本分类**
 2. **摘要生成**
 3. **对话翻译**
-4. **其他的NLP炼丹技巧实践**
+4. **Mask Language Model预训练**
+5. **其他的NLP炼丹技巧实践**
 
 其他参考实践
 
@@ -19,17 +20,53 @@
 
 文本分类demo，还同时作为baseline对比，加上了很多NLP trick实践
 
-### 模型
+## 模型
 
 1. bert-base-chinese
 2. Base RNN
 3. Base RNN + Attention
 4. Base transformer
 
-### 技术
+## 技术
 
 1. 对抗训练
 2. 模型蒸馏
+3. 预训练
+
+
+
+# Pretrain
+
+## 说明
+
+使用上面句子分类中的语料做Mask Language Model的预训练，采用和BERT一样的预训练策略，对我的Transformer进行预训练
+
+测试
+
+1. 在句子分类任务中，加载预训练后的Transformer
+2. 用预训练做Fill Blank任务，见test.py
+
+## 结果
+
+在训练集1000条里构造100000条训练
+
+测试集300条里构造10000条测试
+
+测试集上正确率37%左右
+
+### 句子分类
+
+| Model      | Acc    |
+| ---------- | ------ |
+| Base       | 81.60% |
+| Pretrained | 82.99% |
+
+### 填空
+
+> i will never visit this restaurant again.
+> i will [MASK] visit this restaurant [MASK]
+> [MASK] Blank Answer:  never
+> [MASK] Blank Answer:  again
 
 
 
@@ -84,3 +121,12 @@
 
 1. 修复了Text Classification的一些整理问题
 2. 增加了Text Classification对应的使用说明
+
+
+
+## 2021.7.2
+
+1. 增加了MLM预训练技术实践
+2. 修复了句子分类模型里，过分大且不必要的Word Embed（因为太懒，所以只修改了Transformer的）
+3. 在句子分类里增加了加载预训练的可选项
+4. 修复了一些BUG
