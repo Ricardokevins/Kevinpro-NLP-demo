@@ -1,7 +1,8 @@
 import transformer
 from transformers import BertModel
 import math
-max_length=64
+max_length=128
+
 import torch
 import torch.nn as nn
 from torch.nn import functional as F
@@ -21,14 +22,13 @@ class BiRNN(nn.Module):
                                 num_layers=num_layers,
                                 bidirectional=True, dropout=0.5)
     
-        self.decoder = nn.Linear(4*num_hiddens, 2)
+        self.decoder = nn.Linear(2*num_hiddens, vocab)
 
     def forward(self, inputs):
         embeddings = self.embedding(inputs.permute(1, 0))
         outputs, _ = self.encoder(embeddings) # output, (h, c)
-        encoding = torch.cat((outputs[0], outputs[-1]), -1)
-        outs = self.decoder(encoding)
-        return outs,None
+        result = self.decoder(outputs)
+        return result,None
 
 class BertClassifier(nn.Module):
     def __init__(self):
@@ -49,18 +49,17 @@ class BertClassifier(nn.Module):
 class TransformerClasssifier(nn.Module):
     def __init__(self,vocab):
         super(TransformerClasssifier, self).__init__()
-        BaseModel = transformer.Transformer(n_src_vocab=vocab,max_length=max_length, n_layers=6, n_head=8, d_word_vec=512, d_model=512, d_inner_hid=1024, dropout=0.1, dim_per_head=None)
         self.hidden_size=512
+        BaseModel = transformer.Transformer(n_src_vocab=vocab,max_length=max_length, n_layers=6, n_head=8, d_word_vec=512, d_model=512, d_inner_hid=1024, dropout=0.1, dim_per_head=None)
         self.encoder = BaseModel.get_model()
-        Use_pretrain = True
-        if Use_pretrain:
-            print("========================= Using pretrained model =========================")
-            self.encoder = torch.load('../Pretrain/pretrained.pth')
-        self.fc = nn.Linear(self.hidden_size, 2)
+        self.fc = nn.Linear(self.hidden_size, vocab)
     
+    def save_pretrained_model(self):
+        torch.save(self.encoder, 'pretrained.pth') 
+
     def forward(self, input_ids):
         sequence_heatmap,sent = self.encoder(input_ids)
-        return self.fc(sent),None
+        return self.fc(sequence_heatmap),None
     
 class BiLSTM_Attention1(nn.Module):
 

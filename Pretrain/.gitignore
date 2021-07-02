@@ -1,0 +1,9 @@
+bert-base-chinese
+model.pth
+trains.txt
+tests.txt
+dev.txt
+tests.txt
+teacher.pth
+pretrained.pth
+test.pth

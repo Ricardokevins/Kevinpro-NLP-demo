@@ -37,6 +37,10 @@ def build_tokenizer():
 
 tokenzier = build_tokenizer()
 bert_tokenizer = BertTokenizer.from_pretrained('./bert-base-chinese')
+
+def get_dict_size():
+    return len(tokenzier.word2idx)
+    
 def load_train():
     sents = []
     bert_sent = []

@@ -21,7 +21,8 @@ from model import BertClassifier
 from transformers import BertTokenizer
 from Attack import FGM
 import random
-
+from dataloader import get_dict_size
+word_size = get_dict_size()
 Trainbert = False
 
 def setup_seed(seed):
@@ -89,17 +90,17 @@ from EasyTransformer.util import ProgressBar
 
 
 num_epochs = 30
-batch_size = 128
+batch_size = 64
 if Trainbert:
     batch_size = 16
 
 
 # Choose your model here
-net = BiRNN()
+#net = BiRNN()
 # net = BertClassifier()
 # net = BiLSTM_Attention1()
 # net = BiLSTM_Attention2()
-#net = TransformerClasssifier()
+net = TransformerClasssifier(word_size)
 net = net.cuda()
 
 
@@ -299,7 +300,7 @@ def train():
     #optimizer = optim.SGD(net.parameters(), lr=0.01,weight_decay=0.01)
     #optimizer = optim.Adam(net.parameters(), lr=learning_rate,weight_decay=0)
     
-    optimizer = AdamW(net.parameters(),lr = 2e-3, eps = 1e-8)
+    optimizer = AdamW(net.parameters(),lr = 2e-4, eps = 1e-8)
     if Trainbert:
         optimizer = AdamW(net.parameters(),lr = 2e-5, eps = 1e-8)
     #optimizer = AdamW(net.parameters(), lr=learning_rate)
@@ -384,12 +385,18 @@ def train():
 
 
 Trainbert = False
-#train()
+train()
 #train_Kd()
-train_with_FGM()
+#train_with_FGM()
 
 # Teacher = 0.8819444444444444
 # base = 0.7881944444444444
 # Attention1 = 0.8194444444444444
 # Attention2 = 0.8159722222222222
 # Transformer = 0.7916666666666666
+
+
+
+#0.8159722222222222
+#0.8194444444444444
+#0.8298611111111112
