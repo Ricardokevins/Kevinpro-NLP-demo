@@ -1,0 +1,3000 @@
+<Polarity>1</Polarity>
+<text>great bagels made the old-fashioned way.</text>
+
+<Polarity>0</Polarity>
+<text>i will never visit this restaurant again.</text>
+
+<Polarity>0</Polarity>
+<text>avoid this place!</text>
+
+<Polarity>1</Polarity>
+<text>i also recommend the rice dishes or the different varieties of congee (rice porridge).</text>
+
+<Polarity>0</Polarity>
+<text>bartender was unable to tear himself away from friends at bar.</text>
+
+<Polarity>0</Polarity>
+<text>sea has become so popular that they've let it go to their heads.</text>
+
+<Polarity>1</Polarity>
+<text>metrazur has a beautiful spot overlooking the main terminal.</text>
+
+<Polarity>0</Polarity>
+<text>it costs $2 extra to turn a regular roll into an inside-out roll, but the roll more than triples in size, and that's not just from the rice.</text>
+
+<Polarity>1</Polarity>
+<text>we visited bread bar during january restaurant week and were so pleased with the menu selections and service.</text>
+
+<Polarity>0</Polarity>
+<text>then, if they answer the phone, you're lucky if they don't hang up on you!</text>
+
+<Polarity>1</Polarity>
+<text>i've been back to nha trang literally a hundred times for the beef cubes - they're that good.</text>
+
+<Polarity>1</Polarity>
+<text>the restaurant looks out over beautiful green lawns to the hudson river and the statue of liberty.</text>
+
+<Polarity>0</Polarity>
+<text>disappointing food, lousy service.</text>
+
+<Polarity>1</Polarity>
+<text>this was a repeat visit and we'll definitely be back again.</text>
+
+<Polarity>0</Polarity>
+<text>the menu looked good, except for offering the chilean sea bass, but the server does not offer up the specials that were written on the board outside.</text>
+
+<Polarity>0</Polarity>
+<text>but the thing that my wife and i hated was it was so loud and it felt like 'bar' or 'pub'.</text>
+
+<Polarity>0</Polarity>
+<text>i had been searching really hard for a restaurant in new york where i could really feel unwanted and ignored and i finally found it!</text>
+
+<Polarity>0</Polarity>
+<text>this is my fourth try over a two year period, and i'm done.</text>
+
+<Polarity>0</Polarity>
+<text>but don't ever order bacon late at nite (either platter or in sandwiches, for that matter don't from any take out place) as it is from the morning frying turns out hard almost like bacos, hurt my molars.</text>
+
+<Polarity>0</Polarity>
+<text>dinner took almost 4 hours without any lag time.</text>
+
+<Polarity>1</Polarity>
+<text>consistently good japanese tapas.</text>
+
+<Polarity>1</Polarity>
+<text>bottles of wine are cheap and good.</text>
+
+<Polarity>0</Polarity>
+<text>i ate here a week ago and found most dishes average at best and too expensive.</text>
+
+<Polarity>0</Polarity>
+<text>if you like your music blasted and the system isnt that great and if you want to pay at least 100 dollar bottle minimun then you'll love it here.</text>
+
+<Polarity>1</Polarity>
+<text>succulent steaks cooked precisely to your desired 'doneness' accompanied by salads and sides that don't look like leafy road kill.</text>
+
+<Polarity>0</Polarity>
+<text>but for whatever reason, prices are about twice as high.</text>
+
+<Polarity>1</Polarity>
+<text>the food was terrific and the service classy, attentive, without being overbearing.</text>
+
+<Polarity>1</Polarity>
+<text>i recently went to this restaurant with some co-workers for lunch and had an amazing time.</text>
+
+<Polarity>0</Polarity>
+<text>whem asked, we had to ask more detailed questions so that we knew what the specials were.</text>
+
+<Polarity>1</Polarity>
+<text>you can also special order any kind of dumpling,etc.</text>
+
+<Polarity>0</Polarity>
+<text>a few tips: skip the turnip cake, roast pork buns and egg custards.</text>
+
+<Polarity>0</Polarity>
+<text>on the other hand, if you are not fooled easily, you will find hundreds of restaurants that will give you service and ambiance that is on par with alain ducasse, and food that will outshine in presentaion, taste, choice, quality and quantity.</text>
+
+<Polarity>1</Polarity>
+<text>i just wonder how you can have such a delicious meal for such little money.</text>
+
+<Polarity>0</Polarity>
+<text>butter was melted, white wine warm, cheese oozing everywhere.</text>
+
+<Polarity>1</Polarity>
+<text>quick and friendly service.</text>
+
+<Polarity>1</Polarity>
+<text>wow! how have i missed this one ,tried long tan last week for the first time and now know what the ny times and many more in the neighborhood already knew.</text>
+
+<Polarity>0</Polarity>
+<text>one should not go to lucky strike for the food.</text>
+
+<Polarity>0</Polarity>
+<text>unless you are eating in the pizzeria side of this place, and are not in a rush, this place is a bad idea.</text>
+
+<Polarity>0</Polarity>
+<text>for being number 1, this place has alot of work to do in order to truly earn its so called reputation.</text>
+
+<Polarity>0</Polarity>
+<text>it is not worth for that bucks.</text>
+
+<Polarity>1</Polarity>
+<text>super friendly and knowledgable staff, fabulous bistro fare and a wonderful jazz brunch with great live jazz (the chilaquiles were awesome!</text>
+
+<Polarity>1</Polarity>
+<text>our agreed favorite is the orrechiete with sausage and chicken (usually the waiters are kind enough to split the dish in half so you get to sample both meats).</text>
+
+<Polarity>0</Polarity>
+<text>the manager claimed that he could not compensate us for anything on the bill which just shows the lack of sophistication from the entire group.</text>
+
+<Polarity>1</Polarity>
+<text>if you are the type of person who likes being scared and entertained, this is a great place to go and eat.</text>
+
+<Polarity>1</Polarity>
+<text>you must have the crabmeat lasagna which is out of this world and the chocolate bread pudding for dessert.</text>
+
+<Polarity>1</Polarity>
+<text>otherwise, this place has great service and prices and a nice friendly atmosphere.</text>
+
+<Polarity>1</Polarity>
+<text>it melted in my little mouth and the perfect consistency-not too fishy, creamy, and slightly buttery.</text>
+
+<Polarity>1</Polarity>
+<text>have always found that the waiters will go out of their way to be helpful, despite the fact they are often busy with lots of diners.</text>
+
+<Polarity>1</Polarity>
+<text>this place is so much fun.</text>
+
+<Polarity>1</Polarity>
+<text>would recommend this place as a good date spot if you don't want to drop a ton of cash.</text>
+
+<Polarity>0</Polarity>
+<text>i was really disappointed ant wanted to tell everyone not to go eat or even take out food from there.</text>
+
+<Polarity>0</Polarity>
+<text>i could have drank 4 glasses of water and still been parched - so watch out.</text>
+
+<Polarity>1</Polarity>
+<text>i was pretty much full after our fondue appetizer.</text>
+
+<Polarity>1</Polarity>
+<text>baluchi's has solid food and a nice decor at reasonable prices.</text>
+
+<Polarity>0</Polarity>
+<text>i have tried to make reservations, but both times, the hostess didn't have my name.</text>
+
+<Polarity>0</Polarity>
+<text>i was with a party of 7 (close but not next the the front doors) and we were eating with our coats on.</text>
+
+<Polarity>0</Polarity>
+<text>someone else recommended the dessert - we also left that.</text>
+
+<Polarity>0</Polarity>
+<text>a little pricey but it really hits the spot on a sunday morning!</text>
+
+<Polarity>1</Polarity>
+<text>very popular style izakaya (sake and small portion of sake-friendly dishes ).</text>
+
+<Polarity>1</Polarity>
+<text>spice is great thai food, love the inexpensive appetizers.</text>
+
+<Polarity>1</Polarity>
+<text>went inside and i started to get excited.</text>
+
+<Polarity>0</Polarity>
+<text>quite frankly, this is some of the worst sushi i have ever tried.</text>
+
+<Polarity>0</Polarity>
+<text>both times we waited well over a half hour for a table (even though we had reservations).</text>
+
+<Polarity>0</Polarity>
+<text>prices too high for this cramped and unappealing resturant.</text>
+
+<Polarity>0</Polarity>
+<text>walk-ins are risky too.</text>
+
+<Polarity>1</Polarity>
+<text>from the incredible food, to the warm atmosphere, to the friendly service, this downtown neighborhood spot doesn't miss a beat.</text>
+
+<Polarity>0</Polarity>
+<text>the food was just ok, i would never go back.</text>
+
+<Polarity>0</Polarity>
+<text>this isn't a value joint.</text>
+
+<Polarity>1</Polarity>
+<text>i'm told that it is open 24hrs which is good.</text>
+
+<Polarity>0</Polarity>
+<text>good luck getting a table.</text>
+
+<Polarity>1</Polarity>
+<text>you'll adore it.</text>
+
+<Polarity>1</Polarity>
+<text>even the wine by the glass was good.</text>
+
+<Polarity>1</Polarity>
+<text>it is set far from the small street it's on, and there is no traffic noise.</text>
+
+<Polarity>1</Polarity>
+<text>also good for client lunch meetings, esp.</text>
+
+<Polarity>1</Polarity>
+<text>orsay, is without a doubt one of the best values for authentic french food in nyc.</text>
+
+<Polarity>0</Polarity>
+<text>three strikes and this restaurant is out.</text>
+
+<Polarity>0</Polarity>
+<text>the food is nothing like its menu description.</text>
+
+<Polarity>0</Polarity>
+<text>the waitress, seems to be more concerned of looking good than actually waitressing.</text>
+
+<Polarity>0</Polarity>
+<text>i was back-to-back with the diner at the table behind me and wait staff had to hoist trays over our heads as they squeezed past us again and again.</text>
+
+<Polarity>0</Polarity>
+<text>the overall price tag was very very expensive, something i did expect.</text>
+
+<Polarity>0</Polarity>
+<text>it was not above ordinary and the beef version had cheap (undercooked) beef.</text>
+
+<Polarity>1</Polarity>
+<text>the location and ambience is ok but the food is what makes up for it.</text>
+
+<Polarity>0</Polarity>
+<text>been going here since it opened have seen the quality value decrease considerably.</text>
+
+<Polarity>0</Polarity>
+<text>pricey, but worth a try, at least once.</text>
+
+<Polarity>1</Polarity>
+<text>you can't go wrong with this place.</text>
+
+<Polarity>0</Polarity>
+<text>i had to share my table with a loud group of kids and the service was rude an unattentive.</text>
+
+<Polarity>1</Polarity>
+<text>however, it is jus too good to not praise it.</text>
+
+<Polarity>0</Polarity>
+<text>from the terrible service, to the bland food, not to mention the unaccommodating managers, the overall experience was horrible.</text>
+
+<Polarity>1</Polarity>
+<text>the pizza is the best if you like thin crusted pizza.</text>
+
+<Polarity>0</Polarity>
+<text>don't waste your time, or money!!</text>
+
+<Polarity>1</Polarity>
+<text>ou must try this restaurant.</text>
+
+<Polarity>0</Polarity>
+<text>if you don't mind pre-sliced low quality fish, unfriendly staff and a sushi chef that looks like he is miserable then this is your place.</text>
+
+<Polarity>0</Polarity>
+<text>one would think we'd get an apology or complimentary drinks - instead, we got a snobby waiter wouldn't even take our order for 15 minutes and gave us lip when we asked him to do so.</text>
+
+<Polarity>0</Polarity>
+<text>my entire family was horrified.</text>
+
+<Polarity>1</Polarity>
+<text>a guaranteeed delight!</text>
+
+<Polarity>0</Polarity>
+<text>the aesthetics of this place are like an airport lounge.</text>
+
+<Polarity>1</Polarity>
+<text>go, go, hurry, before everyone finds out about it.</text>
+
+<Polarity>0</Polarity>
+<text>you can get an excellent meal at most of the many indian restaurants on nearby lexington avenue for the cost of one the dainty dishes here.</text>
+
+<Polarity>0</Polarity>
+<text>after 2 tries by the waiter to take it away (we hadn't even looked at it yet, we had full beers yet to drink), the manager approached and told us they needed the table for people with reservations.</text>
+
+<Polarity>0</Polarity>
+<text>could be pricey without a prix fixe meal.</text>
+
+<Polarity>0</Polarity>
+<text>our server checked on us maybe twice during the entire meal.</text>
+
+<Polarity>0</Polarity>
+<text>in fact, while leaving the place we saw two people looking at the menu, and i couldn't help telling them that the food was horrible.</text>
+
+<Polarity>1</Polarity>
+<text>great food, good size menu, great service and an unpretensious setting.</text>
+
+<Polarity>1</Polarity>
+<text>from beginning appetizers, the scallops were incredible, to the delicious chocolate souffle with rasberry mint sorbet, we were delighted by the taste sensations.</text>
+
+<Polarity>0</Polarity>
+<text>i also ordered for delivery and the restaurant forgot half the order.</text>
+
+<Polarity>0</Polarity>
+<text>it's a shame that a nice, convenient place like the pink pony can be so ruined by lousy service.</text>
+
+<Polarity>1</Polarity>
+<text>le pere pinard has a $15 pre-theater menu that is outstanding.</text>
+
+<Polarity>1</Polarity>
+<text>tuk tuk is my second favorite neighborhood thai place (the first being joya).</text>
+
+<Polarity>1</Polarity>
+<text>a pleasant surprise.</text>
+
+<Polarity>0</Polarity>
+<text>the bartender on my most recent visit was so incredibly rude that i will never go back.</text>
+
+<Polarity>1</Polarity>
+<text>this was one of the best restaurants i've ever been to.</text>
+
+<Polarity>0</Polarity>
+<text>the service was poor, restaurant poorly lit, staff not very attentive and i would have rather eaten at a mcdonald's than this joint.</text>
+
+<Polarity>1</Polarity>
+<text>rosario's is without a doubt one of the greatest pizzerias in existence.</text>
+
+<Polarity>0</Polarity>
+<text>it was rather pathetic that it took them over an hour to seat us.</text>
+
+<Polarity>0</Polarity>
+<text>oh yes, and they lie on the phone, claiming they have seating in the garden, then of course the seats are not available.</text>
+
+<Polarity>0</Polarity>
+<text>the strong scents coming from the left and right of me negatively affected my taste buds.</text>
+
+<Polarity>1</Polarity>
+<text>nice atmosphere, the service was very pleasant and the desert was good.</text>
+
+<Polarity>0</Polarity>
+<text>not impressed with the food.</text>
+
+<Polarity>1</Polarity>
+<text>it is definitely special and affordable.</text>
+
+<Polarity>1</Polarity>
+<text>although they do the typical what kind of water would you like questions the service was good and overall very relaxing to place to eat.</text>
+
+<Polarity>1</Polarity>
+<text>personal pans are the perfect size for those hungry nights.</text>
+
+<Polarity>1</Polarity>
+<text>the spicy tuna and salmon are the best we've ever had.</text>
+
+<Polarity>0</Polarity>
+<text>they smell like they stuff them with old canned vegetables like the spinach mushroom calzone.</text>
+
+<Polarity>1</Polarity>
+<text>by dinner time, they turn it around and mount a huge comeback!!</text>
+
+<Polarity>1</Polarity>
+<text>well worth the trip, close to city hall and downtown subway stops.</text>
+
+<Polarity>1</Polarity>
+<text>the decor is vibrant and eye-pleasing with several semi-private boths on the right side of the dining hall, which are great for a date.</text>
+
+<Polarity>1</Polarity>
+<text>the food is reliable and the price is moderate.</text>
+
+<Polarity>0</Polarity>
+<text>i hate this.</text>
+
+<Polarity>1</Polarity>
+<text>he not only makes his own homemade mozzarella, but every pie is ultra fresh.</text>
+
+<Polarity>1</Polarity>
+<text>the drinks are amazing and half off till 8pm.</text>
+
+<Polarity>1</Polarity>
+<text>head and shoulders above its neighboors on east 6 st, taj mahal is also very comparable, in food quality, to the much overpraised (and underdeserving) baluchi's.</text>
+
+<Polarity>0</Polarity>
+<text>(food was delivered by a busboy, not waiter) we got no cheese offered for the pasta, our water and wine glasses remained empty our entire meal, when we would have easily spent another $20 on wine.</text>
+
+<Polarity>0</Polarity>
+<text>they offer the same menu but have creative drinks that are loaded with alcohol and cheeky names -- but they do cost you.</text>
+
+<Polarity>0</Polarity>
+<text>restaurant was dirty and unkempt.</text>
+
+<Polarity>0</Polarity>
+<text>it won't break the bank but i also wouldnt come back for the food.</text>
+
+<Polarity>1</Polarity>
+<text>the dim sum however was very good.</text>
+
+<Polarity>0</Polarity>
+<text>but that wasn't the icing on the cake: a tiramisu that resembled nothing i have ever had.</text>
+
+<Polarity>0</Polarity>
+<text>while the ambiance and atmosphere were great, the food and service could have been a lot better.</text>
+
+<Polarity>1</Polarity>
+<text>the restaurant is rather small but we were lucky to get a table quickly.</text>
+
+<Polarity>1</Polarity>
+<text>good spreads, great beverage selections and bagels really tasty.</text>
+
+<Polarity>1</Polarity>
+<text>try their plain pizza with fresh garlic or eggplant.</text>
+
+<Polarity>1</Polarity>
+<text>the rest of the dim sum, though pricey by chinatown standards, is worth it.</text>
+
+<Polarity>1</Polarity>
+<text>for great chinese food nearby, you have wu liang ye and grand sichuan just a block away.</text>
+
+<Polarity>1</Polarity>
+<text>don't leave without trying one night in tokyo.</text>
+
+<Polarity>1</Polarity>
+<text>nice restaurant overall, with classic upscale italian decor.</text>
+
+<Polarity>1</Polarity>
+<text>they were served warm and had a soft fluffy interior.</text>
+
+<Polarity>0</Polarity>
+<text>not what i wanted to hear.</text>
+
+<Polarity>1</Polarity>
+<text>you guys rock.</text>
+
+<Polarity>1</Polarity>
+<text>whenever you need a sushi fix, mizu will be there with quality fish and great service.</text>
+
+<Polarity>1</Polarity>
+<text>regardless of whether there are two people or two hundred people ahead of you the hostess will take your name and tell you five minutes.</text>
+
+<Polarity>0</Polarity>
+<text>a large is $20, and toppings are about $3 each.</text>
+
+<Polarity>1</Polarity>
+<text>the staff is no nonsense.</text>
+
+<Polarity>0</Polarity>
+<text>the pizza was delivered cold and the cheese wasn't even fully melted!</text>
+
+<Polarity>1</Polarity>
+<text>have been several times and it never dissapoints.</text>
+
+<Polarity>1</Polarity>
+<text>pair you food with the excellent beers on tap or their well priced wine list.</text>
+
+<Polarity>1</Polarity>
+<text>over the years, it has always provided a pleasurable dining experience with quality food and wine.</text>
+
+<Polarity>1</Polarity>
+<text>i will have to say, this bengali fast food joint is clearly my favorite.</text>
+
+<Polarity>1</Polarity>
+<text>decent wine at reasonable prices.</text>
+
+<Polarity>1</Polarity>
+<text>the food is prepared quickly and efficiently.</text>
+
+<Polarity>0</Polarity>
+<text>first, the waiter who served us neglected to fill us in on the specials, which i would have chosen had i known about them.</text>
+
+<Polarity>1</Polarity>
+<text>it may be a bit packed on weekends, but the vibe is good and it is the best french food you will find in the area.</text>
+
+<Polarity>1</Polarity>
+<text>i have been to mary's many times and i like it.</text>
+
+<Polarity>0</Polarity>
+<text>we couldn't carry our conversation as we were routinely interrupted by waitress and servants asking us to order and hinting that we're taking too much time -- amazing, we just sat down.</text>
+
+<Polarity>0</Polarity>
+<text>if i could rate the people this place would be off the charts - unfortunately - the pizza, sorry - not the best in nyc.</text>
+
+<Polarity>1</Polarity>
+<text>you will not be disapointed at all.</text>
+
+<Polarity>0</Polarity>
+<text>unfortunately, the food was not something to get worked up about.</text>
+
+<Polarity>0</Polarity>
+<text>the sauces used are also not that exciting.</text>
+
+<Polarity>1</Polarity>
+<text>friendly staff that actually lets you enjoy your meal and the company you're with.</text>
+
+<Polarity>0</Polarity>
+<text>i've never been treated so rudely.</text>
+
+<Polarity>1</Polarity>
+<text>open late (well as late as i ever got there and i'm a night person)</text>
+
+<Polarity>1</Polarity>
+<text>suan was a recommendation that i am glad we heeded.</text>
+
+<Polarity>0</Polarity>
+<text>and the prices were way to high for what you get.</text>
+
+<Polarity>1</Polarity>
+<text>i've lived in ny for 5 years and this place has it all.</text>
+
+<Polarity>0</Polarity>
+<text>i came to this restaurant expecting to be surprised but left bored and overcharged.</text>
+
+<Polarity>0</Polarity>
+<text>everything, from the soft bread, soggy salad, and 50 minute wait time, with an incredibly rude service to deliver below average food.</text>
+
+<Polarity>0</Polarity>
+<text>no refills on fountain drinks, though.</text>
+
+<Polarity>0</Polarity>
+<text>the menu is prix fixe, so be prepared to spend at least $60 per person, but it is well worth itsuperb food.</text>
+
+<Polarity>0</Polarity>
+<text>the staff isn't the friendliest or most competent, and i am stickler for service, but everything else about this place makes up for it.</text>
+
+<Polarity>0</Polarity>
+<text>we asked to be moved (which took half an hour), and then were seated in a high traffic area in the back, even though the rest of the room was practically empty.</text>
+
+<Polarity>1</Polarity>
+<text>surprisingly nothing could be further from the truth.</text>
+
+<Polarity>1</Polarity>
+<text>where gabriela personaly greets you and recommends you what to eat.</text>
+
+<Polarity>0</Polarity>
+<text>a million better places to go in the city.</text>
+
+<Polarity>0</Polarity>
+<text>the service was terrible, we had to wait for everything and ask several of different people for the same thing before we were allowed to be served.</text>
+
+<Polarity>0</Polarity>
+<text>first off, the waitress was completely unattentive the 2 times we saw her(odd in a restaurant with 6 tables) and got our order wrong.</text>
+
+<Polarity>0</Polarity>
+<text>sauce was watery and the food didn't have much flavor.</text>
+
+<Polarity>0</Polarity>
+<text>the food is terrible and overall, i would have to say avoid at all costs.</text>
+
+<Polarity>0</Polarity>
+<text>and for this i had to shell out a small fortune?</text>
+
+<Polarity>0</Polarity>
+<text>the plain pizza was soggy and the creative wild mushroom(third generation-fornini) pizza we had was drenched with truffle oil in the middle( again making it soggy) and nothingon the rest.</text>
+
+<Polarity>1</Polarity>
+<text>also very inexpensive.</text>
+
+<Polarity>1</Polarity>
+<text>the fried rice is amazing here.</text>
+
+<Polarity>0</Polarity>
+<text>this has got to be one of the most overrated restaurants in brooklyn.</text>
+
+<Polarity>1</Polarity>
+<text>service was quick.</text>
+
+<Polarity>0</Polarity>
+<text>anybody who likes this place must be from a different planet, where greasy, dry and tasteless are complimentary.</text>
+
+<Polarity>0</Polarity>
+<text>if you're in town, it's worth searching for another place.</text>
+
+<Polarity>0</Polarity>
+<text>they charge $6.00 for rice.</text>
+
+<Polarity>1</Polarity>
+<text>we happened upon this place purely by accident and were pleased with the results.</text>
+
+<Polarity>0</Polarity>
+<text>too bad the food wasn't of the same heritage.</text>
+
+<Polarity>1</Polarity>
+<text>it's a perfect place to have a amanzing indian food.</text>
+
+<Polarity>0</Polarity>
+<text>the only thing i could get attention from was one of at least two cats running around that kept batting at my table.</text>
+
+<Polarity>0</Polarity>
+<text>as we were sitting eating the subpar food the manager proceeded to berate a couple of his employees for putting out the wrong containers for condiments and explained to them how expensive these containers were.</text>
+
+<Polarity>0</Polarity>
+<text>we were disappointed with the pre-fixe menu of only 2 choices per course (other restaurants offer 3 choices) and ended up ordering a la carte.</text>
+
+<Polarity>1</Polarity>
+<text>service was prompt, friendly and great.</text>
+
+<Polarity>1</Polarity>
+<text>the place is larger than most and features adequate seating unlike most joints, and has a bar which deserves a mention.</text>
+
+<Polarity>1</Polarity>
+<text>i also ordered the change mojito, which was out of this world.</text>
+
+<Polarity>0</Polarity>
+<text>the portions are now very small, the sauces are overly-ambitious usually inedible while the service is still good, the restaurant, due to its popularity, seems frantic.</text>
+
+<Polarity>1</Polarity>
+<text>even after getting pushed out by the no-class famous ray's, sal has risen again to carry on his father's uncle's legacies with a smile, true love for his community, and let's not forget the outstanding pizza!</text>
+
+<Polarity>0</Polarity>
+<text>they never brought us complimentary noodles, ignored repeated requests for sugar, and threw our dishes on the table.</text>
+
+<Polarity>0</Polarity>
+<text>we could not catch our waiter's eye, and he ignored us.</text>
+
+<Polarity>1</Polarity>
+<text>don't go alone---even two people isn't enough for the whole experience, with pickles and a selection of meats and seafoods.</text>
+
+<Polarity>1</Polarity>
+<text>all the money went into the interior decoration, none of it went to the chefs.</text>
+
+<Polarity>0</Polarity>
+<text>that is a problem since we paid about 20 bucks a dish, and had to order 5 dishes to get a decent taste.</text>
+
+<Polarity>1</Polarity>
+<text>luckily we saved room for the bbq salmon, sea bass and crispy duck.</text>
+
+<Polarity>0</Polarity>
+<text>the food was not fresh, the sauces were bland and very oily.</text>
+
+<Polarity>0</Polarity>
+<text>this was the worst dining experience i've ever had.</text>
+
+<Polarity>0</Polarity>
+<text>got club soda, filled with ice, no lime.</text>
+
+<Polarity>1</Polarity>
+<text>the waitress was very patient with us and the food is phenomenal!</text>
+
+<Polarity>0</Polarity>
+<text>i asked for an open faced cheese sandwich and the manager basically told me to take my business elsewhere!</text>
+
+<Polarity>0</Polarity>
+<text>told us to sit anywhere, and when we sat he said the table was reserved.</text>
+
+<Polarity>0</Polarity>
+<text>it is obvious that no one in the restaurant has any idea about or experience with japanese cuisine.</text>
+
+<Polarity>1</Polarity>
+<text>delicious bagels, especially when right out of the oven.</text>
+
+<Polarity>0</Polarity>
+<text>now it's so crowded and loud you can't even talk to the person next to you.</text>
+
+<Polarity>1</Polarity>
+<text>first went here to enjoy their garden terrace.</text>
+
+<Polarity>0</Polarity>
+<text>no pizza 33 for me!</text>
+
+<Polarity>1</Polarity>
+<text>i'll be back soon.</text>
+
+<Polarity>0</Polarity>
+<text>i don't know who they think they are but they have no respect for the residents of the neighborhood ever since they opened their cabaret next door and blasts loud music till three in the morning every weekend during the summer.</text>
+
+<Polarity>0</Polarity>
+<text>while we thoroughly enjoyed the food, it was annoying to scream across the table for conversation.</text>
+
+<Polarity>0</Polarity>
+<text>price and quality of fish alone will keep us from making a return visit.</text>
+
+<Polarity>1</Polarity>
+<text>it was pretty inexpensive too.</text>
+
+<Polarity>1</Polarity>
+<text>try the cheesecake!</text>
+
+<Polarity>1</Polarity>
+<text>it's really also the service, is good and the waiters are friendly.</text>
+
+<Polarity>0</Polarity>
+<text>if you want to save some money, don't go here.</text>
+
+<Polarity>0</Polarity>
+<text>i am relatively new to the area and tried pick a bgel on 2nd and was disappointed with the service and i thought the food was overated and on the pricey side.</text>
+
+<Polarity>1</Polarity>
+<text>though the spider roll may look like a challenge to eat, with soft shell crab hanging out of the roll, it is well worth the price you pay for them.</text>
+
+<Polarity>1</Polarity>
+<text>as a japanese native, i've lived in the tristate area for over 8 years, but i was just so amazed at this place.</text>
+
+<Polarity>1</Polarity>
+<text>the bagels have an outstanding taste with a terrific texture, both chewy yet not gummy.</text>
+
+<Polarity>1</Polarity>
+<text>try the tandoori salmon!</text>
+
+<Polarity>0</Polarity>
+<text>the environment is romantic, but the food is horrible, the service is pathetic, and gabriella lies about everything she could.</text>
+
+<Polarity>0</Polarity>
+<text>we just ate at kai and were disapointed.</text>
+
+<Polarity>0</Polarity>
+<text>you can barely see who you are with never mind have a conversation.</text>
+
+<Polarity>1</Polarity>
+<text>this place is a great bargain.</text>
+
+<Polarity>0</Polarity>
+<text>sushi wasn't anything spectacular for the price.</text>
+
+<Polarity>0</Polarity>
+<text>i had the pad thai and the noodles were sticky.</text>
+
+<Polarity>1</Polarity>
+<text>we have been to montparnasse many times and return often for good reason.</text>
+
+<Polarity>1</Polarity>
+<text>excellent experience.</text>
+
+<Polarity>1</Polarity>
+<text>the food was really good, i had the onion soup and it was one of the best ever.</text>
+
+<Polarity>0</Polarity>
+<text>anyone who ever dined at a thai restaurant is in for a huge disappointment.</text>
+
+<Polarity>1</Polarity>
+<text>one of the more authentic shanghainese restaurants in the us definitely the best in manhattan chinatown.</text>
+
+<Polarity>0</Polarity>
+<text>no thanks!!!</text>
+
+<Polarity>0</Polarity>
+<text>we ordered the chicken casserole, but what we got were a few small pieces of chicken, all dark meat and on the bone.</text>
+
+<Polarity>0</Polarity>
+<text>the menu changed, portions were even smaller than before, a lentil dish was salty beyond edibility, a basmati rice dish lacked flavor.</text>
+
+<Polarity>1</Polarity>
+<text>so garantuan that you can't fit them in a toaster.</text>
+
+<Polarity>0</Polarity>
+<text>however, i do not understand the extraordinary hype about this restaurant.</text>
+
+<Polarity>0</Polarity>
+<text>the service is awful--the last time i was there (and i do mean the last time) we were told that they needed our table so we would have to leave.</text>
+
+<Polarity>1</Polarity>
+<text>staff is very accomodating.</text>
+
+<Polarity>0</Polarity>
+<text>look elsewhere.</text>
+
+<Polarity>1</Polarity>
+<text>we had the pot-stickers which were great and a tempura dish that was great.</text>
+
+<Polarity>0</Polarity>
+<text>pizza was a little soggy.</text>
+
+<Polarity>1</Polarity>
+<text>service is highly refined: our seating was delayed 35 minutes past our reservation and the maitre d' apologized and regularly kept us apprised of progress.</text>
+
+<Polarity>0</Polarity>
+<text>save yourself the time and trouble and skip this one!</text>
+
+<Polarity>1</Polarity>
+<text>service is friendly, and never had a problem walking in and getting a table.</text>
+
+<Polarity>1</Polarity>
+<text>this is a wonderful place on all stand points especially value ofr money.</text>
+
+<Polarity>0</Polarity>
+<text>after all that, they complained to me about the small tip.</text>
+
+<Polarity>1</Polarity>
+<text>food-awesome.</text>
+
+<Polarity>0</Polarity>
+<text>the sandwiches are dry, tasteless and way overpriced.</text>
+
+<Polarity>0</Polarity>
+<text>a big disappointment, all around.</text>
+
+<Polarity>1</Polarity>
+<text>chinese desserts are known for healthful benefits in addition to the sweetness.</text>
+
+<Polarity>1</Polarity>
+<text>i would definitely recommend sea if you like thai cuisine!</text>
+
+<Polarity>1</Polarity>
+<text>highly recommended is the spicy fried clam rolls and spider rolls.</text>
+
+<Polarity>0</Polarity>
+<text>why make a reservation if you aren't going to keep it?</text>
+
+<Polarity>1</Polarity>
+<text>i heartily recommend.</text>
+
+<Polarity>1</Polarity>
+<text>i am completely hooked on this place, it is ridiculous.</text>
+
+<Polarity>0</Polarity>
+<text>service was slow had to wait to order and get food although not crowded.</text>
+
+<Polarity>0</Polarity>
+<text>it is not consistent.</text>
+
+<Polarity>0</Polarity>
+<text>my co-workers had to wait almost an hour for delivery, only to discover that what they got was not what they ordered.</text>
+
+<Polarity>1</Polarity>
+<text>the food was great.</text>
+
+<Polarity>0</Polarity>
+<text>don't expect to sit down inside though, there are only a few tables and they are always full.</text>
+
+<Polarity>0</Polarity>
+<text>if you live outside the neighborhood, don't bother!</text>
+
+<Polarity>1</Polarity>
+<text>great food at reasonable prices, makes for an evening that can't be beat!</text>
+
+<Polarity>1</Polarity>
+<text>it's better than being on the roof of sutton place with 19 year old interns jabbing you in the ribs all night.</text>
+
+<Polarity>0</Polarity>
+<text>anyways, if you're in the neighborhood to eat good food, i wouldn't waste my time trying to find something, rather go across the street to tamari.</text>
+
+<Polarity>1</Polarity>
+<text>they are often crowded on the weekends but they are efficient and accurate with their service.</text>
+
+<Polarity>1</Polarity>
+<text>we parked on the block of nina's the place looked nice, with people obviously enjoying their pizzas.</text>
+
+<Polarity>1</Polarity>
+<text>especially liked chicken tikka and the naan, and the dals.</text>
+
+<Polarity>0</Polarity>
+<text>this restaurant used to be pretty decent.</text>
+
+<Polarity>1</Polarity>
+<text>the pizza here is delicious.</text>
+
+<Polarity>0</Polarity>
+<text>your money could easily be better spent elsewhere (anywhere).</text>
+
+<Polarity>1</Polarity>
+<text>pizza is terrific, as is homemade pasta.</text>
+
+<Polarity>0</Polarity>
+<text>i do not recommend lunch specials just because it tasts the same with other regular chinese restaurant.</text>
+
+<Polarity>0</Polarity>
+<text>some of the workers ignore me and talk to the female customers, other times, they've skipped my order.</text>
+
+<Polarity>1</Polarity>
+<text>ive been to many thai restaurants in manhattan before, and toons is by far the best thai food ive had (except for my mom's of course).</text>
+
+<Polarity>1</Polarity>
+<text>i have been doing all of the above at the heartland brewery for over 5 years now and i have never been disappointed!</text>
+
+<Polarity>1</Polarity>
+<text>this is some really good, inexpensive sushi.</text>
+
+<Polarity>0</Polarity>
+<text>so rushing us out was absolutely unnecessary!</text>
+
+<Polarity>1</Polarity>
+<text>the place is a lot of fun.</text>
+
+<Polarity>1</Polarity>
+<text>we always go there on the weekends and leave extremely full and satisfied.</text>
+
+<Polarity>1</Polarity>
+<text>it's a great place to pick up a cheap lunch or dinner.</text>
+
+<Polarity>0</Polarity>
+<text>get it together.</text>
+
+<Polarity>1</Polarity>
+<text>highly recommended!!!!!</text>
+
+<Polarity>1</Polarity>
+<text>i felt as though i were eating in paris.</text>
+
+<Polarity>1</Polarity>
+<text>the people that work there are always so friendly you forget you are in new york sometimes.</text>
+
+<Polarity>1</Polarity>
+<text>our favorite meal is a pesto pizza, the house salad, and a good bottle of wine.</text>
+
+<Polarity>1</Polarity>
+<text>the food is delicious - from the specials to the regular menu-fare, the dishes are never a disappointment.</text>
+
+<Polarity>0</Polarity>
+<text>the people in the restaurant were pretty obnoxious and loud.</text>
+
+<Polarity>1</Polarity>
+<text>the have over 100 different beers to offer thier guest so that made my husband very happy and the food was delicious, if i must recommend a dish it must be the pumkin tortelini.</text>
+
+<Polarity>1</Polarity>
+<text>still, any quibbles about the bill were off-set by the pour-your-own measures of liquers which were courtesey of the house...</text>
+
+<Polarity>1</Polarity>
+<text>we didn't even see a menu, as our waiter described both the specials and the main dishes.</text>
+
+<Polarity>0</Polarity>
+<text>just don't take the seat between the bar and the back half of the restaurant, i saw a woman get nudged 40times sitting there.</text>
+
+<Polarity>1</Polarity>
+<text>lahore is a great place to duck into late-night when you need some really tasty food on the cheap -- you'll likely have trouble finishing the amount of food you get for four dollars.</text>
+
+<Polarity>0</Polarity>
+<text>the porcini mushroom pasta special was tasteless, so was the seafood tagliatelle.</text>
+
+<Polarity>1</Polarity>
+<text>good for casual dinner with jeans and sneakers.</text>
+
+<Polarity>0</Polarity>
+<text>the food was lousy - too sweet or too salty and the portions tiny.</text>
+
+<Polarity>0</Polarity>
+<text>will never be back.</text>
+
+<Polarity>1</Polarity>
+<text>vt is what baby pizzas hope to be when they grow up.</text>
+
+<Polarity>1</Polarity>
+<text>while i'm not sure that this happens all the time-this is the kind of treatment that buys repeat business!</text>
+
+<Polarity>0</Polarity>
+<text>i have been to roth's twice and both times were very disappointing.</text>
+
+<Polarity>0</Polarity>
+<text>the miso soup lacked flavor and the fish was unfortunately not as well prepared as in the past.</text>
+
+<Polarity>1</Polarity>
+<text>they also do a great job for restaurant week.</text>
+
+<Polarity>0</Polarity>
+<text>but they don't have a toaster, which is strange.</text>
+
+<Polarity>0</Polarity>
+<text>all my co-workers were amazed at how small the dish was.</text>
+
+<Polarity>0</Polarity>
+<text>the food itself was just ok - nothing spectacular - but the service was awful.</text>
+
+<Polarity>0</Polarity>
+<text>if you want americanized chinese food with your usual watery, generic white sauce, this is your place.</text>
+
+<Polarity>0</Polarity>
+<text>this place must have cost the owners afortune to build.</text>
+
+<Polarity>1</Polarity>
+<text>the atmosphere is great if your looking for a laid back scene and an inexpensive way to spend a weekend afternoon.</text>
+
+<Polarity>1</Polarity>
+<text>what a great place.</text>
+
+<Polarity>0</Polarity>
+<text>the waiter actually poured water on my hand and walked away.</text>
+
+<Polarity>0</Polarity>
+<text>please save yourself the frustration.</text>
+
+<Polarity>0</Polarity>
+<text>the hot dogs were cold in the middle and the buns were stale.</text>
+
+<Polarity>1</Polarity>
+<text>all the people that i bring there go back on their own and bring their friends!</text>
+
+<Polarity>0</Polarity>
+<text>the food was undercooked-the sauce watery, and the vegetables raw.</text>
+
+<Polarity>1</Polarity>
+<text>we've been following chef lyle's food around new york for 15 years and while remaining classic, his innovations with bistro fare have made us return and return.</text>
+
+<Polarity>1</Polarity>
+<text>i am bringing my whole family back next time.</text>
+
+<Polarity>1</Polarity>
+<text>i am amazed by the poor reviews- i find this place to be standout italian in an area flooded with italian- great prices, great atmosphere, good service and a wonderful wine list.</text>
+
+<Polarity>0</Polarity>
+<text>oh and it's too tiny for families with strollers.</text>
+
+<Polarity>1</Polarity>
+<text>all the appetizers and salads were fabulous, the steak was mouth watering and the pasta was delicious!!!</text>
+
+<Polarity>0</Polarity>
+<text>it's a rather cramped and busy restaurant and it closes early.</text>
+
+<Polarity>0</Polarity>
+<text>for the quality of food, a little too expensive.</text>
+
+<Polarity>1</Polarity>
+<text>deep fried skewers are good and still rare to find in nyc.</text>
+
+<Polarity>0</Polarity>
+<text>however, in the summer of 2003, it seems the management has changed and the great big door has been replaced for a glass front ridding itself of the dark romantic getup.</text>
+
+<Polarity>0</Polarity>
+<text>what a ripoff!</text>
+
+<Polarity>1</Polarity>
+<text>with the theater 2 blocks away we had a delicious meal in a beautiful room.</text>
+
+<Polarity>1</Polarity>
+<text>after really enjoying ourselves at the bar we sat down at a table and had dinner.</text>
+
+<Polarity>0</Polarity>
+<text>i've been to joya twice and i will never go again.</text>
+
+<Polarity>1</Polarity>
+<text>pastrami or corned beef are juicy and piled high (ask for extra rye bread).</text>
+
+<Polarity>1</Polarity>
+<text>all conveniently delivered right to the door.</text>
+
+<Polarity>1</Polarity>
+<text>the owner truly caters to all your needs.</text>
+
+<Polarity>1</Polarity>
+<text>raga stands out with an interesting fusion of french and indian cooking.</text>
+
+<Polarity>1</Polarity>
+<text>heartland brewery is by far one of the best places in nyc to make new friends and catch up with old ones.</text>
+
+<Polarity>0</Polarity>
+<text>this place was not all that!</text>
+
+<Polarity>0</Polarity>
+<text>secondly, on this night the place was overwhelmed by upper east side ladies perfume.</text>
+
+<Polarity>1</Polarity>
+<text>i love and i know gourmet food by excellence!</text>
+
+<Polarity>1</Polarity>
+<text>every time in new york i make it a point to visit restaurant saul on smith street.</text>
+
+<Polarity>1</Polarity>
+<text>my personal favorite is an everything bagel with lox spread, but all the bagles are unbeliavably good.</text>
+
+<Polarity>1</Polarity>
+<text>i haven't eat a lamb chop as delicious as that,the salads are really nice dressed with lemon and extra virgnin olive oil.</text>
+
+<Polarity>1</Polarity>
+<text>if you are in the area try the bagel shoppe on 74th street which is 3 blocks away on 2nd ave.</text>
+
+<Polarity>0</Polarity>
+<text>had we been stalling i could understand where they were coming from, but we had been there less than an hour and they hadn't even brought us a check yet!</text>
+
+<Polarity>0</Polarity>
+<text>as much as i like the food there, i can't bring myself to go back.</text>
+
+<Polarity>0</Polarity>
+<text>i'm not picky - but it was actually gross.</text>
+
+<Polarity>0</Polarity>
+<text>diner food at bistro prices is a bummer....</text>
+
+<Polarity>0</Polarity>
+<text>ruby foo's is a tourist trap.</text>
+
+<Polarity>1</Polarity>
+<text>authentic bistro!</text>
+
+<Polarity>1</Polarity>
+<text>the food is uniformly exceptional, with a very capable kitchen which will proudly whip up whatever you feel like eating, whether it's on the menu or not.</text>
+
+<Polarity>0</Polarity>
+<text>the food was absolutely horrible!</text>
+
+<Polarity>1</Polarity>
+<text>i think that it is absolutely brilliant and well runned business operation.</text>
+
+<Polarity>1</Polarity>
+<text>i have never been disappointed in the red eye.</text>
+
+<Polarity>0</Polarity>
+<text>i actually gave patroon another chance before writing this, but the second visit was even worse.</text>
+
+<Polarity>0</Polarity>
+<text>after complaining about the chicken dish, the manager came over to tell us that, no one had ever complained before, and that we just didn't know what the dish was supposed to taste like.</text>
+
+<Polarity>0</Polarity>
+<text>i need at least three rolls to be full, and that's at least $14.00!</text>
+
+<Polarity>1</Polarity>
+<text>the setting is casual and romantic.</text>
+
+<Polarity>0</Polarity>
+<text>he offers subpar service and has no personality.</text>
+
+<Polarity>1</Polarity>
+<text>my boyfriend and i went there to celebrate my birthday the other night and all i can say is that it was magnificent.</text>
+
+<Polarity>0</Polarity>
+<text>the waiters were not attentive except that the bill turned up on the table before we were finished.</text>
+
+<Polarity>1</Polarity>
+<text>tuk tuk is one of those comfortable neighborhood joints where you know you will always have a good meal at a fair price.</text>
+
+<Polarity>0</Polarity>
+<text>it was horrible.</text>
+
+<Polarity>1</Polarity>
+<text>trust me, it will be great, and all of it will be devoured in no time.</text>
+
+<Polarity>1</Polarity>
+<text>nevertheless the food itself is pretty good.</text>
+
+<Polarity>0</Polarity>
+<text>wouldn't recomend it for dinner!</text>
+
+<Polarity>0</Polarity>
+<text>not enough wines by the glass either.</text>
+
+<Polarity>0</Polarity>
+<text>behind this counter, two men are squeezed in.</text>
+
+<Polarity>1</Polarity>
+<text>best of all is the warm vibe, the owner is super friendly and service is fast.</text>
+
+<Polarity>0</Polarity>
+<text>first of all, this place is *not* romantic, as claimed by citysearch's editorial review.</text>
+
+<Polarity>0</Polarity>
+<text>i've been there a few times, and i usually end up sitting next to some pretty odd people.</text>
+
+<Polarity>0</Polarity>
+<text>anyway, this is the last time i cross the williamsburg.</text>
+
+<Polarity>0</Polarity>
+<text>they even have a section in the menu called american chinese food!</text>
+
+<Polarity>1</Polarity>
+<text>brick oven gallery is my pick for best pizza restaurant anywhere.</text>
+
+<Polarity>0</Polarity>
+<text>the only problem is that the manager is a complete incompetent.</text>
+
+<Polarity>1</Polarity>
+<text>the large selection of bruschettas, paninis, tramezzinis keep the palate from stagnating.</text>
+
+<Polarity>1</Polarity>
+<text>this is the best thing in soho.</text>
+
+<Polarity>0</Polarity>
+<text>for $600 ( the most we have ever paid) not even waving a magic wand will ever get us back for a repeat performance.</text>
+
+<Polarity>0</Polarity>
+<text>the only concern i have is with the slighly all-business waitstaff who order and throw the food down, rushing you out.</text>
+
+<Polarity>0</Polarity>
+<text>my steak au poivre was one of the worst i've had.</text>
+
+<Polarity>1</Polarity>
+<text>i liked the beer selection!</text>
+
+<Polarity>1</Polarity>
+<text>all pretty good.</text>
+
+<Polarity>0</Polarity>
+<text>we generally like good restaurants and eat out often but kai was way to expensive for what we got.</text>
+
+<Polarity>0</Polarity>
+<text>the place is a little tight and on a cold day, the seating by the entranceway can be pretty drafty.</text>
+
+<Polarity>0</Polarity>
+<text>the only possible drawback to this last point is that as of the date of this posting, the additional menu items are only written in chinese.</text>
+
+<Polarity>1</Polarity>
+<text>get your food to go, find a bench, and kick back with a plate of dumplings.</text>
+
+<Polarity>1</Polarity>
+<text>this little place has a cute interior decor and affordable city prices.</text>
+
+<Polarity>0</Polarity>
+<text>ive asked a cart attendant for a lotus leaf wrapped rice and she replied back rice and just walked away.</text>
+
+<Polarity>1</Polarity>
+<text>can't wait to go back.</text>
+
+<Polarity>1</Polarity>
+<text>try the hot dogs too, they're snappy and delicious.</text>
+
+<Polarity>1</Polarity>
+<text>over the years the host, vittorio, and his crew, have always treated me as family--although with all the business this not-so-little gem does, it amazing he's even able to remember a consistent but not-so-frequent visitor.</text>
+
+<Polarity>0</Polarity>
+<text>they refuse to seat parties of 3 or more on weekends.</text>
+
+<Polarity>1</Polarity>
+<text>they wouldnt even let me finish my glass of wine before offering another.</text>
+
+<Polarity>1</Polarity>
+<text>wonderful at holiday time.</text>
+
+<Polarity>1</Polarity>
+<text>emilio, the owner, is often sitting in the front table greeting guests as they come and go.</text>
+
+<Polarity>1</Polarity>
+<text>i'm going back.</text>
+
+<Polarity>1</Polarity>
+<text>its a great place for a casual date or to entertain clients for lunch.</text>
+
+<Polarity>1</Polarity>
+<text>it's convenient.</text>
+
+<Polarity>1</Polarity>
+<text>our food was great too!</text>
+
+<Polarity>0</Polarity>
+<text>while the $20 entree range is not overly expensive, in new york city, there is definitely better food in that range, and so sapphire, despite it's lovely atmosphere, will most likely not be a restaurant to which i will return.</text>
+
+<Polarity>0</Polarity>
+<text>but warning: to all those that use this site be weary, be very weary of recommendations.</text>
+
+<Polarity>1</Polarity>
+<text>i really liked this place.</text>
+
+<Polarity>1</Polarity>
+<text>great bagels, spreads and a good place to hang out in.</text>
+
+<Polarity>0</Polarity>
+<text>my chow fun and chow see was really bland and oily.</text>
+
+<Polarity>0</Polarity>
+<text>you have to increase the service a lot.</text>
+
+<Polarity>1</Polarity>
+<text>wine list selection is good and wine-by-the-glass was generously filled to the top.</text>
+
+<Polarity>1</Polarity>
+<text>the food, drinks and service are clearly among the best in the city.</text>
+
+<Polarity>0</Polarity>
+<text>sometimes i get bad food and bad service, sometimes i get good good and bad service.</text>
+
+<Polarity>1</Polarity>
+<text>hats off to the chef.</text>
+
+<Polarity>1</Polarity>
+<text>it's simply the best meal in nyc.</text>
+
+<Polarity>1</Polarity>
+<text>i almost hesititate to write a review because the atmosphere was so great and i would hate for it too become to crowded.</text>
+
+<Polarity>0</Polarity>
+<text>somewhat pricey but what the heck.</text>
+
+<Polarity>1</Polarity>
+<text>go inside and you won't want to leave.</text>
+
+<Polarity>1</Polarity>
+<text>i look forward to eating here again</text>
+
+<Polarity>1</Polarity>
+<text>frankly, when you compare what you can have here for lunch, versus mcds or so many other sandwich shops in the city, there is no comparison.</text>
+
+<Polarity>1</Polarity>
+<text>i highly recommend cafe st. bart's for their food, the ambience and wonderful service.</text>
+
+<Polarity>1</Polarity>
+<text>the entire dining experience was wonderful!</text>
+
+<Polarity>0</Polarity>
+<text>also they were $15 each!</text>
+
+<Polarity>0</Polarity>
+<text>with so many good restaurants on the uws, i don't need overpriced food, absurdly arrogant wait-staff who don't recognize they work at a glorified diner, clumsy service, and management that doesn't care.</text>
+
+<Polarity>1</Polarity>
+<text>it's somewhere you can eat and be happy.</text>
+
+<Polarity>1</Polarity>
+<text>in fact, two people could really share one plate.</text>
+
+<Polarity>1</Polarity>
+<text>we will go back every time we are in the city.</text>
+
+<Polarity>1</Polarity>
+<text>its an excellent place to relax and the food is one of the best in the city of new york.</text>
+
+<Polarity>1</Polarity>
+<text>and yes dal bukhara is so dam good and so are all the kababs.</text>
+
+<Polarity>1</Polarity>
+<text>worth visiting the 1st ave spot because it is the original store.</text>
+
+<Polarity>1</Polarity>
+<text>the place is so cool and the service is prompt and curtious.</text>
+
+<Polarity>1</Polarity>
+<text>example is the soup which was about 6 oz for $12 dollars and the mushrooms where $12 for about 1oz.</text>
+
+<Polarity>0</Polarity>
+<text>when we left at 8:00 pm, it was packed and noisy.</text>
+
+<Polarity>0</Polarity>
+<text>you order from a menu, so you leave feeling like you missed the full experience.</text>
+
+<Polarity>1</Polarity>
+<text>it's constantly open, catering to the pakistani cabbies lined up on crosby st., so there's more turnover with the food than you'd expect (i.e., surprisingly fresh).</text>
+
+<Polarity>0</Polarity>
+<text>eating in, the atmosphere saves it, but at your desk, it's a very disappointing experience.</text>
+
+<Polarity>1</Polarity>
+<text>prices are higher to dine in and their chicken tikka marsala is quite good.</text>
+
+<Polarity>1</Polarity>
+<text>i love the atmorphere @ peep!</text>
+
+<Polarity>0</Polarity>
+<text>i was a little leary about mary's at first - it's small, crowded and you usually have to wait on line - but i'm glad i finally tried it.</text>
+
+<Polarity>0</Polarity>
+<text>for many people, this may not seem like aunthentic thai food because most places in nyc arent quite authentic.</text>
+
+<Polarity>0</Polarity>
+<text>the soup for the udon was soy sauce and water.</text>
+
+<Polarity>0</Polarity>
+<text>stay far away from this place.</text>
+
+<Polarity>1</Polarity>
+<text>definately check it out!!!</text>
+
+<Polarity>1</Polarity>
+<text>we have never had any problems with charging the meal or the tip, and the food was delivered quickly, but we live only a few minutes walk from them.</text>
+
+<Polarity>1</Polarity>
+<text>great people watching as others do the same to you.</text>
+
+<Polarity>1</Polarity>
+<text>lived in shanghai most of my life and thought the food was comparable to the flagship green bo restaurant there.</text>
+
+<Polarity>1</Polarity>
+<text>the portions are large and the servers always surprise us with a different starter.</text>
+
+<Polarity>0</Polarity>
+<text>amma has the worst value for money i have experienced in nyc over the past 2 years.</text>
+
+<Polarity>0</Polarity>
+<text>the grilled cheese at home afterwards was better.!!</text>
+
+<Polarity>0</Polarity>
+<text>we had a most unpleasant experience at this restaurant.</text>
+
+<Polarity>0</Polarity>
+<text>would never go back there.</text>
+
+<Polarity>1</Polarity>
+<text>the food is great.</text>
+
+<Polarity>1</Polarity>
+<text>check out the secret back room.</text>
+
+<Polarity>1</Polarity>
+<text>our server was very helpful and friendly.</text>
+
+<Polarity>0</Polarity>
+<text>a bit breezy up there on the mezzanine from the wind coming from the tracks.</text>
+
+<Polarity>0</Polarity>
+<text>but too far east!</text>
+
+<Polarity>1</Polarity>
+<text>very good service and very good prices.</text>
+
+<Polarity>0</Polarity>
+<text>very excited to hear that short-term chef jason narone has moved on, he truly was a low point of their sterling track record.</text>
+
+<Polarity>0</Polarity>
+<text>the food was just awful, atrocious actually.</text>
+
+<Polarity>1</Polarity>
+<text>i started out with a bombay beer which was big enough for two.</text>
+
+<Polarity>0</Polarity>
+<text>really though, where's the seasoning?</text>
+
+<Polarity>0</Polarity>
+<text>but the pizza is way to expensive.</text>
+
+<Polarity>0</Polarity>
+<text>it takes forever to get a drink and they almost always forget to bring something (although they dont forget to charge you for it.</text>
+
+<Polarity>0</Polarity>
+<text>the food was below average, the service was pathetic, there was no ambience at all.</text>
+
+<Polarity>0</Polarity>
+<text>the dinner was ok, nothing i would have again.</text>
+
+<Polarity>0</Polarity>
+<text>also, because it is so thin, it gets cold very quickly and its not that filling.</text>
+
+<Polarity>1</Polarity>
+<text>nice family owned traditional restaurant.</text>
+
+<Polarity>1</Polarity>
+<text>much more reasonably priced too!</text>
+
+<Polarity>0</Polarity>
+<text>it looked like shredded cheese partly done - still in strips.</text>
+
+<Polarity>1</Polarity>
+<text>whoever the jazz duo was, they were on point.</text>
+
+<Polarity>1</Polarity>
+<text>quality of food is excellent and price is cheap, stick to pork, fish, chicken, lamb and vegetables.</text>
+
+<Polarity>1</Polarity>
+<text>the pizza is delicious and the proprietor is one of the nicest in nyc.</text>
+
+<Polarity>1</Polarity>
+<text>all the nyu students love this place so it makes for a fun young atmosphere.</text>
+
+<Polarity>1</Polarity>
+<text>my husband had the mesclun, salmon, and ice cream and he enjoyed all 3 courses.</text>
+
+<Polarity>1</Polarity>
+<text>not pretentious and very economical.</text>
+
+<Polarity>0</Polarity>
+<text>the table next to us asked if he crushed the grapes himself when their long overdue bottle of wine finally arrived.</text>
+
+<Polarity>1</Polarity>
+<text>check it out</text>
+
+<Polarity>0</Polarity>
+<text>so my husband made up an excuse so we can leave.</text>
+
+<Polarity>0</Polarity>
+<text>i don't think i would go again.</text>
+
+<Polarity>0</Polarity>
+<text>the lobster sandwich is $24 and although it was good it was not nearly enough to warrant that price.</text>
+
+<Polarity>1</Polarity>
+<text>this place has many different styles of pizza and they are all amazing.</text>
+
+<Polarity>1</Polarity>
+<text>the sauce on the pizza is sooo good with garlic and fresh tomatoes and they don't skimp.</text>
+
+<Polarity>0</Polarity>
+<text>of course this atmosphere is lacking, but what do you expect from a 24 hour bagel place anyways?</text>
+
+<Polarity>0</Polarity>
+<text>okay-i don't mind the oily part (cause most are cooked that way) but it was way too bland.</text>
+
+<Polarity>0</Polarity>
+<text>in reality (to maximize potential diners) they were still taking phone reservations and reallocating tables of those waiting in the lobby.</text>
+
+<Polarity>1</Polarity>
+<text>the design and atmosphere is just as good.</text>
+
+<Polarity>0</Polarity>
+<text>we ordered the special, grilled branzino, that was so infused with bone, it was difficult to eat.</text>
+
+<Polarity>0</Polarity>
+<text>fish was overdone.</text>
+
+<Polarity>0</Polarity>
+<text>the most annoying thing, though, is the fact that the servers seem to be trained to drive revenue.</text>
+
+<Polarity>0</Polarity>
+<text>its also a bit of a hassle to get to without a car (i happen to live in inwood).</text>
+
+<Polarity>1</Polarity>
+<text>we will return many times for this oasis in mid-town.</text>
+
+<Polarity>1</Polarity>
+<text>great find!!!</text>
+
+<Polarity>1</Polarity>
+<text>the food is great, service is ok.</text>
+
+<Polarity>1</Polarity>
+<text>hurley's is like cheers where everyone knows your name and they are actually glad you came.</text>
+
+<Polarity>1</Polarity>
+<text>the food looked very appetizing and delicious since it came on a variety of fancy plates.</text>
+
+<Polarity>1</Polarity>
+<text>this is a consistently great place to dine for lunch or dinner.</text>
+
+<Polarity>0</Polarity>
+<text>searching to get out from the cold, freezing weather, we went into what we thought was a deli.</text>
+
+<Polarity>1</Polarity>
+<text>order the panang duck, it's fantastic.</text>
+
+<Polarity>1</Polarity>
+<text>nicky the nose at the bar is a treat.</text>
+
+<Polarity>0</Polarity>
+<text>the hostess is rude to the point of being offensive.</text>
+
+<Polarity>1</Polarity>
+<text>we are very particular about sushi and were both please with every choice which included: ceviche mix (special), crab dumplings, assorted sashimi, sushi and rolls, two types of sake, and the banana tempura.</text>
+
+<Polarity>0</Polarity>
+<text>the atmosphere is noisy and the waiters are literally walking around doing things as fast as they can.</text>
+
+<Polarity>0</Polarity>
+<text>the price is reasonable although the service is poor.</text>
+
+<Polarity>0</Polarity>
+<text>it took them 25 minutes to bring our appetizer.</text>
+
+<Polarity>0</Polarity>
+<text>i was very disappointed with this restaurant.</text>
+
+<Polarity>1</Polarity>
+<text>the best thing i tasted were the lambchops.</text>
+
+<Polarity>1</Polarity>
+<text>in any event, this is a place i'll be sure to stop by again when i'm in this part of town.</text>
+
+<Polarity>0</Polarity>
+<text>maybe it was just an unintentional mistake but i've experienced the same with other restaurants so i don't appreciate such practice.</text>
+
+<Polarity>1</Polarity>
+<text>i love indian food and consider myself to be quite an expert on it.</text>
+
+<Polarity>1</Polarity>
+<text>the dishes offered were unique, very tasty and fresh from the lamb sausages, sardines with biscuits, large whole shrimp to the amazing pistachio ice cream (the best and freshest i've ever had).</text>
+
+<Polarity>0</Polarity>
+<text>but, they were too big for the bun.</text>
+
+<Polarity>1</Polarity>
+<text>planet thai is great!</text>
+
+<Polarity>1</Polarity>
+<text>the wait staff is friendly, and the food has gotten better and better!</text>
+
+<Polarity>0</Polarity>
+<text>($200 for 2 glasses of champagne, not too expensive bottle of wine and 2 after dinner drinks).</text>
+
+<Polarity>0</Polarity>
+<text>stepped on my foot on the second time he reached over me to adjust lighting.</text>
+
+<Polarity>1</Polarity>
+<text>for all of you new to indian food, try the paneer roll, it is a piece of heaven.</text>
+
+<Polarity>0</Polarity>
+<text>i'm still mad that i had to pay for lousy food.</text>
+
+<Polarity>0</Polarity>
+<text>i ordered the smoked salmon and roe appetizer and it was off flavor.</text>
+
+<Polarity>1</Polarity>
+<text>with the great variety on the menu , i eat here often and never get bored .</text>
+
+<Polarity>0</Polarity>
+<text>i had their eggs benedict for brunch, which were the worst in my entire life, i tried removing the hollondaise sauce completely that was how failed it was.</text>
+
+<Polarity>1</Polarity>
+<text>the seafood is amazing, there's a good wine list, and the ever-changing menu always offers some great surprises.</text>
+
+<Polarity>0</Polarity>
+<text>the entree was bland and small, dessert was not inspired.</text>
+
+<Polarity>0</Polarity>
+<text>it's like they took leftover chicken, poured oil and sprinkled pepper powder over it (the sauce was translucent and red).</text>
+
+<Polarity>0</Polarity>
+<text>well, their deliveries take for ever and the food is usually cold.</text>
+
+<Polarity>0</Polarity>
+<text>murray won't do it.</text>
+
+<Polarity>1</Polarity>
+<text>while this isn't classical restaurant fare, the chef has given new life to an old cuisine with some really innovative and tasty dishes that are genuinely indian without being heavy or same old restaurant burn-outs.</text>
+
+<Polarity>1</Polarity>
+<text>it's delicious!</text>
+
+<Polarity>1</Polarity>
+<text>i had the best ravioli ever.</text>
+
+<Polarity>0</Polarity>
+<text>based on a visit a month ago, i returned the week before christmas and was hugely disappointed.</text>
+
+<Polarity>1</Polarity>
+<text>you are treated just like royality.</text>
+
+<Polarity>0</Polarity>
+<text>last memorial day, i tried to make reservations but was told they were closed that weekend (interesting, but...).</text>
+
+<Polarity>1</Polarity>
+<text>if you were there when it first opened, give this restaurant a second chance.</text>
+
+<Polarity>0</Polarity>
+<text>this restaurant is not worth the time, effort, or money to say the least.</text>
+
+<Polarity>1</Polarity>
+<text>word of advice, save room for pasta dishes and never leave until you've had the tiramisu.</text>
+
+<Polarity>0</Polarity>
+<text>yes, they use fancy ingredients, but even fancy ingredients don't make for good pizza unless someone knows how to get the crust right.</text>
+
+<Polarity>0</Polarity>
+<text>my turkey burger was not cooked at all, my friends salmon was completely raw.</text>
+
+<Polarity>1</Polarity>
+<text>since it literally is a complete hole in the wall, it's a bit intimidating at first, but you get over that very quickly as soon as the friendly staff welcomes you - don't hesitate to ask for help with what to get.</text>
+
+<Polarity>1</Polarity>
+<text>definitely not a restaurant to skip!</text>
+
+<Polarity>1</Polarity>
+<text>the lava cake dessert was incredible and i recommend it.</text>
+
+<Polarity>0</Polarity>
+<text>i must say it's a little pricey for the food because it was not as spectacular as the view.</text>
+
+<Polarity>0</Polarity>
+<text>i ordered the crab cocktail and it was soaked in a lime juice concoction where all you could taste was the lime.</text>
+
+<Polarity>1</Polarity>
+<text>to give you an idea of how good we thought it was, we ended up going to ping's three weekends in a row!!!</text>
+
+<Polarity>0</Polarity>
+<text>why do people rave about the ambience.</text>
+
+<Polarity>0</Polarity>
+<text>first it took us a long time to find the place.</text>
+
+<Polarity>0</Polarity>
+<text>the food is expensive, but worth every bite.</text>
+
+<Polarity>0</Polarity>
+<text>i wish they would change back to what it was before.</text>
+
+<Polarity>1</Polarity>
+<text>i was glad i did.</text>
+
+<Polarity>0</Polarity>
+<text>too cold to enjoy.</text>
+
+<Polarity>0</Polarity>
+<text>they don't concern much of customer's health, just want to make money.</text>
+
+<Polarity>1</Polarity>
+<text>the outdoor atmosphere of sitting on the sidewalk watching the world go by 50 feet away on 6th avenue on a cool evening was wonderful.</text>
+
+<Polarity>1</Polarity>
+<text>i would definitely recommend mary's and am making it one of my regular neighborhood haunts.</text>
+
+<Polarity>1</Polarity>
+<text>the sangria was pretty tasty and good on a hot muggy day.</text>
+
+<Polarity>0</Polarity>
+<text>their calzones are horrific, bad, vomit-inducing, yuck.</text>
+
+<Polarity>0</Polarity>
+<text>the highlight of the night was the mayonaisse for my side of fries i received from one of the food runners, which is not good considering the bill was nearly $100.</text>
+
+<Polarity>0</Polarity>
+<text>we were treated with attitude ever since the moment we stepped into the restaurant!</text>
+
+<Polarity>1</Polarity>
+<text>and kruno, the beverage manager is the best bartender i have yet to come across.</text>
+
+<Polarity>0</Polarity>
+<text>they didn't give us the dinner special until we asked for it.</text>
+
+<Polarity>1</Polarity>
+<text>one thing i liked about this place is that i never felt rushed or pressured to give up my table ot incoming guests.</text>
+
+<Polarity>0</Polarity>
+<text>it just wasn't thai.</text>
+
+<Polarity>1</Polarity>
+<text>i found the food to be outstanding, particulary the salmon dish i had.</text>
+
+<Polarity>0</Polarity>
+<text>the photos of the restaurant in its web site are way better than the real look.</text>
+
+<Polarity>1</Polarity>
+<text>an oasis of refinement:  food, though somewhat uneven, often reaches the pinnacles of new american fine cuisine - chef's passion (and kitchen's precise execution) is most evident in the fish dishes and soups.</text>
+
+<Polarity>0</Polarity>
+<text>the worst excuse for japanese food i've ever encountered.</text>
+
+<Polarity>0</Polarity>
+<text>we actually gave 10% tip (which we have never done despite mediocre food and service), because we felt totally ripped off.</text>
+
+<Polarity>0</Polarity>
+<text>i seriously doubt i will ever dine at jimmy's bronx, or for that matter, jimmy's uptown, again.</text>
+
+<Polarity>0</Polarity>
+<text>service was also horrible and the ambience is not that great.</text>
+
+<Polarity>0</Polarity>
+<text>i've overheard comments from him to his employees that should not have been delivered in the dining area and i've been sitting there while he lectured another customer.</text>
+
+<Polarity>0</Polarity>
+<text>got a little loud after 8pm when the joint got full.</text>
+
+<Polarity>1</Polarity>
+<text>ambiance- relaxed and stylish.</text>
+
+<Polarity>1</Polarity>
+<text>when you're sitting in their main dining room (which has a spectacular, hand-painted high ceiling) you'd never know there was a world outside.</text>
+
+<Polarity>0</Polarity>
+<text>no apologies during restaurant week.</text>
+
+<Polarity>0</Polarity>
+<text>the service is awful.</text>
+
+<Polarity>0</Polarity>
+<text>not worth it.</text>
+
+<Polarity>0</Polarity>
+<text>if you want good authentic thai this place is not the place to go.</text>
+
+<Polarity>1</Polarity>
+<text>just got back from lunch at tamarind and it was excellent.</text>
+
+<Polarity>1</Polarity>
+<text>nice value.</text>
+
+<Polarity>0</Polarity>
+<text>i wouldn't even have complained at all if the food at least tasted good but the quality of food was crappy, too.</text>
+
+<Polarity>0</Polarity>
+<text>the fish was not fresh and the rice tasted old and stale.</text>
+
+<Polarity>0</Polarity>
+<text>the food now is inconsistent.</text>
+
+<Polarity>0</Polarity>
+<text>yes, there might be a wait if you have no reservations.</text>
+
+<Polarity>1</Polarity>
+<text>this place, which is only a few months old, is perhaps queens' biggest secret!</text>
+
+<Polarity>0</Polarity>
+<text>i think this would be a pretty good spot if it were not so overpriced and overrated.</text>
+
+<Polarity>0</Polarity>
+<text>filled with suits, though, so you never really feel terribly comfortable.</text>
+
+<Polarity>1</Polarity>
+<text>the restuarant itself is not large, but seems to have several round tables to accomodate large groups hoping to save a buck to eat authentic taiwanese.</text>
+
+<Polarity>0</Polarity>
+<text>all we received was an apology as we left to see our show without dinner.</text>
+
+<Polarity>1</Polarity>
+<text>a great choice at any cost and a great deal.</text>
+
+<Polarity>0</Polarity>
+<text>most people eat there seem to be typical upper east side snobs, so be aware.</text>
+
+<Polarity>1</Polarity>
+<text>what is even better, is that the prices are very affordable as well, and the food is really good.</text>
+
+<Polarity>0</Polarity>
+<text>we left, never to return.</text>
+
+<Polarity>1</Polarity>
+<text>the place itself is beautiful the bar scene seems to be happening.</text>
+
+<Polarity>1</Polarity>
+<text>good selection of wines ranging from affordable to high end.</text>
+
+<Polarity>0</Polarity>
+<text>the red sliding doors may be unique but they do not block off the cold air from the outside.</text>
+
+<Polarity>1</Polarity>
+<text>this is my favorite italian restaurant in all of new york city.</text>
+
+<Polarity>0</Polarity>
+<text>also, don't plan on asking for your favorite roll, if it's not on the menu, you can't have it.</text>
+
+<Polarity>0</Polarity>
+<text>terrible experience.</text>
+
+<Polarity>1</Polarity>
+<text>very good breads as well.</text>
+
+<Polarity>0</Polarity>
+<text>total hipster-wannabe attitude in an otherwise sweet spot.</text>
+
+<Polarity>0</Polarity>
+<text>either that, or the editor's idea of romance must be sharing a conversation with the next table, while trying to speak louder than the traffic on 57th.</text>
+
+<Polarity>0</Polarity>
+<text>not too crazy about their sake martini.</text>
+
+<Polarity>0</Polarity>
+<text>every waitress and customer who passed by me bumped into my chair.</text>
+
+<Polarity>1</Polarity>
+<text>ambiance and music funky, which i enjoy.</text>
+
+<Polarity>0</Polarity>
+<text>we arrived for dinner expecting to be impressed by a place that has an impressive past - but, that's just it -- the past!</text>
+
+<Polarity>1</Polarity>
+<text>the pizza is delicious - they use fresh mozzarella instead of the cheap, frozen, shredded cheese common to most pizzaria's.</text>
+
+<Polarity>0</Polarity>
+<text>still stay away, the table next to us walked out after my table and aanother were serves eventhough they were there much longer...</text>
+
+<Polarity>0</Polarity>
+<text>when he finally did, he was unable to make a gin and tonic -- couldn't find tonic.</text>
+
+<Polarity>1</Polarity>
+<text>i must say the view of nyc is so beautiful!</text>
+
+<Polarity>1</Polarity>
+<text>i would highly recommend.</text>
+
+<Polarity>0</Polarity>
+<text>just ignore the trendy wannabes.</text>
+
+<Polarity>1</Polarity>
+<text>the italian food has flavor (that can be sort of surprising on the ues), and the service turns from a nightmare to attentive,they sort of remind me of the ny yankees of the late 90's, no matter how bad it look, you knew that there was a rally just around the corner...</text>
+
+<Polarity>1</Polarity>
+<text>one of the earlier people commenting on the restaurant did not get the that some experimenting is going on with the menu in a positive way.</text>
+
+<Polarity>1</Polarity>
+<text>to be completely fair, the only redeeming factor was the food, which was above average, but couldn't make up for all the other deficiencies of teodora.</text>
+
+<Polarity>0</Polarity>
+<text>but the staff was so horrible to us.</text>
+
+<Polarity>0</Polarity>
+<text>i don't get it either.</text>
+
+<Polarity>1</Polarity>
+<text>the food is great and reasonably priced.</text>
+
+<Polarity>1</Polarity>
+<text>we went here for lunch a couple of weeks ago on a saturday, and i was thoroughly impressed with the food.</text>
+
+<Polarity>0</Polarity>
+<text>we thought that this place is using too much of msg cooking in the foods.</text>
+
+<Polarity>0</Polarity>
+<text>i ordered a chicken teriyaki dish and found that the chicken was extremely dry.</text>
+
+<Polarity>1</Polarity>
+<text>my girlfriend and i stumbled onto this hopping place the other night and had a great time!</text>
+
+<Polarity>1</Polarity>
+<text>i loving bringing friends here - and i do so every chance i get.</text>
+
+<Polarity>1</Polarity>
+<text>i love this cozy around the way rest.</text>
+
+<Polarity>0</Polarity>
+<text>no free drink.</text>
+
+<Polarity>0</Polarity>
+<text>what i didn't like was how the food came right after it was ordered.</text>
+
+<Polarity>1</Polarity>
+<text>this is a great thai restaurant with a very friendly staff.</text>
+
+<Polarity>0</Polarity>
+<text>drinks got screwed up, she acted put upon.</text>
+
+<Polarity>0</Polarity>
+<text>the main downside to the place is the nazi-like guy running it who constantly complains about the noise level.</text>
+
+<Polarity>1</Polarity>
+<text>my goodness, everything from the fish to the rice to the seaweed was absolutely amazing.</text>
+
+<Polarity>1</Polarity>
+<text>go there on an empty stomach and leave feeling like a baby veal calf(ok bad joke), but you will see.</text>
+
+<Polarity>0</Polarity>
+<text>the seats are uncomfortable if you are sitting against the wall on wooden benches.</text>
+
+<Polarity>0</Polarity>
+<text>yet paired with such rude service, would never recommend for anyone interested in carrying any kind of conversation while there.</text>
+
+<Polarity>0</Polarity>
+<text>we had reservations at 9pm, but was not seated until 10:15pm.</text>
+
+<Polarity>1</Polarity>
+<text>the second you walk through the heavy vault like door, with people anticipating your arrival you get the sense that you are going to have the dining ride of a lifetime.</text>
+
+<Polarity>1</Polarity>
+<text>great indian food and the service is incredible.</text>
+
+<Polarity>0</Polarity>
+<text>i have eaten at many pizza places around nyc and this is hands down the worst.</text>
+
+<Polarity>1</Polarity>
+<text>if you want some roast duck, pork or chicken on rice with ginger, try them out!</text>
+
+<Polarity>1</Polarity>
+<text>i've been to sapphire twice and both times the food was fine, if not good.</text>
+
+<Polarity>0</Polarity>
+<text>i was so sad to read the bad reviews this place got!</text>
+
+<Polarity>1</Polarity>
+<text>this dish is my favorite and i always get it when i go there and never get tired of it.</text>
+
+<Polarity>0</Polarity>
+<text>they were dry and disgusting, i didn't even finish my first piece.</text>
+
+<Polarity>0</Polarity>
+<text>last time i went here, the waitress didn't come back after taking our order.</text>
+
+<Polarity>1</Polarity>
+<text>obviously run by folks who know a pie.</text>
+
+<Polarity>1</Polarity>
+<text>otherwise, good stuff for late nite eats.</text>
+
+<Polarity>0</Polarity>
+<text>big and gawky on the outside.</text>
+
+<Polarity>0</Polarity>
+<text>also, the sandwiches (nearing $7) didn't come with anything like chips or a side.</text>
+
+<Polarity>1</Polarity>
+<text>good music, great food, speedy service affordable prices.</text>
+
+<Polarity>0</Polarity>
+<text>you can actually get 2 salads worth if u take it home and add it to some lettuce!</text>
+
+<Polarity>0</Polarity>
+<text>even after they overcharged me the last time i was there.</text>
+
+<Polarity>0</Polarity>
+<text>those rolls were big, but not good and sashimi wasn't fresh.</text>
+
+<Polarity>0</Polarity>
+<text>worse of all, $60 was erroneously added to our $80 bill.</text>
+
+<Polarity>1</Polarity>
+<text>the atmosphere is unheralded, the service impecible, and the food magnificant.</text>
+
+<Polarity>0</Polarity>
+<text>here's to the fake fish tanks too...</text>
+
+<Polarity>0</Polarity>
+<text>the ambience was nice, but service wasn't so great.</text>
+
+<Polarity>0</Polarity>
+<text>it cannot be the ambience, because the place is very cramped and some guests have to sit in an aisle.</text>
+
+<Polarity>1</Polarity>
+<text>service has always been friendly and efficient.</text>
+
+<Polarity>0</Polarity>
+<text>they forgot a sandwich, didn't include plastic forks, and didn't include pita with the hummus platter.</text>
+
+<Polarity>0</Polarity>
+<text>and at the conclusion of this culinary nightmare the check was given to our table by knocking over a glass of water.</text>
+
+<Polarity>1</Polarity>
+<text>thanks bloom's for a lovely trip.</text>
+
+<Polarity>1</Polarity>
+<text>he has visited thailand and is quite expert on the cuisine.</text>
+
+<Polarity>1</Polarity>
+<text>decor is nice and minimalist, food simple yet very well presented and cooked, and the wine list matches the food very well.</text>
+
+<Polarity>1</Polarity>
+<text>it is the type of place to run into old friends and have a late, raucus dinner.</text>
+
+<Polarity>1</Polarity>
+<text>the wine list is excellent.</text>
+
+<Polarity>1</Polarity>
+<text>we will be back.</text>
+
+<Polarity>0</Polarity>
+<text>plain and simple it's bad thai food.</text>
+
+<Polarity>1</Polarity>
+<text>two people in our party felt like something else, and volare immediately obliged with two great dishes that were not in their regular menu.</text>
+
+<Polarity>1</Polarity>
+<text>i cannot imagine better indian food in all of the city.</text>
+
+<Polarity>1</Polarity>
+<text>if you are a carnivore, come hungry and you will leave more satisfied than you have ever been.</text>
+
+<Polarity>1</Polarity>
+<text>two words: free wine.</text>
+
+<Polarity>1</Polarity>
+<text>threw my fiance's surprise 30th birthday dinner here couldn't be happier.</text>
+
+<Polarity>1</Polarity>
+<text>may, the owner always has a smile on her and will warmly greet you.</text>
+
+<Polarity>1</Polarity>
+<text>what more can you ask for?</text>
+
+<Polarity>0</Polarity>
+<text>considering their price of $6.25 for lunch special, the dish was ridiculously small.</text>
+
+<Polarity>1</Polarity>
+<text>both the fresh mozzerella slices and the plain cheese slice are phenomenal.</text>
+
+<Polarity>1</Polarity>
+<text>so if you want a nice, enjoyable meal at montparnasse, go early for the pre-theater prix-fixe.</text>
+
+<Polarity>0</Polarity>
+<text>drinks way over priced.</text>
+
+<Polarity>1</Polarity>
+<text>stick to the gulab jamun.</text>
+
+<Polarity>0</Polarity>
+<text>food was average and creme brulee was awful - the sugar was charred, not caramelized and smelled of kerosene.</text>
+
+<Polarity>0</Polarity>
+<text>an excellent alternative to fast food joints and ordering in but, the food was slightly disappointing.</text>
+
+<Polarity>0</Polarity>
+<text>i definitely wouldn't go back.</text>
+
+<Polarity>0</Polarity>
+<text>this place is really trendi but they have forgotten about the most important part of a  restaurant, the food.</text>
+
+<Polarity>0</Polarity>
+<text>i just don't understand all the hype...</text>
+
+<Polarity>1</Polarity>
+<text>my friend from milan and myself were pleasantly surprised when we arrived and everyone spoke italian.</text>
+
+<Polarity>0</Polarity>
+<text>don't go there!</text>
+
+<Polarity>1</Polarity>
+<text>went here last night and had a pleasant experience.</text>
+
+<Polarity>0</Polarity>
+<text>we were still sitting at the bar while we drank the sangria, but facing away from the bar when we turned back around, the $2 was gone the people next to us said the bartender took it.</text>
+
+<Polarity>1</Polarity>
+<text>everyone i have spoken too there is super friendly, helpful, and willing to the extra mile for a customer.</text>
+
+<Polarity>0</Polarity>
+<text>drawbacks: service is slow and they don't toast!</text>
+
+<Polarity>1</Polarity>
+<text>the menu was impressive with selections ranging from a burger, to steak, to escargot.</text>
+
+<Polarity>1</Polarity>
+<text>their tuna tartar appetizer is to die for.</text>
+
+<Polarity>1</Polarity>
+<text>try the lasagnette appetizer.</text>
+
+<Polarity>0</Polarity>
+<text>service is not what one would expect from a joint in this price category.</text>
+
+<Polarity>0</Polarity>
+<text>terrible, terrible management - deserves to be shut-down.</text>
+
+<Polarity>0</Polarity>
+<text>and i could do without the cigar smoke.</text>
+
+<Polarity>1</Polarity>
+<text>the sake menu should not be overlooked!</text>
+
+<Polarity>0</Polarity>
+<text>stay away from the latter since you won't go for seconds (hint hint).</text>
+
+<Polarity>1</Polarity>
+<text>if you're craving for haru's great food, especially the house roll, but can't stand the wait building outisde, head across the street to their sake bar!</text>
+
+<Polarity>0</Polarity>
+<text>my husband said the portions were very small, but if my main course was good to eat the portion would've been fine for me.</text>
+
+<Polarity>1</Polarity>
+<text>the decor is dark, cool and soothing, while the food's presentation is spectacular, considering the low prices.</text>
+
+<Polarity>1</Polarity>
+<text>- the bread at the beginning is super tasty and makes you want more - the pizza is delicious and comes in personal sizes, however be warned that the peter's favourite pizza with prosciutto and baby arugula is actually a margarite pizza with cold prosciutto and baby arugula on top, like a salad.</text>
+
+<Polarity>0</Polarity>
+<text>the appetizers are just ok and the main courses were decidedly subpar.</text>
+
+<Polarity>1</Polarity>
+<text>i got enough reasons to keep coming back!!!</text>
+
+<Polarity>1</Polarity>
+<text>i will be going back very soon.</text>
+
+<Polarity>1</Polarity>
+<text>what a great place!</text>
+
+<Polarity>1</Polarity>
+<text>have eaten at ginger house several times, and it's always good.</text>
+
+<Polarity>0</Polarity>
+<text>when asked about how a certain dish was prepared in comparison to a similar at other thai restaurants, he replied this is not mcdonald's, every place makes things differently while it is understandable that every place is indeed different, there was not a need to be uncourteous to customers and downright rude.</text>
+
+<Polarity>0</Polarity>
+<text>just bring someone who speaks cantonese because waiter may not understand you.</text>
+
+<Polarity>0</Polarity>
+<text>there is no excuse for such lousy service!</text>
+
+<Polarity>0</Polarity>
+<text>the svc can be a bit rude at times, esp if you have big group, but overall the restaurant is a must!</text>
+
+<Polarity>0</Polarity>
+<text>it is very overpriced and not very tasty.</text>
+
+<Polarity>0</Polarity>
+<text>maybe i say so because it looked promising for people who like artery-clogging jewish deli food, but turns out to be poorly run and awful.</text>
+
+<Polarity>1</Polarity>
+<text>the takeout menu says to keep an eye out for an expanded menu offering more italian dishes, i can't wait!</text>
+
+<Polarity>1</Polarity>
+<text>overall, a solid restaurant and at less than $40pp (including wine), a solid deal as well.</text>
+
+<Polarity>1</Polarity>
+<text>what more could you want?</text>
+
+<Polarity>0</Polarity>
+<text>this place would be so much better served by being run by a group that actually understands customer service.</text>
+
+<Polarity>0</Polarity>
+<text>if the omakase is to showcase technique and variety, serving almost 40% of items bbq-ed and a spicy tuna roll wrapped with not-so-fresh nori seems to be a rather limp performance.</text>
+
+<Polarity>1</Polarity>
+<text>for those that go once and don't enjoy it, all i can say is that they just don't get it.</text>
+
+<Polarity>1</Polarity>
+<text>the appetizing is excellent - just as good as zabars barney greengrass at a reasonable price (if bought by the pound).</text>
+
+<Polarity>1</Polarity>
+<text>ess-a-bagel (either by sty-town or midtown) is by far the best bagel in ny.</text>
+
+<Polarity>0</Polarity>
+<text>this one is definintely my least favorite.</text>
+
+<Polarity>1</Polarity>
+<text>this is an amazing place to try some roti rolls.</text>
+
+<Polarity>1</Polarity>
+<text>you cannot go wrong with this place.</text>
+
+<Polarity>1</Polarity>
+<text>the waitstaff were attentive, polite and helpful - an impressive feat in such close quarters.</text>
+
+<Polarity>1</Polarity>
+<text>the quantity is also very good, you will come out satisfied.</text>
+
+<Polarity>0</Polarity>
+<text>they did not have mayonnaise, forgot our toast, left out ingredients (ie cheese in an omelet), below hot temperatures and the bacon was so over cooked it crumbled on the plate when you touched it.</text>
+
+<Polarity>1</Polarity>
+<text>the food is awesome - definitely try the striped bass.</text>
+
+<Polarity>0</Polarity>
+<text>we did have to wait at the bar for approx.</text>
+
+<Polarity>0</Polarity>
+<text>don't eat here unless you're starving for thai food and you work next door.</text>
+
+<Polarity>0</Polarity>
+<text>for some reason, all the seafood on the menu was unavailable except for the salmon.</text>
+
+<Polarity>0</Polarity>
+<text>when we stumbled on leon, we thought that we had found quite the gem but, we were certainly wrong.</text>
+
+<Polarity>0</Polarity>
+<text>the halibut was too salty, dessert was so so (don't waste any of your calories) and service was poor.</text>
+
+<Polarity>1</Polarity>
+<text>too large for just two people but nothing was left.</text>
+
+<Polarity>0</Polarity>
+<text>only drawback - they won't toast your bagel, and they don't make eggs for the bagel.</text>
+
+<Polarity>0</Polarity>
+<text>the menu is very limited - i think we counted 4 or 5 entrees.</text>
+
+<Polarity>0</Polarity>
+<text>just don't do it.</text>
+
+<Polarity>1</Polarity>
+<text>sapphire is the only indian restaurant i go to when i'm in nyc.</text>
+
+<Polarity>0</Polarity>
+<text>for $760 for 2 people, it's a once in a lifetime experience.</text>
+
+<Polarity>1</Polarity>
+<text>plenty of choices to make your own creation.</text>
+
+<Polarity>1</Polarity>
+<text>if only they delivered, they'd make a mint!</text>
+
+<Polarity>1</Polarity>
+<text>the food here does a great service to the name (cantonese that is...).</text>
+
+<Polarity>0</Polarity>
+<text>i've waited over one hour for food.</text>
+
+<Polarity>0</Polarity>
+<text>we did notice however, that some tables had what looked like pita instead of naan.</text>
+
+<Polarity>1</Polarity>
+<text>the wait staff is very friendly, if not overly efficient.</text>
+
+<Polarity>1</Polarity>
+<text>and really large portions.</text>
+
+<Polarity>1</Polarity>
+<text>the bagels are fabulous.</text>
+
+<Polarity>1</Polarity>
+<text>have recommended the place to friends, always gets good response.</text>
+
+<Polarity>1</Polarity>
+<text>right off the l in brooklyn this is a nice cozy place with good pizza.</text>
+
+<Polarity>0</Polarity>
+<text>not the food ,not the ambiance , not the service, i agree with the previous reviews you wait and wait , the wait staff are very rude and when you get in they are looking to get you right out .</text>
+
+<Polarity>1</Polarity>
+<text>i went at 6:00 pm specifically for the pre-theater menu ($19.95 for roasted tomato soup with chevre, steak frites, creme brulee) and it was marvelous.</text>
+
+<Polarity>0</Polarity>
+<text>we only ordered desserts and drinks, but no refills were offered.</text>
+
+<Polarity>1</Polarity>
+<text>with so many poor experiences to be had in the theater district, is truly an excellent find!</text>
+
+<Polarity>0</Polarity>
+<text>we won't go to this place again for a good meal.</text>
+
+<Polarity>1</Polarity>
+<text>not only was the food outstanding, but the little 'perks' were great.</text>
+
+<Polarity>0</Polarity>
+<text>needless to say, i'm never going back and you should be wary too.</text>
+
+<Polarity>0</Polarity>
+<text>a real dissapointment.</text>
+
+<Polarity>1</Polarity>
+<text>i highly recommend the sophia pizza.</text>
+
+<Polarity>0</Polarity>
+<text>besides, when you have bad service, that's less money you have to tip.</text>
+
+<Polarity>0</Polarity>
+<text>however, i was there for a work dinner not long ago when my colleague from london noticed a very large waterbug on the ceiling.</text>
+
+<Polarity>1</Polarity>
+<text>the server was really cool and served us our food and drinks with a smile.</text>
+
+<Polarity>1</Polarity>
+<text>the service was impeccable and unobtrusive -- the staff knows what they are there to do -- to know their menu, present your meal, and attend to your needs.</text>
+
+<Polarity>1</Polarity>
+<text>i understand the area and folks you need not come here for the romantic, alluring ambiance or the five star service featuring a sommlier and a complicated maze of captain and back waiters - you come for the authentic foods, the tastes, the experiance.</text>
+
+<Polarity>1</Polarity>
+<text>the food was very good, a great deal, and the place its self was great.</text>
+
+<Polarity>1</Polarity>
+<text>the establishment scores big points in presentation and style.</text>
+
+<Polarity>0</Polarity>
+<text>this place has good potential, but needs a significant amount of work before we can justify spending that much money on indian food you can get everywhere else.</text>
+
+<Polarity>1</Polarity>
+<text>planet thailand has always been a hit with me , i go there usually for the sushi, which is great , the thai food is excellent too .</text>
+
+<Polarity>1</Polarity>
+<text>the beverages were excellent, and the dessert was good.</text>
+
+<Polarity>1</Polarity>
+<text>delivery is fast too.</text>
+
+<Polarity>1</Polarity>
+<text>a++   the service was good to excellent along with the attitude.</text>
+
+<Polarity>0</Polarity>
+<text>however, it's not worth a special trip.</text>
+
+<Polarity>0</Polarity>
+<text>now if they could only get a toaster.</text>
+
+<Polarity>1</Polarity>
+<text>i was turned on to this restaurant by a fellow foodie friend of mine, and have been going back regularly ever since.</text>
+
+<Polarity>1</Polarity>
+<text>if you'd like to have a nice light meal with an asian accent, long tan is a good place on the slope.</text>
+
+<Polarity>0</Polarity>
+<text>i think the restaurant was too loud (when full) to be romantic.</text>
+
+<Polarity>0</Polarity>
+<text>it was tiny and i felt like i was eating in someone's living room.</text>
+
+<Polarity>0</Polarity>
+<text>they charge different prices all the time.</text>
+
+<Polarity>0</Polarity>
+<text>over price, and small portions .</text>
+
+<Polarity>1</Polarity>
+<text>we were not dissappointed in the least bit by this little gem.</text>
+
+<Polarity>1</Polarity>
+<text>the service was attentive.</text>
+
+<Polarity>1</Polarity>
+<text>katz's has been a nyc original for over 100 years.</text>
+
+<Polarity>0</Polarity>
+<text>the food was not very tasty, the portioins were tiny even for such a high quality restaurant.</text>
+
+<Polarity>0</Polarity>
+<text>besides having the table we had been promised given to other restaurant patrons twice before we were actually seated, we were served dishes we hadn't ordered three times, received one of our orders 20 minutes after the rest of the table had been served (and that order was undercooked), and charged $45 more than we should have been on our bill.</text>
+
+<Polarity>1</Polarity>
+<text>i think the stuff was better than disney.</text>
+
+<Polarity>0</Polarity>
+<text>the last time i went we were seated at a table in a corridor next to the kitchen.</text>
+
+<Polarity>0</Polarity>
+<text>waiters tend to forget drinks completely, food portions are so tiny, two people have trouble sharing one entree.</text>
+
+<Polarity>0</Polarity>
+<text>for the people who want great food plus great service, roxy is a place to avoid!</text>
+
+<Polarity>0</Polarity>
+<text>i've never felt more unwelcome than last month at jimmy's bronx cafe.</text>
+
+<Polarity>1</Polarity>
+<text>the food always tastes fresh and served promptly.</text>
+
+<Polarity>1</Polarity>
+<text>i've been coming here as a child and always come back for the taste.</text>
+
+<Polarity>0</Polarity>
+<text>we were fans of the half-price saturday night option until some inedible squid during a recent visit.</text>
+
+<Polarity>1</Polarity>
+<text>we had crawfish boiled and despite making a mess, it was a ton of fun and quite tasty as well.</text>
+
+<Polarity>1</Polarity>
+<text>all the food was hot tasty.</text>
+
+<Polarity>1</Polarity>
+<text>i recommend the garlic shrimp, okra (bindi), and anything with lamb.</text>
+
+<Polarity>1</Polarity>
+<text>three courses - choices include excellent mussels, puff pastry goat cheese and salad with a delicious dressing, and a hanger steak au poivre that is out of this world.</text>
+
+<Polarity>0</Polarity>
+<text>we ordered a tuna melt - it came with out cheese which just made it a tuna sandwich.</text>
+
+<Polarity>0</Polarity>
+<text>we laughed when he finally offered us a dessert menu and we left a 10 percent tip, which was generous, i feel.</text>
+
+<Polarity>0</Polarity>
+<text>like others have said, don't expect the restaurant to make a nite out romantic for you and yes, a busy restaurant may require you to wait.</text>
+
+<Polarity>0</Polarity>
+<text>if you live in new york city, you'll find better food at small restaurants outside of time square and spend half the amount.</text>
+
+<Polarity>1</Polarity>
+<text>he takes real pride in his food and his business.</text>
+
+<Polarity>1</Polarity>
+<text>yourself a favor and have dinner here and see if you dont agree with me.</text>
+
+<Polarity>0</Polarity>
+<text>for park avenue i expected so much more.</text>
+
+<Polarity>1</Polarity>
+<text>the desserts are more appealing then stuffy overpriced french restaurants.</text>
+
+<Polarity>0</Polarity>
+<text>would have rather tried terrace in the sky or water club for that price</text>
+
+<Polarity>0</Polarity>
+<text>the sides were ok and incredibly salty.</text>
+
+<Polarity>1</Polarity>
+<text>we always have a delicious meal and always leave feeling satisfied.</text>
+
+<Polarity>0</Polarity>
+<text>what came to our table was burned beyond recognition and stringy.</text>
+
+<Polarity>1</Polarity>
+<text>the combination of fresh tomato sauce, fresh mozz cheese, basil and the dough they make with imported flour, makes this is one of the better pizza's in ny.</text>
+
+<Polarity>1</Polarity>
+<text>the waitress remembers me and is very friendly, she knows what my regular is and that's the fried mini buns with the condensed milk and the assorted fruits on beancurd.</text>
+
+<Polarity>0</Polarity>
+<text>the dim sum is ok but doesn't taste that fresh, and the little dishes don't look steamy hot as they should (also note lack of chinese here).</text>
+
+<Polarity>0</Polarity>
+<text>there are much better places in ny with better prices.</text>
+
+<Polarity>0</Polarity>
+<text>you could get a much better dining experience for the same amount of money in a lot of other french bistros.</text>
+
+<Polarity>1</Polarity>
+<text>the food options rule.</text>
+
+<Polarity>0</Polarity>
+<text>ambiance is barely romantic but management tries.</text>
+
+<Polarity>0</Polarity>
+<text>they brought glasses and the bottle, and just left the bottle at our table.</text>
+
+<Polarity>0</Polarity>
+<text>if you are a vegetarian, this really isn't a good place to go.</text>
+
+<Polarity>1</Polarity>
+<text>the food is fresh, delicious, and reasonably priced.</text>
+
+<Polarity>0</Polarity>
+<text>the singapore mai fun had no curry flavor whatsoever.</text>
+
+<Polarity>1</Polarity>
+<text>look foward to trying the ruben upon returning.</text>
+
+<Polarity>0</Polarity>
+<text>they came out over cooked and the cheese was almost non existant.</text>
+
+<Polarity>1</Polarity>
+<text>unfortunately, the food is outstanding, but everything else about this restaurant is the pits.</text>
+
+<Polarity>1</Polarity>
+<text>great friendly service, fast seating, fast delivery, excellent sushi.</text>
+
+<Polarity>0</Polarity>
+<text>i am surprised to say the least and find such practice not worth the effort.</text>
+
+<Polarity>1</Polarity>
+<text>overall a oh ya even though there is waiting it is deff worth it</text>
+
+<Polarity>1</Polarity>
+<text>the prix fixe menu is worth every penny and you get more than enough (both in quantity and quality).</text>
+
+<Polarity>0</Polarity>
+<text>they don't seem to place an emphasis on specials or fresh ingredients which to me is necessary for good thai.</text>
+
+<Polarity>1</Polarity>
+<text>all of my co-workers stated that the food was amazing and wondered why they hadn't heard about this place.</text>
+
+<Polarity>1</Polarity>
+<text>great romantic place for a date (try to get the corner booth table for a little privacy and to sit close!).</text>
+
+<Polarity>1</Polarity>
+<text>try green curry with vegetables.</text>
+
+<Polarity>0</Polarity>
+<text>the staff ignored my friends and i the entire time we were there.</text>
+
+<Polarity>1</Polarity>
+<text>at the end you're left with a mild broth with noodles that you can slurp out of a cup.</text>
+
+<Polarity>1</Polarity>
+<text>pizza and garlic knots are great as well, i order from them quite often and the delivery is always super quick!</text>
+
+<Polarity>0</Polarity>
+<text>the menu is nothing like the one on the website.</text>
+
+<Polarity>1</Polarity>
+<text>i work near-by, and they have the best oatmeal in the neighborhood- not a packaged or quick-cooked item.</text>
+
+<Polarity>1</Polarity>
+<text>service could be improved but overall this is a place that understands the importance of little things (the heavy, black, antique-seeming teapot, for one) in the restaurant experience.</text>
+
+<Polarity>1</Polarity>
+<text>this is one of my favorite restaurants and it is not to be missed.</text>
+
+<Polarity>1</Polarity>
+<text>the food is usually good but it certainly isn't a relaxing place to go.</text>
+
+<Polarity>0</Polarity>
+<text>oh, don't even let me start with how expensive the bills were!</text>
+
+<Polarity>1</Polarity>
+<text>saturday, nov. 6th i had a group from work come in with about 35 people and the staff was amazing to accomodate us.</text>
+
+<Polarity>1</Polarity>
+<text>among all of the new 5th avenue restaurants, this offers by far one of the best values for your money.</text>
+
+<Polarity>0</Polarity>
+<text>went there last night for 2 year anniversery, and wasn't all that impressed.</text>
+
+<Polarity>1</Polarity>
+<text>and it was quick which is very important.</text>
+
+<Polarity>1</Polarity>
+<text>me and my girls will definitely go back.</text>
+
+<Polarity>0</Polarity>
+<text>this place is incredibly tiny.</text>
+
+<Polarity>1</Polarity>
+<text>however, they've got the most amazing pastrami and the soups hit the spot.</text>
+
+<Polarity>0</Polarity>
+<text>for those prices and the dressed up atmosphere you expect more and should get more.</text>
+
+<Polarity>1</Polarity>
+<text>overall i would recommend it and go back again.</text>
+
+<Polarity>0</Polarity>
+<text>probably would not go again...</text>
+
+<Polarity>1</Polarity>
+<text>it hits the spot every time</text>
+
+<Polarity>1</Polarity>
+<text>the pastrami sandwich was like buttah and with pickles and an icy cold beer to wash it down, it was a pleasurable experience.</text>
+
+<Polarity>1</Polarity>
+<text>the pizza was pretty good and huge.</text>
+
+<Polarity>0</Polarity>
+<text>instead of wasting your time here: support restaurants that care about food.</text>
+
+<Polarity>0</Polarity>
+<text>the space is a bit too small for live music, so on  jazz nights, it can be loud and cramped.</text>
+
+<Polarity>1</Polarity>
+<text>everything we had was pretty good, but we have only been there once.</text>
+
+<Polarity>1</Polarity>
+<text>the photobook menu was a cute touch, certainly helped my group and i pick the fried chicken, pork chop, and noodle dishes that we all ordered.</text>
+
+<Polarity>1</Polarity>
+<text>definitely a neighborhood favorite.</text>
+
+<Polarity>0</Polarity>
+<text>looking from the outside in, one would hesitate to enter this hole in the wall (really, that's what it is).</text>
+
+<Polarity>0</Polarity>
+<text>my entree of hot pot with seafood was full of imitation crabmeat with a couple pieces of shrimp and squid, and was unnecessarily heated with a burner.</text>
+
+<Polarity>1</Polarity>
+<text>gigino's in wagner park is so enjoyable.</text>
+
+<Polarity>0</Polarity>
+<text>the kitchen however, is almost always slow.</text>
+
+<Polarity>0</Polarity>
+<text>the noise level was unbearable, conversation impossible.</text>
+
+<Polarity>0</Polarity>
+<text>the people with carts of food don't understand you because they don't speak english, their job is to give you the delicious food you point at.</text>
+
+<Polarity>1</Polarity>
+<text>the prices were fantastic.</text>
+
+<Polarity>0</Polarity>
+<text>it's definately not a place to go if you want to impress someone.</text>
+
+<Polarity>1</Polarity>
+<text>add to that great service and great food at a reasonable price and you have yourself the beginning of a great evening.</text>
+
+<Polarity>0</Polarity>
+<text>the food was bland oily.</text>
+
+<Polarity>0</Polarity>
+<text>it's true, this place is not cheap.</text>
+
+<Polarity>1</Polarity>
+<text>fabulous service, fantastic food, and a chilled out atmosphere and environment.</text>
+
+<Polarity>1</Polarity>
+<text>all in all, i don't see how you can go wrong.</text>
+
+<Polarity>1</Polarity>
+<text>the service was attentive and her suggestions of menu items was right on the mark.</text>
+
+<Polarity>0</Polarity>
+<text>this should have been done in a back room - away from customers.</text>
+
+<Polarity>1</Polarity>
+<text>we love th pink pony.</text>
+
+<Polarity>0</Polarity>
+<text>we ordered some beef and noodle soup dishes from the thai section of the menu but nothing we got was thai.</text>
+
+<Polarity>1</Polarity>
+<text>prices are very good.</text>
+
+<Polarity>0</Polarity>
+<text>the only disappointment was the coat check girls who didn't seem to know what a customer is on a realtively non-busy night (for the coat check girls).</text>
+
+<Polarity>0</Polarity>
+<text>at night, but it's hard to hear your own conversation with everyone else competing for that same luxury - the music playing in the background is also voluminous.</text>
+
+<Polarity>0</Polarity>
+<text>something about them being busy with holiday party's.</text>
+
+<Polarity>1</Polarity>
+<text>please try the filet mignon, its just the most tender piece ever.</text>
+
+<Polarity>0</Polarity>
+<text>the menu prices are a bit expensive for what you get in quality and portion size.</text>
+
+<Polarity>1</Polarity>
+<text>but overall i give it a 10</text>
+
+<Polarity>1</Polarity>
+<text>i plan to come here again and look forward to trying their assortment of bruschetta, panini's.....</text>
+
+<Polarity>1</Polarity>
+<text>the wine selection (by the glass and bottle) is wonderful and i always recommend that friends make a reservation if they're going to be in town.</text>
+
+<Polarity>1</Polarity>
+<text>also, top the meal with a delicious and perfect slice of tiramisu.</text>
+
+<Polarity>1</Polarity>
+<text>this place is great.</text>
+
+<Polarity>0</Polarity>
+<text>it's a place for people who pay a lot for mediocre food, noise and a chance to be with their fellow bridge and tunnel folks.</text>
+
+<Polarity>0</Polarity>
+<text>food was good not great not worth the wait or another visit</text>
+
+<Polarity>0</Polarity>
+<text>it is thick and slightly soggy.</text>
+
+<Polarity>1</Polarity>
+<text>definitely a great spot for a nice occasion or date.</text>
+
+<Polarity>1</Polarity>
+<text>authentic food and they have real service, not just the rush you get sometimes when they try to push you out the door.</text>
+
+<Polarity>0</Polarity>
+<text>this restaurant was way overhyped.</text>
+
+<Polarity>1</Polarity>
+<text>we were very pleasantly surprised.</text>
+
+<Polarity>0</Polarity>
+<text>the food was just ok, at least for what food was available.</text>
+
+<Polarity>0</Polarity>
+<text>immediately after we paid, the waiter took the money and said, okay, you guys are outta here.</text>
+
+<Polarity>1</Polarity>
+<text>the other night we had the $30 three course meal and everything was delicious - if i could of licked the plate clean i would of.</text>
+
+<Polarity>0</Polarity>
+<text>will not be back.</text>
+
+<Polarity>0</Polarity>
+<text>tends to turn people away.</text>
+
+<Polarity>1</Polarity>
+<text>a hearty two thumbs up!</text>
+
+<Polarity>1</Polarity>
+<text>joya used to be a cool spot with decent food and a colorful - if not relaxed - atmosphere.</text>
+
+<Polarity>0</Polarity>
+<text>never again!</text>
+
+<Polarity>0</Polarity>
+<text>late nite omelletes are not good here, there is no variety!</text>
+
+<Polarity>0</Polarity>
+<text>don't be fooled by crowds of people.</text>
+
+<Polarity>1</Polarity>
+<text>granted the space is smaller than most, it is the best service you will find in even the largest of restaurants.</text>
+
+<Polarity>0</Polarity>
+<text>my friend's food was also the complete opposite of what it's supposed to taste like (and look like).</text>
+
+<Polarity>1</Polarity>
+<text>black white shakes came out good also.</text>
+
+<Polarity>0</Polarity>
+<text>i don't get it, what's so special about prune ?</text>
+
+<Polarity>1</Polarity>
+<text>don't judge this place prima facie, you have to try it to believe it, a home away from home for the literate heart.</text>
+
+<Polarity>0</Polarity>
+<text>like saying her bread comes from a special bakery when we have seen her buying it dowtown manhathan.</text>
+
+<Polarity>0</Polarity>
+<text>you should pass on the calamari.</text>
+
+<Polarity>0</Polarity>
+<text>was surprisingly disappointed.</text>
+
+<Polarity>1</Polarity>
+<text>the anti-pasta was excellent, especially the calamari, as were the filling pasta mains.</text>
+
+<Polarity>1</Polarity>
+<text>a glass of leaping lizard, a glass of prosecco, and the mussels had everything happy.</text>
+
+<Polarity>1</Polarity>
+<text>the octopus eaters were floored by the octopus salad.</text>
+
+<Polarity>0</Polarity>
+<text>the seating was if they were trying to get the maximum amount of people into the restaurant, so be nice to your neighbor when you dine here.</text>
+
+<Polarity>1</Polarity>
+<text>deff recimmend bukhara they also have opened two new locations guess ill try them out.</text>
+
+<Polarity>0</Polarity>
+<text>the crispy chicken wasn't for us, though.</text>
+
+<Polarity>1</Polarity>
+<text>service is top notch.</text>
+
+<Polarity>0</Polarity>
+<text>only complaint would be that at an average cost of $12-$15 per meal, i'd like not to have to worry about finding a seat!</text>
+
+<Polarity>0</Polarity>
+<text>the sushi was awful!</text>
+
+<Polarity>0</Polarity>
+<text>and the tom kha soup was pathetic.</text>
+
+<Polarity>0</Polarity>
+<text>both times i was extremely dissappointed by the service, which was boarderline rude.</text>
+
+<Polarity>1</Polarity>
+<text>the characters really make for an enjoyable experience.</text>
+
+<Polarity>1</Polarity>
+<text>we recently decided to try this location, and to our delight, they have outdoor seating, perfect since i had my yorkie with me.</text>
+
+<Polarity>1</Polarity>
+<text>it's a really great deal, considering we got full off of four dollars.</text>
+
+<Polarity>1</Polarity>
+<text>it seems like this is a place the locals like and the people working here liked it too.</text>
+
+<Polarity>1</Polarity>
+<text>i wish they had one near my office- i would go everyday.</text>
+
+<Polarity>0</Polarity>
+<text>priced at upper intermediate range.</text>
+
+<Polarity>0</Polarity>
+<text>go only if you are already in the neighborhood and don't want to bother going farther for a better place.</text>
+
+<Polarity>0</Polarity>
+<text>knowledge of the chef and the waitress are below average.</text>
+
+<Polarity>1</Polarity>
+<text>mizu is home to creative and unique rolls not to found anywhere else.</text>
+
+<Polarity>0</Polarity>
+<text>we were planning to get dessert but the waitress basically through the bill at us before we had a chance to order.</text>
+
+<Polarity>0</Polarity>
+<text>but when we looked at the menu, there weren't a lot of choices, most of them were dumplings in the appetizer section.</text>
+
+<Polarity>1</Polarity>
+<text>if you wrote a bad review, it's because you don't understand what rao's is all about.</text>
+
+<Polarity>1</Polarity>
+<text>i would go back tho.</text>
+
+<Polarity>1</Polarity>
+<text>the waitstaff were very nice and suggested swordfish for my husband he enjoyed his meal.</text>
+
+<Polarity>1</Polarity>
+<text>the only thing more wonderful than the food (which is exceptional) is the service.</text>
+
+<Polarity>1</Polarity>
+<text>it's also attached to angel's share, which is a cool, more romantic bar...</text>
+
+<Polarity>0</Polarity>
+<text>if your favorite chinese food is general tao chicken, then this is not your place.</text>
+
+<Polarity>0</Polarity>
+<text>the hostess and the waitress were incredibly rude and did everything they could to rush us out.</text>
+
+<Polarity>0</Polarity>
+<text>it could have been handled better.</text>
+
+<Polarity>0</Polarity>
+<text>even with the prix fixe pricing, this restaurant is not worth it.</text>
+
+<Polarity>0</Polarity>
+<text>food is average, and i would say even the chain restaurant baluchi's tastes better.</text>
+
+<Polarity>0</Polarity>
+<text>definitely not worth the price!</text>
+
+<Polarity>0</Polarity>
+<text>also a little more expensive than your average bagel place.</text>
+
+<Polarity>0</Polarity>
+<text>the man that was hosting promised to save a table for our party of 7, then sat a party of 2 at the very table he was saving (mean while there were boths open all around).</text>
+
+<Polarity>1</Polarity>
+<text>the pad thai is excellent here, as well.</text>
+
+<Polarity>1</Polarity>
+<text>faan's got a great concept but a little rough on the delivery.</text>
+
+<Polarity>1</Polarity>
+<text>they might be all business at the counter when you give your order, but their food says i love you.</text>
+
+<Polarity>0</Polarity>
+<text>they were such a rip-off ($8.95 for four small meat patties in steamed buns) and not worth trying.</text>
+
+<Polarity>1</Polarity>
+<text>i love the fact that the pizza tastes so good and is so cheap.</text>
+
+<Polarity>0</Polarity>
+<text>went there with my wife and we had to wait for a table even though you could see there many that were empty with not reservation sigh on them.</text>
+
+<Polarity>0</Polarity>
+<text>i dont how this place is still running.</text>
+
+<Polarity>0</Polarity>
+<text>zero ambiance to boot.</text>
+
+<Polarity>0</Polarity>
+<text>the decor is really blah, and not at all hip or happening.</text>
+
+<Polarity>1</Polarity>
+<text>this tiny williamsburg spot is always pleasantly surprising.</text>
+
+<Polarity>0</Polarity>
+<text>i for one will never patronize them again.</text>
+
+<Polarity>1</Polarity>
+<text>the food is great and authentic.</text>
+
+<Polarity>0</Polarity>
+<text>as soon as my father lifted his pen from the check a chef appeared to usher us out.</text>
+
+<Polarity>1</Polarity>
+<text>the new york times has reviewed this place three times already, you know it's going to be good.</text>
+
+<Polarity>0</Polarity>
+<text>the food was mediocre at best but it was the horrible service that made me vow never to go back.</text>
+
+<Polarity>1</Polarity>
+<text>fresh ingredients and everything is made to order.</text>
+
+<Polarity>1</Polarity>
+<text>by far this is the only chinese desserts place i know in ny or anywhere close in the northeastern america that serves desserts with frog jelly in a couple of varieties and pig feet ginger simmered in black vinegar.</text>
+
+<Polarity>0</Polarity>
+<text>when we were finally seated our waitress came by twice-1 for our order and 2-for our check.</text>
+
+<Polarity>1</Polarity>
+<text>ive been here a bunch of times now and the service is always outstanding.</text>
+
+<Polarity>0</Polarity>
+<text>we were very disappointed.</text>
+
+<Polarity>1</Polarity>
+<text>anyway, the food is good, the price is right and they have a decent wine list.</text>
+
+<Polarity>0</Polarity>
+<text>there is also very limited seating and there can be a substantial wait in getting food at peak times.</text>
+
+<Polarity>0</Polarity>
+<text>the rice was poor quality and was cooked so badly it was hard.</text>
+
+<Polarity>0</Polarity>
+<text>a narrow corridor leads to a tiny space where there are three tiny white tiled counters, a great deal of mess (stacks of bottles, cans) and a small counter holding 12-14 entrees.</text>
+
+<Polarity>1</Polarity>
+<text>lunch came with pickels and slaw, no extra charge.</text>
+
+<Polarity>0</Polarity>
+<text>it appears to be the owner's first venture and it shows.</text>
+
+<Polarity>0</Polarity>
+<text>chance is a joke.</text>
+
+<Polarity>1</Polarity>
+<text>our waitress was sweet and accomodating, not overbearing.</text>
+
+<Polarity>0</Polarity>
+<text>but the thai is definitely not great -- bland and indistinguished.</text>
+
+<Polarity>0</Polarity>
+<text>for the next hour and a half we stood in the crowded lobby area of this touristy restaurant listening to all types of explanations of why we were not being seated.</text>
+
+<Polarity>1</Polarity>
+<text>even with john's and joe's around the corner, this place will make a name for itself.</text>
+
+<Polarity>0</Polarity>
+<text>this place is amazingly bad.</text>
+
+<Polarity>1</Polarity>
+<text>i've been here 3 times for lunch and it is one of my favorites in the city.</text>
+
+<Polarity>0</Polarity>
+<text>definitely highly not recommended.</text>
+
+<Polarity>0</Polarity>
+<text>it is about food and ambiance, and imagine how dreadful it will be it we only had to listen to an idle engine.</text>
+
+<Polarity>1</Polarity>
+<text>they have authentic indian at amazin prices.</text>
+
+<Polarity>1</Polarity>
+<text>fantastic place.</text>
+
+<Polarity>0</Polarity>
+<text>first the wrong bread came out with the appetizer, then when i tried to order a second glass of wine for my main course...</text>
+
+<Polarity>0</Polarity>
+<text>some servers make you feel like they are doing you a favor to bring you the food.</text>
+
+<Polarity>1</Polarity>
+<text>raga's is a romantic, cozy restaurant.</text>
+
+<Polarity>0</Polarity>
+<text>made my dining experience uncomfortable.</text>
+
+<Polarity>1</Polarity>
+<text>this is a nice restaurant if you are looking for a good place to host an intimate dinner meeting with business associates.</text>
+
+<Polarity>1</Polarity>
+<text>solid wine list, knowledgeable staff, friendly owners and an adventurous, ever-changing menu keep us coming back.</text>
+
+<Polarity>0</Polarity>
+<text>if that's a problem, go to mcdonald's and destroy your insides.</text>
+
+<Polarity>1</Polarity>
+<text>the service, wine selection, ambiance are all outstanding and deserve recognition.</text>
+
+<Polarity>0</Polarity>
+<text>don't look down your nose at me like that...</text>
+
+<Polarity>1</Polarity>
+<text>the waitress suggested glasses of wine that went very well with the food.</text>
+
+<Polarity>0</Polarity>
+<text>i've been here a couple of times and have not been impressed.</text>
+
+<Polarity>1</Polarity>
+<text>but the coconut rice was good.</text>
+
+<Polarity>0</Polarity>
+<text>not worth the prices.</text>
+
+<Polarity>0</Polarity>
+<text>i've been to several places for dim sum and this has got to be the worst.</text>
+
+<Polarity>1</Polarity>
+<text>if you love wine and cheese and delicious french fare, you'll love artisanal!</text>
+
+<Polarity>1</Polarity>
+<text>everything at sala thai is tasty and well-portioned.</text>
+
+<Polarity>1</Polarity>
+<text>we had the lobster sandwich and it was fantastic.</text>
+
+<Polarity>1</Polarity>
+<text>highly recommend this as great value for excellent sushi and service.</text>
+
+<Polarity>1</Polarity>
+<text>the pizza is good though.</text>
+
