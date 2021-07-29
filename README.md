@@ -27,7 +27,8 @@
 2. Base RNN
 3. Base RNN + Attention
 4. Base transformer
-
+5. CHI + TFIDF + LR/MLP/SVM (相对传统的统计学习方法)
+   
 ## 技术
 
 1. 对抗训练
@@ -152,3 +153,9 @@
 1. 增加了GNN在NLP中的应用
 2. 实现了GNN在文本分类上的使用
 3. 效果不好，暂时怀疑是数据处理的问题
+
+# 2021.7.29
+
+1. 增加了CHI+TFIDF传统机器学习算法在文本分类上的应用
+2. 实现和测试了算法性能
+3. 更新了README
