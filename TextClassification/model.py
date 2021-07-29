@@ -52,7 +52,7 @@ class TransformerClasssifier(nn.Module):
         BaseModel = transformer.Transformer(n_src_vocab=vocab,max_length=max_length, n_layers=6, n_head=8, d_word_vec=512, d_model=512, d_inner_hid=1024, dropout=0.1, dim_per_head=None)
         self.hidden_size=512
         self.encoder = BaseModel.get_model()
-        Use_pretrain = True
+        Use_pretrain = False
         if Use_pretrain:
             print("========================= Using pretrained model =========================")
             self.encoder = torch.load('../Pretrain/pretrained.pth')

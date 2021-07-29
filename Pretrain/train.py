@@ -51,7 +51,7 @@ from EasyTransformer.util import ProgressBar
 
 
 num_epochs = 30
-batch_size = 256
+batch_size = 128
 
 #net = BiRNN(vocab = word_size)
 net = TransformerClasssifier(word_size)
@@ -65,7 +65,7 @@ def test(net):
     total = 0
     iter=0
     crossentropyloss = nn.CrossEntropyLoss()
-    source,target,label = load_test_data(10000)
+    source,target,label = load_test_data(1000)
     #sample(source,target,label)
     test_dataset = get_dataset(source,target,label)
     with torch.no_grad():
@@ -116,7 +116,7 @@ def train():
     optimizer = AdamW(net.parameters(),lr = 2e-5, eps = 1e-8)
     #optimizer = AdamW(net.parameters(), lr=learning_rate)
     #train_dataset, test_dataset = torch.utils.data.random_split(dataset, [train_size, test_size])
-    sources,targets,labels = load_train_data(100000)
+    sources,targets,labels = load_train_data(10000)
     train_dataset = get_dataset(sources,targets,labels)
     #print(train_dataset)
     train_iter = torch.utils.data.DataLoader(train_dataset, batch_size, shuffle=True)
