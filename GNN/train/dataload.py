@@ -62,7 +62,7 @@ def load_test():
 def convert_sent2graph(sent):
     node = []
     edge = []
-    step = [-3,-2,-1]
+    step = [-5,-4,-3,-2,-1]
     for i in range(len(sent)):
         if sent[i]!=0:
             node.append(sent[i])
@@ -156,6 +156,10 @@ class TestDataset(InMemoryDataset):
             node,edge = convert_sent2graph(s)
             node = torch.tensor(node)
             edge = torch.tensor(edge).transpose(0,1)
+            # print(s)
+            # print(node)
+            # print(edge)
+            # exit()
             #print(node.shape)
             #print(edge.shape)
             y = torch.tensor([l])

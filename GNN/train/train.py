@@ -21,11 +21,11 @@ print(model)
   
 device = torch.device('cuda')
 #model = model.to(device)
-optimizer = torch.optim.Adam(model.parameters(), lr=0.05)
+optimizer = torch.optim.Adam(model.parameters(), lr=0.005)
 criterion = torch.nn.CrossEntropyLoss()
 
 batch_size = 4
-num_epochs = 10
+num_epochs = 20
 train_loader = DataLoader(train_dataset, batch_size=batch_size)
 test_loader = DataLoader(test_dataset, batch_size=2)
 model.train()
@@ -44,17 +44,25 @@ def test():
     return correct / len(test_loader.dataset)  # Derive ratio of correct predictions.
 
 def train():
+    best_acc = -1
     for i in range(num_epochs):
         model.train()
+        correct = 0
         for data in tqdm(train_loader):  # Iterate in batches over the training dataset.
             #data = data.to(device)
             #print(data.x.shape)
+            optimizer.zero_grad()
             out = model(data.x, data.edge_index, data.batch)  # Perform a single forward pass.
             loss = criterion(out, data.y)  # Compute the loss.
-            loss.backward()  # Derive gradients.
-            optimizer.step()  # Update parameters based on gradients.
-            optimizer.zero_grad()  # Clear gradients.
+            loss.backward()      
+            optimizer.step()
+            pred = out.argmax(dim=1)  # Use the class with highest probability.
+            correct += int((pred == data.y).sum())  # Check against ground-truth labels.
+        print(correct / len(train_loader.dataset) ) # Derive ratio of correct predictions.
+
         acc = test()
-        print("Epoch {} Acc {}".format(i,acc))
+        if acc > best_acc:
+            best_acc = acc
+        print("Epoch {} Acc {} Best Acc {}".format(i,acc,best_acc))
 
 train()
