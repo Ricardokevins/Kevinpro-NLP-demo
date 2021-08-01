@@ -33,8 +33,7 @@ def data_prep2json():
             dump_f.write(a)
             dump_f.write("\n")
 
-data_prep2json()
-exit()
+
 
 def build_tokenizer():
     corpus = []

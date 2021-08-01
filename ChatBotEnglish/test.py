@@ -361,6 +361,7 @@ class EncoderRNN(nn.Module):
         # Convert word indexes to embeddings
         embedded = self.embedding(input_seq)
         # Pack padded batch of sequences for RNN module
+        input_lengths = input_lengths.cpu()
         packed = torch.nn.utils.rnn.pack_padded_sequence(embedded, input_lengths)
         # Forward pass through GRU
         outputs, hidden = self.gru(packed, hidden)
@@ -489,8 +490,8 @@ def train(input_variable, lengths, target_variable, mask, max_target_len, encode
 
     # Determine if we are using teacher forcing this iteration
     use_teacher_forcing = True if random.random() < teacher_forcing_ratio else False
-    print('sssssssssssssssssssssssssssssssssssss')
-    print(target_variable.shape)
+    #print('sssssssssssssssssssssssssssssssssssss')
+    #print(target_variable.shape)
     # Forward batch of sequences through decoder one time step at a time
     if use_teacher_forcing:
         for t in range(max_target_len):
@@ -533,6 +534,7 @@ def train(input_variable, lengths, target_variable, mask, max_target_len, encode
 
     return sum(print_losses) / n_totals
 
+from tqdm import tqdm
 def trainIters(model_name, voc, pairs, encoder, decoder, encoder_optimizer, decoder_optimizer, embedding, encoder_n_layers, decoder_n_layers, save_dir, n_iteration, batch_size, print_every, save_every, clip, corpus_name, loadFilename):
 
     # Load batches for each iteration
@@ -548,7 +550,7 @@ def trainIters(model_name, voc, pairs, encoder, decoder, encoder_optimizer, deco
 
     # Training loop
     print("Training...")
-    for iteration in range(start_iteration, n_iteration + 1):
+    for iteration in tqdm(range(start_iteration, n_iteration + 1)):
         training_batch = training_batches[iteration - 1]
         # Extract fields from batch
         input_variable, lengths, target_variable, mask, max_target_len = training_batch
@@ -652,7 +654,7 @@ model_name = 'cb_model'
 attn_model = 'dot'
 #attn_model = 'general'
 #attn_model = 'concat'
-hidden_size = 500
+hidden_size = 256
 encoder_n_layers = 2
 decoder_n_layers = 2
 dropout = 0.1
@@ -660,7 +662,7 @@ batch_size = 64
 
 # Set checkpoint to load from; set to None if starting from scratch
 
-checkpoint_iter = 4000
+checkpoint_iter = 1000
 loadFilename = os.path.join(save_dir, model_name, corpus_name,
                            '{}-{}_{}'.format(encoder_n_layers, decoder_n_layers, hidden_size),
                            '{}_checkpoint.tar'.format(checkpoint_iter))
@@ -702,7 +704,7 @@ teacher_forcing_ratio = 1.0
 learning_rate = 0.0001
 decoder_learning_ratio = 5.0
 n_iteration = 4000
-print_every = 1
+print_every = 1000
 save_every = 500
 Train = True
 # Ensure dropout layers are in train mode

@@ -20,7 +20,7 @@ import time
 SENTENCE_START = '<s>'
 SENTENCE_END = '</s>'
 ex = Experiment('PGNSum', save_git_info=False)
-ex.captured_out_filter = apply_backspaces_and_linefeeds
+#ex.captured_out_filter = apply_backspaces_and_linefeeds
 #obv = MongoObserver(url="localhost", port=27017, db_name="PgnSum")
 
 ex.observers.append(FileStorageObserver('Run'))
@@ -32,7 +32,7 @@ def config():
     batch_size = 64
     epochs = 20
     cuda_device = [0]
-    optimizer = {'choose': 'AdamW', 'lr': 2e-5, 'eps': 1e-8}
+    optimizer = {'choose': 'AdamW', 'lr': 2e-3, 'eps': 1e-8}
     #optimizer = {'choose': 'SGD', 'lr': 0.01}
     loss_func = 'CE'
     possessbar = False
@@ -379,7 +379,7 @@ class Trainer:
 @ex.main
 def main(_config, _run):
     print("----Runing----")
-    Train = True
+    Train = False
     trainer = Trainer(_config, _run)
     if Train:
         trainer.train()
@@ -389,6 +389,7 @@ def main(_config, _run):
 
 
 if __name__ == "__main__":
+    print("Hello")
     r = ex.run()
     print(r.config)
     print(r.host_info)
