@@ -1,3 +1,8 @@
+import torch
+import torch.nn as nn
+from torch import optim
+import torch.nn.functional as F
+
 class EncoderRNN(nn.Module):
     def __init__(self, hidden_size, embedding, n_layers=1, dropout=0):
         super(EncoderRNN, self).__init__()
@@ -90,6 +95,9 @@ class LuongAttnDecoderRNN(nn.Module):
         embedded = self.embedding(input_step)
         embedded = self.embedding_dropout(embedded)
         # Forward through unidirectional GRU
+        # print(embedded.shape)
+        # print(last_hidden.shape)
+        # exit()
         rnn_output, hidden = self.gru(embedded, last_hidden)
         # Calculate attention weights from the current GRU output
         attn_weights = self.attn(rnn_output, encoder_outputs)

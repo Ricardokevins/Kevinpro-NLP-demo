@@ -29,7 +29,7 @@ ex.observers.append(FileStorageObserver('Run'))
 
 @ex.config
 def config():
-    batch_size = 64
+    batch_size = 32
     epochs = 20
     cuda_device = [0]
     optimizer = {'choose': 'AdamW', 'lr': 2e-3, 'eps': 1e-8}
@@ -325,7 +325,9 @@ class Trainer:
                 final_dist, s_t_1,  c_t_1, attn_dist, p_gen, next_coverage = self.decoder(y_t_1, s_t_1,
                                                                                             encoder_outputs, encoder_feature, source_mask, c_t_1,
                                                                                             extra_zeros, source_ext, coverage, di)
-
+                dec_h, dec_c = s_t_1
+                dec_h = dec_h.squeeze()
+                dec_c = dec_c.squeeze()
                 log_probs = torch.log(final_dist)
                 topk_log_probs, topk_ids = torch.topk(log_probs, 5)
 
@@ -379,7 +381,7 @@ class Trainer:
 @ex.main
 def main(_config, _run):
     print("----Runing----")
-    Train = False
+    Train = True
     trainer = Trainer(_config, _run)
     if Train:
         trainer.train()

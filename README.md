@@ -96,9 +96,6 @@
 1. GRU encoder-decoder
 
 
-
-
-
 # PGNSum
 
 使用PointerGenerator的摘要生成
@@ -112,8 +109,9 @@
 
 # Seq2Seq
 
-普通的Seq2seq翻译网络
+重构了机器人对话系统，使用了BeamSearch和GreedySearch两种解码方式
 
+使用GRU作为Seq2Seq+Attn的基本结构
 
 
 
@@ -148,14 +146,20 @@
 
 
 
-# 2021.7.11
+## 2021.7.11
 
 1. 增加了GNN在NLP中的应用
 2. 实现了GNN在文本分类上的使用
 3. 效果不好，暂时怀疑是数据处理的问题
 
-# 2021.7.29
+## 2021.7.29
 
 1. 增加了CHI+TFIDF传统机器学习算法在文本分类上的应用
 2. 实现和测试了算法性能
 3. 更新了README
+
+## 2021.8.2
+
+1. 重构了对话机器人模型于Seq2Seq文件夹
+2. 实现了BeamSearch解码方式
+3. 修复了PGN里的BeamSearch Bug

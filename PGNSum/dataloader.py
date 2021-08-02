@@ -37,7 +37,7 @@ def data_prep2json():
 
 def build_tokenizer():
     corpus = []
-    with open("train.json", 'r', encoding='utf-8') as load_f:
+    with open("data/train.json", 'r', encoding='utf-8') as load_f:
         temp = load_f.readlines()
         for line in temp:
             dic = json.loads(line)
@@ -113,7 +113,7 @@ class SumDataset(Dataset):
 
         self.source_length = []
         self.target_length = []
-        with open("train.json", 'r', encoding='utf-8') as load_f:
+        with open("data/train.json", 'r', encoding='utf-8') as load_f:
             temp = load_f.readlines()
             temp=temp[:10000]
             print("dataNumber",len(temp))

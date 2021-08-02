@@ -7,7 +7,7 @@ PAD_token = 0  # Used for padding short sentences
 SOS_token = 1  # Start-of-sentence token
 EOS_token = 2  # End-of-sentence token
 
-MIN_COUNT = 3    # Minimum word count threshold for trimming
+
 MAX_LENGTH = 10  # Maximum sentence length to consider
 
 class Voc:
@@ -100,12 +100,7 @@ def loadPrepareData(corpus, corpus_name, datafile, save_dir):
     print("Counted words:", voc.num_words)
     return voc, pairs
 
-# Load/Assemble voc and pairs
-corpus_name = ""
-corpus = os.path.join("data", corpus_name)
-save_dir = os.path.join("data", "save")
-datafile = os.path.join(corpus, "formatted_movie_lines.txt")
-voc, pairs = loadPrepareData(corpus, corpus_name, datafile, save_dir)
+
 
 
 def trimRareWords(voc, pairs, MIN_COUNT):
@@ -189,16 +184,3 @@ def batch2TrainData(voc, pair_batch):
 
 
 
-# Trim voc and pairs
-pairs = trimRareWords(voc, pairs, MIN_COUNT)
-
-# Example for validation
-small_batch_size = 5
-batches = batch2TrainData(voc, [random.choice(pairs) for _ in range(small_batch_size)])
-input_variable, lengths, target_variable, mask, max_target_len = batches
-
-print("input_variable:", input_variable)
-print("lengths:", lengths)
-print("target_variable:", target_variable)
-print("mask:", mask)
-print("max_target_len:", max_target_len)
