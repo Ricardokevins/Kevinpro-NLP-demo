@@ -13,6 +13,7 @@ import torch
 
 from dataloader import load_train
 from dataloader import load_test
+from dataloader import get_dict_size
 from model import TransformerClasssifier
 from model import BiRNN
 from model import BiLSTM_Attention1
@@ -21,8 +22,7 @@ from model import BertClassifier
 from transformers import BertTokenizer
 from Attack import FGM
 import random
-from dataloader import get_dict_size
-word_size = get_dict_size()
+
 Trainbert = False
 
 def setup_seed(seed):
@@ -100,7 +100,10 @@ if Trainbert:
 # net = BertClassifier()
 # net = BiLSTM_Attention1()
 # net = BiLSTM_Attention2()
-net = TransformerClasssifier(word_size)
+
+word_num = get_dict_size()
+print(word_num)
+net = TransformerClasssifier(word_num)
 net = net.cuda()
 
 
@@ -389,14 +392,8 @@ train()
 #train_Kd()
 #train_with_FGM()
 
-# Teacher = 0.8819444444444444
-# base = 0.7881944444444444
-# Attention1 = 0.8194444444444444
-# Attention2 = 0.8159722222222222
-# Transformer = 0.7916666666666666
+#saved Best ACC:  0.8333333333333334
 
 
-
-#0.8159722222222222
 #0.8194444444444444
 #0.8298611111111112

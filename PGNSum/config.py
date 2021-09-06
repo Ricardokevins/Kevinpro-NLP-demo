@@ -9,13 +9,12 @@ root_dir = "../weibo/finished_files"
 hidden_dim = 128
 emb_dim = 64
 batch_size = 2
-# max_enc_steps = 400
 max_enc_steps = 200
-# max_dec_steps = 100
-max_dec_steps = 40
+max_dec_steps = 50
+
 beam_size = 4
 # min_dec_steps = 35
-min_dec_steps = 20
+min_dec_steps = 10
 vocab_size = 50_000
 
 lr = 0.15

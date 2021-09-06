@@ -59,13 +59,13 @@ net = net.cuda()
 
 def test(net):
     net.eval()
-    batch_size = 16
+    batch_size = 64
     avg_loss = 0
     correct = 0
     total = 0
     iter=0
     crossentropyloss = nn.CrossEntropyLoss()
-    source,target,label = load_test_data(1000)
+    source,target,label = load_test_data(2000)
     #sample(source,target,label)
     test_dataset = get_dataset(source,target,label)
     with torch.no_grad():
@@ -116,7 +116,7 @@ def train():
     optimizer = AdamW(net.parameters(),lr = 2e-5, eps = 1e-8)
     #optimizer = AdamW(net.parameters(), lr=learning_rate)
     #train_dataset, test_dataset = torch.utils.data.random_split(dataset, [train_size, test_size])
-    sources,targets,labels = load_train_data(10000)
+    sources,targets,labels = load_train_data(50000)
     train_dataset = get_dataset(sources,targets,labels)
     #print(train_dataset)
     train_iter = torch.utils.data.DataLoader(train_dataset, batch_size, shuffle=True)

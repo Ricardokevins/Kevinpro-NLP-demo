@@ -57,6 +57,10 @@ class Voc:
         for word in keep_words:
             self.addWord(word)
 
+    # def write2dict(self):
+    #     f = open("dict.txt",'w'):
+    #     for i in word2index:
+            
 
 
 # Turn a Unicode string to plain ASCII, thanks to
@@ -134,6 +138,7 @@ def trimRareWords(voc, pairs, MIN_COUNT):
 
 
 def indexesFromSentence(voc, sentence):
+
     return [voc.word2index[word] for word in sentence.split(' ')] + [EOS_token]
 
 # zip 对数据进行合并了，相当于行列转置了

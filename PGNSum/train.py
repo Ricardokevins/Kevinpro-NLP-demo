@@ -229,7 +229,7 @@ class Trainer:
             #print(source_ext.shape)
             coverage = torch.zeros(torch.max(source_length).item()).cuda()
             source_mask = torch.zeros(torch.max(source_length).item()).cuda()
-            
+            print(source_length)
             for j in range(source_length):
                 source_mask[j] = 1
             c_t_1 = torch.zeros((1, 2 * self.hidden_dim)).cuda()
@@ -381,13 +381,13 @@ class Trainer:
 @ex.main
 def main(_config, _run):
     print("----Runing----")
-    Train = True
+    Train = False
     trainer = Trainer(_config, _run)
     if Train:
         trainer.train()
     else:
-        #trainer.greedy_decoder()
-        trainer.beam_decoder()
+        trainer.greedy_decoder()
+        #trainer.beam_decoder()
 
 
 if __name__ == "__main__":

@@ -1,28 +1,23 @@
 import torch
 import  transformer
-max_length = 64
-def get_dataset(corpur_path):
+max_length = 80
+max_sample = 1e4
+
+def get_dataset(corpur_path,max_num):
     texts = []
     labels = []
-    with open(corpur_path) as f:
+    with open(corpur_path,encoding='utf-8') as f:
         li = []
         while True:
             content = f.readline().replace('\n', '')
-            if not content:              #为空行，表示取完一次数据（一次的数据保存在li中）
-                if not li:               #如果列表也为空，则表示数据读完，结束循环
-                    break
-                label = li[0][10]
-                text = li[1][6:-7]
-                texts.append(text)
-                labels.append(int(label))
-                li = []
-            else:
-                li.append(content)       #["<Polarity>标签</Polarity>", "<text>句子内容</text>"]
+            texts.append(content)
+            if len(texts) > max_num:
+                break
     return texts, labels
 
 
-def bulid_corpus(train_data):
-    texts, labels = get_dataset(train_data)
+def bulid_corpus(train_data,max_num):
+    texts, labels = get_dataset(train_data,max_num)
     return texts
 
 def build_tokenizer(text):
@@ -58,14 +53,14 @@ def random_word(text,tokenzier):
 
     return " ".join(tokens),output_label
 
-corpus = bulid_corpus('trains.txt')
+corpus = bulid_corpus('corpus.txt',5e3)
 tokenzier = build_tokenizer(corpus)
 
 def get_dict_size():
     return len(tokenzier.word2idx)
 
 def load_train_data(samples_num):
-    corpus = bulid_corpus('trains.txt')
+    corpus = bulid_corpus('corpus.txt',samples_num/2)
     source = []
     target = []
     labels = []
@@ -83,7 +78,7 @@ def load_train_data(samples_num):
                 return source,target,labels
 
 def load_test_data(samples_num):
-    corpus = bulid_corpus('tests.txt')
+    corpus = bulid_corpus('corpus.txt',samples_num/2)
     source = []
     target = []
     labels = []

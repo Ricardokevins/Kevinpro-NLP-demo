@@ -49,8 +49,8 @@ class BertClassifier(nn.Module):
 class TransformerClasssifier(nn.Module):
     def __init__(self,vocab):
         super(TransformerClasssifier, self).__init__()
-        self.hidden_size=512
-        BaseModel = transformer.Transformer(n_src_vocab=vocab,max_length=max_length, n_layers=6, n_head=8, d_word_vec=512, d_model=512, d_inner_hid=1024, dropout=0.1, dim_per_head=None)
+        self.hidden_size=256
+        BaseModel = transformer.Transformer(n_src_vocab=vocab,max_length=max_length, n_layers=3, n_head=4, d_word_vec=256, d_model=256, d_inner_hid=512, dropout=0.1, dim_per_head=None)
         self.encoder = BaseModel.get_model()
         self.fc = nn.Linear(self.hidden_size, vocab)
     

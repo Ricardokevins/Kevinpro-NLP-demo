@@ -71,7 +71,6 @@ if loadFilename:
 # Use appropriate device
 encoder = encoder.to(device)
 decoder = decoder.to(device)
-print('Models built and ready to go!')
 
 encoder.eval()
 decoder.eval()
@@ -218,26 +217,18 @@ def evaluateInside(encoder, decoder, searcher, voc,testset):
     sources = []
     for test in tqdm(testset):
         try:
-            # Get input sentence
-            #input_sentence = input('> ')
             source = test[0]
             target = test[1]
             sources.append(source)
             input_sentence = source
-            # Check if it is quit case
-            # Normalize sentence
-            #input_sentence = normalizeString(input_sentence)
-            # Evaluate sentence
             output_words = evaluate(encoder, decoder, searcher, voc, input_sentence)
-            # Format and print response sentence
             output_words[:] = [x for x in output_words if not (x == 'EOS' or x == 'PAD')]
             predict = ' '.join(output_words)
             predicts.append(predict)
             targets.append(target)
-            #print('Bot:', ' '.join(output_words))
         except KeyError:
             pass
-            #print("Error: Encountered unknown word.")
+
     rouge = Rouge()
     scores = rouge.get_scores(predicts, targets, avg=True)
     print(len(predicts))
@@ -248,6 +239,7 @@ def evaluateInside(encoder, decoder, searcher, voc,testset):
         f.write(i+"     "+j+'\n')
         f.write("==================================================\n")
     f.close()
+
 def evaluateInput(encoder, decoder, searcher, voc):
     input_sentence = ''
     while(1):
@@ -269,32 +261,41 @@ def evaluateInput(encoder, decoder, searcher, voc):
         except KeyError:
             print("Error: Encountered unknown word.")
 
-corpus_name = ""
-corpus = os.path.join("data", corpus_name)
-save_dir = os.path.join("data", "save")
-datafile = os.path.join(corpus, "formatted_movie_lines.txt")
-voc, pairs = loadPrepareData(corpus, corpus_name, datafile, save_dir)
-# Trim voc and pairs
-from dataloader import trimRareWords
-pairs = trimRareWords(voc, pairs, MIN_COUNT)
 
-f = open("TestSet.txt",'w',encoding='utf-8')
-
-test_set_size = 1000
-import random
-
-test_set = []
-while len(test_set) < test_set_size:
-    test_sample = random.choice(pairs)
-    if test_sample not in test_set:
-        test_set.append(test_sample)
-
-print(test_set[0])
-# Initialize search module
 searcher = GreedySearchDecoder(encoder, decoder)
 #searcher = BeamSearchDecoder(encoder, decoder)
-# Begin chatting (uncomment and run the following line to begin)
-evaluateInside(encoder, decoder, searcher, voc,test_set)
+
+def BotAPI(input_sentence):
+    try:
+        output_words = evaluate(encoder, decoder, searcher, voc, input_sentence)
+        # Format and print response sentence
+        output_words[:] = [x for x in output_words if not (x == 'EOS' or x == 'PAD')]
+    except KeyError:
+        output_words = ['unable to answer']
+    return 'Bot: '+' '.join(output_words)
+
+def test():
+    from dataloader import trimRareWords
+    pairs2 = trimRareWords(voc, pairs, MIN_COUNT)
+
+    f = open("TestSet.txt",'w',encoding='utf-8')
+
+    test_set_size = 1000
+    import random
+
+    test_set = []
+    while len(test_set) < test_set_size:
+        test_sample = random.choice(pairs2)
+        if test_sample not in test_set:
+            test_set.append(test_sample)
+
+    test_set = [test_set[0]]
+    print(test_set[0])
+    #searcher = BeamSearchDecoder(encoder, decoder)
+    evaluateInside(encoder, decoder, searcher, voc,test_set)
+
+#test()
+
 
 #{'rouge-1': {'f': 0.08770590099211, 'p': 0.09842976190476202, 'r': 0.0928503968253969}, 'rouge-2': {'f': 0.015368631185338202, 'p': 0.016616666666666665, 'r': 0.016145238095238094}, 'rouge-l': {'f': 0.08617159363142878, 'p': 0.09672976190476201, 'r': 0.0910988095238096}}
 #{'rouge-1': {'f': 0.09156701700941122, 'p': 0.1092472222222222, 'r': 0.09344126984126996}, 'rouge-2': {'f': 0.014569763394207222, 'p': 0.017352380952380956, 'r': 0.014278571428571427}, 'rouge-l': {'f': 0.091432549840759, 'p': 0.10849960317460312, 'r': 0.09379880952380965}}
