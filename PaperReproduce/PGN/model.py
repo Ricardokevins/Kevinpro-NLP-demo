@@ -53,11 +53,8 @@ class Encoder(nn.Module):
     #seq_lens should be in descending order
     def forward(self, input, seq_lens):
         embedded = self.embedding(input)
-       
-        packed = pack_padded_sequence(embedded, seq_lens, batch_first=True)
-        output, hidden = self.lstm(packed)
-
-        encoder_outputs, _ = pad_packed_sequence(output, batch_first=True)  # h dim = B x t_k x n
+        
+        encoder_outputs,hidden = self.lstm(embedded)
         encoder_outputs = encoder_outputs.contiguous()
         
         encoder_feature = encoder_outputs.view(-1, 2*config.hidden_dim)  # B * t_k x 2*hidden_dim
@@ -94,7 +91,6 @@ class Attention(nn.Module):
 
     def forward(self, s_t_hat, encoder_outputs, encoder_feature, enc_padding_mask, coverage):
         b, t_k, n = list(encoder_outputs.size())
-
         dec_fea = self.decode_proj(s_t_hat) # B x 2*hidden_dim
         dec_fea_expanded = dec_fea.unsqueeze(1).expand(b, t_k, n).contiguous() # B x t_k x 2*hidden_dim
         dec_fea_expanded = dec_fea_expanded.view(-1, n)  # B * t_k x 2*hidden_dim
@@ -108,6 +104,11 @@ class Attention(nn.Module):
         e = F.tanh(att_features) # B * t_k x 2*hidden_dim
         scores = self.v(e)  # B * t_k x 1
         scores = scores.view(-1, t_k)  # B x t_k
+
+        # TODO My Modied
+        # print(coverage.shape[0])
+        # print(coverage.shape[1])
+        #enc_padding_mask = enc_padding_mask[:,:coverage.shape[1]]
 
         attn_dist_ = F.softmax(scores, dim=1)*enc_padding_mask # B x t_k
         normalization_factor = attn_dist_.sum(1, keepdim=True)

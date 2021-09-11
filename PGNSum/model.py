@@ -100,7 +100,7 @@ class Attention(nn.Module):
         if config.is_coverage:
             coverage_input = coverage.view(-1, 1)         # B * t_k x 1
             coverage_feature = self.W_c(coverage_input)  # B * t_k x 2*hidden_dim
-
+            
             att_features = att_features + coverage_feature
 
         e = torch.tanh(att_features)   # B * t_k x 2*hidden_dim

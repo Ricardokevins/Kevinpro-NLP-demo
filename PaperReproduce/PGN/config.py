@@ -11,18 +11,19 @@ PAD = '<pad>'
 train_data_path = './data/train.json'
 dev_data_path = './data/dev.json'
 vocab_path = './data/vocab.txt'
-
+save_path = './save'
 
 # Hyperparameters
+EPOCH = 5
 hidden_dim = 128
 emb_dim = 64
-batch_size = 2
-max_enc_steps = 200
-max_dec_steps = 50
+batch_size = 16
+max_enc_steps = 150
+max_dec_steps = 35
 
 beam_size = 4
 # min_dec_steps = 35
-min_dec_steps = 10
+min_dec_steps = 5
 vocab_size = 10_000
 
 lr = 0.15
