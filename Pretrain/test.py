@@ -28,11 +28,11 @@ def setup_seed(seed):
 setup_seed(44)
 
 from dataloader import bulid_corpus,build_tokenizer
-corpus = bulid_corpus('trains.txt')
+corpus = bulid_corpus('corpus.txt',1)
 tokenzier = build_tokenizer(corpus)
 from dataloader import get_dict_size
 word_size = get_dict_size()
-
+print("wprd+size",word_size)
 def propossess_text(text):
     label = []
     for i in text.split(" "):
@@ -54,14 +54,16 @@ def fill_blank():
     # input_text = "i love the little pie company as [MASK] as anyone else who [MASK] written reviews"
     label = propossess_text(input_text)
     input_id = tokenzier.encode(text)
+    print("model wordsize :",word_size)
     model = TransformerClasssifier(word_size)
-    model=torch.load('test.pth')
+    model=torch.load('pretrained.pth')
     model = model.cuda()
     input_id = torch.tensor(input_id).reshape(1,-1).cuda()
     logits,attn = model(input_id)
     
     label = torch.tensor(label)
     active_loss = label.reshape(-1) == 1
+    print(logits.shape)
     active_logits = logits.reshape(-1,word_size)[active_loss]
     _, active_logits = torch.max(active_logits, 1)
     predict = active_logits.cpu().numpy().tolist()

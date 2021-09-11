@@ -52,11 +52,11 @@ class TransformerClasssifier(nn.Module):
         self.hidden_size=256
         BaseModel = transformer.Transformer(n_src_vocab=vocab,max_length=max_length, n_layers=3, n_head=4, d_word_vec=256, d_model=256, d_inner_hid=512, dropout=0.1, dim_per_head=None)
         self.encoder = BaseModel.get_model()
-        Use_pretrain = True
+        Use_pretrain = False
         if Use_pretrain:
             print("========================= Using pretrained model =========================")
             self.encoder = torch.load('../Pretrain/pretrained.pth')
-        self.fc = nn.Linear(self.hidden_size, 10)
+        self.fc = nn.Linear(self.hidden_size, 2)
     
     def forward(self, input_ids):
         sequence_heatmap,sent = self.encoder(input_ids)
