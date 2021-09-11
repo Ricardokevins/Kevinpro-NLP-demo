@@ -4,13 +4,13 @@
 
 主要内容
 
-1. **文本分类**
-2. **摘要生成**
-3. **对话翻译**
-4. **GNN实现使用**
-5. **Mask Language Model预训练**
+1. **文本分类,BiLSTM,Transfomer**
+2. **摘要生成,Pointer Generator NetWord**
+3. **对话翻译 Seq2Seq**
+4. **GNN在文本分类的实践**
+5. **Transformer Mask Language Model预训练**
 6. **GPT文本续写以及GPT做数学题（偷的hhh）**
-7. **其他的NLP炼丹技巧实践**
+7. **其他的NLP炼丹技巧实践 对抗学习等**
 
 其他参考实践
 
