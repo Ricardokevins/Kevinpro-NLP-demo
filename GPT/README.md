@@ -1,4 +1,3 @@
-
 # minGPT
 
 ![mingpt](mingpt.jpg)

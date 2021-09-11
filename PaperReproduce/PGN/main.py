@@ -9,10 +9,12 @@ from torch.optim import Adagrad
 from torch.utils.data import Dataset, DataLoader
 import numpy as np
 from EasyTransformer.util import ProgressBar
+import warnings
 
 import config
 from dataloader import Tokenizer, SumDataset
 
+warnings.filterwarnings('ignore')
 use_cuda = config.use_gpu and torch.cuda.is_available()
 
 
@@ -20,7 +22,7 @@ class Train(object):
     def __init__(self):
         self.tokenizer = Tokenizer()
         self.dataset = SumDataset()
-        self.dataloader = DataLoader(self.dataset, batch_size=config.batch_size, shuffle=True,drop_last=True)
+        self.dataloader = DataLoader(self.dataset, batch_size=config.batch_size, shuffle=True, drop_last=True)
 
         train_dir = os.path.join(config.save_path, 'train_%d' % (int(time.time())))
         if not os.path.exists(train_dir):
@@ -65,7 +67,7 @@ class Train(object):
 
         return start_iter, start_loss
 
-    def train_one_batch(self, enc_batch,dec_batch):
+    def train_one_batch(self, enc_batch, dec_batch):
         enc_batch, enc_padding_mask, enc_lens, enc_batch_extend_vocab, extra_zeros, c_t_1, coverage = \
             enc_batch
         dec_batch, dec_padding_mask, max_dec_len, dec_lens_var, target_batch = \
@@ -111,9 +113,7 @@ class Train(object):
 
     def trainEpoch(self, epoch, model_file_path=None):
         print("starting Epoch {}".format(epoch))
-        self.setup_train(model_file_path)
         iter = 0
-        start = time.time()
         pbar = ProgressBar(n_total=len(self.dataloader), desc='Training')
         for enc_input, enc_input_ext, dec_input, dec_output, enc_len, dec_len, oov_word_num in self.dataloader:
             # computing Mask of input and output
@@ -134,15 +134,13 @@ class Train(object):
             extra_zeros = None
             if max_oov_num > 0:
                 extra_zeros = torch.zeros((config.batch_size, max_oov_num))
-            
+
             c_t_1 = torch.zeros((config.batch_size, 2 * config.hidden_dim))
             coverage = torch.zeros(enc_batch.size())
-           
+
             dec_batch = dec_input
             target_batch = dec_output
             max_dec_len = max(dec_len).numpy()
-
-
 
             if use_cuda:
                 enc_batch = enc_batch.cuda()
@@ -160,30 +158,24 @@ class Train(object):
                 dec_len = dec_len.cuda()
                 target_batch = target_batch.cuda()
 
-            
-            # Pack data for training 
+            # Pack data for training
             enc_batch_pack = (enc_batch, enc_padding_mask, enc_len, enc_input_ext, extra_zeros, c_t_1, coverage)
             dec_batch_pack = (dec_batch, dec_padding_mask, max_dec_len, dec_len, target_batch)
 
             # Training
-            loss = self.train_one_batch(enc_batch_pack,dec_batch_pack)
-            
+            loss = self.train_one_batch(enc_batch_pack, dec_batch_pack)
 
             running_avg_loss = 0
             iter += 1
             pbar(iter, {'loss': loss/iter})
-            # print_interval = 1000
-            # if iter % print_interval == 0:
-            #     print('steps %d, seconds for %d batch: %.2f , loss: %f' % (iter, print_interval,
-            #                                                                time.time() - start, loss))
-            #     start = time.time()
+            
             if iter % 100 == 0:
                 self.save_model(iter)
 
-    def train(self):
+    def train(self,model_file_path=None):
+        self.setup_train(model_file_path)
         for i in range(config.EPOCH):
             self.trainEpoch(i+1)
-
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Train script")

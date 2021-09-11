@@ -9,7 +9,8 @@
 3. **对话翻译**
 4. **GNN实现使用**
 5. **Mask Language Model预训练**
-6. **其他的NLP炼丹技巧实践**
+6. **GPT文本续写以及GPT做数学题（偷的hhh）**
+7. **其他的NLP炼丹技巧实践**
 
 其他参考实践
 
@@ -163,3 +164,11 @@
 1. 重构了对话机器人模型于Seq2Seq文件夹
 2. 实现了BeamSearch解码方式
 3. 修复了PGN里的BeamSearch Bug
+
+
+
+## 2021.9.11
+
+1. 添加了GPT在文本续写和数学题问题的解决（偷了[karpathy/minGPT: A minimal PyTorch re-implementation of the OpenAI GPT (Generative Pretrained Transformer) training (github.com)](https://github.com/karpathy/minGPT)代码实现的很好，对理解GPT很有帮助，偷过来看看能不能用在好玩的东西
+2. 重构了Pointer Generator NetWork，之前的表现一直不好，打算干脆重构，一行一行的重新捋一遍，感觉会安心很多。施工ing。
+
