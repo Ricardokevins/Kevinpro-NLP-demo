@@ -12,6 +12,7 @@ train_data_path = './data/train.json'
 dev_data_path = './data/dev.json'
 vocab_path = './data/vocab.txt'
 
+
 # Hyperparameters
 hidden_dim = 128
 emb_dim = 64
@@ -22,7 +23,7 @@ max_dec_steps = 50
 beam_size = 4
 # min_dec_steps = 35
 min_dec_steps = 10
-vocab_size = 50_000
+vocab_size = 10_000
 
 lr = 0.15
 adagrad_init_acc = 0.1
