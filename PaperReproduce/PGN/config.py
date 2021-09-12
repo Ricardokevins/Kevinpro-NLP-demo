@@ -10,9 +10,11 @@ PAD = '<pad>'
 
 train_data_path = './data/train.json'
 dev_data_path = './data/dev.json'
+
 vocab_path = './data/vocab.txt'
 save_path = './save'
 output_path = './output/dec_reuslt.txt'
+ref_path = './output/ref_result.txt'
 
 # Hyperparameters
 EPOCH = 30
