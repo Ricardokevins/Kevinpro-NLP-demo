@@ -191,3 +191,4 @@ class SumDataset(Dataset):
         assert max_dec_steps == len(dec_input)
         assert max_dec_steps == len(dec_output)
         return enc_input, enc_input_ext, enc_len, dec_input, dec_output, dec_len, oov_word_list
+
