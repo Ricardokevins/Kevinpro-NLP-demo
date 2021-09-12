@@ -23,7 +23,6 @@ class Tokenizer:
     def __init__(self, LoadFromFile=True):
         self.word2id = {}
         self.id2word = {}
-        self.id2word = {}
         self.cur_word = 0
         self.add_word(PAD)
         self.add_word(SENTENCE_START)

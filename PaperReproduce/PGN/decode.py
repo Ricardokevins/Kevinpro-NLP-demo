@@ -102,6 +102,28 @@ class DecodeDataset(Dataset):
 
         return enc_input, enc_input_ext, enc_len, oov_word
 
+class Beam(object):
+    def __init__(self, tokens, log_probs, state, context, coverage):
+        self.tokens = tokens
+        self.log_probs = log_probs
+        self.state = state
+        self.context = context
+        self.coverage = coverage
+
+    def extend(self, token, log_prob, state, context, coverage):
+        return Beam(tokens=self.tokens + [token],
+                    log_probs=self.log_probs + [log_prob],
+                    state=state,
+                    context=context,
+                    coverage=coverage)
+
+    @property
+    def latest_token(self):
+        return self.tokens[-1]
+
+    @property
+    def avg_log_prob(self):
+        return sum(self.log_probs) / len(self.tokens)
 
 class Decode_Eval:
     def __init__(self, model_path, input_lines):
@@ -112,11 +134,10 @@ class Decode_Eval:
     def sort_beams(self, beams):
         return sorted(beams, key=lambda h: h.avg_log_prob, reverse=True)
 
-    def decode_one_batch(self, enc_batch, dec_batch):
+    def decode_one_batch(self, enc_batch):
         enc_batch, enc_padding_mask, enc_lens, enc_batch_extend_vocab, extra_zeros, c_t_0, coverage_t_0 = \
             enc_batch
-        dec_batch, dec_padding_mask, max_dec_len, dec_lens_var, target_batch = \
-            dec_batch
+        
 
         encoder_outputs, encoder_feature, encoder_hidden = self.model.encoder(enc_batch, enc_lens)
         s_t_0 = self.model.reduce_state(encoder_hidden)
@@ -125,10 +146,18 @@ class Decode_Eval:
         dec_h = dec_h.squeeze()
         dec_c = dec_c.squeeze()
 
+        encoder_outputs = [encoder_outputs for i in range(config.beam_size)]
+        encoder_feature = [encoder_feature for i in range(config.beam_size)]
+        #extra_zeros = [extra_zeros for i in config.beam_size]
+
+        encoder_outputs = torch.stack(encoder_outputs,1).squeeze()
+        #print('encpder',encoder_outputs.shape)
+        encoder_feature = torch.stack(encoder_feature,1).squeeze().reshape(-1,2*config.hidden_dim)
+
         # decoder batch preparation, it has beam_size example initially everything is repeated
         beams = [Beam(tokens=[self.tokenizer.word2id[SENTENCE_START]],
                       log_probs=[0.0],
-                      state=(dec_h[0], dec_c[0]),
+                      state=(dec_h, dec_c),
                       context=c_t_0[0],
                       coverage=(coverage_t_0[0] if config.is_coverage else None))
                  for _ in range(config.beam_size)]
@@ -141,21 +170,22 @@ class Decode_Eval:
             y_t_1 = torch.LongTensor(latest_tokens)
             if use_cuda:
                 y_t_1 = y_t_1.cuda()
+
             all_state_h = []
             all_state_c = []
-
             all_context = []
 
             for h in beams:
                 state_h, state_c = h.state
                 all_state_h.append(state_h)
                 all_state_c.append(state_c)
-
                 all_context.append(h.context)
 
             s_t_1 = (torch.stack(all_state_h, 0).unsqueeze(0), torch.stack(all_state_c, 0).unsqueeze(0))
             c_t_1 = torch.stack(all_context, 0)
 
+            #print("test",s_t_1[0].shape,s_t_1[1].shape)
+            #exit()
             coverage_t_1 = None
             if config.is_coverage:
                 all_coverage = []
@@ -163,6 +193,8 @@ class Decode_Eval:
                     all_coverage.append(h.coverage)
                 coverage_t_1 = torch.stack(all_coverage, 0)
 
+            # print(coverage_t_1.shape)
+            # print(c_t_1.shape)
             final_dist, s_t, c_t, attn_dist, p_gen, coverage_t = self.model.decoder(y_t_1, s_t_1,
                                                                                     encoder_outputs, encoder_feature, enc_padding_mask, c_t_1,
                                                                                     extra_zeros, enc_batch_extend_vocab, coverage_t_1, steps)
@@ -181,7 +213,7 @@ class Decode_Eval:
                 context_i = c_t[i]
                 coverage_i = (coverage_t[i] if config.is_coverage else None)
 
-                for j in xrange(config.beam_size * 2):  # for each of the top 2*beam_size hyps:
+                for j in range(config.beam_size * 2):  # for each of the top 2*beam_size hyps:
                     new_beam = h.extend(token=topk_ids[i, j].item(),
                                         log_prob=topk_log_probs[i, j].item(),
                                         state=state_i,
@@ -191,7 +223,7 @@ class Decode_Eval:
 
             beams = []
             for h in self.sort_beams(all_beams):
-                if h.latest_token == self.vocab.word2id(data.STOP_DECODING):
+                if h.latest_token == self.tokenizer.word2id[SENTENCE_END]:
                     if steps >= config.min_dec_steps:
                         results.append(h)
                 else:
@@ -211,27 +243,40 @@ class Decode_Eval:
     def eval(self):
         pbar = ProgressBar(n_total=len(self.dataset), desc='Training')
         iter = 0
+        f = open(config.output_path,'w',encoding='utf-8')
         for enc_input, enc_input_ext, enc_len, oov_word_num, oov_word_list in self.dataset:
             enc_input = enc_input.reshape(1,-1)
             enc_input_ext = enc_input.reshape(1,-1)
             enc_len = enc_len.reshape(1,-1)
             oov_word_num = oov_word_num.reshape(1,-1)
 
+            # enc_input_list = [enc_input for i in range(config.beam_size)]
+            # enc_input_ext_list = [enc_input_ext for i in range(config.beam_size)]
+            # enc_len_list = [enc_len for i in range(config.beam_size)]
+            # enc_input = torch.stack(enc_input_list, 0)
+            # enc_input_ext = torch.stack(enc_input_ext_list, 0)
+            # enc_len = torch.stack(enc_len_list, 0)
+            
             # computing Mask of input and output
             enc_padding_mask = torch.zeros(enc_input.shape)
             for i in range(len(enc_len)):
                 for j in range(enc_len[i]):
                     enc_padding_mask[i][j] = 1
-            max_oov_num = max(oov_word_num).numpy()
-
+            max_oov_num = max(oov_word_num).numpy().tolist()[0]
+            
+            #'''test
+            import types
+            if isinstance(max_oov_num, int) is False:
+                print(max_oov_num)
+            #'''
             # Packup input and output data to Match the origin API
             enc_batch = enc_input
             extra_zeros = None
             if max_oov_num > 0:
-                extra_zeros = torch.zeros((1, max_oov_num))
+                extra_zeros = torch.zeros((config.beam_size, max_oov_num))
 
             c_t_1 = torch.zeros((1, 2 * config.hidden_dim))
-            coverage = torch.zeros(enc_batch.size())
+            coverage = torch.zeros(1,enc_batch.shape[1])
 
             
 
@@ -252,14 +297,25 @@ class Decode_Eval:
 
 
             # Training
-            best_summary = self.decode_one_batch(enc_batch_pack, dec_batch_pack)
+            best_summary = self.decode_one_batch(enc_batch_pack)
             output_ids = [int(t) for t in best_summary.tokens[1:]]
-            print(output_ids)
-            exit()
+            
             # decoded_words = data.outputids2words(output_ids, self.vocab,
             #                                      (batch.art_oovs[0] if config.pointer_gen else None))
+            words = self.convertId2words(output_ids,oov_word_list)
+            summary = "".join(words)
+            f.write(summary + '\n')
             iter += 1
             pbar(iter, {})
+
+    def convertId2words(self,output_ids,oov_dict):
+        words = []
+        for i in output_ids:
+            if i >= config.vocab_size:
+                words.append(oov_dict[i-config.vocab_size])
+            else:
+                words.append(self.tokenizer.id2word[i])
+        return words
 
 
 def decode():
@@ -273,7 +329,7 @@ def decode():
         source = dic['content']
         input_lines.append(source)
 
-    model_path = "./save/model_0_1631411954"
+    model_path = "./save/model_0_1631416384"
     de = Decode_Eval(model_path, input_lines)
     de.eval()
 
