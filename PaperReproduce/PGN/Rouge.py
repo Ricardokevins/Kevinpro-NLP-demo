@@ -23,6 +23,7 @@ import json
 from rouge import Rouge
 f = open(output_path,'r',encoding='utf-8')
 lines = f.readlines()
+refs = refs[:len(lines)]
 assert len(lines) == len(refs)
 lines = [" ".join(i.strip().replace('\n','').replace('</s>','')) for i in lines]
 

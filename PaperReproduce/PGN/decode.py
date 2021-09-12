@@ -35,7 +35,8 @@ class DecodeDataset(Dataset):
         self.dec_len_list = []
         self.oov_word_num_list = []
         self.oov_word_list = []
-        print("dataNumber", len(input_lines))
+        self.input_lines = input_lines[:1000]
+        print("dataNumber", len(self.input_lines))
         from tqdm import tqdm
         for line in self.input_lines:
             enc_input, enc_input_ext, enc_len, oov_word = self.get_one_sample(line)

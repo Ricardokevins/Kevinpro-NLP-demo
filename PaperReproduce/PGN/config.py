@@ -9,7 +9,8 @@ PAD = '<pad>'
 
 
 train_data_path = './data/train.json'
-dev_data_path = './data/dev.json'
+#dev_data_path = './data/dev.json'
+dev_data_path = './data/train.json'
 
 vocab_path = './data/vocab.txt'
 save_path = './save'
