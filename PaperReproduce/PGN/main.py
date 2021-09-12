@@ -31,6 +31,7 @@ class Train(object):
         self.model_dir = os.path.join(train_dir, 'model')
         if not os.path.exists(self.model_dir):
             os.mkdir(self.model_dir)
+        self.setup_train()
 
     def save_model(self, iter):
         state = {
@@ -79,6 +80,7 @@ class Train(object):
         s_t_1 = self.model.reduce_state(encoder_hidden)
 
         step_losses = []
+        #print(self.model.decoder.state_dict()['out1.bias'])
         for di in range(min(max_dec_len, config.max_dec_steps)):
             y_t_1 = dec_batch[:, di]  # Teacher forcing
             final_dist, s_t_1,  c_t_1, attn_dist, p_gen, next_coverage = self.model.decoder(y_t_1, s_t_1,
@@ -100,83 +102,88 @@ class Train(object):
         sum_losses = torch.sum(torch.stack(step_losses, 1), 1)
         batch_avg_loss = sum_losses/dec_lens_var
         loss = torch.mean(batch_avg_loss)
-
+        
         loss.backward()
-
-        self.norm = clip_grad_norm_(self.model.encoder.parameters(), config.max_grad_norm)
+        
+        clip_grad_norm_(self.model.encoder.parameters(), config.max_grad_norm)
         clip_grad_norm_(self.model.decoder.parameters(), config.max_grad_norm)
         clip_grad_norm_(self.model.reduce_state.parameters(), config.max_grad_norm)
 
         self.optimizer.step()
-
         return loss.item()
 
-    def trainEpoch(self, epoch, model_file_path=None):
-        print("starting Epoch {}".format(epoch))
-        iter = 0
-        pbar = ProgressBar(n_total=len(self.dataloader), desc='Training')
-        for enc_input, enc_input_ext, dec_input, dec_output, enc_len, dec_len, oov_word_num in self.dataloader:
-            # computing Mask of input and output
-            enc_padding_mask = torch.zeros((config.batch_size, config.max_enc_steps))
-            for i in range(len(enc_len)):
-                for j in range(enc_len[i]):
-                    enc_padding_mask[i][j] = 1
-
-            dec_padding_mask = torch.zeros((config.batch_size, config.max_dec_steps))
-            for i in range(len(dec_len)):
-                for j in range(dec_len[i]):
-                    dec_padding_mask[i][j] = 1
-
-            max_oov_num = max(oov_word_num).numpy()
-
-            # Packup input and output data to Match the origin API
-            enc_batch = enc_input
-            extra_zeros = None
-            if max_oov_num > 0:
-                extra_zeros = torch.zeros((config.batch_size, max_oov_num))
-
-            c_t_1 = torch.zeros((config.batch_size, 2 * config.hidden_dim))
-            coverage = torch.zeros(enc_batch.size())
-
-            dec_batch = dec_input
-            target_batch = dec_output
-            max_dec_len = max(dec_len).numpy()
-
-            if use_cuda:
-                enc_batch = enc_batch.cuda()
-                enc_padding_mask = enc_padding_mask.cuda()
-                enc_len = enc_len.int()
-                enc_input_ext = enc_input_ext.cuda()
-                if extra_zeros is not None:
-                    extra_zeros = extra_zeros.cuda()
-                c_t_1 = c_t_1.cuda()
-                coverage = coverage.cuda()
-
-                dec_batch = dec_batch.cuda()
-                dec_padding_mask = dec_padding_mask.cuda()
-                #max_dec_len = max_dec_len.cuda()
-                dec_len = dec_len.cuda()
-                target_batch = target_batch.cuda()
-
-            # Pack data for training
-            enc_batch_pack = (enc_batch, enc_padding_mask, enc_len, enc_input_ext, extra_zeros, c_t_1, coverage)
-            dec_batch_pack = (dec_batch, dec_padding_mask, max_dec_len, dec_len, target_batch)
-
-            # Training
-            loss = self.train_one_batch(enc_batch_pack, dec_batch_pack)
-
-            running_avg_loss = 0
-            iter += 1
-            pbar(iter, {'loss': loss/iter})
-            
-            if iter % 100 == 0:
-                self.save_model(iter)
-
     def train(self,model_file_path=None):
-        self.setup_train(model_file_path)
-        for i in range(config.EPOCH):
-            self.trainEpoch(i+1)
+        
+        for epoch in range(config.EPOCH):
+            #print(self.model.encoder.state_dict()['W_h.weight'])
+            print("\nstarting Epoch {}".format(epoch))
+            iter = 0
+            # for name, parameters in self.model.decoder.named_parameters():
+            #     print(name, ':', parameters.size())
+            # for parameters in self.model.encoder.parameters():
+            #     print(parameters)
+            #print(self.model.decoder.state_dict()['out1.bias'])
+            total_loss = 0
+            pbar = ProgressBar(n_total=len(self.dataloader), desc='Training')
+            for enc_input, enc_input_ext, dec_input, dec_output, enc_len, dec_len, oov_word_num in self.dataloader:
+                # computing Mask of input and output
+                enc_padding_mask = torch.zeros((config.batch_size, config.max_enc_steps))
+                for i in range(len(enc_len)):
+                    for j in range(enc_len[i]):
+                        enc_padding_mask[i][j] = 1
 
+                dec_padding_mask = torch.zeros((config.batch_size, config.max_dec_steps))
+                for i in range(len(dec_len)):
+                    for j in range(dec_len[i]):
+                        dec_padding_mask[i][j] = 1
+
+                max_oov_num = max(oov_word_num).numpy()
+
+                # Packup input and output data to Match the origin API
+                enc_batch = enc_input
+                extra_zeros = None
+                if max_oov_num > 0:
+                    extra_zeros = torch.zeros((config.batch_size, max_oov_num))
+
+                c_t_1 = torch.zeros((config.batch_size, 2 * config.hidden_dim))
+                coverage = torch.zeros(enc_batch.size())
+
+                dec_batch = dec_input
+                target_batch = dec_output
+                max_dec_len = max(dec_len).numpy()
+
+                if use_cuda:
+                    enc_batch = enc_batch.cuda()
+                    enc_padding_mask = enc_padding_mask.cuda()
+                    enc_len = enc_len.int()
+                    enc_input_ext = enc_input_ext.cuda()
+                    if extra_zeros is not None:
+                        extra_zeros = extra_zeros.cuda()
+                    c_t_1 = c_t_1.cuda()
+                    coverage = coverage.cuda()
+
+                    dec_batch = dec_batch.cuda()
+                    dec_padding_mask = dec_padding_mask.cuda()
+                    #max_dec_len = max_dec_len.cuda()
+                    dec_len = dec_len.cuda()
+                    target_batch = target_batch.cuda()
+
+                # Pack data for training
+                enc_batch_pack = (enc_batch, enc_padding_mask, enc_len, enc_input_ext, extra_zeros, c_t_1, coverage)
+                dec_batch_pack = (dec_batch, dec_padding_mask, max_dec_len, dec_len, target_batch)
+
+                # Training
+                loss = self.train_one_batch(enc_batch_pack, dec_batch_pack)
+                total_loss += loss
+                iter += 1
+
+                pbar(iter, {'loss': total_loss/iter})
+                
+                
+            self.save_model(0)
+
+            
+            #exit()
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Train script")
     parser.add_argument("-m",

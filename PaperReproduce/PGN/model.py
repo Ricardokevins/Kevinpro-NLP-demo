@@ -203,7 +203,7 @@ class Model(object):
         encoder = Encoder()
         decoder = Decoder()
         reduce_state = ReduceState()
-
+        
         # shared the embedding between encoder and decoder
         decoder.embedding.weight = encoder.embedding.weight
         if is_eval:

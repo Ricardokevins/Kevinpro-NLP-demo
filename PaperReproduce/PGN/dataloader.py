@@ -61,7 +61,8 @@ class Tokenizer:
 
 
 class SumDataset(Dataset):
-    def __init__(self):
+    def __init__(self,mode = 'Train'):
+        self.mode2file_name = {'Train':train_data_path,'Dev':dev_data_path}
         self.tokenizer = Tokenizer()
         self.enc_input_list = []
         self.enc_input_ext_list = []
@@ -70,12 +71,14 @@ class SumDataset(Dataset):
         self.enc_len_list = []
         self.dec_len_list = []
         self.oov_word_num_list = []
+        self.file = self.mode2file_name[mode]
 
-        load_f = open(train_data_path, 'r', encoding='utf-8')
+        load_f = open(self.file, 'r', encoding='utf-8')
         temp = load_f.readlines()
-        temp = temp[:10000]
+        #temp = temp[:10000]
         print("dataNumber", len(temp))
-        for line in temp:
+        from tqdm import tqdm
+        for line in tqdm(temp):
             dic = json.loads(line)
             source = dic['content']
             target = dic['summary']

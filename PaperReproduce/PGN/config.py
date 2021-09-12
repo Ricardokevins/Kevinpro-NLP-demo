@@ -12,12 +12,13 @@ train_data_path = './data/train.json'
 dev_data_path = './data/dev.json'
 vocab_path = './data/vocab.txt'
 save_path = './save'
+output_path = './output/dec_reuslt.txt'
 
 # Hyperparameters
-EPOCH = 5
+EPOCH = 30
 hidden_dim = 128
 emb_dim = 64
-batch_size = 16
+batch_size = 64
 max_enc_steps = 150
 max_dec_steps = 35
 
