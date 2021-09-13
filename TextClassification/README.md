@@ -1,3 +1,21 @@
+# TextClassification
+
+文本分类demo，还同时作为baseline对比，加上了很多NLP trick实践
+
+## 模型
+
+1. bert-base-chinese
+2. Base RNN
+3. Base RNN + Attention
+4. Base transformer
+5. CHI + TFIDF + LR/MLP/SVM (相对传统的统计学习方法)
+   
+## 技术
+
+1. 对抗训练
+2. 模型蒸馏
+3. 预训练
+
 # 神经网络算法使用说明
 
 这个文件夹下主要是句子分类的代码

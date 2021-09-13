@@ -18,101 +18,13 @@
 2. **文本语意匹配**：[Ricardokevins/Text_Matching: NLP2020中兴捧月句子相似度匹配 (github.com)](https://github.com/Ricardokevins/Text_Matching)
 3. **Transfomer实现和其他部件**：[Ricardokevins/EasyTransformer: Quick start with strong baseline of Bert and Transformer without pretrain (github.com)](https://github.com/Ricardokevins/EasyTransformer)
 
-# TextClassification
-
-文本分类demo，还同时作为baseline对比，加上了很多NLP trick实践
-
-## 模型
-
-1. bert-base-chinese
-2. Base RNN
-3. Base RNN + Attention
-4. Base transformer
-5. CHI + TFIDF + LR/MLP/SVM (相对传统的统计学习方法)
-   
-## 技术
-
-1. 对抗训练
-2. 模型蒸馏
-3. 预训练
-
-
-
-# GNN
-
-使用torch_geometric作为图神经网络的工具
-
-自己实现了读取构造图数据，以及图模型的代码
-
-代码可运行，但是效果不好（正在排查原因中）
-
-
-
-# Pretrain
-
-## 说明
-
-使用上面句子分类中的语料做Mask Language Model的预训练，采用和BERT一样的预训练策略，对我的Transformer进行预训练
-
-测试
-
-1. 在句子分类任务中，加载预训练后的Transformer
-2. 用预训练做Fill Blank任务，见test.py
-
-## 结果
-
-在训练集1000条里构造100000条训练
-
-测试集300条里构造10000条测试
-
-测试集上正确率37%左右
-
-### 句子分类
-
-| Model      | Acc    |
-| ---------- | ------ |
-| Base       | 81.60% |
-| Pretrained | 82.99% |
-
-### 填空
-
-> i will never visit this restaurant again.
->
-> i will [MASK] visit this restaurant [MASK]
->
-> [MASK] Blank Answer:  never
->
-> [MASK] Blank Answer:  again
 
 
 
 
 
-# ChatBotEnglish
-
-英文对话机器人
-
-### 模型
-
-1. GRU encoder-decoder
 
 
-# PGNSum
-
-使用PointerGenerator的摘要生成
-
-### 模型
-
-1. LSTM
-2. Pointer Generator
-
-
-
-# Seq2Seq
-
-重构了机器人对话系统，使用了BeamSearch和GreedySearch两种解码方式
-
-使用GRU作为Seq2Seq+Attn的基本结构
 
 
 
