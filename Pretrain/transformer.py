@@ -20,6 +20,8 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+from io import open
+import unicodedata
 import numpy as np
 import torch
 import torch.nn as nn
@@ -30,6 +32,7 @@ PAD = 0
 extract from https://github.com/whr94621/NJUNMT-pytorch
 Aim to get a simple implement of Transformer without pretrain and deploy quickly
 '''
+
 
 class Embeddings(nn.Module):
 
@@ -42,20 +45,17 @@ class Embeddings(nn.Module):
 
         super().__init__()
 
-
         if dropout > 0.0:
             self.dropout = nn.Dropout(dropout)
         else:
             self.dropout = None
 
         self.padding_idx = padding_idx
-        
 
-           
         self.embeddings = nn.Embedding(num_embeddings=num_embeddings,
-                                embedding_dim=embedding_dim,
-                                padding_idx=self.padding_idx)
-    
+                                       embedding_dim=embedding_dim,
+                                       padding_idx=self.padding_idx)
+
         self.add_position_embedding = add_position_embedding
 
         self.scale = embedding_dim ** 0.5
@@ -72,8 +72,8 @@ class Embeddings(nn.Module):
         assert (channels % 2 == 0)
         num_timescales = channels // 2
         log_timescale_increment = (
-                math.log(float(max_timescale) / float(min_timescale)) /
-                (float(num_timescales) - 1.))
+            math.log(float(max_timescale) / float(min_timescale)) /
+            (float(num_timescales) - 1.))
         position = torch.arange(0, length).float()
         inv_timescales = torch.arange(0, num_timescales).float()
         if x.is_cuda:
@@ -92,7 +92,7 @@ class Embeddings(nn.Module):
     def forward(self, x):
 
         emb = self.embeddings(x)
-         # rescale to [-1.0, 1.0]
+        # rescale to [-1.0, 1.0]
         if self.add_position_embedding:
             emb = emb * self.scale
             emb += self._add_pos_embedding(emb)
@@ -101,6 +101,7 @@ class Embeddings(nn.Module):
             emb = self.dropout(emb)
 
         return emb
+
 
 class PositionwiseFeedForward(nn.Module):
     """ A two-layer Feed-Forward-Network with residual layer norm.
@@ -126,6 +127,7 @@ class PositionwiseFeedForward(nn.Module):
         inter = self.dropout_1(self.relu(self.w_1(self.layer_norm(x))))
         output = self.dropout_2(self.w_2(inter))
         return output + x
+
 
 class MultiHeadedAttention(nn.Module):
     def __init__(self, model_dim, head_count, dim_per_head=None, dropout=0.1):
@@ -160,7 +162,6 @@ class MultiHeadedAttention(nn.Module):
             .transpose(1, 2).contiguous()
 
     def _combine_heads(self, x):
-
         """:param x: [batch_size * head_count, seq_len, dim_per_head]"""
         seq_len = x.size(2)
 
@@ -226,11 +227,12 @@ class MultiHeadedAttention(nn.Module):
 
         # Return one attn
         top_attn = attn \
-                       .view(batch_size, head_count,
-                             query_len, key_len)[:, 0, :, :] \
+            .view(batch_size, head_count,
+                  query_len, key_len)[:, 0, :, :] \
             .contiguous()
         # END CHECK
         return output, top_attn, [key_up, value_up]
+
 
 def get_attn_causal_mask(seq):
     ''' Get an attention mask to avoid using the subsequent info.
@@ -245,6 +247,7 @@ def get_attn_causal_mask(seq):
     if seq.is_cuda:
         subsequent_mask = subsequent_mask.cuda()
     return subsequent_mask
+
 
 class EncoderBlock(nn.Module):
 
@@ -267,6 +270,7 @@ class EncoderBlock(nn.Module):
 
         return self.pos_ffn(out)
 
+
 class Pooler(nn.Module):
     def __init__(self, d_model):
         super().__init__()
@@ -277,7 +281,8 @@ class Pooler(nn.Module):
 
     def forward(self, x):
         x = self.linear(x[:, 0])
-        return F.tanh(x)
+        return torch.tanh(x)
+
 
 class TransformerEncoder(nn.Module):
 
@@ -290,7 +295,7 @@ class TransformerEncoder(nn.Module):
         self.embeddings = Embeddings(num_embeddings=n_src_vocab,
                                      embedding_dim=d_word_vec,
                                      dropout=dropout,
-                                     add_position_embedding=True                                    
+                                     add_position_embedding=True
                                      )
         self.block_stack = nn.ModuleList(
             [EncoderBlock(d_model=d_model, d_inner_hid=d_inner_hid, n_head=n_head, dropout=dropout,
@@ -298,7 +303,7 @@ class TransformerEncoder(nn.Module):
              for _ in range(n_layers)])
 
         self.pooler = Pooler(d_model)
-        
+
         self.layer_norm = nn.LayerNorm(d_model)
 
     def forward(self, src_seq):
@@ -316,6 +321,7 @@ class TransformerEncoder(nn.Module):
         sent_encode = self.pooler(out)
         return out, sent_encode
 
+
 # coding=utf-8
 # Copyright 2018 The Google AI Language Team Authors and The HugginFace Inc. team.
 #
@@ -330,8 +336,8 @@ class TransformerEncoder(nn.Module):
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-import unicodedata
-from io import open
+
+
 def _is_whitespace(char):
     """Checks whether `chars` is a whitespace character."""
     # \t, \n, and \r are technically contorl characters but we treat them
@@ -343,6 +349,7 @@ def _is_whitespace(char):
         return True
     return False
 
+
 def _is_control(char):
     """Checks whether `chars` is a control character."""
     # These are technically control characters but we count them as whitespace
@@ -353,6 +360,7 @@ def _is_control(char):
     if cat.startswith("C"):
         return True
     return False
+
 
 def _is_punctuation(char):
     """Checks whether `chars` is a punctuation character."""
@@ -369,6 +377,7 @@ def _is_punctuation(char):
         return True
     return False
 
+
 def whitespace_tokenize(text):
     """Runs basic whitespace cleaning and splitting on a peice of text."""
     text = text.strip()
@@ -376,6 +385,7 @@ def whitespace_tokenize(text):
         return []
     tokens = text.split()
     return tokens
+
 
 class BasicTokenizer(object):
     """Runs basic tokenization (punctuation splitting, lower casing, etc.)."""
@@ -399,16 +409,16 @@ class BasicTokenizer(object):
         # and generally don't have any Chinese data in them (there are Chinese
         # characters in the vocabulary because Wikipedia does have some Chinese
         # words in the English Wikipedia.).
-        
+
         # TODO:disabled!!!!!
         #text = self._tokenize_chinese_chars(text)
         orig_tokens = whitespace_tokenize(text)
         split_tokens = []
-        for i,token in enumerate(orig_tokens):
+        for i, token in enumerate(orig_tokens):
             if self.do_lower_case and token not in self.never_split:
                 token = token.lower()
                 token = self._run_strip_accents(token)
-            #split_tokens.append(token)
+            # split_tokens.append(token)
             #split_tokens.extend([(i,t) for t in self._run_split_on_punc(token)])
             split_tokens.extend(self._run_split_on_punc(token))
             #output_tokens = whitespace_tokenize(" ".join(split_tokens))
@@ -496,10 +506,8 @@ class BasicTokenizer(object):
         return "".join(output)
 
 
-
-
 class Transformer():
-    def __init__(self , n_src_vocab=30000,max_length=512, n_layers=6, n_head=8, d_word_vec=512, d_model=512, d_inner_hid=1024, dropout=0.1, dim_per_head=None):
+    def __init__(self, n_src_vocab=30000, max_length=512, n_layers=6, n_head=8, d_word_vec=512, d_model=512, d_inner_hid=1024, dropout=0.1, dim_per_head=None):
         super().__init__()
         self.n_src_vocab = n_src_vocab
         self.max_length = max_length
@@ -509,72 +517,72 @@ class Transformer():
         self.d_model = d_model
         self.d_inner_hid = d_inner_hid
         self.dropout = dropout
-        self.dim_per_head=dim_per_head
+        self.dim_per_head = dim_per_head
         print("==== Transformer Init successfully ====")
 
     def get_tokenzier(self, corpus):
         divide = BasicTokenizer()
         self.TransformerTokenizer = Tokenizer(self.n_src_vocab, self.max_length, divide, corpus)
         return self.TransformerTokenizer
-    
+
     def get_model(self):
         self.TransformerModel = TransformerEncoder(self.n_src_vocab, self.n_layers, self.n_head, self.d_word_vec, self.d_model, self.d_inner_hid, self.dropout, dim_per_head=self.dim_per_head)
         return self.TransformerModel
 
+
 class Tokenizer():
-    def __init__(self, max_wordn,max_length,divide,lines):
+    def __init__(self, max_wordn, max_length, divide, lines):
         self.max_wordn = max_wordn
         self.max_length = max_length
         self.divide = divide
         self.word2idx = {}
         self.idx2word = {}
         self.build_dict(lines)
-        
 
     def build_dict(self, sents):
         import os
         from collections import Counter
         if os.path.exists('dict.txt'):
             print("Using exsit dict")
-            f = open('dict.txt', 'r',encoding='utf-8')
+            f = open('dict.txt', 'r', encoding='utf-8')
             lines = f.readlines()
-            index =0 
+            index = 0
             for i in lines:
                 word = i.replace('\n', '')
                 self.word2idx[word] = index
                 self.idx2word[index] = word
-                index+=1
+                index += 1
             print("Dict len: ", len(self.word2idx))
-        else:        
+        else:
             all_vocab = []
             words = set([])
             for sent in sents:
-                sent=self.divide.tokenize(sent)
+                sent = self.divide.tokenize(sent)
                 all_vocab.extend(sent)
-            counter = Counter(all_vocab) 
-            count_pairs = counter.most_common(self.max_wordn-4) 
+            counter = Counter(all_vocab)
+            count_pairs = counter.most_common(self.max_wordn-4)
             words, _ = list(zip(*count_pairs))
 
-            words = ['[PAD]','[OOV]','[<s>]','[/<s>]','[MASK]'] +  list(words)
+            words = ['[PAD]', '[OOV]', '[<s>]', '[/<s>]', '[MASK]'] + list(words)
 
-            for pos,i in enumerate(words):
+            for pos, i in enumerate(words):
                 self.word2idx[i] = pos
                 self.idx2word[pos] = i
-            
+
             print("Dict len: ", len(self.word2idx))
-            f = open('dict.txt','w',encoding='utf-8')
+            f = open('dict.txt', 'w', encoding='utf-8')
             for i in range(len(self.word2idx)):
                 f.write(self.idx2word[i]+'\n')
             f.close()
-    
+
     def cut(self, sent):
         return self.divide.tokenize(sent)
-        
+
     def encode(self, sent):
         sent_idx = []
-        sent=self.divide.tokenize(sent)
+        sent = self.divide.tokenize(sent)
         sent = sent[: self.max_length]
-        
+
         for i in sent:
             if i in self.word2idx:
                 sent_idx.append(self.word2idx[i])
@@ -583,5 +591,3 @@ class Tokenizer():
         while len(sent_idx) < self.max_length:
             sent_idx.append(0)
         return sent_idx
-
-

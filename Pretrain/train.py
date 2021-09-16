@@ -29,9 +29,9 @@ from dataloader import get_dict_size
 word_size = get_dict_size()
 
 def sample(source,target,label):
-    print(source[0])
-    print(target[0])
-    print(label[0])
+    print(source)
+    print(target)
+    print(label)
 #sample(source,target,label)
 def get_dataset(source,target,label):
     source = torch.tensor(source)
@@ -63,7 +63,7 @@ def test(net):
     total = 0
     iter=0
     crossentropyloss = nn.CrossEntropyLoss()
-    source,target,label = load_test_data(2000)
+    source,target,label = load_test_data()
     #sample(source,target,label)
     test_dataset = get_dataset(source,target,label)
     with torch.no_grad():
@@ -114,7 +114,7 @@ def train():
     optimizer = AdamW(net.parameters(),lr = 2e-5, eps = 1e-8)
     #optimizer = AdamW(net.parameters(), lr=learning_rate)
     #train_dataset, test_dataset = torch.utils.data.random_split(dataset, [train_size, test_size])
-    sources,targets,labels = load_train_data(50000)
+    sources,targets,labels = load_train_data()
     train_dataset = get_dataset(sources,targets,labels)
     #print(train_dataset)
     train_iter = torch.utils.data.DataLoader(train_dataset, batch_size, shuffle=True)
@@ -141,8 +141,10 @@ def train():
 
             source = source.reshape(batch_size, -1)
             target = target.reshape(batch_size,-1)
-            label = label.reshape(-1)
-
+            label = label.reshape(batch_size,-1)
+            # print(source.shape,target.shape,label.shape)
+            # sample(source,target,label)
+            # exit()
 
             if USE_CUDA:
                 source=source.cuda()
@@ -158,7 +160,9 @@ def train():
             active_logits = logits.reshape(-1,word_size)[active_loss]
             active_labels = target.reshape(-1)[active_loss]
             #print(active_logits.shape)
-            #print(active_labels.shape)
+           # print(active_labels.shape)
+            # sample(active_logits, active_labels,active_loss)
+            #exit()
             #loss = loss_fct(active_logits, active_labels)
             loss = crossentropyloss(active_logits,active_labels)
             #print(loss)
@@ -170,13 +174,14 @@ def train():
             optimizer.step()
             scheduler.step()
             avg_loss+=loss.item()     
-            pbar(iter, {'loss': avg_loss/iter})
+            
             _, active_logits = torch.max(active_logits, 1)
             # print(logits)
             # print(label)
             # print(correct)
             # print(total)
             correct += active_logits.data.eq(active_labels.data).cpu().sum()
+            pbar(iter, {'loss': avg_loss/iter,'Acc':correct/total})
             total += active_labels.shape[0]
         loss=loss.detach().cpu()
         print("\nepoch ", str(epoch)," loss: ", loss.mean().numpy().tolist(),"Acc:", correct.numpy().tolist()/total)

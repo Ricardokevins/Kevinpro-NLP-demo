@@ -1,7 +1,7 @@
 import torch
 import  transformer
 max_length = 80
-max_sample = 1e4
+max_sample = 1e5
 
 def get_dataset(corpur_path,max_num):
     texts = []
@@ -26,21 +26,24 @@ def build_tokenizer(text):
     return tokenizer
 
 import random
+import copy
 def random_word(text,tokenzier):
-    tokens = text.split(' ')
+    tokens = copy.deepcopy(text)
     output_label = []
     for i, token in enumerate(tokens):
+            if token == 0:
+                break
             prob = random.random()
             if prob < 0.15:
                 prob /= 0.15
 
                 # 80% randomly change token to mask token
                 if prob < 0.8:
-                    tokens[i] = '[MASK]'
+                    tokens[i] = 4 #MASK ID
 
                 # 10% randomly change token to random token
                 elif prob < 0.9:
-                    tokens[i] = tokenzier.idx2word[random.randrange(len(tokenzier.word2idx))]
+                    tokens[i] = random.randrange(7,len(tokenzier.word2idx))
 
                 # 10% randomly change token to current token
                 else:
@@ -51,7 +54,7 @@ def random_word(text,tokenzier):
             else:
                 output_label.append(0)
 
-    return " ".join(tokens),output_label
+    return tokens,output_label
 
 corpus = bulid_corpus('corpus.txt',5e3)
 tokenzier = build_tokenizer(corpus)
@@ -59,38 +62,45 @@ tokenzier = build_tokenizer(corpus)
 def get_dict_size():
     return len(tokenzier.word2idx)
 
-def load_train_data(samples_num):
-    corpus = bulid_corpus('corpus.txt',samples_num/2)
+def load_train_data():
+    corpus = bulid_corpus('corpus.txt',max_sample)
     source = []
     target = []
     labels = []
     while 1:
         for i in corpus:
-            text,label = random_word(i,tokenzier)
-            source.append(tokenzier.encode(text))
-            target.append(tokenzier.encode(i))
+            target_id = tokenzier.encode(i)
+            source_id,label = random_word(target_id,tokenzier)
+            #print(type(tokenzier.encode(text)))
+            #assert(len(tokenzier.encode(text))==len(tokenzier.encode(i)))
+            source.append(source_id)
+            target.append(target_id)
             while len(label)<max_length:
                 label.append(0)
             label = label[:max_length]
-            assert(len(label) == max_length)
             labels.append(label)
-            if len(source) >= samples_num:
+            #assert(len(label) == max_length)
+            if len(source) >= (max_sample):
                 return source,target,labels
 
-def load_test_data(samples_num):
-    corpus = bulid_corpus('corpus.txt',samples_num/2)
+
+def load_test_data():
+    corpus = bulid_corpus('corpus.txt',max_sample/10)
     source = []
     target = []
     labels = []
     while 1:
         for i in corpus:
-            text,label = random_word(i,tokenzier)
-            source.append(tokenzier.encode(text))
-            target.append(tokenzier.encode(i))
+            target_id = tokenzier.encode(i)
+            source_id,label = random_word(target_id,tokenzier)
+            #print(type(tokenzier.encode(text)))
+            #assert(len(tokenzier.encode(text))==len(tokenzier.encode(i)))
+            source.append(source_id)
+            target.append(target_id)
             while len(label)<max_length:
                 label.append(0)
             label = label[:max_length]
             labels.append(label)
-            assert(len(label) == max_length)
-            if len(source) >= samples_num:
+            #assert(len(label) == max_length)
+            if len(source) >= (max_sample/10):
                 return source,target,labels
