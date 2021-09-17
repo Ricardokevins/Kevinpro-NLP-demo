@@ -118,7 +118,7 @@ class Loss_Eval:
 
 
 def Eval():
-    evaluator = Loss_Eval("./save/model_0_1631416384")
+    evaluator = Loss_Eval("./save/model_0_1631411954")
     #evaluator = Decode_Eval("./save/model_0_1631411954")
     evaluator.eval()
 

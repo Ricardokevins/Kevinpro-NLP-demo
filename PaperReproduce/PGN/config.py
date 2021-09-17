@@ -8,27 +8,24 @@ OOV = '<unk>'
 PAD = '<pad>'
 
 
-train_data_path = './data/train.json'
-#dev_data_path = './data/dev.json'
-dev_data_path = './data/train.json'
-
+train_data_path = './data/tokenized/train.json'
+dev_data_path = './data/tokenized/dev.json'
 vocab_path = './data/vocab.txt'
 save_path = './save'
 output_path = './output/dec_reuslt.txt'
-ref_path = './output/ref_result.txt'
 
 # Hyperparameters
 EPOCH = 30
 hidden_dim = 128
 emb_dim = 64
-batch_size = 64
-max_enc_steps = 150
+batch_size = 128
+max_enc_steps = 120
 max_dec_steps = 35
 
 beam_size = 4
 # min_dec_steps = 35
 min_dec_steps = 5
-vocab_size = 10_000
+vocab_size = 50_000
 
 lr = 0.15
 adagrad_init_acc = 0.1

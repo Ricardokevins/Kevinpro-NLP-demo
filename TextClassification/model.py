@@ -5,6 +5,7 @@ max_length=64
 import torch
 import torch.nn as nn
 from torch.nn import functional as F
+
 def setup_seed(seed):
     torch.manual_seed(seed)
     torch.cuda.manual_seed_all(seed)
@@ -56,7 +57,7 @@ class TransformerClasssifier(nn.Module):
         BaseModel = transformer.Transformer(n_src_vocab=vocab,max_length=max_length, n_layers=6, n_head=8, d_word_vec=512, d_model=512, d_inner_hid=768, dropout=0.1, dim_per_head=None)
         self.encoder = BaseModel.get_model()
         
-        Use_pretrain = True
+        Use_pretrain = False
         if Use_pretrain:
             print("========================= Using pretrained model =========================")
             self.encoder = torch.load('../Pretrain/pretrained.pth')
@@ -122,7 +123,6 @@ class BiLSTM_Attention2(nn.Module):
         nn.init.uniform_(self.w_omega, -0.1, 0.1)
         nn.init.uniform_(self.u_omega, -0.1, 0.1)
 
-
     def attention_net(self, x):       #x:[batch, seq_len, hidden_dim*2]
 
         u = torch.tanh(torch.matmul(x, self.w_omega))         #[batch, seq_len, hidden_dim*2]
@@ -146,3 +146,45 @@ class BiLSTM_Attention2(nn.Module):
         attn_output,attn = self.attention_net(output)
         logit = self.fc(attn_output)
         return logit,attn
+
+class RDrop(nn.Module):
+    """
+    R-Drop for classification tasks.
+    Example:
+        criterion = RDrop()
+        logits1 = model(input)  # model: a classification model instance. input: the input data
+        logits2 = model(input)
+        loss = criterion(logits1, logits2, target)     # target: the target labels. len(loss_) == batch size
+    Notes: The model must contains `dropout`. The model predicts twice with the same input, and outputs logits1 and logits2.
+    """
+    def __init__(self):
+        super(RDrop, self).__init__()
+        self.ce = nn.CrossEntropyLoss()
+        self.kld = nn.KLDivLoss()
+
+    def forward(self, logits1, logits2, target, kl_weight=0.05):
+        """
+        Args:
+            logits1: One output of the classification model.
+            logits2: Another output of the classification model.
+            target: The target labels.
+            kl_weight: The weight for `kl_loss`.
+
+        Returns:
+            loss: Losses with the size of the batch size.
+        """
+        ce_loss = (self.ce(logits1, target) + self.ce(logits2, target)) / 2
+        # print(logits1)
+        # print(logits2)
+        p_loss = F.kl_div(F.log_softmax(logits1, dim=-1), F.softmax(logits2, dim=-1), reduction='none')
+        q_loss = F.kl_div(F.log_softmax(logits2, dim=-1), F.softmax(logits1, dim=-1), reduction='none')
+        p_loss = p_loss.sum()
+        q_loss = q_loss.sum()
+        kl_loss = (p_loss + q_loss) / 2
+
+        # print(ce_loss)
+        # print(kl_loss)
+        # exit()
+        #exit(0)
+        loss = ce_loss + kl_weight * kl_loss
+        return loss

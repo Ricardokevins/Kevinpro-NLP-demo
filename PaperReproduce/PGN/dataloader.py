@@ -38,7 +38,7 @@ class Tokenizer:
             self.cur_word += 1
 
     def add_sentence(self, sentence):
-        for i in sentence:
+        for i in sentence.split(' '):
             if self.cur_word < vocab_size:
                 self.add_word(i)
             else:
@@ -76,12 +76,27 @@ class SumDataset(Dataset):
         temp = load_f.readlines()
         #temp = temp[:10000]
         print("dataNumber", len(temp))
+        index = 0
         from tqdm import tqdm
         for line in tqdm(temp):
             dic = json.loads(line)
             source = dic['content']
             target = dic['summary']
+           
             enc_input, enc_input_ext, enc_len, dec_input, dec_output, dec_len, oov_word_list = self.get_one_sample(source, target)
+
+            # if len(oov_word_list)>5:
+            #     print(source)
+            #     print(target)
+            #     print(enc_input)
+            #     print(enc_input_ext)
+            #     print(enc_len)
+            #     print(dec_input)
+            #     print(dec_output)
+            #     print(dec_len)
+            #     print(oov_word_list)
+            #     exit()
+
             self.enc_input_list.append(enc_input)
             self.enc_input_ext_list.append(enc_input_ext)
             self.dec_input_list.append(dec_input)
@@ -109,7 +124,7 @@ class SumDataset(Dataset):
 
     def sentence2ids(self, article):
         ids = []
-        for i in article:
+        for i in article.split(' '):
             if i in self.tokenizer.word2id:
                 ids.append(self.tokenizer.word2id[i])
             else:
@@ -120,7 +135,7 @@ class SumDataset(Dataset):
     def sentence2idsExt(self,article):
         ids = []
         oov_word_list = []
-        for i in article:
+        for i in article.split(' '):
             if i in self.tokenizer.word2id:
                 ids.append(self.tokenizer.word2id[i])
             else:
@@ -134,7 +149,7 @@ class SumDataset(Dataset):
     def target2ids(self, target, oov_word_list):
         ids = []
         oov_word_list = []
-        for i in target:
+        for i in target.split(' '):
             if i in self.tokenizer.word2id:
                 ids.append(self.tokenizer.word2id[i])
             else:

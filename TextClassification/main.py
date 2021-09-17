@@ -19,11 +19,12 @@ from model import BiRNN
 from model import BiLSTM_Attention1
 from model import BiLSTM_Attention2
 from model import BertClassifier
+from model import RDrop
 from transformers import BertTokenizer
 from Attack import FGM
 import random
 
-Trainbert = False
+from config import *
 
 def setup_seed(seed):
     torch.manual_seed(seed)
@@ -45,7 +46,7 @@ def convert2dataset_origin(text,bert_sent,label):
 
 train_dataset = convert2dataset_origin(train_samples[0], train_samples[1],train_samples[2])
 test_dataset = convert2dataset_origin(test_samples[0], test_samples[1],test_samples[2])
-USE_CUDA = True
+
 
 def load_eval():
     Trainbert = True
@@ -89,10 +90,6 @@ def load_eval():
 from EasyTransformer.util import ProgressBar
 
 
-num_epochs = 30
-batch_size = 64
-if Trainbert:
-    batch_size = 16
 
 
 # Choose your model here
@@ -100,12 +97,12 @@ if Trainbert:
 # net = BertClassifier()
 # net = BiLSTM_Attention1()
 # net = BiLSTM_Attention2()
-
 word_num = get_dict_size()
 print(word_num)
 net = TransformerClasssifier(word_num)
 net = net.cuda()
-
+if mode == 'train_with_RDrop':
+    loss_pro = RDrop()
 
 def train_with_FGM():
     net.train()
@@ -311,6 +308,8 @@ def train():
     train_iter = torch.utils.data.DataLoader(train_dataset, batch_size, shuffle=True)
     pre_loss=1
     crossentropyloss = nn.CrossEntropyLoss()
+    if mode == 'train_with_RDrop':
+        KL_loss_function = nn.KLDivLoss()
     total_steps = len(train_iter)*num_epochs
     print("----total step: ",total_steps,"----")
     print("----warmup step: ", int(total_steps * 0.2), "----")
@@ -341,7 +340,15 @@ def train():
                 logits,attn = net(bert_sent)
             else:
                 logits,attn = net(train_text)
-            loss = crossentropyloss(logits, label)
+
+            if mode == 'train_with_RDrop':
+                logits2,attn2 = net(train_text)
+                # loss1= crossentropyloss(logits, label)
+                # loss2= crossentropyloss(logits2, label)
+                loss = loss_pro(logits,logits2,label)      
+            else:
+                loss = crossentropyloss(logits, label)
+
             optimizer.zero_grad()
             loss.backward()
             optimizer.step()
@@ -361,7 +368,7 @@ def train():
         if best_acc < cur_acc:
             best_acc = cur_acc
             print("saved Best ACC: ",best_acc)
-            torch.save(net, 'model.pth') 
+            #torch.save(net, 'model.pth') 
     
     print(best_acc)
     return
@@ -387,8 +394,16 @@ def train():
 # BERT 0.8645833333333334
 
 
-Trainbert = False
-train()
+if mode ==  'train_with_FGM':
+    train_with_FGM()
+
+if mode == "train_Kd":
+    train_Kd()
+
+if mode == "train" or 'train_with_RDrop':
+    train()
+
+
 #train_Kd()
 #train_with_FGM()
 
