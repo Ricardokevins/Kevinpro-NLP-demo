@@ -95,11 +95,11 @@ from EasyTransformer.util import ProgressBar
 # Choose your model here
 #net = BiRNN()
 # net = BertClassifier()
-# net = BiLSTM_Attention1()
+net = BiLSTM_Attention1()
 # net = BiLSTM_Attention2()
-word_num = get_dict_size()
-print(word_num)
-net = TransformerClasssifier(word_num)
+# word_num = get_dict_size()
+# print(word_num)
+# net = TransformerClasssifier(word_num)
 net = net.cuda()
 if mode == 'train_with_RDrop':
     loss_pro = RDrop()

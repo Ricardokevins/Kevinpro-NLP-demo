@@ -78,7 +78,7 @@ class BiLSTM_Attention1(nn.Module):
         self.embedding = nn.Embedding(vocab_size, embedding_dim)
         self.rnn = nn.LSTM(embedding_dim, hidden_dim, num_layers=n_layers, bidirectional=True, dropout=0.5)
         self.fc = nn.Linear(hidden_dim * 2, 2)
-        self.dropout = nn.Dropout(0.5)
+        self.dropout = nn.Dropout(0.3)
 
     #x,query：[batch, seq_len, hidden_dim*2]
     def attention_net(self, x, query, mask=None):      #软性注意力机制（key=value=x）
@@ -162,7 +162,7 @@ class RDrop(nn.Module):
         self.ce = nn.CrossEntropyLoss()
         self.kld = nn.KLDivLoss()
 
-    def forward(self, logits1, logits2, target, kl_weight=0.05):
+    def forward(self, logits1, logits2, target, kl_weight=1):
         """
         Args:
             logits1: One output of the classification model.
