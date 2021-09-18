@@ -63,6 +63,7 @@ def train():
     embedding = nn.Embedding(vocab_size, HIDDEN_SIZE)
     encoder = EncoderRNN(HIDDEN_SIZE, embedding, ENCODER_LAYER, DROP_OUT)
     for source,target in dataloader:
-        encode_result = encoder(source)
+        outputs,hidden,encode_info = encoder(source)
+        
 
 train()

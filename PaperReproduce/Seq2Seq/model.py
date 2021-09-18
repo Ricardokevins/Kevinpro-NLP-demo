@@ -18,8 +18,13 @@ class EncoderRNN(nn.Module):
     def forward(self, input_seq, hidden=None):
         x = self.embedding(input_seq)
         outputs, hidden = self.gru(x)
-        return outputs,hidden
+        encode_info = torch.mean(outputs, dim = 1)
+        return outputs,hidden,encode_info
 
     
-class DecoderRNN(nn.module):
-    def __init__(self)
+class DecoderRNN(nn.Module):
+    def __init__(self):
+        pass
+        
+    def forward(self,input_seq,last_hidden,encoder_outputs):
+        pass
