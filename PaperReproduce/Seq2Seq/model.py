@@ -18,4 +18,8 @@ class EncoderRNN(nn.Module):
     def forward(self, input_seq, hidden=None):
         x = self.embedding(input_seq)
         outputs, hidden = self.gru(x)
-        exit()
+        return outputs,hidden
+
+    
+class DecoderRNN(nn.module):
+    def __init__(self)

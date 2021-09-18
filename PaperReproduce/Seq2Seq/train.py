@@ -33,7 +33,7 @@ class Seq2SeqDataset(Dataset):
             source_ids = [tokenizer.word2id[SENTENCE_START]] + source_ids
             self.source.append(source_ids)
             target_ids = self.get_ids(j)
-            target_ids = target + [tokenizer.word2id[SENTENCE_END]]
+            target_ids = target_ids + [tokenizer.word2id[SENTENCE_END]]
             self.target.append(target_ids)
 
     def get_ids(self,article):
@@ -45,15 +45,15 @@ class Seq2SeqDataset(Dataset):
 
     def trim_vector(self,vector):
         while len(vector) < MAX_Sentence_length:
-            vector.append(tokenizer.word2id(PAD))
+            vector.append(tokenizer.word2id[PAD])
         vector = vector[:MAX_Sentence_length]
         return vector
 
     def __len__(self):
-        return len(self.sources)
+        return len(self.source)
 
     def __getitem__(self, idx):
-        return torch.tensor(self.sources[idx]), torch.tensor(self.target[idx])
+        return torch.tensor(self.source[idx]), torch.tensor(self.target[idx])
 
 
 def train():
