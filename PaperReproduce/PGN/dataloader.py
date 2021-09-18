@@ -119,7 +119,6 @@ class SumDataset(Dataset):
         return len(self.enc_input_list)
 
     def __getitem__(self, idx):
-        
         return torch.tensor(self.enc_input_list[idx]), torch.tensor(self.enc_input_ext_list[idx]), torch.tensor(self.dec_input_list[idx]), torch.tensor(self.dec_output_list[idx]), torch.tensor(self.enc_len_list[idx]), torch.tensor(self.dec_len_list[idx]), torch.tensor(self.oov_word_num_list[idx])
 
     def sentence2ids(self, article):
