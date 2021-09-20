@@ -46,7 +46,7 @@ hidden_size = 256
 encoder_n_layers = 2
 decoder_n_layers = 2
 dropout = 0.1
-batch_size = 64
+batch_size = 2
 USE_CUDA = torch.cuda.is_available()
 device = torch.device("cuda" if USE_CUDA else "cpu")
 
@@ -69,7 +69,11 @@ def train(input_variable, lengths, target_variable, mask, max_target_len, encode
     lengths = lengths.to(device)
     target_variable = target_variable.to(device)
     mask = mask.to(device)
-
+    print(input_variable)
+    print(target_variable)
+    print(lengths)
+    print(mask)
+    exit()
     # Initialize variables
     loss = 0
     print_losses = []
