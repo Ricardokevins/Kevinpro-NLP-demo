@@ -6,6 +6,8 @@ import torch.nn as nn
 from torch import optim
 import torch.nn.functional as F
 from torch.utils.data import Dataset, DataLoader
+from torch.nn.utils.rnn import pad_sequence
+
 import numpy 
 from EasyTransformer.util import ProgressBar
 from preprocess import Tokenizer
@@ -20,12 +22,12 @@ from model import DecoderRNN
 tokenizer = Tokenizer()
 
 EPOCH = 5
-BATCH_SIZE = 2
+BATCH_SIZE = 64
 HIDDEN_SIZE = 256
 ENCODER_LAYER = 1
 DROP_OUT = 0.1
-clip = 50.0
-learning_rate = 0.0001
+clip = 2.0
+learning_rate = 0.01
 decoder_learning_ratio = 5.0
 SOS = tokenizer.word2id[SENTENCE_START]
 EOS = tokenizer.word2id[SENTENCE_END]
@@ -78,6 +80,24 @@ class Seq2SeqDataset(Dataset):
     def __getitem__(self, idx):
         return torch.tensor(self.source[idx]), torch.tensor(self.target[idx])
 
+def convert(data):
+    data.sort(key=lambda x: len(x), reverse=True)
+    data = pad_sequence(data, batch_first=True, padding_value=0)
+    return data
+
+def collate_fn(data):
+    sources = []
+    targets = []
+    for i in data:
+        source = i[0]
+        target = i[1]
+
+    source = list(data[0])
+    target = list(data[1])
+    source = convert(source)
+    target = convert(target)
+    return source,target
+
 def maskNLLLoss(inp, target, mask):
     nTotal = mask.sum()
     crossEntropy = -torch.log(torch.gather(inp, 1, target.view(-1, 1)).squeeze(1))
@@ -87,7 +107,7 @@ def maskNLLLoss(inp, target, mask):
 
 def train():
     dataset = Seq2SeqDataset()
-    dataloader = DataLoader(dataset, batch_size=BATCH_SIZE, shuffle=True, drop_last=True)
+    dataloader = DataLoader(dataset, batch_size=BATCH_SIZE, shuffle=False, drop_last=True)
     vocab_size = len(tokenizer.word2id)
     embedding = nn.Embedding(vocab_size, HIDDEN_SIZE)
     encoder = EncoderRNN(HIDDEN_SIZE, embedding, ENCODER_LAYER, DROP_OUT).cuda()
@@ -105,8 +125,10 @@ def train():
         for source, target in dataloader:
             source = source.cuda()
             target = target.cuda()
-            # print(source)
-            # print(target)
+            #print(source)
+            #print(target)
+            # print(source.shape)
+            # exit()
             # for i in source:
             #     for j in i:
             #         print(tokenizer.id2word[j.cpu().numpy().tolist()])
@@ -124,9 +146,11 @@ def train():
 
             decoder_mask = torch.BoolTensor(decoder_mask).cuda()
             step_losses = []
-            use_teacher_forcing = True if random.random() < 0.5 else False
+            #use_teacher_forcing = True if random.random() < 0.5 else False
+            use_teacher_forcing = True
             if use_teacher_forcing:
                 for i in range(MAX_Sentence_length+1):
+                    #print(decoder_input)
                     decoder_outputs, hidden = decoder(decoder_input, decoder_hidden, outputs)
                     decoder_input = target[:,i].view(-1, 1)
                     # print(decoder_input.shape)
@@ -137,6 +161,7 @@ def train():
                     step_loss = -torch.log(gold_probs + 1e-12)
                     step_loss = step_loss * step_mask
                     step_losses.append(step_loss)
+                #exit()
             else:
                 for i in range(MAX_Sentence_length+1):
                     decoder_outputs, hidden = decoder(decoder_input, decoder_hidden, outputs)
@@ -146,7 +171,7 @@ def train():
                     decoder_input = decoder_input.cuda()
                     step_mask = decoder_mask[:, i]
                     gold_probs = torch.gather(decoder_outputs, 1, target[:, i].view(-1, 1)).squeeze(1)
-
+                    #print(gold_probs)
                     step_loss = -torch.log(gold_probs + 1e-12)
                     step_loss = step_loss * step_mask
                     step_losses.append(step_loss)
@@ -154,18 +179,19 @@ def train():
             sum_losses = torch.sum(torch.stack(step_losses, 0), 0)
             avg_len = torch.sum(decoder_mask) / BATCH_SIZE
             sum_losses = sum_losses / avg_len
+            #print(sum_losses)
             loss = torch.mean(sum_losses)
             loss.backward()
             _ = torch.nn.utils.clip_grad_norm_(encoder.parameters(), clip)
             _ = torch.nn.utils.clip_grad_norm_(decoder.parameters(), clip)
-            exit()
+            #exit()
             # Adjust model weights
             encoder_optimizer.step()
             decoder_optimizer.step()
 
             avg_loss += loss
             count += 1
-            pbar(count, {'loss': avg_loss/(count)})
+            pbar(count, {'loss': loss})
 
         torch.save({
                 'en': encoder.state_dict(),

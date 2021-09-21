@@ -69,6 +69,7 @@ def train(input_variable, lengths, target_variable, mask, max_target_len, encode
     lengths = lengths.to(device)
     target_variable = target_variable.to(device)
     mask = mask.to(device)
+    
     print(input_variable)
     print(target_variable)
     print(lengths)

@@ -4,7 +4,7 @@ SENTENCE_END = '[/s]'
 OOV = '[oov]'
 
 MIN_Word_count = 3
-MAX_Sentence_length = 10
+MAX_Sentence_length = 5
 def read_file(filename):
     file = open(filename, 'r',encoding='utf8')
     lines = file.readlines()
