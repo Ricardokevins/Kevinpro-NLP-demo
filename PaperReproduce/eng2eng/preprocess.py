@@ -77,4 +77,7 @@ class Tokenizer:
 
 # t.export()
 
-#sent1,sent2 = read_file("./formatted_movie_lines.txt")
+# sent1,sent2 = read_file("./formatted_movie_lines.txt")
+# f = open("target.txt",'w',encoding='utf-8')
+# for i in sent2:
+#     f.write(i +'\n')

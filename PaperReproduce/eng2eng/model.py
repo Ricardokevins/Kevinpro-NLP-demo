@@ -13,10 +13,14 @@ class EncoderRNN(nn.Module):
         # Initialize GRU; the input_size and hidden_size params are both set to 'hidden_size'
         #   because our input size is a word embedding with number of features == hidden_size
         self.gru = nn.GRU(hidden_size, hidden_size, n_layers,
-                          dropout=(0 if n_layers == 1 else dropout),batch_first=True)
+                          dropout=(0 if n_layers == 1 else dropout))
 
     def forward(self, input_seq, hidden=None):
+        
+        input_seq = input_seq.transpose(0,1)
+        
         x = self.embedding(input_seq)
+        
         outputs, hidden = self.gru(x)
         return outputs,hidden
 
@@ -29,22 +33,24 @@ class DecoderRNN(nn.Module):
         self.output_size = output_size
         self.n_layers = n_layers
         self.dropout = dropout
-        self.gru = nn.GRU(hidden_size, hidden_size, n_layers, dropout=(0 if n_layers == 1 else dropout),batch_first=True)
+        self.gru = nn.GRU(hidden_size, hidden_size, n_layers, dropout=(0 if n_layers == 1 else dropout))
         self.mlp = nn.Linear(2*hidden_size,hidden_size)
         self.out = nn.Linear(hidden_size, output_size)
         
     def forward(self,input_seq,last_hidden,encoder_outputs):
         #print(last_hidden.shape)
+        input_seq = input_seq.transpose(0,1)
         embedding = self.embedding(input_seq)
         #print(embedding.shape)
         #embedding = embedding.transpose(0,1)
         #print(embedding.shape)
 
         outputs, hidden = self.gru(embedding,last_hidden)
-        context = torch.mean(encoder_outputs, dim = 1)
+        context = torch.mean(encoder_outputs, dim = 0)
+        #print(context.shape)
         outputs = outputs.squeeze()
         # print(encode_info.shape)
-        # print(outputs.shape)
+        #print(outputs.shape)
         # exit()
         concat_input = torch.cat((outputs, context), 1)
         concat_output = torch.tanh(self.mlp(concat_input))
