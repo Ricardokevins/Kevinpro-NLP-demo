@@ -18,21 +18,22 @@ from preprocess import PAD
 from preprocess import OOV
 from preprocess import MAX_Sentence_length
 from model import EncoderRNN
-from model import DecoderRNN
+#from model import DecoderRNN
+from model import AttnDecoderRNN as DecoderRNN
 tokenizer = Tokenizer()
-Train_flag = False
+Train_flag = True
 
-EPOCH = 15
+EPOCH = 20
 if Train_flag:
     BATCH_SIZE = 64
 else:
     BATCH_SIZE = 64
 
-HIDDEN_SIZE = 256
-ENCODER_LAYER = 1
+HIDDEN_SIZE = 128
+ENCODER_LAYER = 2
 DROP_OUT = 0.1
-clip = 2.0
-learning_rate = 0.001
+clip = 10.0
+learning_rate = 0.0015
 decoder_learning_ratio = 5.0
 SOS = tokenizer.word2id[SENTENCE_START]
 EOS = tokenizer.word2id[SENTENCE_END]
@@ -145,24 +146,22 @@ def train():
             decoder_input = torch.LongTensor([[SOS] for _ in range(BATCH_SIZE)])
             decoder_input = decoder_input.cuda()
             decoder_hidden = hidden
+
             decoder_mask = numpy.zeros((BATCH_SIZE, MAX_Sentence_length+1))
-             
             for i in range(len(target)):
                 for j in range(len(target[i])):
                     if target[i][j] != tokenizer.word2id[PAD]:
                         decoder_mask[i][j] = 1
-
             decoder_mask = torch.BoolTensor(decoder_mask).cuda()
+
             step_losses = []
             use_teacher_forcing = True if random.random() < 0.5 else False
             #use_teacher_forcing = True
             if use_teacher_forcing:
                 for time_step in range(MAX_Sentence_length+1):
                     #print(decoder_input)
-                    decoder_outputs, hidden = decoder(decoder_input, decoder_hidden, outputs)
+                    decoder_outputs, decoder_hidden = decoder(decoder_input, decoder_hidden, outputs)
                     decoder_input = target[:,time_step].view(-1, 1)
-                    # print(decoder_input.shape)
-                    # exit()
                     decoder_input = decoder_input.cuda()
                     step_mask = decoder_mask[:, time_step]
                     gold_probs = torch.gather(decoder_outputs, 1, target[:, time_step].view(-1, 1)).squeeze(1)
@@ -172,7 +171,7 @@ def train():
                 #exit()
             else:
                 for time_step in range(MAX_Sentence_length+1):
-                    decoder_outputs, hidden = decoder(decoder_input, decoder_hidden, outputs)
+                    decoder_outputs, decoder_hidden = decoder(decoder_input, decoder_hidden, outputs)
                     _, topi = decoder_outputs.topk(1)
                     decoder_input = torch.LongTensor([[topi[i][0]] for i in range(BATCH_SIZE)])
                     decoder_input = decoder_input.cuda()
@@ -254,7 +253,7 @@ def test():
         decode_result_ids = [[] for i in range(BATCH_SIZE)]
             
         for time_step in range(MAX_Sentence_length+1):
-            decoder_outputs, hidden = decoder(decoder_input, decoder_hidden, outputs)
+            decoder_outputs, decoder_hidden = decoder(decoder_input, decoder_hidden, outputs)
             _, topi = decoder_outputs.topk(1)
             decoder_input = torch.LongTensor([[topi[i][0]] for i in range(BATCH_SIZE)])
             decoder_input = decoder_input.cuda()
