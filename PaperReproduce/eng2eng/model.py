@@ -61,6 +61,50 @@ class DecoderRNN(nn.Module):
         # exit()
         return output,hidden
 
+class AttnDecoderRNN(nn.Module):
+    def __init__(self,embedding,hidden_size,output_size,n_layers,dropout):
+        super(AttnDecoderRNN, self).__init__()
+        self.embedding = embedding
+        self.hidden_size = hidden_size
+        self.output_size = output_size
+        self.n_layers = n_layers
+        self.dropout = dropout
+        self.gru = nn.GRU(hidden_size, hidden_size, n_layers, dropout=(0 if n_layers == 1 else dropout))
+    
+        self.mlp = nn.Linear(2*hidden_size,hidden_size)
+        self.out = nn.Linear(hidden_size, output_size)
+        
+    def forward(self,input_seq,last_hidden,encoder_outputs):
+        #print(last_hidden.shape)
+        input_seq = input_seq.transpose(0,1)
+        embedding = self.embedding(input_seq)
+        #print(embedding.shape)
+        #embedding = embedding.transpose(0,1)
+        #print(embedding.shape)
+        
+        outputs, hidden = self.gru(embedding,last_hidden)
+        attn_weights = torch.sum(outputs * encoder_outputs, dim=2)
+        attn_weights = attn_weights.t()
+        attn_weights = F.softmax(attn_weights, dim=1).unsqueeze(1)
+        #print(attn_weights.shape)
+        context = attn_weights.bmm(encoder_outputs.transpose(0, 1))
+        context = context.squeeze(1)
+        #print(encoder_outputs.shape)
+
+        outputs = outputs.squeeze()
+
+        # print(encode_info.shape)
+        #print(outputs.shape)
+        # exit()
+        concat_input = torch.cat((outputs, context), 1)
+        concat_output = torch.tanh(self.mlp(concat_input))
+        output = self.out(concat_output)
+        output = F.softmax(output, dim=1)
+        # print(output.shape)
+        # print(hidden.shape)
+        # exit()
+        return output,hidden
+
 # import torch
 # import torch.nn as nn
 # from torch import optim

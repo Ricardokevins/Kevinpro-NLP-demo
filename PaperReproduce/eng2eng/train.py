@@ -18,9 +18,10 @@ from preprocess import PAD
 from preprocess import OOV
 from preprocess import MAX_Sentence_length
 from model import EncoderRNN
-from model import DecoderRNN
+#from model import DecoderRNN
+from model import AttnDecoderRNN as DecoderRNN
 tokenizer = Tokenizer()
-Train_flag = False
+Train_flag = True
 
 EPOCH = 15
 if Train_flag:
