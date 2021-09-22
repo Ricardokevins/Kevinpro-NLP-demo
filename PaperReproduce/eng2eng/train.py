@@ -20,14 +20,19 @@ from preprocess import MAX_Sentence_length
 from model import EncoderRNN
 from model import DecoderRNN
 tokenizer = Tokenizer()
+Train_flag = False
 
-EPOCH = 5
-BATCH_SIZE = 64
+EPOCH = 15
+if Train_flag:
+    BATCH_SIZE = 64
+else:
+    BATCH_SIZE = 64
+
 HIDDEN_SIZE = 256
 ENCODER_LAYER = 1
 DROP_OUT = 0.1
 clip = 2.0
-learning_rate = 0.01
+learning_rate = 0.001
 decoder_learning_ratio = 5.0
 SOS = tokenizer.word2id[SENTENCE_START]
 EOS = tokenizer.word2id[SENTENCE_END]
@@ -107,22 +112,25 @@ def maskNLLLoss(inp, target, mask):
 
 def train():
     dataset = Seq2SeqDataset()
-    dataloader = DataLoader(dataset, batch_size=BATCH_SIZE, shuffle=False, drop_last=True)
+    dataloader = DataLoader(dataset, batch_size=BATCH_SIZE, shuffle=True, drop_last=True)
     vocab_size = len(tokenizer.word2id)
     embedding = nn.Embedding(vocab_size, HIDDEN_SIZE)
     encoder = EncoderRNN(HIDDEN_SIZE, embedding, ENCODER_LAYER, DROP_OUT).cuda()
     decoder = DecoderRNN(embedding, HIDDEN_SIZE, vocab_size, ENCODER_LAYER, DROP_OUT).cuda()
     encoder_optimizer = optim.Adam(encoder.parameters(), lr=learning_rate)
     decoder_optimizer = optim.Adam(decoder.parameters(), lr=learning_rate * decoder_learning_ratio)
-    pbar = ProgressBar(n_total=len(dataloader), desc='Training')
+    
 
     
     
     for epoch in range(EPOCH):
-        print("START EPOCH {}".format(epoch))
+        print("\nSTART EPOCH {}".format(epoch))
+        pbar = ProgressBar(n_total=len(dataloader), desc='Training')
         count = 0
         avg_loss = 0
         for source, target in dataloader:
+            encoder_optimizer.zero_grad()
+            decoder_optimizer.zero_grad()
             source = source.cuda()
             target = target.cuda()
             #print(source)
@@ -146,31 +154,30 @@ def train():
 
             decoder_mask = torch.BoolTensor(decoder_mask).cuda()
             step_losses = []
-            #use_teacher_forcing = True if random.random() < 0.5 else False
-            use_teacher_forcing = True
+            use_teacher_forcing = True if random.random() < 0.5 else False
+            #use_teacher_forcing = True
             if use_teacher_forcing:
-                for i in range(MAX_Sentence_length+1):
+                for time_step in range(MAX_Sentence_length+1):
                     #print(decoder_input)
                     decoder_outputs, hidden = decoder(decoder_input, decoder_hidden, outputs)
-                    decoder_input = target[:,i].view(-1, 1)
+                    decoder_input = target[:,time_step].view(-1, 1)
                     # print(decoder_input.shape)
                     # exit()
                     decoder_input = decoder_input.cuda()
-                    step_mask = decoder_mask[:, i]
-                    gold_probs = torch.gather(decoder_outputs, 1, target[:, i].view(-1, 1)).squeeze(1)
+                    step_mask = decoder_mask[:, time_step]
+                    gold_probs = torch.gather(decoder_outputs, 1, target[:, time_step].view(-1, 1)).squeeze(1)
                     step_loss = -torch.log(gold_probs + 1e-12)
                     step_loss = step_loss * step_mask
                     step_losses.append(step_loss)
                 #exit()
             else:
-                for i in range(MAX_Sentence_length+1):
+                for time_step in range(MAX_Sentence_length+1):
                     decoder_outputs, hidden = decoder(decoder_input, decoder_hidden, outputs)
                     _, topi = decoder_outputs.topk(1)
                     decoder_input = torch.LongTensor([[topi[i][0]] for i in range(BATCH_SIZE)])
-                    
                     decoder_input = decoder_input.cuda()
-                    step_mask = decoder_mask[:, i]
-                    gold_probs = torch.gather(decoder_outputs, 1, target[:, i].view(-1, 1)).squeeze(1)
+                    step_mask = decoder_mask[:, time_step]
+                    gold_probs = torch.gather(decoder_outputs, 1, target[:, time_step].view(-1, 1)).squeeze(1)
                     #print(gold_probs)
                     step_loss = -torch.log(gold_probs + 1e-12)
                     step_loss = step_loss * step_mask
@@ -191,22 +198,23 @@ def train():
 
             avg_loss += loss
             count += 1
-            pbar(count, {'loss': loss})
+            #pbar(count, {'loss': loss})
+            pbar(count-1, {'loss': avg_loss/count})
 
         torch.save({
                 'en': encoder.state_dict(),
                 'de': decoder.state_dict(),
                 'embedding': embedding.state_dict()
-            }, 'Epoch_{}_{}.tar'.format(epoch, 'checkpoint'))
+            }, './model/Epoch_{}_{}.tar'.format(epoch, 'checkpoint'))
 
 
 def test():
     dataset = Seq2SeqDataset()
-    dataloader = DataLoader(dataset, batch_size=BATCH_SIZE, shuffle=True, drop_last=True)
+    dataloader = DataLoader(dataset, batch_size=BATCH_SIZE, shuffle=False, drop_last=True)
     vocab_size = len(tokenizer.word2id)
     pbar = ProgressBar(n_total=len(dataloader), desc='Training')
 
-    LOAD_FILE_NAME = './Epoch_0_checkpoint.tar'
+    LOAD_FILE_NAME = './model/Epoch_10_checkpoint.tar'
     checkpoint = torch.load(LOAD_FILE_NAME)
     encoder_sd = checkpoint['en']
     decoder_sd = checkpoint['de']
@@ -228,7 +236,7 @@ def test():
 
     avg_loss = 0
     count = 0
-   
+    f = open("output.txt",'w',encoding = 'utf-8')
     for source, target in dataloader:
         source = source.cuda()
         target = target.cuda()
@@ -243,24 +251,40 @@ def test():
                 if target[i][j] != tokenizer.word2id[PAD]:
                     decoder_mask[i][j] = 1
         step_losses = []
-        decode_result_ids = []
-        for i in range(MAX_Sentence_length):
+        decode_result_ids = [[] for i in range(BATCH_SIZE)]
+            
+        for time_step in range(MAX_Sentence_length+1):
             decoder_outputs, hidden = decoder(decoder_input, decoder_hidden, outputs)
-            prob, topi = decoder_outputs.topk(1)
-            decode_result_ids.append(topi[i][0].cpu().numpy().tolist())
+            _, topi = decoder_outputs.topk(1)
             decoder_input = torch.LongTensor([[topi[i][0]] for i in range(BATCH_SIZE)])
             decoder_input = decoder_input.cuda()
-            step_mask = decoder_mask[:, i]
+            for i in range(BATCH_SIZE):
+                decode_result_ids[i].append(topi[i][0].cpu().numpy().tolist())
+            
         
-        # print(decode_result_ids)
-        # exit()
+        tokens_list = []
+        for index in decode_result_ids:
+            tokens = " ".join([tokenizer.id2word[i] for i in index]).replace(" "+SENTENCE_START,"").replace(" "+SENTENCE_END,"").replace(" "+PAD,"")
+            tokens_list.append(tokens)
+        
+        for i in tokens_list:
+            f.write(i+'\n')
+        #print(target)
+        #print(decode_result_ids)
+        #print(tokens_list)
+        # tokens = tokens
+        # print(tokens)
+        #exit()count
+        count += 1
         pbar(count, {})
 
 
 
 def main():
-    train()
-    #test()
+    if Train_flag:
+        train()
+    else:
+        test()
 
 
 main()

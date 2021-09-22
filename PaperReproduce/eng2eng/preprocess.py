@@ -4,7 +4,7 @@ SENTENCE_END = '[/s]'
 OOV = '[oov]'
 
 MIN_Word_count = 3
-MAX_Sentence_length = 5
+MAX_Sentence_length = 10
 def read_file(filename):
     file = open(filename, 'r',encoding='utf8')
     lines = file.readlines()
@@ -77,4 +77,7 @@ class Tokenizer:
 
 # t.export()
 
-#sent1,sent2 = read_file("./formatted_movie_lines.txt")
+# sent1,sent2 = read_file("./formatted_movie_lines.txt")
+# f = open("target.txt",'w',encoding='utf-8')
+# for i in sent2:
+#     f.write(i +'\n')
