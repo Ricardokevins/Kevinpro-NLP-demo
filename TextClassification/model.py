@@ -162,7 +162,7 @@ class RDrop(nn.Module):
         self.ce = nn.CrossEntropyLoss()
         self.kld = nn.KLDivLoss()
 
-    def forward(self, logits1, logits2, target, kl_weight=1):
+    def forward(self, logits1, logits2, target, kl_weight=0):
         """
         Args:
             logits1: One output of the classification model.
@@ -176,12 +176,17 @@ class RDrop(nn.Module):
         ce_loss = (self.ce(logits1, target) + self.ce(logits2, target)) / 2
         # print(logits1)
         # print(logits2)
-        p_loss = F.kl_div(F.log_softmax(logits1, dim=-1), F.softmax(logits2, dim=-1), reduction='none')
-        q_loss = F.kl_div(F.log_softmax(logits2, dim=-1), F.softmax(logits1, dim=-1), reduction='none')
-        p_loss = p_loss.sum()
-        q_loss = q_loss.sum()
+        #print(F.log_softmax(logits1, dim=-1))
+        #print(F.softmax(logits2, dim=-1))
+        p_loss = F.kl_div(F.log_softmax(logits1, dim=-1), F.softmax(logits2, dim=-1), reduction='batchmean')
+        #print(p_loss)
+        q_loss = F.kl_div(F.log_softmax(logits2, dim=-1), F.softmax(logits1, dim=-1), reduction='batchmean')
+        #p_loss = p_loss.sum()
+        #q_loss = q_loss.sum()
         kl_loss = (p_loss + q_loss) / 2
-
+        #print(ce_loss)
+        #print(kl_loss)
+        #exit()
         # print(ce_loss)
         # print(kl_loss)
         # exit()
