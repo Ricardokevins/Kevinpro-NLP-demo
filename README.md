@@ -5,7 +5,7 @@
 主要内容
 
 1. **文本分类,BiLSTM,Transfomer**
-2. **摘要生成,Pointer Generator NetWord**
+2. **摘要生成,Pointer Generator NetWork**
 3. **对话翻译 Seq2Seq**
 4. **GNN在文本分类的实践**
 5. **Transformer Mask Language Model预训练**
