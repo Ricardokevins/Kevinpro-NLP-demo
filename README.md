@@ -11,6 +11,7 @@
 5. **Transformer Mask Language Model预训练**
 6. **GPT文本续写以及GPT做数学题（偷的hhh）**
 7. **其他的NLP炼丹技巧实践 对抗学习等**
+8. **新增两个大佬的Transformer实现，来源注于代码中（实现的很漂亮，对于理解很有帮助）**
 
 其他参考实践
 
