@@ -9,7 +9,7 @@
 主要内容（具体见各个项目内部的README）
 
 1. **文本分类,BiLSTM,Transfomer**
-2. **摘要生成,Pointer Generator NetWord**
+2. **摘要生成,Pointer Generator NetWork**
 3. **对话翻译 Seq2Seq**
 4. **GNN在文本分类的实践**
 5. **Transformer Mask Language Model预训练**
@@ -100,6 +100,5 @@
 ## 2021.9.16
 
 1. 修复了Pretrain里Mask Token未对齐，位置不一致问题
-
 
 
