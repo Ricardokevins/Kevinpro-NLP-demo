@@ -19,8 +19,8 @@ for i in word2id:
 dict_size = len(word2id)
 src_vocab_size = dict_size
 tgt_vocab_size = dict_size
-batch_size = 64
-EPOCH = 5
+batch_size = 16
+EPOCH = 50
 src_len = 5 # length of source
 tgt_len = 5 # length of target
 
@@ -184,13 +184,8 @@ class Decoder(nn.Module):
         #dec_outputs = self.tgt_emb(dec_inputs) + self.pos_emb(torch.LongTensor([[5,1,2,3,4]]))
         dec_outputs = self.pos_emb(self.tgt_emb(dec_inputs))
         dec_self_attn_pad_mask = get_attn_pad_mask(dec_inputs, dec_inputs)
-        #print(dec_self_attn_pad_mask)
         dec_self_attn_subsequent_mask = get_attn_subsequent_mask(dec_inputs)
-        #print(dec_self_attn_subsequent_mask)
-        
         dec_self_attn_mask = torch.gt((dec_self_attn_pad_mask + dec_self_attn_subsequent_mask), 0)
-        #print(dec_self_attn_mask)
-        #exit()
         dec_enc_attn_mask = get_attn_pad_mask(dec_inputs, enc_inputs)
         dec_self_attns, dec_enc_attns = [], []
         for layer in self.layers:
@@ -228,7 +223,7 @@ def data_generator():
         random_length = random.randint(2,4)
         kernel_input = [word2id[str(random.randint(1,9))] for i in range(random_length)]
         #assert len(kernel_input) <= 4
-        enc_input_data = kernel_input
+        enc_input_data = kernel_input.copy()
         dec_input_data = [1] + kernel_input
         dec_target_data = kernel_input + [2]
 
@@ -276,8 +271,8 @@ train_iter = torch.utils.data.DataLoader(train_dataset, batch_size, shuffle=True
 
 crossentropyloss = nn.CrossEntropyLoss()
 model = Transformer().cuda()
-optimizer = optim.Adam(model.parameters(), lr=0.01)
-
+#optimizer = optim.Adam(model.parameters(), lr=0.001)
+optimizer = optim.SGD(model.parameters(), lr=1e-3, momentum=0.99)
 for epoch in range(EPOCH):
     index = 0
     loss_sum = 0
