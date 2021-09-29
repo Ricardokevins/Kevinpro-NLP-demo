@@ -130,7 +130,7 @@ def setup_seed(seed):
 setup_seed(500)
 
 def decode_test(model, start_symbol):
-    z = torch.randn(1, 10 ,400).cuda() # 每一行是一个隐变量，总共有batch_size行
+    z = (torch.randn(1, 10 ,400)*2+11.5).cuda() # 每一行是一个隐变量，总共有batch_size行
     #print(z)
     enc_input = torch.tensor([3 for i in range(10)]).unsqueeze(0).cuda()
     dec_input = torch.zeros(1, 0).type_as(enc_input.data).cuda()

@@ -1,8 +1,12 @@
 # NLP
 
-个人的NLP实践demo。部分来源于其他开源项目。欢迎Star Fork。
+个人的NLP实践demo。部分来源于其他开源项目（侵删）。欢迎Star Fork以及PR。有问题发Issue，我会有邮件提示并回复的~~
 
-主要内容
+**Some Simple implement of Fun NLP algorithm in Pytorch. updating and maintaining**
+
+**If you have  problems, please comment in Issue**
+
+主要内容（具体见各个项目内部的README）
 
 1. **文本分类,BiLSTM,Transfomer**
 2. **摘要生成,Pointer Generator NetWork**
@@ -29,8 +33,14 @@
 
 
 
-
 # 更新记录
+
+## 2021.9.29
+
+1. 在Transformer里增加了一个随机数字串恢复的Demo，对新手理解Transformer超友好，不需要外部数据，利用随机构造的数字串训练
+2. 新增实验TransfomerVAE，暂时有BUG，施工中
+
+
 
 ## 2021.1.23
 
@@ -90,3 +100,5 @@
 ## 2021.9.16
 
 1. 修复了Pretrain里Mask Token未对齐，位置不一致问题
+
+
