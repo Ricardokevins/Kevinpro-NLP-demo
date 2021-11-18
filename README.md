@@ -1,6 +1,6 @@
 # NLP
 
-个人的NLP实践demo。部分来源于其他开源项目（侵删）。欢迎Star Fork以及PR。有问题发Issue，我会有邮件提示并回复的~~
+个人的NLP实践demo。部分来源于其他开源项目（侵删）。欢迎Star Fork以及PR。有问题发Issue，我会回复的。
 
 **Some Simple implement of Fun NLP algorithm in Pytorch. updating and maintaining**
 

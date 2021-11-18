@@ -223,9 +223,10 @@ class TransformerVAE(nn.Module):
         super(TransformerVAE, self).__init__()
         self.encoder = Encoder().cuda()
         self.decoder = Decoder().cuda()
+        self.decoder.tgt_emb = self.encoder.src_emb
         self.projection = nn.Linear(d_model, tgt_vocab_size, bias=False).cuda()
         input_dim = 512
-        h_dim = 400
+        h_dim = 768
         self.fc1 = nn.Linear(input_dim, input_dim)  
         self.fc2 = nn.Linear(input_dim, h_dim)  # mu
         self.fc3 = nn.Linear(input_dim, h_dim)  # log_var

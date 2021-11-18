@@ -21,11 +21,15 @@ lines = f.readlines()
 # print(lines[1].strip().split('\t'))
 
 count = 0
-max_length = 10
+min_length = 10
+max_length = 20
 batch_size = 8
 
 SOSID = bert_tokenizer.encode('[CLS]', add_special_tokens=False)[0]
 EOSID = bert_tokenizer.encode('[SEP]', add_special_tokens=False)[0]
+MASKID = bert_tokenizer.encode('[MASK]',add_special_tokens=False)[0]
+# print(MASKID)
+# exit()
 # print(SOSID,EOSID)
 # exit()
 # test add token
@@ -44,15 +48,24 @@ def padding(idx):
     while len(padded_idx)<max_length:
         padded_idx.append(0)
     return padded_idx
+import random
+def random_drop(idx):
+    droped = idx.copy()
+    for i in range(1,len(droped)-1):
+        prob = random.randint(0, 10)
+        if prob == 0:
+            droped[i] = MASKID
+    return droped
 
 for i in tqdm(range(1,len(lines))):
     sent = lines[i].strip().split('\t')[1]
-    if len(sent) < max_length-1:
+    if len(sent) < max_length-1 and len(sent) > min_length:
         count += 1
         #indexed_tokens = bert_tokenizer.encode(sent, add_special_tokens=True)
         indexed_tokens = bert_tokenizer.encode(sent, add_special_tokens=False)
         enc_input = padding(indexed_tokens)
         dec_input = padding([SOSID]+indexed_tokens)
+        dec_input = random_drop(dec_input)
         dec_target = padding(indexed_tokens+[EOSID])
         enc_inputs.append(enc_input)
         dec_inputs.append(dec_input)
@@ -67,7 +80,7 @@ dec_inputs = torch.tensor(dec_inputs)
 dec_targets = torch.tensor(dec_targets)
 train_dataset = torch.utils.data.TensorDataset(enc_inputs,dec_inputs,dec_targets)
 train_iter = torch.utils.data.DataLoader(train_dataset, batch_size, shuffle=True)
-crossentropyloss = nn.CrossEntropyLoss()
+crossentropyloss = nn.CrossEntropyLoss(ignore_index=0)
 
 #bert_sent.append(indexed_tokens)
 #tokens = bert_tokenizer.convert_ids_to_tokens(indexed_tokens)
@@ -107,7 +120,7 @@ def loss_function(x_hat, x, mu, log_var):
     return loss, CEL, KLD
 
 net = TransformerVAE().cuda()
-net=torch.load('model/epoch76.pt')
+#net=torch.load('model/epoch76.pt')
 # net = VAE().cuda()
 optimizer = optim.SGD(net.parameters(), lr=1e-3, momentum=0.99)
 #optimizer = AdamW(net.parameters(),lr = 2e-5, eps = 1e-8)
@@ -130,14 +143,14 @@ def setup_seed(seed):
 setup_seed(500)
 
 def decode_test(model, start_symbol):
-    z = (torch.randn(1, 10 ,400)*2+11.5).cuda() # 每一行是一个隐变量，总共有batch_size行
+    z = (torch.randn(1, 10 ,768)).cuda() # 每一行是一个隐变量，总共有batch_size行
     #print(z)
     enc_input = torch.tensor([3 for i in range(10)]).unsqueeze(0).cuda()
     dec_input = torch.zeros(1, 0).type_as(enc_input.data).cuda()
     terminal = False
     next_symbol = start_symbol
     token_list = []
-    for i in range(10):         
+    for i in range(15):         
         dec_input=torch.cat([dec_input.detach(),torch.tensor([[next_symbol]],dtype=enc_input.dtype).cuda()],-1)
         #print(dec_input)
         #print(enc_input)
@@ -152,7 +165,8 @@ def decode_test(model, start_symbol):
         token_list.append(next_word )
     print(bert_tokenizer.convert_ids_to_tokens(token_list))        
     return dec_input
-
+# decode_test(net,SOSID)
+# exit()
 # def decode_test(model):
 #     z = torch.randn(1, 10 ,400).cuda() # 每一行是一个隐变量，总共有batch_size行
     
@@ -174,8 +188,8 @@ def decode_test(model, start_symbol):
 #     print(tokens)
 #     #exit()
     
-decode_test(net,SOSID)
-exit()
+
+# exit()
 for epoch in range(100):
     print("\nstart Epoch: ",epoch)
     loss_sum = 0
@@ -193,7 +207,7 @@ for epoch in range(100):
         index+=1
         loss_sum +=loss
         pbar(index-1, {'loss': loss_sum/index})
-        if index % 20 == 0:
+        if index % 80 == 0:
             print("\n")
             #decode_test(net)
             #print(CEL,KLD,loss)
@@ -202,11 +216,21 @@ for epoch in range(100):
             _, result = torch.max(x_hat, 2)
             result = result[0]
             #print(result.shape)
-            tokens = bert_tokenizer.convert_ids_to_tokens(enc_input[0])
+            tokens = bert_tokenizer.convert_ids_to_tokens(dec_input[0])
             print(tokens)
             tokens = bert_tokenizer.convert_ids_to_tokens(result)
             print(tokens)
-    #torch.save(net, 'model/epoch{}.pt'.format(epoch)) 
+            
+            log_var_mean=torch.mean(log_var,dim=0,keepdim=False)
+            log_var_mean=torch.mean(log_var_mean,dim=0,keepdim=False)
+            log_var_mean=torch.mean(log_var_mean,dim=0,keepdim=False)
+            mu_mean = torch.mean(mu,dim=0,keepdim=False)
+            mu_mean = torch.mean(mu_mean,dim=0,keepdim=False)
+            mu_mean = torch.mean(mu_mean,dim=0,keepdim=False)
+            print("E: {} Sigma: {}".format(mu_mean,log_var_mean))
+            
+            #print(CEL,KLD)
+    torch.save(net, 'model/epoch{}.pt'.format(epoch)) 
     # print(loss)
     # exit()
 

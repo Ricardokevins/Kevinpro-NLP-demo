@@ -1,0 +1,91 @@
+Today arxiv has 316 new papers in CS area, and 34 of them is about NLP, 1 of them contain your keywords.
+
+Ensure your keywords is ['factual', 'dialogue summarization', 'summary', 'summarization', 'faithful', 'translation', 'Contrastive Learning'](case=True). 
+
+This is your paperlist.Enjoy! 
+
+------------1------------
+arXiv:2110.14766
+Title: Fine Grained Human Evaluation for English-to-Chinese Machine  Translation: A Case Study on Scientific Text
+['Computation and Language (cs.CL)']
+https://arxiv.org/abs/2110.14766
+
+Here is the Research Direction Distribution Report. 
+
+Machine Learning (cs.LG)   153
+Artificial Intelligence (cs.AI)   63
+Computer Vision and Pattern Recognition (cs.CV)   61
+Computation and Language (cs.CL)   34
+Machine Learning (stat.ML)   30
+Robotics (cs.RO)   24
+Networking and Internet Architecture (cs.NI)   18
+Information Theory (cs.IT)   15
+Systems and Control (eess.SY)   15
+Signal Processing (eess.SP)   15
+Image and Video Processing (eess.IV)   12
+Data Structures and Algorithms (cs.DS)   12
+Optimization and Control (math.OC)   11
+Cryptography and Security (cs.CR)   11
+Human-Computer Interaction (cs.HC)   10
+Distributed, Parallel, and Cluster Computing (cs.DC)   10
+Information Retrieval (cs.IR)   10
+Numerical Analysis (math.NA)   9
+Computers and Society (cs.CY)   7
+Social and Information Networks (cs.SI)   6
+Computer Science and Game Theory (cs.GT)   6
+Sound (cs.SD)   5
+Audio and Speech Processing (eess.AS)   5
+Multiagent Systems (cs.MA)   4
+Statistics Theory (math.ST)   4
+Software Engineering (cs.SE)   4
+Methodology (stat.ME)   3
+Graphics (cs.GR)   3
+Computational Geometry (cs.CG)   3
+Algebraic Topology (math.AT)   3
+Probability (math.PR)   3
+Mathematical Physics (math-ph)   3
+Computational Physics (physics.comp-ph)   3
+Quantum Physics (quant-ph)   3
+Computation (stat.CO)   2
+Programming Languages (cs.PL)   2
+Computational Engineering, Finance, and Science (cs.CE)   2
+Multimedia (cs.MM)   2
+Populations and Evolution (q-bio.PE)   2
+Databases (cs.DB)   2
+Dynamical Systems (math.DS)   2
+Discrete Mathematics (cs.DM)   2
+Emerging Technologies (cs.ET)   2
+Trading and Market Microstructure (q-fin.TR)   2
+Quantitative Methods (q-bio.QM)   2
+Fluid Dynamics (physics.flu-dyn)   2
+General Economics (econ.GN)   1
+Econometrics (econ.EM)   1
+Quantum Gases (cond-mat.quant-gas)   1
+Computational Complexity (cs.CC)   1
+Digital Libraries (cs.DL)   1
+Neural and Evolutionary Computing (cs.NE)   1
+Applications (stat.AP)   1
+Performance (cs.PF)   1
+Hardware Architecture (cs.AR)   1
+Formal Languages and Automata Theory (cs.FL)   1
+Differential Geometry (math.DG)   1
+Applied Physics (physics.app-ph)   1
+Optics (physics.optics)   1
+Classical Analysis and ODEs (math.CA)   1
+Analysis of PDEs (math.AP)   1
+Metric Geometry (math.MG)   1
+Functional Analysis (math.FA)   1
+Theoretical Economics (econ.TH)   1
+Combinatorics (math.CO)   1
+Earth and Planetary Astrophysics (astro-ph.EP)   1
+Medical Physics (physics.med-ph)   1
+Statistical Finance (q-fin.ST)   1
+Atmospheric and Oceanic Physics (physics.ao-ph)   1
+Data Analysis, Statistics and Probability (physics.data-an)   1
+Disordered Systems and Neural Networks (cond-mat.dis-nn)   1
+Statistical Mechanics (cond-mat.stat-mech)   1
+Plasma Physics (physics.plasm-ph)   1
+Neurons and Cognition (q-bio.NC)   1
+Chemical Physics (physics.chem-ph)   1
+Genomics (q-bio.GN)   1
+Soft Condensed Matter (cond-mat.soft)   1
