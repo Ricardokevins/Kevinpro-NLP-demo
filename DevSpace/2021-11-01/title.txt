@@ -1,0 +1,99 @@
+Today arxiv has 259 new papers in CS area, and 56 of them is about NLP, 5 of them contain your keywords.
+
+Ensure your keywords is ['factual', 'dialogue summarization', 'summary', 'summarization', 'faithful', 'translation', 'Contrastive Learning'](case=True). 
+
+This is your paperlist.Enjoy! 
+
+------------1------------
+arXiv:2110.15426
+Title: RadBERT-CL: Factually-Aware Contrastive Learning For Radiology Report  Classification
+['Machine Learning (cs.LG)', 'Computation and Language (cs.CL)']
+https://arxiv.org/abs/2110.15426
+
+------------2------------
+arXiv:2110.15729
+Title: Decision Attentive Regularization to Improve Simultaneous Speech  Translation Systems
+['Sound (cs.SD)', 'Computation and Language (cs.CL)', 'Audio and Speech Processing (eess.AS)']
+https://arxiv.org/abs/2110.15729
+
+------------3------------
+arXiv:2110.15720
+Title: Weakly Supervised Concept Map Generation through Task-Guided Graph  Translation
+['Computation and Language (cs.CL)', 'Artificial Intelligence (cs.AI)']
+https://arxiv.org/abs/2110.15720
+
+------------4------------
+arXiv:2110.15716
+Title: Building the Language Resource for a Cebuano-Filipino Neural Machine  Translation System
+['Computation and Language (cs.CL)']
+https://arxiv.org/abs/2110.15716
+
+------------5------------
+arXiv:2110.15426
+Title: RadBERT-CL: Factually-Aware Contrastive Learning For Radiology Report  Classification
+['Machine Learning (cs.LG)', 'Computation and Language (cs.CL)']
+https://arxiv.org/abs/2110.15426
+
+Here is the Research Direction Distribution Report. 
+
+Machine Learning (cs.LG)   94
+Computation and Language (cs.CL)   56
+Artificial Intelligence (cs.AI)   49
+Computer Vision and Pattern Recognition (cs.CV)   37
+Numerical Analysis (math.NA)   25
+Machine Learning (stat.ML)   18
+Information Theory (cs.IT)   14
+Data Structures and Algorithms (cs.DS)   14
+Sound (cs.SD)   12
+Audio and Speech Processing (eess.AS)   12
+Systems and Control (eess.SY)   12
+Cryptography and Security (cs.CR)   12
+Image and Video Processing (eess.IV)   10
+Signal Processing (eess.SP)   9
+Optimization and Control (math.OC)   9
+Robotics (cs.RO)   8
+Information Retrieval (cs.IR)   8
+Social and Information Networks (cs.SI)   7
+Distributed, Parallel, and Cluster Computing (cs.DC)   7
+Human-Computer Interaction (cs.HC)   7
+Software Engineering (cs.SE)   6
+Statistics Theory (math.ST)   5
+Computers and Society (cs.CY)   5
+Quantum Physics (quant-ph)   5
+Probability (math.PR)   4
+Networking and Internet Architecture (cs.NI)   4
+Computational Complexity (cs.CC)   4
+Neural and Evolutionary Computing (cs.NE)   4
+Methodology (stat.ME)   4
+Computational Geometry (cs.CG)   3
+Analysis of PDEs (math.AP)   3
+Dynamical Systems (math.DS)   3
+Disordered Systems and Neural Networks (cond-mat.dis-nn)   2
+Fluid Dynamics (physics.flu-dyn)   2
+Computational Engineering, Finance, and Science (cs.CE)   2
+Computational Physics (physics.comp-ph)   2
+Hardware Architecture (cs.AR)   2
+Multiagent Systems (cs.MA)   2
+Digital Libraries (cs.DL)   2
+Physics and Society (physics.soc-ph)   2
+Geophysics (physics.geo-ph)   1
+Pattern Formation and Solitons (nlin.PS)   1
+Graphics (cs.GR)   1
+Mathematical Software (cs.MS)   1
+Multimedia (cs.MM)   1
+Discrete Mathematics (cs.DM)   1
+Emerging Technologies (cs.ET)   1
+Other Quantitative Biology (q-bio.OT)   1
+Classical Physics (physics.class-ph)   1
+Computer Science and Game Theory (cs.GT)   1
+Databases (cs.DB)   1
+Programming Languages (cs.PL)   1
+Tissues and Organs (q-bio.TO)   1
+Combinatorics (math.CO)   1
+Metric Geometry (math.MG)   1
+Quantitative Methods (q-bio.QM)   1
+Spectral Theory (math.SP)   1
+Representation Theory (math.RT)   1
+Adaptation and Self-Organizing Systems (nlin.AO)   1
+Biomolecules (q-bio.BM)   1
+Applications (stat.AP)   1

@@ -1,0 +1,698 @@
+,id,title,authors,subjects,subject_split
+0,arXiv:2110.15957,"
+Title: Visual Keyword Spotting with Attention
+","
+Authors:
+K R Prajwal, 
+Liliane Momeni, 
+Triantafyllos Afouras, 
+Andrew Zisserman
+","
+Subjects: Computer Vision and Pattern Recognition (cs.CV); Computation and Language (cs.CL)
+
+","['Computer Vision and Pattern Recognition (cs.CV)', 'Computation and Language (cs.CL)']"
+1,arXiv:2110.15943,"
+Title: MetaICL: Learning to Learn In Context
+","
+Authors:
+Sewon Min, 
+Mike Lewis, 
+Luke Zettlemoyer, 
+Hannaneh Hajishirzi
+","
+Subjects: Computation and Language (cs.CL); Artificial Intelligence (cs.AI)
+
+","['Computation and Language (cs.CL)', 'Artificial Intelligence (cs.AI)']"
+2,arXiv:2110.15931,"
+Title: Unsupervised Full Constituency Parsing with Neighboring Distribution  Divergence
+","
+Authors:
+Letian Peng, 
+Zuchao Li, 
+Hai Zhao
+","
+Subjects: Computation and Language (cs.CL)
+",['Computation and Language (cs.CL)']
+3,arXiv:2110.15905,"
+Title: Transformer Ensembles for Sexism Detection
+","
+Authors:
+Lily Davies, 
+Marta Baldracchi, 
+Carlo Alessandro Borella, 
+Konstantinos Perifanos
+","
+Subjects: Computation and Language (cs.CL)
+",['Computation and Language (cs.CL)']
+4,arXiv:2110.15871,"
+Title: From Theories on Styles to their Transfer in Text: Bridging the Gap with  a Hierarchical Survey
+","
+Authors:
+Enrica Troiano, 
+Aswathy Velutharambath, 
+and Roman Klinger
+","
+Subjects: Computation and Language (cs.CL)
+",['Computation and Language (cs.CL)']
+5,arXiv:2110.15836,"
+Title: Combining Unsupervised and Text Augmented Semi-Supervised Learning for  Low Resourced Autoregressive Speech Recognition
+","
+Authors:
+Chak-Fai Li, 
+Francis Keith, 
+William Hartmann, 
+Matthew Snover
+","
+Subjects: Computation and Language (cs.CL); Sound (cs.SD); Audio and Speech Processing (eess.AS)
+
+","['Computation and Language (cs.CL)', 'Sound (cs.SD)', 'Audio and Speech Processing (eess.AS)']"
+6,arXiv:2110.15803,"
+Title: Natural Language Processing for Smart Healthcare
+","
+Authors:
+Binggui Zhou, 
+Guanghua Yang, 
+Zheng Shi, 
+Shaodan Ma
+","
+Subjects: Computation and Language (cs.CL); Artificial Intelligence (cs.AI)
+
+","['Computation and Language (cs.CL)', 'Artificial Intelligence (cs.AI)']"
+7,arXiv:2110.15802,"
+Title: BERMo: What can BERT learn from ELMo?
+","
+Authors:
+Sangamesh Kodge, 
+Kaushik Roy
+","
+Subjects: Computation and Language (cs.CL); Machine Learning (cs.LG)
+
+","['Computation and Language (cs.CL)', 'Machine Learning (cs.LG)']"
+8,arXiv:2110.15801,"
+Title: Application of the Multi-label Residual Convolutional Neural Network  text classifier using Content-Based Routing process
+","
+Authors:
+Tounsi Achraf, 
+Elkefi Safa
+","
+Subjects: Computation and Language (cs.CL); Artificial Intelligence (cs.AI); Machine Learning (cs.LG)
+
+","['Computation and Language (cs.CL)', 'Artificial Intelligence (cs.AI)', 'Machine Learning (cs.LG)']"
+9,arXiv:2110.15799,"
+Title: Guided Policy Search for Parameterized Skills using Adverbs
+","
+Authors:
+Benjamin A. Spiegel, 
+George Konidaris
+","
+Subjects: Artificial Intelligence (cs.AI); Computation and Language (cs.CL); Human-Computer Interaction (cs.HC); Robotics (cs.RO)
+
+","['Artificial Intelligence (cs.AI)', 'Computation and Language (cs.CL)', 'Human-Computer Interaction (cs.HC)', 'Robotics (cs.RO)']"
+10,arXiv:2110.15797,"
+Title: Discovering Non-monotonic Autoregressive Orderings with Variational  Inference
+","
+Authors:
+Xuanlin Li, 
+Brandon Trabucco, 
+Dong Huk Park, 
+Michael Luo, 
+Sheng Shen, 
+Trevor Darrell, 
+Yang Gao
+","
+Subjects: Computation and Language (cs.CL); Artificial Intelligence (cs.AI); Machine Learning (cs.LG)
+
+","['Computation and Language (cs.CL)', 'Artificial Intelligence (cs.AI)', 'Machine Learning (cs.LG)']"
+11,arXiv:2110.15794,"
+Title: CLAUSEREC: A Clause Recommendation Framework for AI-aided Contract  Authoring
+","
+Authors:
+Vinay Aggarwal, 
+Aparna Garimella, 
+Balaji Vasan Srinivasan, 
+Anandhavelu N, 
+Rajiv Jain
+","
+Subjects: Computation and Language (cs.CL); Artificial Intelligence (cs.AI)
+
+","['Computation and Language (cs.CL)', 'Artificial Intelligence (cs.AI)']"
+12,arXiv:2110.15789,"
+Title: On the Feasibility of Predicting Questions being Forgotten in Stack  Overflow
+","
+Authors:
+Thi Huyen Nguyen, 
+Tu Nguyen, 
+Tuan-Anh Hoang, 
+Claudia Niederée
+","
+Subjects: Information Retrieval (cs.IR); Computation and Language (cs.CL); Machine Learning (cs.LG)
+
+","['Information Retrieval (cs.IR)', 'Computation and Language (cs.CL)', 'Machine Learning (cs.LG)']"
+13,arXiv:2110.15778,"
+Title: Comparing Machine Learning-Centered Approaches for Forecasting Language  Patterns During Frustration in Early Childhood
+","
+Authors:
+Arnav Bhakta, 
+Yeunjoo Kim, 
+Pamela Cole
+","
+Subjects: Computation and Language (cs.CL); Machine Learning (cs.LG)
+
+","['Computation and Language (cs.CL)', 'Machine Learning (cs.LG)']"
+14,arXiv:2110.15766,"
+Title: NxMTransformer: Semi-Structured Sparsification for Natural Language  Understanding via ADMM
+","
+Authors:
+Connor Holmes, 
+Minjia Zhang, 
+Yuxiong He, 
+Bo Wu
+","
+Subjects: Computation and Language (cs.CL); Artificial Intelligence (cs.AI)
+
+","['Computation and Language (cs.CL)', 'Artificial Intelligence (cs.AI)']"
+15,arXiv:2110.15763,"
+Title: How to Leverage Multimodal EHR Data for Better Medical Predictions?
+","
+Authors:
+Bo Yang, 
+Lijun Wu
+","
+Subjects: Computation and Language (cs.CL)
+",['Computation and Language (cs.CL)']
+16,arXiv:2110.15733,"
+Title: Detecting Gender Bias in Transformer-based Models: A Case Study on BERT
+","
+Authors:
+Bingbing Li, 
+Hongwu Peng, 
+Rajat Sainju, 
+Junhuan Yang, 
+Lei Yang, 
+Yueying Liang, 
+Weiwen Jiang, 
+Binghui Wang, 
+Hang Liu, 
+Caiwen Ding
+","
+Subjects: Computation and Language (cs.CL); Machine Learning (cs.LG)
+
+","['Computation and Language (cs.CL)', 'Machine Learning (cs.LG)']"
+17,arXiv:2110.15732,"
+Title: Named Entity Recognition in Unstructured Medical Text Documents
+","
+Authors:
+Cole Pearson, 
+Naeem Seliya, 
+Rushit Dave
+","
+Subjects: Computation and Language (cs.CL)
+",['Computation and Language (cs.CL)']
+18,arXiv:2110.15731,"
+Title: CORAA: a large corpus of spontaneous and prepared speech manually  validated for speech recognition in Brazilian Portuguese
+","
+Authors:
+Arnaldo Candido Junior, 
+Edresson Casanova, 
+Anderson Soares, 
+Frederico Santos de Oliveira, 
+Lucas Oliveira, 
+Ricardo Corso Fernandes Junior, 
+Daniel Peixoto Pinto da Silva, 
+Fernando Gorgulho Fayet, 
+Bruno Baldissera Carlotto, 
+Lucas Rafael Stefanel Gris, 
+Sandra Maria Aluísio
+","
+Subjects: Computation and Language (cs.CL); Sound (cs.SD); Audio and Speech Processing (eess.AS)
+
+","['Computation and Language (cs.CL)', 'Sound (cs.SD)', 'Audio and Speech Processing (eess.AS)']"
+19,arXiv:2110.15730,"
+Title: E-Commerce Dispute Resolution Prediction
+","
+Authors:
+David Tsurel, 
+Michael Doron, 
+Alexander Nus, 
+Arnon Dagan, 
+Ido Guy, 
+Dafna Shahaf
+","
+Subjects: Computation and Language (cs.CL); Artificial Intelligence (cs.AI)
+
+","['Computation and Language (cs.CL)', 'Artificial Intelligence (cs.AI)']"
+20,arXiv:2110.15729,"
+Title: Decision Attentive Regularization to Improve Simultaneous Speech  Translation Systems
+","
+Authors:
+Mohd Abbas Zaidi, 
+Beomseok Lee, 
+Nikhil Kumar Lakumarapu, 
+Sangha Kim, 
+Chanwoo Kim
+","
+Subjects: Sound (cs.SD); Computation and Language (cs.CL); Audio and Speech Processing (eess.AS)
+
+","['Sound (cs.SD)', 'Computation and Language (cs.CL)', 'Audio and Speech Processing (eess.AS)']"
+21,arXiv:2110.15728,"
+Title: Deep Learning for Bias Detection: From Inception to Deployment
+","
+Authors:
+Md Abul Bashar, 
+Richi Nayak, 
+Anjor Kothare, 
+Vishal Sharma, 
+Kesavan Kandadai
+","
+Subjects: Computation and Language (cs.CL); Artificial Intelligence (cs.AI); Machine Learning (cs.LG); Neural and Evolutionary Computing (cs.NE); Social and Information Networks (cs.SI)
+
+","['Computation and Language (cs.CL)', 'Artificial Intelligence (cs.AI)', 'Machine Learning (cs.LG)', 'Neural and Evolutionary Computing (cs.NE)', 'Social and Information Networks (cs.SI)']"
+22,arXiv:2110.15727,"
+Title: Calling to CNN-LSTM for Rumor Detection: A Deep Multi-channel Model for  Message Veracity Classification in Microblogs
+","
+Authors:
+Abderrazek Azri (ERIC), 
+Cécile Favre (ERIC), 
+Nouria Harbi (ERIC), 
+Jérôme Darmont (ERIC), 
+Camille Noûs
+","
+Subjects: Computation and Language (cs.CL); Artificial Intelligence (cs.AI)
+
+","['Computation and Language (cs.CL)', 'Artificial Intelligence (cs.AI)']"
+23,arXiv:2110.15726,"
+Title: Social Media Reveals Urban-Rural Differences in Stress across China
+","
+Authors:
+Jesse Cui, 
+Tingdan Zhang, 
+Dandan Pang, 
+Kokil Jaidka, 
+Garrick Sherman, 
+Vinit Jakhetiya, 
+Lyle Ungar, 
+Sharath Chandra Guntuku
+","
+Subjects: Computation and Language (cs.CL); Artificial Intelligence (cs.AI); Computers and Society (cs.CY); Social and Information Networks (cs.SI)
+
+","['Computation and Language (cs.CL)', 'Artificial Intelligence (cs.AI)', 'Computers and Society (cs.CY)', 'Social and Information Networks (cs.SI)']"
+24,arXiv:2110.15725,"
+Title: Batch-Softmax Contrastive Loss for Pairwise Sentence Scoring Tasks
+","
+Authors:
+Anton Chernyavskiy, 
+Dmitry Ilvovsky, 
+Pavel Kalinin, 
+Preslav Nakov
+","
+Subjects: Computation and Language (cs.CL); Artificial Intelligence (cs.AI); Information Retrieval (cs.IR); Machine Learning (cs.LG); Neural and Evolutionary Computing (cs.NE)
+
+","['Computation and Language (cs.CL)', 'Artificial Intelligence (cs.AI)', 'Information Retrieval (cs.IR)', 'Machine Learning (cs.LG)', 'Neural and Evolutionary Computing (cs.NE)']"
+25,arXiv:2110.15724,"
+Title: Learning to Learn End-to-End Goal-Oriented Dialog From Related Dialog  Tasks
+","
+Authors:
+Janarthanan Rajendran, 
+Jonathan K. Kummerfeld, 
+Satinder Singh
+","
+Subjects: Computation and Language (cs.CL); Machine Learning (cs.LG)
+
+","['Computation and Language (cs.CL)', 'Machine Learning (cs.LG)']"
+26,arXiv:2110.15723,"
+Title: SP-GPT2: Semantics Improvement in Vietnamese Poetry Generation
+","
+Authors:
+Tuan Nguyen, 
+Hanh Pham, 
+Truong Bui, 
+Tan Nguyen, 
+Duc Luong, 
+Phong Nguyen
+","
+Subjects: Computation and Language (cs.CL); Artificial Intelligence (cs.AI); Machine Learning (cs.LG)
+
+","['Computation and Language (cs.CL)', 'Artificial Intelligence (cs.AI)', 'Machine Learning (cs.LG)']"
+27,arXiv:2110.15722,"
+Title: A Novel Sequence Tagging Framework for Consumer Event-Cause Extraction
+","
+Authors:
+Congqing He, 
+Jie Zhang, 
+Xiangyu Zhu, 
+Huan Liu, 
+Yukun Huang
+","
+Subjects: Computation and Language (cs.CL); Artificial Intelligence (cs.AI)
+
+","['Computation and Language (cs.CL)', 'Artificial Intelligence (cs.AI)']"
+28,arXiv:2110.15721,"
+Title: Paperswithtopic: Topic Identification from Paper Title Only
+","
+Authors:
+Daehyun Cho, 
+Christian Wallraven
+","
+Subjects: Computation and Language (cs.CL); Artificial Intelligence (cs.AI)
+
+","['Computation and Language (cs.CL)', 'Artificial Intelligence (cs.AI)']"
+29,arXiv:2110.15720,"
+Title: Weakly Supervised Concept Map Generation through Task-Guided Graph  Translation
+","
+Authors:
+Jiaying Lu, 
+Xiangjue Dong, 
+Carl J. Yang
+","
+Subjects: Computation and Language (cs.CL); Artificial Intelligence (cs.AI)
+
+","['Computation and Language (cs.CL)', 'Artificial Intelligence (cs.AI)']"
+30,arXiv:2110.15718,"
+Title: Deep convolutional forest: a dynamic deep ensemble approach for spam  detection in text
+","
+Authors:
+Mai A. Shaaban (1), 
+Yasser F. Hassan (2), 
+Shawkat K. Guirguis (3) ((1) Department of Mathematics and Computer Science, Faculty of Science, Alexandria University, Alexandria, Egypt, (2) Faculty of Computers and Data Science, Alexandria University, Alexandria, Egypt, (3) Institute of Graduate Studies and Research, Alexandria University, Alexandria, Egypt)
+","
+Subjects: Computation and Language (cs.CL); Artificial Intelligence (cs.AI); Machine Learning (cs.LG)
+
+","['Computation and Language (cs.CL)', 'Artificial Intelligence (cs.AI)', 'Machine Learning (cs.LG)']"
+31,arXiv:2110.15717,"
+Title: LIDSNet: A Lightweight on-device Intent Detection model using Deep  Siamese Network
+","
+Authors:
+Vibhav Agarwal, 
+Sudeep Deepak Shivnikar, 
+Sourav Ghosh, 
+Himanshu Arora, 
+Yashwant Saini
+","
+Subjects: Computation and Language (cs.CL); Machine Learning (cs.LG)
+
+","['Computation and Language (cs.CL)', 'Machine Learning (cs.LG)']"
+32,arXiv:2110.15716,"
+Title: Building the Language Resource for a Cebuano-Filipino Neural Machine  Translation System
+","
+Authors:
+Kristine Mae Adlaon, 
+Nelson Marcos
+","
+Subjects: Computation and Language (cs.CL)
+",['Computation and Language (cs.CL)']
+33,arXiv:2110.15712,"
+Title: Analysing the Effect of Masking Length Distribution of MLM: An  Evaluation Framework and Case Study on Chinese MRC Datasets
+","
+Authors:
+Changchang. Zeng, 
+Shaobo. Li
+","
+Subjects: Computation and Language (cs.CL)
+",['Computation and Language (cs.CL)']
+34,arXiv:2110.15710,"
+Title: Classification of hierarchical text using geometric deep learning: the  case of clinical trials corpus
+","
+Authors:
+Sohrab Ferdowsi, 
+Nikolay Borissov, 
+Julien Knafou, 
+Poorya Amini, 
+Douglas Teodoro
+","
+Subjects: Computation and Language (cs.CL); Machine Learning (cs.LG)
+
+","['Computation and Language (cs.CL)', 'Machine Learning (cs.LG)']"
+35,arXiv:2110.15709,"
+Title: LegalNLP -- Natural Language Processing methods for the Brazilian Legal  Language
+","
+Authors:
+Felipe Maia Polo, 
+Gabriel Caiaffa Floriano Mendonça, 
+Kauê Capellato J. Parreira, 
+Lucka Gianvechio, 
+Peterson Cordeiro, 
+Jonathan Batista Ferreira, 
+Leticia Maria Paz de Lima, 
+Antônio Carlos do Amaral Maia, 
+Renato Vicente
+","
+Subjects: Computation and Language (cs.CL); Machine Learning (cs.LG)
+
+","['Computation and Language (cs.CL)', 'Machine Learning (cs.LG)']"
+36,arXiv:2110.15708,"
+Title: Neural sentence embedding models for semantic similarity estimation in  the biomedical domain
+","
+Authors:
+Kathrin Blagec, 
+Hong Xu, 
+Asan Agibetov, 
+Matthias Samwald
+","
+Subjects: Computation and Language (cs.CL)
+",['Computation and Language (cs.CL)']
+37,arXiv:2110.15707,"
+Title: Hidden Markov Based Mathematical Model dedicated to Extract Ingredients  from Recipe Text
+","
+Authors:
+Zied Baklouti (UP, ENIT)
+","
+Subjects: Computation and Language (cs.CL)
+",['Computation and Language (cs.CL)']
+38,arXiv:2110.15706,"
+Title: Integrating Deep Event-Level and Script-Level Information for Script  Event Prediction
+","
+Authors:
+Long Bai, 
+Saiping Guan, 
+Jiafeng Guo, 
+Zixuan Li, 
+Xiaolong Jin, 
+Xueqi Cheng
+","
+Subjects: Computation and Language (cs.CL); Artificial Intelligence (cs.AI)
+
+","['Computation and Language (cs.CL)', 'Artificial Intelligence (cs.AI)']"
+39,arXiv:2110.15705,"
+Title: Distilling Relation Embeddings from Pre-trained Language Models
+","
+Authors:
+Asahi Ushio, 
+Jose Camacho-Collados, 
+Steven Schockaert
+","
+Subjects: Computation and Language (cs.CL)
+",['Computation and Language (cs.CL)']
+40,arXiv:2110.15704,"
+Title: Influence of ASR and Language Model on Alzheimer's Disease Detection
+","
+Authors:
+Joan Codina-Filbà, 
+Guillermo Cámbara, 
+Jordi Luque, 
+Mireia Farrús
+","
+Subjects: Computation and Language (cs.CL); Sound (cs.SD); Audio and Speech Processing (eess.AS)
+
+","['Computation and Language (cs.CL)', 'Sound (cs.SD)', 'Audio and Speech Processing (eess.AS)']"
+41,arXiv:2110.15703,"
+Title: Navigating the Kaleidoscope of COVID-19 Misinformation Using Deep  Learning
+","
+Authors:
+Yuanzhi Chen, 
+Mohammad Rashedul Hasan
+","
+Subjects: Computation and Language (cs.CL); Machine Learning (cs.LG)
+
+","['Computation and Language (cs.CL)', 'Machine Learning (cs.LG)']"
+42,arXiv:2110.15682,"
+Title: Overview of ADoBo 2021: Automatic Detection of Unassimilated Borrowings  in the Spanish Press
+","
+Authors:
+Elena Álvarez Mellado, 
+Luis Espinosa Anke, 
+Julio Gonzalo Arroyo, 
+Constantine Lignos, 
+Jordi Porta Zamorano
+","
+Subjects: Computation and Language (cs.CL)
+",['Computation and Language (cs.CL)']
+43,arXiv:2110.15659,"
+Title: Amendable Generation for Dialogue State Tracking
+","
+Authors:
+Xin Tian, 
+Liankai Huang, 
+Yingzhan Lin, 
+Siqi Bao, 
+Huang He, 
+Yunyi Yang, 
+Hua Wu, 
+Fan Wang, 
+Shuqi Sun
+","
+Subjects: Computation and Language (cs.CL)
+",['Computation and Language (cs.CL)']
+44,arXiv:2110.15622,"
+Title: Path-Enhanced Multi-Relational Question Answering with Knowledge Graph  Embeddings
+","
+Authors:
+Guanglin Niu, 
+Yang Li, 
+Chengguang Tang, 
+Zhongkai Hu, 
+Shibin Yang, 
+Peng Li, 
+Chengyu Wang, 
+Hao Wang, 
+Jian Sun
+","
+Subjects: Computation and Language (cs.CL); Artificial Intelligence (cs.AI); Machine Learning (cs.LG)
+
+","['Computation and Language (cs.CL)', 'Artificial Intelligence (cs.AI)', 'Machine Learning (cs.LG)']"
+45,arXiv:2110.15621,"
+Title: MentalBERT: Publicly Available Pretrained Language Models for Mental  Healthcare
+","
+Authors:
+Shaoxiong Ji, 
+Tianlin Zhang, 
+Luna Ansari, 
+Jie Fu, 
+Prayag Tiwari, 
+Erik Cambria
+","
+Subjects: Computation and Language (cs.CL)
+",['Computation and Language (cs.CL)']
+46,arXiv:2110.15599,"
+Title: Handshakes AI Research at CASE 2021 Task 1: Exploring different  approaches for multilingual tasks
+","
+Authors:
+Vivek Kalyan, 
+Paul Tan, 
+Shaun Tan, 
+Martin Andrews
+","
+Subjects: Computation and Language (cs.CL); Artificial Intelligence (cs.AI)
+
+","['Computation and Language (cs.CL)', 'Artificial Intelligence (cs.AI)']"
+47,arXiv:2110.15542,"
+Title: Automatic Hand Sign Recognition: Identify Unusuality through Latent  Cognizance
+","
+Authors:
+Pisit Nakjai, 
+Tatpong Katanyukul
+","
+Subjects: Computation and Language (cs.CL); Machine Learning (cs.LG)
+
+","['Computation and Language (cs.CL)', 'Machine Learning (cs.LG)']"
+48,arXiv:2110.15534,"
+Title: Structure-aware Fine-tuning of Sequence-to-sequence Transformers for  Transition-based AMR Parsing
+","
+Authors:
+Jiawei Zhou, 
+Tahira Naseem, 
+Ramón Fernandez Astudillo, 
+Young-Suk Lee, 
+Radu Florian, 
+Salim Roukos
+","
+Subjects: Computation and Language (cs.CL)
+",['Computation and Language (cs.CL)']
+49,arXiv:2110.15527,"
+Title: Pre-training Co-evolutionary Protein Representation via A Pairwise  Masked Language Model
+","
+Authors:
+Liang He, 
+Shizhuo Zhang, 
+Lijun Wu, 
+Huanhuan Xia, 
+Fusong Ju, 
+He Zhang, 
+Siyuan Liu, 
+Yingce Xia, 
+Jianwei Zhu, 
+Pan Deng, 
+Bin Shao, 
+Tao Qin, 
+Tie-Yan Liu
+","
+Subjects: Computation and Language (cs.CL); Artificial Intelligence (cs.AI)
+
+","['Computation and Language (cs.CL)', 'Artificial Intelligence (cs.AI)']"
+50,arXiv:2110.15498,"
+Title: Learning Personal Food Preferences via Food Logs Embedding
+","
+Authors:
+Ahmed A. Metwally, 
+Ariel K. Leong, 
+Aman Desai, 
+Anvith Nagarjuna, 
+Dalia Perelman, 
+Michael Snyder
+","
+Subjects: Computation and Language (cs.CL); Machine Learning (cs.LG)
+
+","['Computation and Language (cs.CL)', 'Machine Learning (cs.LG)']"
+51,arXiv:2110.15453,"
+Title: Using Text Analytics for Health to Get Meaningful Insights from a Corpus  of COVID Scientific Papers
+","
+Authors:
+Dmitry Soshnikov, 
+Vickie Soshnikova
+","
+Subjects: Computation and Language (cs.CL); Digital Libraries (cs.DL); Information Retrieval (cs.IR)
+
+","['Computation and Language (cs.CL)', 'Digital Libraries (cs.DL)', 'Information Retrieval (cs.IR)']"
+52,arXiv:2110.15430,"
+Title: Improving Noise Robustness of Contrastive Speech Representation Learning  with Speech Reconstruction
+","
+Authors:
+Heming Wang, 
+Yao Qian, 
+Xiaofei Wang, 
+Yiming Wang, 
+Chengyi Wang, 
+Shujie Liu, 
+Takuya Yoshioka, 
+Jinyu Li, 
+DeLiang Wang
+","
+Subjects: Sound (cs.SD); Computation and Language (cs.CL); Audio and Speech Processing (eess.AS)
+
+","['Sound (cs.SD)', 'Computation and Language (cs.CL)', 'Audio and Speech Processing (eess.AS)']"
+53,arXiv:2110.15426,"
+Title: RadBERT-CL: Factually-Aware Contrastive Learning For Radiology Report  Classification
+","
+Authors:
+Ajay Jaiswal, 
+Liyan Tang, 
+Meheli Ghosh, 
+Justin Rousseau, 
+Yifan Peng, 
+Ying Ding
+","
+Subjects: Machine Learning (cs.LG); Computation and Language (cs.CL)
+
+","['Machine Learning (cs.LG)', 'Computation and Language (cs.CL)']"
+54,arXiv:2110.15409,"
+Title: What makes us curious? analysis of a corpus of open-domain questions
+","
+Authors:
+Zhaozhen Xu, 
+Amelia Howarth, 
+Nicole Briggs, 
+Nello Cristianini
+","
+Subjects: Computation and Language (cs.CL); Artificial Intelligence (cs.AI); Machine Learning (cs.LG)
+
+","['Computation and Language (cs.CL)', 'Artificial Intelligence (cs.AI)', 'Machine Learning (cs.LG)']"
+55,arXiv:2110.15684,"
+Title: Fusing ASR Outputs in Joint Training for Speech Emotion Recognition
+","
+Authors:
+Yuanchao Li, 
+Peter Bell, 
+Catherine Lai
+","
+Subjects: Audio and Speech Processing (eess.AS); Computation and Language (cs.CL); Sound (cs.SD)
+
+","['Audio and Speech Processing (eess.AS)', 'Computation and Language (cs.CL)', 'Sound (cs.SD)']"

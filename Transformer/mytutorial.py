@@ -219,11 +219,17 @@ def data_generator():
     enc_inputs = []
     dec_inputs = []
     dec_targets = []
-    for i in range(2000):
+    for i in range(1000):
         random_length = random.randint(2,4)
+        #random_length = 5
         kernel_input = [word2id[str(random.randint(1,9))] for i in range(random_length)]
         #assert len(kernel_input) <= 4
         enc_input_data = kernel_input.copy()
+
+
+        fake_input = [1]
+        fake_input = padding(fake_input)
+
         dec_input_data = [1] + kernel_input
         dec_target_data = kernel_input + [2]
 
@@ -236,7 +242,7 @@ def data_generator():
         # print(dec_target_data)
         # exit()
         enc_inputs.append(enc_input_data)
-        dec_inputs.append(dec_input_data)
+        dec_inputs.append(fake_input)
         dec_targets.append(dec_target_data)
     return enc_inputs,dec_inputs,dec_targets
 
@@ -246,6 +252,8 @@ def greedy_decode(model):
     kernel_input = [word2id[i] for i in input_list]
     enc_input = kernel_input
     enc_input = padding(enc_input)
+
+    
     dec_input = [1] + kernel_input
     dec_input = padding(dec_input)
 
