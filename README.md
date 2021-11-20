@@ -34,6 +34,9 @@
 
 
 # 更新记录
+## 2021.11.20
+1. 更新了BM25和TF-IDF算法，用于快速检索
+
 
 ## 2021.9.29
 
@@ -102,3 +105,7 @@
 1. 修复了Pretrain里Mask Token未对齐，位置不一致问题
 
 
+# 参考
+
+## BM25
+https://blog.csdn.net/chaojianmo/article/details/105143657
