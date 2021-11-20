@@ -1,4 +1,4 @@
-path = 'train.target'
+#path = 'train.target'
 
 # Follow implement in https://blog.csdn.net/chaojianmo/article/details/105143657
 
@@ -71,7 +71,7 @@ class BM25_Model(object):
  
     def init(self):
         df = {}
-        for document in self.documents_list:
+        for document in tqdm(self.documents_list):
             temp = {}
             for word in document:
                 temp[word] = temp.get(word, 0) + 1
@@ -99,26 +99,55 @@ class BM25_Model(object):
         best_score = -1
         best_result = 0
         result_list = []
-        for i in tqdm(range(self.documents_number)):
+        for i in range(self.documents_number):
             cur_score = self.get_score(i, query)
             score_list.append(cur_score)
-            if best_score < cur_score:
-                best_score = cur_score
-                # best_result = i
-                #print(best_score)
-                #print(self.documents_list[i])
-                result_list.append(self.documents_list[i])
-        for i in result_list[-5:]:
-            print(" ".join(i))
+        #     if best_score < cur_score:
+        #         best_score = cur_score
+        #         # best_result = i
+        #         #print(best_score)
+        #         #print(self.documents_list[i])
+        #         result_list.append(self.documents_list[i])
+        # for i in result_list[-3:]:
+        #     print(" ".join(i))
+        return score_list
 
+path = 'test.extract.source'
 f = open(path,'r',encoding='utf-8')
 lines = f.readlines()
-lines = [i.strip().split() for i in lines]
+lines = [i.strip() for i in lines]
 
-input_query = "The Spanish football league has asked Uefa to investigate into whether Manchester City have broken financial fair play rules.".split()
-#input_query = lines[-1]
-model1 = TF_IDF_Model(lines)
-model1.get_documents_score(input_query)
+fout = open("QueryResult.txt",'w',encoding = 'utf-8')
+import json
+Document_Features = []
+for i in range(len(lines)):
+    data_dict = json.loads(lines[i])
+    Document_Features.append(data_dict['feature'])
 
-model2 = BM25_Model(lines)
-model2.get_documents_score(input_query)
+model2 = BM25_Model(Document_Features)
+
+def getTopK(t):
+    k = 5
+    max_index = []
+    for _ in range(k):
+        number = max(t)
+        index = t.index(number)
+        t[index] = 0
+        max_index.append(index)
+    return max_index
+
+for i in tqdm(range(len(lines))):
+    data_dict = json.loads(lines[i])
+    score_list = model2.get_documents_score(data_dict['feature'])
+    
+    score_list[i] = -1
+    best = getTopK(score_list)
+    best = [str(i) for i in best]
+    fout.write(" ".join(best) + '\n')
+
+# input_query = lines[-1]
+# model1 = TF_IDF_Model(lines)
+# model1.get_documents_score(input_query)
+
+# model2 = BM25_Model(lines)
+# model2.get_documents_score(input_query)
