@@ -40,8 +40,9 @@ def get_oracle(sent_list,summary):
         best_score = get_score(" ".join(best_sents),summary)
 
     best_sents = [sent_list[i] for i in Chosen_idx]
-    print(len(best_sents))
-    print(cal_count)
+    #print(len(sent_list))
+    #print(len(best_sents))
+    #print(cal_count)
     try:
         temp_rouge = rouge.get_scores(" ".join(best_sents), summary)
     except :
@@ -80,7 +81,7 @@ for i in tqdm(range(len(lines))):
     data_dict = json.loads(data)
     doc = data_dict['text']
 
-    for j in query[i][:5]:
+    for j in query[i][:3]:
         assist = lines[j].strip()
         assist_dict = json.loads(assist)
         assist_doc = assist_dict['text']

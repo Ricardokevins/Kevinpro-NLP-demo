@@ -7,34 +7,21 @@ import spacy
 from spacy import displacy
 from collections import Counter
 import en_core_web_lg
-
+import en_core_web_sm
 import json
 from tqdm import tqdm
 import random
 random.seed(413)
-# For inference Speed, I only sample 2000 data samples
-
 
 nlp = en_core_web_lg.load()
-f = open('test.source','r',encoding = 'utf-8')
-
+f = open('train.source','r',encoding = 'utf-8')
+fout = open('train.extract.source','w',encoding = 'utf-8')
 exclude = ['DATE','TIME','PERCENT','MONEY','QUANTITY','ORDINAL','CARDINAL']
 
 lines = f.readlines()
-
-data_index = []
-while len(data_index) < 2000:
-    random_index = random.randint(0,len(lines)-1)
-    if random_index not in data_index:
-        data_index.append(random_index)
-
-print(data_index[:10])
-print(data_index[27])
-assert data_index[0] == 10455
-
-fout = open('test.extract.source','w',encoding = 'utf-8')
-for i in tqdm(range(len(data_index))):
-    data = lines[data_index[i]].strip()
+lines = lines[:10000]
+for i in tqdm(range(len(lines))):
+    data = lines[i].strip()
     doc= nlp(data)
     data_dict = {}
     extract_features = []
