@@ -33,7 +33,10 @@
 
 
 
-# 更新记录
+# 最近更新记录
+## 2021.11.20
+1. 更新了BM25和TF-IDF算法，用于快速检索
+
 
 ## 2021.9.29
 
@@ -41,7 +44,7 @@
 2. 新增实验TransfomerVAE，暂时有BUG，施工中
 
 
-
+# 更新记录
 ## 2021.1.23
 
  1. 初次commit 添加句子分类模块，包含Transformer和BiLSTM以及BiLSTM+Attn模型 
@@ -102,3 +105,7 @@
 1. 修复了Pretrain里Mask Token未对齐，位置不一致问题
 
 
+# 参考
+
+## BM25
+https://blog.csdn.net/chaojianmo/article/details/105143657
