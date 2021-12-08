@@ -17,7 +17,7 @@ corpus_path = './toutiaonews38w/train.tsv'
 
 f = open(corpus_path, 'r',encoding='utf8')
 lines = f.readlines()
-
+lines = lines[:10000]
 # print(lines[1].strip().split('\t'))
 
 count = 0
@@ -122,8 +122,8 @@ def loss_function(x_hat, x, mu, log_var):
 net = TransformerVAE().cuda()
 #net=torch.load('model/epoch76.pt')
 # net = VAE().cuda()
-optimizer = optim.SGD(net.parameters(), lr=1e-3, momentum=0.99)
-#optimizer = AdamW(net.parameters(),lr = 2e-5, eps = 1e-8)
+#optimizer = optim.SGD(net.parameters(), lr=1e-3, momentum=0.99)
+optimizer = AdamW(net.parameters(),lr = 2e-5, eps = 1e-8)
 index = 0
 loss_sum = 0 
 
@@ -190,7 +190,13 @@ def decode_test(model, start_symbol):
     
 
 # exit()
-for epoch in range(100):
+import torch
+scaler = torch.cuda.amp.GradScaler()
+autocast = torch.cuda.amp.autocast
+USE_AMP = False
+import time
+time_start=time.time()
+for epoch in range(1):
     print("\nstart Epoch: ",epoch)
     loss_sum = 0
     index = 0
@@ -199,11 +205,21 @@ for epoch in range(100):
         enc_input = enc_input.cuda()
         dec_input = dec_input.cuda()
         dec_target = dec_target.cuda()
-        x_hat, mu, log_var = net(enc_input,dec_input)
-        loss, CEL, KLD = loss_function(x_hat,dec_target,mu,log_var)
-        optimizer.zero_grad()
-        loss.backward()
-        optimizer.step()
+
+        if USE_AMP:
+            with autocast():
+                x_hat, mu, log_var = net(enc_input,dec_input)
+                loss, CEL, KLD = loss_function(x_hat,dec_target,mu,log_var)
+            scaler.scale(loss).backward()
+            scaler.step(optimizer)
+            scaler.update()
+
+        else:
+            x_hat, mu, log_var = net(enc_input,dec_input)
+            loss, CEL, KLD = loss_function(x_hat,dec_target,mu,log_var)
+            optimizer.zero_grad()
+            loss.backward()
+            optimizer.step()
         index+=1
         loss_sum +=loss
         pbar(index-1, {'loss': loss_sum/index})
@@ -230,7 +246,18 @@ for epoch in range(100):
             print("E: {} Sigma: {}".format(mu_mean,log_var_mean))
             
             #print(CEL,KLD)
-    torch.save(net, 'model/epoch{}.pt'.format(epoch)) 
+    #torch.save(net, 'model/epoch{}.pt'.format(epoch)) 
     # print(loss)
     # exit()
+time_end=time.time()
+print('time cost',time_end-time_start,'s')
 
+#[Training] 66/66 [==============================] 130.701ms/step  loss: 5381.077148 time cost 8.626954555511475 s
+#[Training] 66/66 [==============================] 121.644ms/step  loss: 5384.339355 time cost 8.029486656188965 s
+#[Training] 322/322 [==============================] 94.891ms/step  loss: 5317.723633 time cost 30.55495047569275 s
+
+
+
+#[Training] 66/66 [==============================] 175.997ms/step  loss: 1151.829834 time cost 11.696011304855347 s
+#[Training] 66/66 [==============================] 172.516ms/step  loss: 1211.351196 time cost 11.46684718132019 s
+#[Training] 322/322 [==============================] 152.799ms/step  loss: 331.187225 time cost 49.277952909469604 s

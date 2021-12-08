@@ -81,7 +81,7 @@ class ScaledDotProductAttention(nn.Module):
         attn_mask: [batch_size, n_heads, seq_len, seq_len]
         '''
         scores = torch.matmul(Q, K.transpose(-1, -2)) / np.sqrt(d_k) # scores : [batch_size, n_heads, len_q, len_k]
-        scores.masked_fill_(attn_mask, -1e9) # Fills elements of self tensor with value where mask is True.
+        scores.masked_fill_(attn_mask, -float('inf')) # Fills elements of self tensor with value where mask is True.
         
         attn = nn.Softmax(dim=-1)(scores)
         context = torch.matmul(attn, V) # [batch_size, n_heads, len_q, d_v]
