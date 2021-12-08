@@ -24,6 +24,9 @@
 3. **Transfomer实现和其他部件**：[Ricardokevins/EasyTransformer: Quick start with strong baseline of Bert and Transformer without pretrain (github.com)](https://github.com/Ricardokevins/EasyTransformer)
 
 # 最近更新记录
+## 2021.12.9
+1. 新增了Amp混合精度实验，实现与VAEGenerator，简单的在本地的MX150上测试，加速时间和显存占用显著改善（可见代码后注释）
+2. 基于Amp的要求，修改了model定义里的1e-9为inf
 
 ## 2021.11.20
 
@@ -89,3 +92,6 @@
 
 ## BM25
 <https://blog.csdn.net/chaojianmo/article/details/105143657>
+
+## AMP混合精度训练
+https://featurize.cn/notebooks/368cbc81-2b27-4036-98a1-d77589b1f0c4
