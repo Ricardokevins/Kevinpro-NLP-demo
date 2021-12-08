@@ -17,7 +17,7 @@ corpus_path = './toutiaonews38w/train.tsv'
 
 f = open(corpus_path, 'r',encoding='utf8')
 lines = f.readlines()
-lines = lines[:2000]
+lines = lines[:10000]
 # print(lines[1].strip().split('\t'))
 
 count = 0
@@ -193,7 +193,7 @@ def decode_test(model, start_symbol):
 import torch
 scaler = torch.cuda.amp.GradScaler()
 autocast = torch.cuda.amp.autocast
-USE_AMP = True
+USE_AMP = False
 import time
 time_start=time.time()
 for epoch in range(1):
@@ -251,3 +251,13 @@ for epoch in range(1):
     # exit()
 time_end=time.time()
 print('time cost',time_end-time_start,'s')
+
+#[Training] 66/66 [==============================] 130.701ms/step  loss: 5381.077148 time cost 8.626954555511475 s
+#[Training] 66/66 [==============================] 121.644ms/step  loss: 5384.339355 time cost 8.029486656188965 s
+#[Training] 322/322 [==============================] 94.891ms/step  loss: 5317.723633 time cost 30.55495047569275 s
+
+
+
+#[Training] 66/66 [==============================] 175.997ms/step  loss: 1151.829834 time cost 11.696011304855347 s
+#[Training] 66/66 [==============================] 172.516ms/step  loss: 1211.351196 time cost 11.46684718132019 s
+#[Training] 322/322 [==============================] 152.799ms/step  loss: 331.187225 time cost 49.277952909469604 s
