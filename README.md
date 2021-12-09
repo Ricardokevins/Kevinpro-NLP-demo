@@ -43,7 +43,7 @@ My other open source NLP projects
 
 1. update BM25 and TF-IDF algorithm for quick match of Text.
 
-# Update
+# Update History
 
 ## 2021.1.23
 
