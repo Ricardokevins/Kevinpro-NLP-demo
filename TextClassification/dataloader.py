@@ -38,7 +38,7 @@ def build_tokenizer():
     return tokenizer
 
 tokenzier = build_tokenizer()
-bert_tokenizer = BertTokenizer.from_pretrained('./bert-base-chinese')
+bert_tokenizer = BertTokenizer.from_pretrained('../../../PTM/bert-base-chinese')
 
 def get_dict_size():
     return tokenzier.get_size()
