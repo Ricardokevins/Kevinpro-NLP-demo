@@ -15,6 +15,7 @@
 1. 对抗训练
 2. 模型蒸馏
 3. 预训练
+4. Pytorch_lighting框架，混合精度训练(LightingMain.py)
 
 # 神经网络算法使用说明
 

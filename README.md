@@ -1,43 +1,49 @@
 # NLP
 
-个人的NLP实践demo。部分来源于其他开源项目（侵删）。欢迎Star Fork以及PR。有问题发Issue，我会回复的。
-
 **Some Simple implement of Fun NLP algorithm in Pytorch. updating and maintaining**
 
-**If you have  problems, please comment in Issue**
+**If you have any question, please comment in Issue**
+
+[中文版本README](http://www.cnblogs.com/sxdcgaq8080/p/7894828.html)
 
 主要内容（具体见各个项目内部的README）
 
-1. **文本分类,BiLSTM,Transformer**
-2. **摘要生成,Pointer Generator NetWork**
-3. **对话翻译 Seq2Seq**
-4. **GNN在文本分类的实践**
-5. **Transformer Mask Language Model预训练**
-6. **GPT文本续写以及GPT做数学题（偷的hhh）**
-7. **其他的NLP炼丹技巧实践 对抗学习等**
-8. **新增两个大佬的Transformer实现，来源注于代码中（实现的很漂亮，对于理解很有帮助）**
+1. **Text Classification Based on many Models (BiLSTM,Transformer)**
+2. **Summary Generation (Pointer Generator NetWork)**
+3. **Dialogue Translation (Seq2Seq)**
+4. **GNN in Text Classification**
+5. **Transformer Mask Language Model Pretraining**
+6. **GPT for Text Generation and GPT for math problem**
+7. **Adversarial training (FGM)**
+8. **Implement of Transformer For Quick learning(source link in comment)**
+9. **Practical use of Pytorch_Lighting**
+10. **AMP and Fp16 training for Pytorch**
 
-其他参考实践
+My other open source NLP projects
 
-1. **bert关系抽取**：[Ricardokevins/Bert-In-Relation-Extraction: 使用Bert完成实体之间关系抽取 (github.com)](https://github.com/Ricardokevins/Bert-In-Relation-Extraction)
-2. **文本语意匹配**：[Ricardokevins/Text_Matching: NLP2020中兴捧月句子相似度匹配 (github.com)](https://github.com/Ricardokevins/Text_Matching)
-3. **Transfomer实现和其他部件**：[Ricardokevins/EasyTransformer: Quick start with strong baseline of Bert and Transformer without pretrain (github.com)](https://github.com/Ricardokevins/EasyTransformer)
+1. **BERT in Relation Extraction**：[Ricardokevins/Bert-In-Relation-Extraction: 使用Bert完成实体之间关系抽取 (github.com)](https://github.com/Ricardokevins/Bert-In-Relation-Extraction)
+2. **Text-matching**：[Ricardokevins/Text_Matching: NLP2020中兴捧月句子相似度匹配 (github.com)](https://github.com/Ricardokevins/Text_Matching)
+3. **Transformer implement and useful NLP toolkit**：[Ricardokevins/EasyTransformer: Quick start with strong baseline of Bert and Transformer without pretrain (github.com)](https://github.com/Ricardokevins/EasyTransformer)
 
-# 最近更新记录
+# What's New ~~
+
+## 2021.12.10
+
+1. Update Practical use of Pytorch_Lighting, Use Text_classification as Example. Convert the Pytorch to LightningLite. More details in LightingMain.py。
+2. Remove the redundant code
+
 ## 2021.12.9
-1. 新增了Amp混合精度实验，实现与VAEGenerator，简单的在本地的MX150上测试，加速时间和显存占用显著改善（可见代码后注释）
-2. 基于Amp的要求，修改了model定义里的1e-9为inf
+
+1. update Practical use of Amp(Automatic Mixed Precision). Implement in VAEGenerator, Test on local MX150, Significant improve the training time and  Memory-Usage, More details in Comments at the end of the code
+2. Based the command of Amp, Modified the definition of 1e-9 to inf in model.py
 
 ## 2021.11.20
 
-1. 更新了BM25和TF-IDF算法，用于快速检索
+1. update BM25 and TF-IDF algorithm for quick match of Text.
 
-## 2021.9.29
 
-1. 在Transformer里增加了一个随机数字串恢复的Demo，对新手理解Transformer超友好，不需要外部数据，利用随机构造的数字串训练
-2. 新增实验TransfomerVAE，暂时有BUG，施工中
 
-# 更新记录
+# Update
 
 ## 2021.1.23
 
@@ -88,10 +94,15 @@
 
 1. 修复了Pretrain里Mask Token未对齐，位置不一致问题
 
+## 2021.9.29
+
+1. 在Transformer里增加了一个随机数字串恢复的Demo，对新手理解Transformer超友好，不需要外部数据，利用随机构造的数字串训练
+2. 新增实验TransfomerVAE，暂时有BUG，施工中
 # 参考
 
 ## BM25
+
 <https://blog.csdn.net/chaojianmo/article/details/105143657>
 
 ## AMP混合精度训练
-https://featurize.cn/notebooks/368cbc81-2b27-4036-98a1-d77589b1f0c4
+<https://featurize.cn/notebooks/368cbc81-2b27-4036-98a1-d77589b1f0c4>
