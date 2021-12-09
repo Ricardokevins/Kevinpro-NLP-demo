@@ -5,7 +5,7 @@
 
 主要内容（具体见各个项目内部的README）
 
-1. **基于多种模型 (BiLSTM,Transformer) 的文本分类 **
+1. **基于多种模型 (BiLSTM,Transformer) 的文本分类**
 2. **摘要生成 (Pointer Generator NetWork)**
 3. **对话翻译 (Seq2Seq)**
 4. **GNN在文本分类的实践**

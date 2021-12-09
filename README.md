@@ -4,9 +4,11 @@
 
 **If you have any question, please comment in Issue**
 
-[中文版本README](http://www.cnblogs.com/sxdcgaq8080/p/7894828.html)
 
-主要内容（具体见各个项目内部的README）
+[中文版本README](https://github.com/Ricardokevins/Kevinpro-NLP-demo/blob/dev-win/Chinese.md)
+
+# The main content
+more details in folder's readme.md inside
 
 1. **Text Classification Based on many Models (BiLSTM,Transformer)**
 2. **Summary Generation (Pointer Generator NetWork)**
