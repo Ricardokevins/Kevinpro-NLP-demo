@@ -43,8 +43,6 @@ My other open source NLP projects
 
 1. update BM25 and TF-IDF algorithm for quick match of Text.
 
-
-
 # Update
 
 ## 2021.1.23
@@ -106,5 +104,5 @@ My other open source NLP projects
 
 <https://blog.csdn.net/chaojianmo/article/details/105143657>
 
-## AMP混合精度训练
+## Automatic Mixed Precision (AMP)
 <https://featurize.cn/notebooks/368cbc81-2b27-4036-98a1-d77589b1f0c4>
