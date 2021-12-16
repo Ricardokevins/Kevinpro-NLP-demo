@@ -4,10 +4,10 @@
 
 **If you have any question, please comment in Issue**
 
-
 [中文版本README](https://github.com/Ricardokevins/Kevinpro-NLP-demo/blob/dev-win/Chinese.md)
 
 # The main content
+
 more details in folder's readme.md inside
 
 1. **Text Classification Based on many Models (BiLSTM,Transformer)**
@@ -20,6 +20,7 @@ more details in folder's readme.md inside
 8. **Implement of Transformer For Quick learning(source link in comment)**
 9. **Practical use of Pytorch_Lighting**
 10. **AMP and Fp16 training for Pytorch**
+11. **Usefully Visualize Toolkit for Attention Map(or Other weighted Matrix**
 
 My other open source NLP projects
 
@@ -28,6 +29,11 @@ My other open source NLP projects
 3. **Transformer implement and useful NLP toolkit**：[Ricardokevins/EasyTransformer: Quick start with strong baseline of Bert and Transformer without pretrain (github.com)](https://github.com/Ricardokevins/EasyTransformer)
 
 # What's New ~~
+
+## 2021.12.17
+
+1. Update Weighted Matrix Visualize Toolkit(eg. used for visualize of Attention Map) implement in Visualize. More Useful toolkit in the future
+2. Update Python comment Code Standards. More formal code practices will be followed in the future.
 
 ## 2021.12.10
 
@@ -98,6 +104,7 @@ My other open source NLP projects
 
 1. 在Transformer里增加了一个随机数字串恢复的Demo，对新手理解Transformer超友好，不需要外部数据，利用随机构造的数字串训练
 2. 新增实验TransfomerVAE，暂时有BUG，施工中
+
 # 参考
 
 ## BM25
@@ -105,4 +112,5 @@ My other open source NLP projects
 <https://blog.csdn.net/chaojianmo/article/details/105143657>
 
 ## Automatic Mixed Precision (AMP)
+
 <https://featurize.cn/notebooks/368cbc81-2b27-4036-98a1-d77589b1f0c4>
