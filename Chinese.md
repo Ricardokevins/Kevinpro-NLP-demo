@@ -13,8 +13,9 @@
 6. **GPT文本续写以及GPT做数学题（偷的hhh）**
 7. **其他的NLP炼丹技巧实践 对抗学习等**
 8. **新增两个大佬的Transformer实现，来源注于代码中（对于理解很有帮助）**
-9. Pytorch_Lighting的实践使用
-10. Pytorch原生AMP混合精度实验使用
+9. **Pytorch_Lighting的实践使用**
+10. **Pytorch原生AMP混合精度实验使用**
+11. **便捷好用的带权矩阵可视化，可用于可视化Attenton矩阵**
 
 
 其他参考实践
@@ -25,6 +26,9 @@
 
 # 最近更新记录
 
+## 2021.12.17
+1. 更新了带权矩阵的可视化工具，未来将支持更多的可视化工具
+2. 更新了python代码规范
 ## 2021.12.10
 1. 新增了使用pytorch_lighting的实验，对Text_classification里的分类代码为例子，修改为使用LightningLite实现，具体见LightingMain.py。
 2. 移除了部分冗余代码
