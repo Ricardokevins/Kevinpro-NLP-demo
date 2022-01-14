@@ -1,6 +1,3 @@
-# Some Code Borrow from Tae Hwan Jung(Jeff Jung) @graykode, Derek Miller @dmmiller612
-# Recoded by kevinpro(SheSj)
-
 import numpy as np
 import torch
 import torch.nn as nn
@@ -8,31 +5,6 @@ import torch.optim as optim
 import matplotlib.pyplot as plt
 import math
 from torch.autograd import Variable
-from EasyTransformer.util import ProgressBar
-
-word2id = {'PAD':0,'BOS':1,'EOS':2,'1':3,'2':4,'3':5,'4':6,'5':7,'6':8,'7':9,'8':10,'9':11}
-id2word = {}
-for i in word2id:
-    id2word[word2id[i]] = i
-
-dict_size = len(word2id)
-src_vocab_size = dict_size
-tgt_vocab_size = dict_size
-batch_size = 16
-EPOCH = 50
-src_len = 5 # length of source
-tgt_len = 5 # length of target
-
-d_model = 512  # Embedding Size
-d_ff = 1024  # FeedForward dimension
-d_k = d_v = 64  # dimension of K(=Q), V
-n_layers = 3  # number of Encoder of Decoder Layer
-n_heads = 4  # number of heads in Multi-Head Attention
-
-# S: Symbol that shows starting of decoding input
-# E: Symbol that shows starting of decoding output
-# P: Symbol that will fill in blank sequence if current batch data size is short than time steps
-
 class PositionalEncoding(nn.Module):
     "Implement the PE function."
     def __init__(self, d_model = 512, dropout = 0.1, max_len=5000):
@@ -205,103 +177,3 @@ class Transformer(nn.Module):
         dec_outputs, dec_self_attns, dec_enc_attns = self.decoder(dec_inputs, enc_inputs, enc_outputs)
         dec_logits = self.projection(dec_outputs) # dec_logits : [batch_size x src_vocab_size x tgt_vocab_size]
         return dec_logits.view(-1, dec_logits.size(-1)), enc_self_attns, dec_self_attns, dec_enc_attns
-
-
-def padding(idx):
-    while len(idx) < src_len:
-        idx.append(0)
-    idx = idx[:src_len]
-    return idx
-
-def data_generator():
-    import random
-    enc_inputs = []
-    dec_inputs = []
-    dec_targets = []
-    for i in range(1000):
-        random_length = random.randint(2,4)
-        #random_length = 5
-        kernel_input = [word2id[str(random.randint(1,9))] for i in range(random_length)]
-        #assert len(kernel_input) <= 4
-        enc_input_data = kernel_input.copy()
-
-
-        fake_input = [1]
-        fake_input = padding(fake_input)
-
-        dec_input_data = [1] + kernel_input
-        dec_target_data = kernel_input + [2]
-
-        enc_input_data = padding(enc_input_data)
-        dec_input_data = padding(dec_input_data)
-        dec_target_data = padding(dec_target_data)
-
-        # print(enc_input_data)
-        # print(dec_input_data)
-        # print(dec_target_data)
-        # exit()
-        enc_inputs.append(enc_input_data)
-        dec_inputs.append(fake_input)
-        dec_targets.append(dec_target_data)
-    return enc_inputs,dec_inputs,dec_targets
-
-def greedy_decode(model):
-    input_string = '5 3 1 2'
-    input_list = input_string.split(' ')
-    kernel_input = [word2id[i] for i in input_list]
-    enc_input = kernel_input
-    enc_input = padding(enc_input)
-
-    
-    dec_input = [1] + kernel_input
-    dec_input = padding(dec_input)
-
-    enc_input = torch.tensor(enc_input).unsqueeze(0).cuda()
-    dec_input = torch.tensor(dec_input).unsqueeze(0).cuda()
-    
-    # print(enc_input)
-    # print(dec_input)
-    output,t1,t2,t3 = model(enc_input,dec_input)
-    _, result = torch.max(output, 1)
-    result = result.cpu().numpy().tolist()
-    decode_result = [id2word[i] for i in result]
-    print("".join(decode_result))
-    # exit()
-
-enc_inputs,dec_inputs,dec_targets = data_generator()
-enc_inputs = torch.tensor(enc_inputs)
-dec_inputs = torch.tensor(dec_inputs)
-dec_targets = torch.tensor(dec_targets)
-
-train_dataset = torch.utils.data.TensorDataset(enc_inputs,dec_inputs,dec_targets)
-train_iter = torch.utils.data.DataLoader(train_dataset, batch_size, shuffle=True,drop_last=True)
-
-crossentropyloss = nn.CrossEntropyLoss()
-model = Transformer().cuda()
-#optimizer = optim.Adam(model.parameters(), lr=0.001)
-optimizer = optim.SGD(model.parameters(), lr=1e-3, momentum=0.99)
-for epoch in range(EPOCH):
-    index = 0
-    loss_sum = 0
-    print("\nEpoch: ",epoch)
-    pbar = ProgressBar(n_total=len(train_iter), desc='Training')
-    for enc_input,dec_input,dec_target in train_iter:
-        # print(enc_input)
-        # print(dec_input)
-        # print(dec_target)
-        # exit()
-        optimizer.zero_grad()
-        enc_input = enc_input.cuda()
-        dec_input = dec_input.cuda()
-        dec_target = dec_target.cuda()
-        dec_logits,t1,t2,t3 = model(enc_input,dec_input)
-        dec_target = dec_target.reshape(-1)
-        loss = crossentropyloss(dec_logits,dec_target)
-        loss.backward()
-        optimizer.step()
-        index += 1
-        loss_sum += loss
-        pbar(index-1, {'loss': loss_sum/index})
-    greedy_decode(model)
-        
-
