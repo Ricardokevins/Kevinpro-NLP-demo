@@ -1,7 +1,6 @@
 from torch.utils.data import Dataset
 
 class CharDataset(Dataset):
-
     def __init__(self, data, block_size):
         chars = sorted(list(set(data)))
         data_size, vocab_size = len(data), len(chars)
