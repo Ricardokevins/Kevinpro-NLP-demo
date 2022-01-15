@@ -18,6 +18,7 @@ class CharDataset(Dataset):
             data = i.strip().split(' ')
             word = data[0]
             idx = data[1]
+            
             self.word2id[word] = int(idx)
 
         self.id2word = {}
@@ -31,14 +32,16 @@ class CharDataset(Dataset):
         for s,t in zip(source,target):
             s = s.replace("\n","")
             for i in s:
-                if i not in self.word2id:
-                    self.word2id[i] = id 
-                    id += 1
+                if len(i.strip()) != 0:
+                    if i not in self.word2id:
+                        self.word2id[i] = id 
+                        id += 1
             t = t.replace("\n","")
             for i in t:
-                if i not in self.word2id:
-                    self.word2id[i] = id 
-                    id += 1
+                if len(i.strip()) != 0:
+                    if i not in self.word2id:
+                        self.word2id[i] = id 
+                        id += 1
             if id > 30000:
                 break
         
@@ -125,7 +128,8 @@ class TransformerTrainer:
         self.device = 'cpu'
         if torch.cuda.is_available():
             self.device = torch.cuda.current_device()
-            self.model = torch.nn.DataParallel(self.model).to(self.device)
+            self.model.to(self.device)
+            #self.model = torch.nn.DataParallel(self.model).to(self.device)
 
     def save_checkpoint(self):
         # DataParallel wrappers keep raw model object in .module attribute
@@ -136,8 +140,8 @@ class TransformerTrainer:
     def train(self):
         model, config = self.model, self.config
         raw_model = model.module if hasattr(self.model, "module") else model
-        optimizer = raw_model.configure_optimizers(config)
-
+        optimizer = torch.optim.AdamW(self.model.parameters(), lr=config.learning_rate, betas=config.betas)
+        
         def run_epoch(split):
             is_train = split == 'train'
             model.train(is_train)

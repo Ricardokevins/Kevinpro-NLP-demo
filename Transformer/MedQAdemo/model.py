@@ -180,9 +180,22 @@ class Transformer(nn.Module):
         self.encoder = Encoder()
         self.decoder = Decoder()
         self.projection = nn.Linear(d_model, tgt_vocab_size, bias=False)
-        
+        self.encoder.apply(self._init_weights)
+        self.decoder.apply(self._init_weights)
+
+    def _init_weights(self, module):
+        if isinstance(module, (nn.Linear, nn.Embedding)):
+            module.weight.data.normal_(mean=0.0, std=0.02)
+            if isinstance(module, nn.Linear) and module.bias is not None:
+                module.bias.data.zero_()
+        elif isinstance(module, nn.LayerNorm):
+            module.bias.data.zero_()
+            module.weight.data.fill_(1.0)
+
     def forward(self, enc_inputs, dec_inputs):
         enc_outputs, enc_self_attns = self.encoder(enc_inputs)
         dec_outputs, dec_self_attns, dec_enc_attns = self.decoder(dec_inputs, enc_inputs, enc_outputs)
         dec_logits = self.projection(dec_outputs) # dec_logits : [batch_size x src_vocab_size x tgt_vocab_size]
         return dec_logits.view(-1, dec_logits.size(-1)), enc_self_attns, dec_self_attns, dec_enc_attns
+
+    
