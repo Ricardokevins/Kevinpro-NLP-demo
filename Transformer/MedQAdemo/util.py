@@ -1,3 +1,6 @@
+import torch
+
+
 def readFromPair():
     f = open('./data/question.txt','r',encoding='utf-8')
     question = f.readlines()
@@ -7,3 +10,4 @@ def readFromPair():
     answer = [i.replace('\n','') for i in answer]
 
     return question,answer
+

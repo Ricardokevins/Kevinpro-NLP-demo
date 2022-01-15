@@ -2,7 +2,59 @@ from torch.utils.data import Dataset
 import torch
 import torch.nn as nn
 from util import *
+from util import readFromPair
 import os
+class DecodeData:
+    def __init__(self):
+        self.question,self.answer = readFromPair()
+        if os.path.exists('dict.txt') == False:
+            print("Hit error")
+            exit()
+        else:
+            self.load_dict()
+
+    def tokenizer(self,input):
+        ids = []
+        for i in input:
+            if i in self.word2id:
+                ids.append(self.word2id[i])
+            else:
+                ids.append(self.word2id['[UNK]'])
+        return ids
+
+    def padding(self,input):
+        while len(input) < 200:
+            input.append(self.word2id['[PAD]'])
+        input = input[:200]
+        return input
+
+    def load_dict(self):
+        f = open("dict.txt",'r',encoding = 'utf-8')
+        lines = f.readlines()
+        self.word2id = {}
+        for i in lines:
+            data = i.strip().split(' ')
+            word = data[0]
+            idx = data[1]
+            
+            self.word2id[word] = int(idx)
+
+        self.id2word = {}
+        for i in self.word2id:
+            self.id2word[self.word2id[i]] = i
+        return 
+    
+    def encode(self,source_text):
+        source_id = self.tokenizer(source_text)
+        decode_input = [self.word2id['[BOS]']]
+        return source_id,decode_input
+    
+    def decode(self,result):
+        tokens = [ ]
+        for i in result:
+            if i in self.id2word:
+                tokens.append(self.id2word[i])
+        return tokens
 class CharDataset(Dataset):
     def __init__(self):
         self.question,self.answer = readFromPair()
@@ -10,7 +62,7 @@ class CharDataset(Dataset):
             self.build_dict(self.question, self.answer)
         else:
             self.load_dict()
-
+    
     def load_dict(self):
         f = open("dict.txt",'r',encoding = 'utf-8')
         lines = f.readlines()

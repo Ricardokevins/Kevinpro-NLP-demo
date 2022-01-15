@@ -9,8 +9,8 @@ from torch.autograd import Variable
 d_model = 512  # Embedding Size
 d_ff = 1024  # FeedForward dimension
 d_k = d_v = 64  # dimension of K(=Q), V
-n_layers = 3  # number of Encoder of Decoder Layer
-n_heads = 4  # number of heads in Multi-Head Attention
+n_layers = 6  # number of Encoder of Decoder Layer
+n_heads = 8  # number of heads in Multi-Head Attention
 dict_size = 8000
 src_vocab_size = dict_size
 tgt_vocab_size = dict_size
@@ -132,7 +132,6 @@ class Encoder(nn.Module):
     def forward(self, enc_inputs): # enc_inputs : [batch_size x source_len]
         #enc_outputs = self.src_emb(enc_inputs) + self.pos_emb(torch.LongTensor([[1,2,3,4,0]]))
         enc_outputs = self.pos_emb(self.src_emb(enc_inputs))
-        enc_self_attn_mask = get_attn_pad_mask(enc_inputs, enc_inputs)
         enc_self_attns = []
         for layer in self.layers:
             enc_outputs, enc_self_attn = layer(enc_outputs, enc_self_attn_mask)
@@ -180,8 +179,8 @@ class Transformer(nn.Module):
         self.encoder = Encoder()
         self.decoder = Decoder()
         self.projection = nn.Linear(d_model, tgt_vocab_size, bias=False)
-        self.encoder.apply(self._init_weights)
-        self.decoder.apply(self._init_weights)
+        # self.encoder.apply(self._init_weights)
+        # self.decoder.apply(self._init_weights)
 
     def _init_weights(self, module):
         if isinstance(module, (nn.Linear, nn.Embedding)):
