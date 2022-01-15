@@ -1,5 +1,6 @@
 from torch.utils.data import Dataset
 from util import *
+import os
 class CharDataset(Dataset):
     def __init__(self):
         question,answer = readFromPair()
@@ -7,6 +8,21 @@ class CharDataset(Dataset):
             self.build_dict(question, answer)
         else:
             self.load_dict()
+
+    def load_dict(self):
+        f = open("dict.txt",'r',encoding = 'utf-8')
+        lines = f.readlines()
+        for i in lines:
+            data = i.strip().split(' ')
+            word = data[0]
+            idx = data[1]
+            self.word2id[word] = int(idx)
+
+        self.id2word = {}
+        for i in self.word2id:
+            self.id2word[self.word2id[i]] = i
+        return 
+
     def build_dict(self,source,target):
         self.word2id = {'[PAD]':0,'[BOS]':1,'[EOS]':2}
         id = 3
@@ -28,12 +44,14 @@ class CharDataset(Dataset):
         
         f = open('dict.txt','w',encoding='utf-8')
         for i in self.word2id:
-            f.write(i + " " + self.word2id[i] + "\n")
+            f.write(i + " " + str(self.word2id[i]) + "\n")
         return
 
     def __len__(self):
         return 
 
     def __getitem__(self, idx):
-        # grab a chunk of (block_size + 1) characters from the data
         return 
+
+
+CharDataset()
