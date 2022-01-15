@@ -1,5 +1,6 @@
 from torch.utils.data import Dataset
 import torch
+import torch.nn as nn
 from util import *
 import os
 class CharDataset(Dataset):
@@ -64,7 +65,7 @@ class CharDataset(Dataset):
         return ids
 
     def padding(self,input):
-        if len(input) < 200:
+        while len(input) < 200:
             input.append(self.word2id['[PAD]'])
         input = input[:200]
         return input
@@ -79,10 +80,11 @@ class CharDataset(Dataset):
 
         target_text = self.answer[idx]
         target_id = self.tokenizer(target_text)
-
-        decode_input = [self.word2id['BOS']] + target_id
-        decode_label = target_id + self.word2id['[EOS]']
-
+        target_id = self.padding(target_id)
+        decode_input = [self.word2id['[BOS]']] + target_id
+        decode_label = target_id + [self.word2id['[EOS]']]
+        assert len(decode_input) == len(decode_label)
+        assert len(decode_input) == 201
         return torch.tensor(source_id),torch.tensor(decode_input),torch.tensor(decode_label)
 
 
@@ -141,7 +143,7 @@ class TransformerTrainer:
         model, config = self.model, self.config
         raw_model = model.module if hasattr(self.model, "module") else model
         optimizer = torch.optim.AdamW(self.model.parameters(), lr=config.learning_rate, betas=config.betas)
-        
+        crossentropyloss = nn.CrossEntropyLoss()
         def run_epoch(split):
             is_train = split == 'train'
             model.train(is_train)
@@ -152,15 +154,16 @@ class TransformerTrainer:
 
             losses = []
             pbar = tqdm(enumerate(loader), total=len(loader)) if is_train else enumerate(loader)
-            for it, (x, y) in pbar:
+            for it, (source,decode_input,decode_label) in pbar:
 
                 # place data on the correct device
-                x = x.to(self.device)
-                y = y.to(self.device)
-
+                source = source.to(self.device)
+                decode_input = decode_input.to(self.device)
+                decode_label = decode_label.to(self.device)
                 # forward the model
                 with torch.set_grad_enabled(is_train):
-                    logits, loss = model(x, y)
+                    dec_logits, enc_self_attns, dec_self_attns, dec_enc_attns = model(source, decode_input)
+                    loss = crossentropyloss(dec_logits,decode_label.reshape(-1))
                     loss = loss.mean() # collapse all losses if they are scattered on multiple gpus
                     losses.append(loss.item())
 
@@ -172,21 +175,8 @@ class TransformerTrainer:
                     torch.nn.utils.clip_grad_norm_(model.parameters(), config.grad_norm_clip)
                     optimizer.step()
 
-                    # decay the learning rate based on our progress
-                    if config.lr_decay:
-                        self.tokens += (y >= 0).sum() # number of tokens processed this step (i.e. label is not -100)
-                        if self.tokens < config.warmup_tokens:
-                            # linear warmup
-                            lr_mult = float(self.tokens) / float(max(1, config.warmup_tokens))
-                        else:
-                            # cosine learning rate decay
-                            progress = float(self.tokens - config.warmup_tokens) / float(max(1, config.final_tokens - config.warmup_tokens))
-                            lr_mult = max(0.1, 0.5 * (1.0 + math.cos(math.pi * progress)))
-                        lr = config.learning_rate * lr_mult
-                        for param_group in optimizer.param_groups:
-                            param_group['lr'] = lr
-                    else:
-                        lr = config.learning_rate
+
+                    lr = config.learning_rate
 
                     # report progress
                     pbar.set_description(f"epoch {epoch+1} iter {it}: train loss {loss.item():.5f}. lr {lr:e}")

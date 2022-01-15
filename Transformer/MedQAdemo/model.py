@@ -9,9 +9,9 @@ from torch.autograd import Variable
 d_model = 512  # Embedding Size
 d_ff = 1024  # FeedForward dimension
 d_k = d_v = 64  # dimension of K(=Q), V
-n_layers = 6  # number of Encoder of Decoder Layer
-n_heads = 8  # number of heads in Multi-Head Attention
-dict_size = 10000
+n_layers = 3  # number of Encoder of Decoder Layer
+n_heads = 4  # number of heads in Multi-Head Attention
+dict_size = 8000
 src_vocab_size = dict_size
 tgt_vocab_size = dict_size
 class PositionalEncoding(nn.Module):
