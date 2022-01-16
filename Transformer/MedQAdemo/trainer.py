@@ -2,8 +2,12 @@ from torch.utils.data import Dataset
 import torch
 import torch.nn as nn
 from util import *
-from util import readFromPair
 import os
+from model import Transformer
+import torch
+
+
+
 class DecodeData:
     def __init__(self):
         self.question,self.answer = readFromPair()
@@ -55,6 +59,7 @@ class DecodeData:
             if i in self.id2word:
                 tokens.append(self.id2word[i])
         return tokens
+
 class CharDataset(Dataset):
     def __init__(self):
         self.question,self.answer = readFromPair()
@@ -62,7 +67,7 @@ class CharDataset(Dataset):
             self.build_dict(self.question, self.answer)
         else:
             self.load_dict()
-    
+
     def load_dict(self):
         f = open("dict.txt",'r',encoding = 'utf-8')
         lines = f.readlines()
@@ -164,12 +169,37 @@ class TrainerConfig:
     # learning rate decay params: linear warmup followed by cosine decay to 10% of original
     lr_decay = False
 
-    ckpt_path = 'novelModel.pth'
+    ckpt_path = './data/novelModel.pth'
     num_workers = 0 # for DataLoader
 
     def __init__(self, **kwargs):
         for k,v in kwargs.items():
             setattr(self, k, v)
+
+@torch.no_grad()
+def greedy_decoder(model,input = "医生孩子脑瘫一般有啥表现？,我家宝宝现在是4岁了，我最近感觉他好像是得了脑瘫了，但是我对脑瘫的症状不是很了解，想咨询下医生。小儿脑瘫有哪些表现"):
+    model.eval()
+    model.cuda()
+    decode_steps = 200
+    decode_dataset = DecodeData()
+    enc_input,dec_input = decode_dataset.encode(input)
+    enc_input = torch.tensor(enc_input).unsqueeze(0).cuda()
+    dec_input = torch.tensor(dec_input).unsqueeze(0).cuda()
+    for k in range(decode_steps):
+        dec_logits, enc_self_attns, dec_self_attns, dec_enc_attns = model(enc_input,dec_input)
+        _, ix = torch.topk(dec_logits, k=1, dim=-1)
+        ix = ix[:,-1]
+        ix = ix.reshape(1,-1)
+        dec_input = torch.cat((dec_input, ix), dim=1)
+
+
+    result = dec_input.cpu().numpy().tolist()[0]
+    tokens = decode_dataset.decode(result)
+    output_string = "".join(tokens)
+    output_string = output_string.replace("[PAD]","")
+    output_string = output_string.replace("[BOS]","")
+    #output_string = output_string.replace("[EOS]","")
+    print("Kevin's Transformer Doctor:",output_string)
 
 class TransformerTrainer:
     def __init__(self, model, train_dataset, test_dataset, config):
@@ -215,6 +245,7 @@ class TransformerTrainer:
                 # forward the model
                 with torch.set_grad_enabled(is_train):
                     dec_logits, enc_self_attns, dec_self_attns, dec_enc_attns = model(source, decode_input)
+                    dec_logits = dec_logits.view(-1, dec_logits.size(-1))
                     loss = crossentropyloss(dec_logits,decode_label.reshape(-1))
                     loss = loss.mean() # collapse all losses if they are scattered on multiple gpus
                     losses.append(loss.item())
@@ -241,14 +272,14 @@ class TransformerTrainer:
         best_loss = float('inf')
         self.tokens = 0 # counter used for learning rate decay
         for epoch in range(config.max_epochs):
-
+            self.save_checkpoint()
             run_epoch('train')
             if self.test_dataset is not None:
                 test_loss = run_epoch('test')
 
             # supports early stopping based on the test loss, or just save always if no test set is provided
             good_model = self.test_dataset is None or test_loss < best_loss
-
+            greedy_decoder(model)
             self.save_checkpoint()
             # if self.config.ckpt_path is not None and good_model:
             #     best_loss = test_loss
