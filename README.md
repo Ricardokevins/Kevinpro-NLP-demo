@@ -4,7 +4,7 @@
 
 **If you have any question, please comment in Issue**
 
-[中文版本README](https://github.com/Ricardokevins/Kevinpro-NLP-demo/blob/dev-win/Chinese.md)
+[中文版本README](https://github.com/Ricardokevins/Kevinpro-NLP-demo/blob/main/Chinese.md)
 
 # The main content
 
