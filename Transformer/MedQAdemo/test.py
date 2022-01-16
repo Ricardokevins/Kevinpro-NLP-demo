@@ -5,10 +5,7 @@ from trainer import greedy_decoder
 import warnings
 warnings.filterwarnings('ignore')
 
-# model = Transformer()
-
 model = make_model(7000,7000)
-# model = Transformer()
 model.load_state_dict(torch.load('./data/novelModel.pth'))
 
 #input = "头疼头晕怎么办"

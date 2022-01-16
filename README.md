@@ -21,6 +21,7 @@ more details in folder's readme.md inside
 9. **Practical use of Pytorch_Lighting**
 10. **AMP and Fp16 training for Pytorch**
 11. **Usefully Visualize Toolkit for Attention Map(or Other weighted Matrix**
+12. **Doctor "Seq2Seq Transformer" In Medical QA**
 
 My other open source NLP projects
 
@@ -29,7 +30,10 @@ My other open source NLP projects
 3. **Transformer implement and useful NLP toolkit**：[Ricardokevins/EasyTransformer: Quick start with strong baseline of Bert and Transformer without pretrain (github.com)](https://github.com/Ricardokevins/EasyTransformer)
 
 # What's New ~~
-
+## 2022.1.16
+1. Update use Seq2Seq Transformer to Modeling Medical QA task   (Tuing on 55w pairs of Chinese Medical QA data) More detail to be seen in README.md of Transformer/MedQAdemo/
+2. Update new Trainer and useful tools
+3. remove previous implement of Transformer (with some unfixable bugs)
 ## 2021.12.17
 
 1. Update Weighted Matrix Visualize Toolkit(eg. used for visualize of Attention Map) implement in Visualize. More Useful toolkit in the future
@@ -45,9 +49,7 @@ My other open source NLP projects
 1. update Practical use of Amp(Automatic Mixed Precision). Implement in VAEGenerator, Test on local MX150, Significant improve the training time and  Memory-Usage, More details in Comments at the end of the code
 2. Based the command of Amp, Modified the definition of 1e-9 to inf in model.py
 
-## 2021.11.20
 
-1. update BM25 and TF-IDF algorithm for quick match of Text.
 
 # Update History
 
@@ -105,6 +107,9 @@ My other open source NLP projects
 1. 在Transformer里增加了一个随机数字串恢复的Demo，对新手理解Transformer超友好，不需要外部数据，利用随机构造的数字串训练
 2. 新增实验TransfomerVAE，暂时有BUG，施工中
 
+## 2021.11.20
+
+1. update BM25 and TF-IDF algorithm for quick match of Text.
 # 参考
 
 ## BM25

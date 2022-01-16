@@ -16,6 +16,7 @@
 9. **Pytorch_Lighting的实践使用**
 10. **Pytorch原生AMP混合精度实验使用**
 11. **便捷好用的带权矩阵可视化，可用于可视化Attenton矩阵**
+12. **利用Seq2Seq Transformer完成中文医疗QA任务**
 
 
 其他参考实践
@@ -25,7 +26,10 @@
 3. **Transfomer实现和其他部件**：[Ricardokevins/EasyTransformer: Quick start with strong baseline of Bert and Transformer without pretrain (github.com)](https://github.com/Ricardokevins/EasyTransformer)
 
 # 最近更新记录
-
+## 2021.1.16
+1. 实现了利用Seq2Seq Transformer完成中文医疗QA任务，在55W条中文医疗问答对上训练（见Transformer/MedQAdemo里的README.md)
+2. 实现了新的trainer和一些有用的工具
+3. 移除了之前transformer的实现（有一些不好修复的bug，比如对encoder的不依赖）
 ## 2021.12.17
 1. 更新了带权矩阵的可视化工具，未来将支持更多的可视化工具
 2. 更新了python代码规范
@@ -37,9 +41,6 @@
 1. 新增了Amp混合精度实验，实现与VAEGenerator，简单的在本地的MX150上测试，加速时间和显存占用显著改善（可见代码后注释）
 2. 基于Amp的要求，修改了model定义里的1e-9为inf
 
-## 2021.11.20
-
-1. 更新了BM25和TF-IDF算法，用于快速检索
 
 ## 2021.9.29
 
@@ -96,6 +97,12 @@
 ## 2021.9.16
 
 1. 修复了Pretrain里Mask Token未对齐，位置不一致问题
+
+
+## 2021.11.20
+
+1. 更新了BM25和TF-IDF算法，用于快速检索
+
 
 # 参考
 
