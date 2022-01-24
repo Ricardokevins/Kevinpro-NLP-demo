@@ -16,7 +16,7 @@ bert_tokenizer = BertTokenizer.from_pretrained(pretrain_path)
 corpus_path = './toutiaonews38w/train.tsv'
 f = open(corpus_path, 'r',encoding='utf8')
 lines = f.readlines()
-lines = lines[:10000]
+#lines = lines[:10000]
 # print(lines[1].strip().split('\t'))
 
 count = 0
@@ -123,7 +123,7 @@ net = net.cuda()
 #net=torch.load('model/epoch76.pt')
 # net = VAE().cuda()
 #optimizer = optim.SGD(net.parameters(), lr=1e-3, momentum=0.99)
-optimizer = AdamW(net.parameters(),lr = 2e-5, eps = 1e-8)
+optimizer = AdamW(net.parameters(),lr = 6e-4, eps = 1e-8)
 index = 0
 loss_sum = 0 
 
@@ -196,7 +196,7 @@ autocast = torch.cuda.amp.autocast
 USE_AMP = False
 import time
 time_start=time.time()
-for epoch in range(1):
+for epoch in range(10):
     print("\nstart Epoch: ",epoch)
     loss_sum = 0
     index = 0
@@ -246,7 +246,7 @@ for epoch in range(1):
             print("E: {} Sigma: {}".format(mu_mean,log_var_mean))
             
             #print(CEL,KLD)
-    #torch.save(net, 'model/epoch{}.pt'.format(epoch)) 
+    torch.save(net, 'model/epoch{}.pt'.format(epoch)) 
     # print(loss)
     # exit()
 time_end=time.time()
