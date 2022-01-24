@@ -16,12 +16,12 @@ bert_tokenizer = BertTokenizer.from_pretrained(pretrain_path)
 corpus_path = './toutiaonews38w/train.tsv'
 f = open(corpus_path, 'r',encoding='utf8')
 lines = f.readlines()
-#lines = lines[:10000]
+lines = lines[:10000]
 # print(lines[1].strip().split('\t'))
 
 count = 0
 min_length = 10
-max_length = 20
+max_length = 30
 batch_size = 8
 
 SOSID = bert_tokenizer.encode('[CLS]', add_special_tokens=False)[0]
@@ -123,7 +123,7 @@ net = net.cuda()
 #net=torch.load('model/epoch76.pt')
 # net = VAE().cuda()
 #optimizer = optim.SGD(net.parameters(), lr=1e-3, momentum=0.99)
-optimizer = AdamW(net.parameters(),lr = 6e-4, eps = 1e-8)
+optimizer = AdamW(net.parameters(),lr = 6e-3, eps = 1e-8)
 index = 0
 loss_sum = 0 
 
