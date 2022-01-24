@@ -8,13 +8,12 @@ import torch
 import torch.nn.functional as F
 from EasyTransformer.util import ProgressBar
 from transformers import AdamW
-from model import TransformerVAE
+from model import make_model
 import torch.optim as optim
 
-pretrain_path = '../../../PTM//bert-base-chinese'
+pretrain_path = 'D:\\DOWNLOAD_ARCHIVE\\PLM\\BERT\\bert-base-chinese'
 bert_tokenizer = BertTokenizer.from_pretrained(pretrain_path)
 corpus_path = './toutiaonews38w/train.tsv'
-
 f = open(corpus_path, 'r',encoding='utf8')
 lines = f.readlines()
 lines = lines[:10000]
@@ -65,7 +64,7 @@ for i in tqdm(range(1,len(lines))):
         indexed_tokens = bert_tokenizer.encode(sent, add_special_tokens=False)
         enc_input = padding(indexed_tokens)
         dec_input = padding([SOSID]+indexed_tokens)
-        dec_input = random_drop(dec_input)
+        #dec_input = random_drop(dec_input)
         dec_target = padding(indexed_tokens+[EOSID])
         enc_inputs.append(enc_input)
         dec_inputs.append(dec_input)
@@ -119,7 +118,8 @@ def loss_function(x_hat, x, mu, log_var):
     #loss = CEL
     return loss, CEL, KLD
 
-net = TransformerVAE().cuda()
+net = make_model(dict_size,dict_size)
+net = net.cuda()
 #net=torch.load('model/epoch76.pt')
 # net = VAE().cuda()
 #optimizer = optim.SGD(net.parameters(), lr=1e-3, momentum=0.99)
