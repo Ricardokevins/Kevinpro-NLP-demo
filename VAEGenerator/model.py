@@ -290,7 +290,7 @@ class TransformerVAE(nn.Module):
         return self.encoder(self.src_embed(src), src_mask)
     
     def trans_decode(self, memory, src_mask, tgt, tgt_mask):
-        return self.decoder(self.tgt_embed(tgt), memory, src_mask, tgt_mask)
+        return self.generator(self.decoder(self.tgt_embed(tgt), memory, src_mask, tgt_mask))
     
     def encode(self,x):
         h = F.relu(self.fc1(x))
@@ -301,10 +301,13 @@ class TransformerVAE(nn.Module):
         # print(log_var.shape)
         return mu, log_var
     
-    def decode(self,tgt,enc_inputs,z):
+    def decode(self,tgt,src,z):
+        z = self.fc4(z)
         src_mask = (src != 0).unsqueeze(-2)
         tgt_mask = make_std_mask(tgt, 0)
-        dec_logits = self.trans_decode(enc_outputs,src_mask,tgt,tgt_mask)
+        dec_logits = self.trans_decode(z,src_mask,tgt,tgt_mask)
+        print(tgt.shape)
+        print(dec_logits.shape)
         return dec_logits
 
     def reparameterization(self, mu, log_var):
