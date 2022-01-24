@@ -306,8 +306,6 @@ class TransformerVAE(nn.Module):
         src_mask = (src != 0).unsqueeze(-2)
         tgt_mask = make_std_mask(tgt, 0)
         dec_logits = self.trans_decode(z,src_mask,tgt,tgt_mask)
-        print(tgt.shape)
-        print(dec_logits.shape)
         return dec_logits
 
     def reparameterization(self, mu, log_var):
