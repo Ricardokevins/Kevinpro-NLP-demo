@@ -275,7 +275,7 @@ class TransformerVAE(nn.Module):
         self.encoder = encoder
         self.decoder = decoder
         self.src_embed = src_embed
-        self.tgt_embed = src_embed
+        self.tgt_embed = tgt_embed
         self.generator = generator
 
         input_dim = 512
