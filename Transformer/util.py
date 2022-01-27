@@ -23,6 +23,4 @@ def readFromPair():
     answer = f.readlines()
     answer = [i.replace('\n','') for i in answer]
     #question,answer = random_sample(question,answer,10000)
-    # question = question[100000:110000]
-    # answer = answer[100000:110000]
     return question,answer

@@ -3,15 +3,15 @@ import torch
 import torch.nn as nn
 from util import *
 import os
-from model import Transformer
 import torch
 
 
 
 class DecodeData:
-    def __init__(self):
+    def __init__(self,dict_path = 'dict.txt'):
+        self.dict_path = dict_path
         self.question,self.answer = readFromPair()
-        if os.path.exists('dict.txt') == False:
+        if os.path.exists(dict_path) == False:
             print("Hit error")
             exit()
         else:
@@ -33,7 +33,7 @@ class DecodeData:
         return input
 
     def load_dict(self):
-        f = open("dict.txt",'r',encoding = 'utf-8')
+        f = open(self.dict_path,'r',encoding = 'utf-8')
         lines = f.readlines()
         self.word2id = {}
         for i in lines:
@@ -61,15 +61,16 @@ class DecodeData:
         return tokens
 
 class CharDataset(Dataset):
-    def __init__(self):
+    def __init__(self,dict_path = 'dict.txt'):
+        self.dict_path = dict_path
         self.question,self.answer = readFromPair()
-        if os.path.exists('dict.txt') == False:
+        if os.path.exists(dict_path) == False:
             self.build_dict(self.question, self.answer)
         else:
             self.load_dict()
 
     def load_dict(self):
-        f = open("dict.txt",'r',encoding = 'utf-8')
+        f = open(self.dict_path,'r',encoding = 'utf-8')
         lines = f.readlines()
         self.word2id = {}
         for i in lines:
@@ -107,7 +108,7 @@ class CharDataset(Dataset):
         for i in self.word2id:
             self.id2word[self.word2id[i]] = i
         
-        f = open('dict.txt','w',encoding='utf-8')
+        f = open(self.dict_path,'w',encoding='utf-8')
         for i in self.word2id:
             f.write(i + " " + str(self.word2id[i]) + "\n")
         return
@@ -177,7 +178,7 @@ class TrainerConfig:
             setattr(self, k, v)
 
 @torch.no_grad()
-def greedy_decoder(model,input = "医生孩子脑瘫一般有啥表现？,我家宝宝现在是4岁了，我最近感觉他好像是得了脑瘫了，但是我对脑瘫的症状不是很了解，想咨询下医生。小儿脑瘫有哪些表现"):
+def greedy_decoder(model,input = None):
     model.eval()
     model.cuda()
     decode_steps = 200
@@ -199,7 +200,7 @@ def greedy_decoder(model,input = "医生孩子脑瘫一般有啥表现？,我家
     output_string = output_string.replace("[PAD]","")
     output_string = output_string.replace("[BOS]","")
     #output_string = output_string.replace("[EOS]","")
-    print("Kevin's Transformer Doctor:",output_string)
+    print("Kevin's Transformer:",output_string)
 
 class TransformerTrainer:
     def __init__(self, model, train_dataset, test_dataset, config):
