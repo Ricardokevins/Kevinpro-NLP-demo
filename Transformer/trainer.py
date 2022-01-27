@@ -10,6 +10,7 @@ class DataConfig:
         self.max_length = 200
         self.max_word_num = 30000
         self.dict_path = 'dict.txt'
+        self.max_samples = -1
 
 class DecodeData:
     def __init__(self,config):
@@ -67,7 +68,7 @@ class DecodeData:
 class CharDataset(Dataset):
     def __init__(self,config):
         self.config = config
-        self.question,self.answer = readFromPair()
+        self.question,self.answer = readFromPair(self.config.max_samples)
         if os.path.exists(self.config.dict_path) == False:
             self.build_dict(self.question, self.answer)
         else:

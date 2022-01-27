@@ -15,12 +15,13 @@ def random_sample(source,target,sample_num):
         sampled_target.append(target[i])
     return sampled_source,sampled_target
 
-def readFromPair():
+def readFromPair(max_samples):
     f = open('./data/question.txt','r',encoding='utf-8')
     question = f.readlines()
     question = [i.replace('\n','') for i in question]
     f = open("./data/answer.txt",'r',encoding = 'utf-8')
     answer = f.readlines()
     answer = [i.replace('\n','') for i in answer]
-    #question,answer = random_sample(question,answer,10000)
+    if max_samples != -1:
+        question,answer = random_sample(question,answer,max_samples)
     return question,answer
