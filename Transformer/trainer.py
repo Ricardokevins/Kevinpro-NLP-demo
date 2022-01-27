@@ -5,13 +5,17 @@ from util import *
 import os
 import torch
 
-
+class DataConfig:
+    def __init__(self):
+        self.max_length = 200
+        self.max_word_num = 30000
+        self.dict_path = 'dict.txt'
 
 class DecodeData:
-    def __init__(self,dict_path = 'dict.txt'):
-        self.dict_path = dict_path
+    def __init__(self,config):
+        self.dict_path = config.dict_path
         self.question,self.answer = readFromPair()
-        if os.path.exists(dict_path) == False:
+        if os.path.exists(self.dict_path) == False:
             print("Hit error")
             exit()
         else:
@@ -27,9 +31,9 @@ class DecodeData:
         return ids
 
     def padding(self,input):
-        while len(input) < 200:
+        while len(input) < config.max_length:
             input.append(self.word2id['[PAD]'])
-        input = input[:200]
+        input = input[:config.max_length]
         return input
 
     def load_dict(self):
@@ -61,10 +65,10 @@ class DecodeData:
         return tokens
 
 class CharDataset(Dataset):
-    def __init__(self,dict_path = 'dict.txt'):
-        self.dict_path = dict_path
+    def __init__(self,config):
+        self.dict_path = config.dict_path
         self.question,self.answer = readFromPair()
-        if os.path.exists(dict_path) == False:
+        if os.path.exists(self.dict_path) == False:
             self.build_dict(self.question, self.answer)
         else:
             self.load_dict()
@@ -86,8 +90,9 @@ class CharDataset(Dataset):
         return 
 
     def build_dict(self,source,target):
-        self.word2id = {'[PAD]':0,'[BOS]':1,'[EOS]':2,'[UNK]':3}
-        id = 4
+        self.word2id = {'[PAD]':0,'[BOS]':1,'[EOS]':2,'[UNK]':3,'[MASK]':4}
+        id = 5
+        assert id == len(self.word2id)
         for s,t in zip(source,target):
             s = s.replace("\n","")
             for i in s:
@@ -101,7 +106,7 @@ class CharDataset(Dataset):
                     if i not in self.word2id:
                         self.word2id[i] = id 
                         id += 1
-            if id > 30000:
+            if id >= config.max_word_num:
                 break
         
         self.id2word = {}
@@ -123,9 +128,9 @@ class CharDataset(Dataset):
         return ids
 
     def padding(self,input):
-        while len(input) < 200:
+        while len(input) < config.max_length:
             input.append(self.word2id['[PAD]'])
-        input = input[:200]
+        input = input[:config.max_length]
         return input
 
     def __len__(self):
@@ -142,7 +147,7 @@ class CharDataset(Dataset):
         decode_input = [self.word2id['[BOS]']] + target_id
         decode_label = target_id + [self.word2id['[EOS]']]
         assert len(decode_input) == len(decode_label)
-        assert len(decode_input) == 201
+        assert len(decode_input) == config.max_length+1
         return torch.tensor(source_id),torch.tensor(decode_input),torch.tensor(decode_label)
 
 
@@ -178,11 +183,12 @@ class TrainerConfig:
             setattr(self, k, v)
 
 @torch.no_grad()
-def greedy_decoder(model,input = None):
+def greedy_decoder(model,input = None,decode_steps = 200,config = None,device='cuda:0'):
     model.eval()
     model.cuda()
-    decode_steps = 200
-    decode_dataset = DecodeData()
+    if config == None:
+        config = DataConfig()
+    decode_dataset = DecodeData(config)
     enc_input,dec_input = decode_dataset.encode(input)
     enc_input = torch.tensor(enc_input).unsqueeze(0).cuda()
     dec_input = torch.tensor(dec_input).unsqueeze(0).cuda()
@@ -192,15 +198,13 @@ def greedy_decoder(model,input = None):
         ix = ix[:,-1]
         ix = ix.reshape(1,-1)
         dec_input = torch.cat((dec_input, ix), dim=1)
-
-
     result = dec_input.cpu().numpy().tolist()[0]
     tokens = decode_dataset.decode(result)
     output_string = "".join(tokens)
     output_string = output_string.replace("[PAD]","")
     output_string = output_string.replace("[BOS]","")
     #output_string = output_string.replace("[EOS]","")
-    print("Kevin's Transformer:",output_string)
+    return output_string
 
 class TransformerTrainer:
     def __init__(self, model, train_dataset, test_dataset, config):
