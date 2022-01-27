@@ -13,9 +13,9 @@ class DataConfig:
 
 class DecodeData:
     def __init__(self,config):
-        self.dict_path = config.dict_path
+        self.config = config
         self.question,self.answer = readFromPair()
-        if os.path.exists(self.dict_path) == False:
+        if os.path.exists(self.config.dict_path) == False:
             print("Hit error")
             exit()
         else:
@@ -31,13 +31,13 @@ class DecodeData:
         return ids
 
     def padding(self,input):
-        while len(input) < config.max_length:
+        while len(input) < self.config.max_length:
             input.append(self.word2id['[PAD]'])
-        input = input[:config.max_length]
+        input = input[:self.config.max_length]
         return input
 
     def load_dict(self):
-        f = open(self.dict_path,'r',encoding = 'utf-8')
+        f = open(self.config.dict_path,'r',encoding = 'utf-8')
         lines = f.readlines()
         self.word2id = {}
         for i in lines:
@@ -66,15 +66,15 @@ class DecodeData:
 
 class CharDataset(Dataset):
     def __init__(self,config):
-        self.dict_path = config.dict_path
+        self.config = config
         self.question,self.answer = readFromPair()
-        if os.path.exists(self.dict_path) == False:
+        if os.path.exists(self.config.dict_path) == False:
             self.build_dict(self.question, self.answer)
         else:
             self.load_dict()
 
     def load_dict(self):
-        f = open(self.dict_path,'r',encoding = 'utf-8')
+        f = open(self.config.dict_path,'r',encoding = 'utf-8')
         lines = f.readlines()
         self.word2id = {}
         for i in lines:
@@ -106,14 +106,14 @@ class CharDataset(Dataset):
                     if i not in self.word2id:
                         self.word2id[i] = id 
                         id += 1
-            if id >= config.max_word_num:
+            if id >= self.config.max_word_num:
                 break
         
         self.id2word = {}
         for i in self.word2id:
             self.id2word[self.word2id[i]] = i
         
-        f = open(self.dict_path,'w',encoding='utf-8')
+        f = open(self.config.dict_path,'w',encoding='utf-8')
         for i in self.word2id:
             f.write(i + " " + str(self.word2id[i]) + "\n")
         return
@@ -128,9 +128,9 @@ class CharDataset(Dataset):
         return ids
 
     def padding(self,input):
-        while len(input) < config.max_length:
+        while len(input) < self.config.max_length:
             input.append(self.word2id['[PAD]'])
-        input = input[:config.max_length]
+        input = input[:self.config.max_length]
         return input
 
     def __len__(self):
@@ -147,7 +147,7 @@ class CharDataset(Dataset):
         decode_input = [self.word2id['[BOS]']] + target_id
         decode_label = target_id + [self.word2id['[EOS]']]
         assert len(decode_input) == len(decode_label)
-        assert len(decode_input) == config.max_length+1
+        assert len(decode_input) == self.config.max_length+1
         return torch.tensor(source_id),torch.tensor(decode_input),torch.tensor(decode_label)
 
 
