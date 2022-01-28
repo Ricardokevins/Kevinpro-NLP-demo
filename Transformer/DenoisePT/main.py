@@ -14,8 +14,8 @@ default_config = DataConfig()
 
 Train = False
 if Train:
-    model = make_model(7000,7000)
     train_dataset = CharDataset(default_config)
+    model = make_model(7000,7000)
     tconf = TrainerConfig(max_epochs=2 , batch_size=2, learning_rate=2e-4, lr_decay=True, num_workers=0)
     trainer = TransformerTrainer(model, train_dataset, None, tconf)
     trainer.train() 

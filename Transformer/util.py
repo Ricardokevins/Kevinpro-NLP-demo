@@ -16,10 +16,10 @@ def random_sample(source,target,sample_num):
     return sampled_source,sampled_target
 
 def readFromPair(max_samples):
-    f = open('./data/question.txt','r',encoding='utf-8')
+    f = open('./data/source.txt','r',encoding='utf-8')
     question = f.readlines()
     question = [i.replace('\n','') for i in question]
-    f = open("./data/answer.txt",'r',encoding = 'utf-8')
+    f = open("./data/target.txt",'r',encoding = 'utf-8')
     answer = f.readlines()
     answer = [i.replace('\n','') for i in answer]
     if max_samples != -1:
