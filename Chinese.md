@@ -5,17 +5,18 @@
 
 主要内容（具体见各个项目内部的README说明）
 
-1. **基于多种模型 (BiLSTM,Transformer) 的文本分类[go here]([htt](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/TextClassification))**
-2. **摘要生成 (Pointer Generator NetWork)[go here]([htt](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/PGNSum))**
-3. **对话翻译 (Seq2Seq)  [go here]([htt](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/ChatBotEnglish))**
-4. **GNN在文本分类的实践 [go here]([htt](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/GNN))**
-5. ***Transformer Mask Language Model预训练[go here]([htt](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/Pretrain))**
-6. **GPT文本续写以及GPT做数学题[go here]([htt](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/GPT))**
-7. **NLP炼丹技巧实践 对抗学习 (FGM)[go here]([htt](https://github.com/Ricardokevins/Kevinpro-NLP-demo/blob/main/TextClassification/Attack.py))**
-8. **非常简单且易部署的 Seq2Seq-Transformer. 包括了一些部署样例，如中文医疗QA和DeNoise预训练 欢迎尝试使用[go here]([htt](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/Transformer))**
-9. **Pytorch_Lighting实践[go here]([htt](https://github.com/Ricardokevins/Kevinpro-NLP-demo/blob/main/TextClassification/LightingMain.py))**
-10. **Pytorch实现 AMP 和 Fp16 训练 [go here]([htt](https://github.com/Ricardokevins/Kevinpro-NLP-demo/blob/main/VAEGenerator/transformerBased.py))**
-11. **便捷好用的带权矩阵可视化，可用于可视化Attenton矩阵[go here]([htt](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/Visualize))**
+1. **基于多种模型 (BiLSTM,Transformer) 的文本分类  [go here](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/TextClassification)**
+2. **摘要生成 (Pointer Generator NetWork)  [go here](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/PGNSum)**
+3. **对话翻译 (Seq2Seq)  [go here](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/ChatBotEnglish)**
+4. **GNN在文本分类的实践  [go here](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/GNN)**
+5. ***Transformer Mask Language Model预训练  [go here](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/Pretrain)**
+6. **GPT文本续写以及GPT做数学题  [go here](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/GPT)**
+7. **NLP炼丹技巧实践 对抗学习 (FGM)  [go here](https://github.com/Ricardokevins/Kevinpro-NLP-demo/blob/main/TextClassification/Attack.py)**
+8. **非常简单且易部署的 Seq2Seq-Transformer. 包括了一些部署样例，如中文医疗QA和DeNoise预训练 欢迎尝试使用  [go here](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/Transformer)**
+9. **Pytorch_Lighting实践  [go here](https://github.com/Ricardokevins/Kevinpro-NLP-demo/blob/main/TextClassification/LightingMain.py)**
+10. **Pytorch实现 AMP 和 Fp16 训练  [go here](https://github.com/Ricardokevins/Kevinpro-NLP-demo/blob/main/VAEGenerator/transformerBased.py)**
+11. **便捷好用的带权矩阵可视化，可用于可视化Attenton矩阵  [go here](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/Visualize)**
+
 
 其他参考实践
 
