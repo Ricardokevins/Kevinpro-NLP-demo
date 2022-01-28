@@ -15,7 +15,6 @@ class DataConfig:
 class DecodeData:
     def __init__(self,config):
         self.config = config
-        self.question,self.answer = readFromPair()
         if os.path.exists(self.config.dict_path) == False:
             print("Hit error")
             exit()
@@ -218,8 +217,8 @@ class TransformerTrainer:
         self.device = 'cpu'
         if torch.cuda.is_available():
             self.device = torch.cuda.current_device()
-            self.model.to(self.device)
-            #self.model = torch.nn.DataParallel(self.model).to(self.device)
+            #self.model.to(self.device)
+            self.model = torch.nn.DataParallel(self.model).to(self.device)
 
     def save_checkpoint(self):
         # DataParallel wrappers keep raw model object in .module attribute
@@ -285,7 +284,7 @@ class TransformerTrainer:
 
             # supports early stopping based on the test loss, or just save always if no test set is provided
             good_model = self.test_dataset is None or test_loss < best_loss
-            greedy_decoder(model)
+            #greedy_decoder(model)
             self.save_checkpoint()
             # if self.config.ckpt_path is not None and good_model:
             #     best_loss = test_loss

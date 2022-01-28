@@ -40,14 +40,17 @@ def apply_noise(sent,temp_dict):
 def generate_noise_data():
     sents = fop.read_txt_lines('./data/corpus.txt')
     temp_dict = get_temp_dict()
-    data = []
-    for i in tqdm(sents):
-        t = apply_noise(i,temp_dict)
-        data.append(t)
-    fop.write_txt_file('./data/target.txt',sents)
-    fop.write_txt_file('./data/source.txt', data)
-    print(sents[0])
-    print(data[0])
+    source = []
+    target = []
+    for e in range(10):
+        for i in tqdm(sents):
+            t = i[:200]
+            s = apply_noise(t,temp_dict)
+            source.append(s)
+            target.append(t)
+    fop.write_txt_file('./data/target.txt',target)
+    fop.write_txt_file('./data/source.txt', source)
+
 
 generate_noise_data()
 

@@ -12,11 +12,11 @@ import warnings
 warnings.filterwarnings("ignore")
 default_config = DataConfig()
 
-Train = True
+Train = False
 if Train:
     train_dataset = CharDataset(default_config)
-    model = make_model(7000,7000)
-    tconf = TrainerConfig(max_epochs=2 , batch_size=4, learning_rate=2e-4, lr_decay=True, num_workers=0)
+    model = make_model(6300,6300)
+    tconf = TrainerConfig(max_epochs=4 , batch_size=64, learning_rate=2e-4, lr_decay=True, num_workers=0)
     trainer = TransformerTrainer(model, train_dataset, None, tconf)
     trainer.train() 
 else:
@@ -25,7 +25,7 @@ else:
     import warnings
     warnings.filterwarnings('ignore')
 
-    model = make_model(7000,7000)
+    model = make_model(6300,6300)
     model.load_state_dict(torch.load('./data/novelModel.pth'))
 
     #input = "头疼头晕怎么办"
@@ -35,11 +35,14 @@ else:
     # 头疼，咳嗽，感觉有点发烧。我是不是得了新冠肺炎啊？
     # 每天睡不着，很晚睡，没有精神咋办
     # 我被玻璃划伤了脚，请问怎么处理
-    question = "高血压患者能吃党参吗？,我有高血压这两天女婿来的时候给我拿了些党参泡水喝，您好高血压可以吃党参吗？"
+    # 我想咨一下关于咱们本科招生强机计划的一问题
+
+
+    question = "你懂我在什么"
     question = "恶心想吐，不想吃饭咋办"
 
     while 1 :
-        question = input("输入你要问医生的问题      ：")
+        question = input("输入：")
         result = greedy_decoder(model, input = question,config = default_config)
-        print(result)
+        print("输出：" + result)
         print('\n')
