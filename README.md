@@ -10,17 +10,17 @@
 
 you can go into each project folder for more details in folder's readme.md inside,  
 
-1. **Text Classification Based on many Models (BiLSTM,Transformer)[go here]([htt](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/TextClassification))**
-2. **Summary Generation (Pointer Generator NetWork)[go here]([htt](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/PGNSum))**
-3. **Dialogue Translation (Seq2Seq) to build your own DialogueBot~~  [go here]([htt](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/ChatBotEnglish))**
-4. **Use GNN in Text Classification[go here]([htt](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/GNN)**
-5. **Transformer Mask Language Model Pretraining[go here]([htt](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/Pretrain))**
-6. **GPT for Text Generation and GPT for math problem[go here]([htt](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/GPT))**
-7. **Adversarial training (FGM)[go here]([htt](https://github.com/Ricardokevins/Kevinpro-NLP-demo/blob/main/TextClassification/Attack.py))**
-8. **Very Simple and quick Use/Deploy of Seq2Seq-Transformer. Including Several Eamples(Denoise Pretrain, Medical-QuestionAnswering[go here]([htt](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/Transformer))**
-9. **Practical use of Pytorch_Lighting[go here]([htt](https://github.com/Ricardokevins/Kevinpro-NLP-demo/blob/main/TextClassification/LightingMain.py))**
-10. **AMP and Fp16 training for Pytorch[go here]([htt](https://github.com/Ricardokevins/Kevinpro-NLP-demo/blob/main/VAEGenerator/transformerBased.py))**
-11. **Usefully Visualize Toolkit for Attention Map(or Other weighted Matrix[go here]([htt](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/Visualize))**
+1. **Text Classification Based on many Models (BiLSTM,Transformer)[go here](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/TextClassification)**
+2. **Summary Generation (Pointer Generator NetWork)[go here](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/PGNSum)**
+3. **Dialogue Translation (Seq2Seq) to build your own DialogueBot~~  [go here](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/ChatBotEnglish)**
+4. **Use GNN in Text Classification[go here](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/GNN)**
+5. **Transformer Mask Language Model Pretraining[go here](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/Pretrain)**
+6. **GPT for Text Generation and GPT for math problem[go here](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/GPT)**
+7. **Adversarial training (FGM)[go here](https://github.com/Ricardokevins/Kevinpro-NLP-demo/blob/main/TextClassification/Attack.py)**
+8. **Very Simple and quick Use/Deploy of Seq2Seq-Transformer. Including Several Eamples(Denoise Pretrain, Medical-QuestionAnswering[go here](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/Transformer)**
+9. **Practical use of Pytorch_Lighting[go here](https://github.com/Ricardokevins/Kevinpro-NLP-demo/blob/main/TextClassification/LightingMain.py)**
+10. **AMP and Fp16 training for Pytorch[go here](https://github.com/Ricardokevins/Kevinpro-NLP-demo/blob/main/VAEGenerator/transformerBased.py)**
+11. **Usefully Visualize Toolkit for Attention Map(or Other weighted Matrix[go here](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/Visualize)**
 
 
 My other open source NLP projects
