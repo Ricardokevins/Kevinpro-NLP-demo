@@ -7,7 +7,6 @@ def random_sample(source,target,sample_num):
         new_idx = random.randint(0,len(source)-1)
         if new_idx not in idx:
             idx.append(new_idx)
-
     sampled_source = []
     sampled_target = []
     for i in idx:
