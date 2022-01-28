@@ -26,10 +26,10 @@
 
 # 最近更新记录
 
-## 2021.1.28
+## 2022.1.28
 1. 重构了Transformer项目里的代码，更加易用且易部署
 2. 在Transformer项目里新增了DenoisePretrain的示例代码
-## 2021.1.16
+## 2022.1.16
 1. 实现了利用Seq2Seq Transformer完成中文医疗QA任务，在55W条中文医疗问答对上训练（见Transformer/MedQAdemo里的README.md)
 2. 实现了新的trainer和一些有用的工具
 3. 移除了之前transformer的实现（有一些不好修复的bug，比如对encoder的不依赖）
