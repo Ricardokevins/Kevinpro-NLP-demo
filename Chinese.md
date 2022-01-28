@@ -3,21 +3,19 @@
 个人的NLP实践demo。部分代码参考了其他开源项目。
 欢迎Star Fork以及PR。有问题发Issue。
 
-主要内容（具体见各个项目内部的README）
+主要内容（具体见各个项目内部的README说明）
 
-1. **基于多种模型 (BiLSTM,Transformer) 的文本分类**
-2. **摘要生成 (Pointer Generator NetWork)**
-3. **对话翻译 (Seq2Seq)**
-4. **GNN在文本分类的实践**
-5. **Transformer Mask Language Model预训练**
-6. **GPT文本续写以及GPT做数学题（偷的hhh）**
-7. **其他的NLP炼丹技巧实践 对抗学习等**
-8. **新增两个大佬的Transformer实现，来源注于代码中（对于理解很有帮助）**
-9. **Pytorch_Lighting的实践使用**
-10. **Pytorch原生AMP混合精度实验使用**
-11. **便捷好用的带权矩阵可视化，可用于可视化Attenton矩阵**
-12. **利用Seq2Seq Transformer完成中文医疗QA任务**
-
+1. **基于多种模型 (BiLSTM,Transformer) 的文本分类[go here]([htt](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/TextClassification))**
+2. **摘要生成 (Pointer Generator NetWork)[go here]([htt](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/PGNSum))**
+3. **对话翻译 (Seq2Seq)  [go here]([htt](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/ChatBotEnglish))**
+4. **GNN在文本分类的实践 [go here]([htt](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/GNN))**
+5. ***Transformer Mask Language Model预训练[go here]([htt](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/Pretrain))**
+6. **GPT文本续写以及GPT做数学题[go here]([htt](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/GPT))**
+7. **NLP炼丹技巧实践 对抗学习 (FGM)[go here]([htt](https://github.com/Ricardokevins/Kevinpro-NLP-demo/blob/main/TextClassification/Attack.py))**
+8. **非常简单且易部署的 Seq2Seq-Transformer. 包括了一些部署样例，如中文医疗QA和DeNoise预训练 欢迎尝试使用[go here]([htt](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/Transformer))**
+9. **Pytorch_Lighting实践[go here]([htt](https://github.com/Ricardokevins/Kevinpro-NLP-demo/blob/main/TextClassification/LightingMain.py))**
+10. **Pytorch实现 AMP 和 Fp16 训练 [go here]([htt](https://github.com/Ricardokevins/Kevinpro-NLP-demo/blob/main/VAEGenerator/transformerBased.py))**
+11. **便捷好用的带权矩阵可视化，可用于可视化Attenton矩阵[go here]([htt](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/Visualize))**
 
 其他参考实践
 
@@ -26,6 +24,10 @@
 3. **Transfomer实现和其他部件**：[Ricardokevins/EasyTransformer: Quick start with strong baseline of Bert and Transformer without pretrain (github.com)](https://github.com/Ricardokevins/EasyTransformer)
 
 # 最近更新记录
+
+## 2021.1.28
+1. 重构了Transformer项目里的代码，更加易用且易部署
+2. 在Transformer项目里新增了DenoisePretrain的示例代码
 ## 2021.1.16
 1. 实现了利用Seq2Seq Transformer完成中文医疗QA任务，在55W条中文医疗问答对上训练（见Transformer/MedQAdemo里的README.md)
 2. 实现了新的trainer和一些有用的工具
@@ -41,11 +43,6 @@
 1. 新增了Amp混合精度实验，实现与VAEGenerator，简单的在本地的MX150上测试，加速时间和显存占用显著改善（可见代码后注释）
 2. 基于Amp的要求，修改了model定义里的1e-9为inf
 
-
-## 2021.9.29
-
-1. 在Transformer里增加了一个随机数字串恢复的Demo，对新手理解Transformer超友好，不需要外部数据，利用随机构造的数字串训练
-2. 新增实验TransfomerVAE，暂时有BUG，施工中
 
 # 更新记录
 
@@ -102,6 +99,11 @@
 ## 2021.11.20
 
 1. 更新了BM25和TF-IDF算法，用于快速检索
+
+## 2021.9.29
+
+1. 在Transformer里增加了一个随机数字串恢复的Demo，对新手理解Transformer超友好，不需要外部数据，利用随机构造的数字串训练
+2. 新增实验TransfomerVAE，暂时有BUG，施工中
 
 
 # 参考

@@ -8,20 +8,20 @@
 
 # The main content
 
-more details in folder's readme.md inside
+you can go into each project folder for more details in folder's readme.md inside,  
 
-1. **Text Classification Based on many Models (BiLSTM,Transformer)**
-2. **Summary Generation (Pointer Generator NetWork)**
-3. **Dialogue Translation (Seq2Seq)**
-4. **GNN in Text Classification**
-5. **Transformer Mask Language Model Pretraining**
-6. **GPT for Text Generation and GPT for math problem**
-7. **Adversarial training (FGM)**
-8. **Implement of Transformer For Quick learning(source link in comment)**
-9. **Practical use of Pytorch_Lighting**
-10. **AMP and Fp16 training for Pytorch**
-11. **Usefully Visualize Toolkit for Attention Map(or Other weighted Matrix**
-12. **Doctor "Seq2Seq Transformer" In Medical QA**
+1. **Text Classification Based on many Models (BiLSTM,Transformer)[go here]([htt](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/TextClassification))**
+2. **Summary Generation (Pointer Generator NetWork)[go here]([htt](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/PGNSum))**
+3. **Dialogue Translation (Seq2Seq) to build your own DialogueBot~~  [go here]([htt](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/ChatBotEnglish))**
+4. **Use GNN in Text Classification[go here]([htt](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/GNN)**
+5. **Transformer Mask Language Model Pretraining[go here]([htt](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/Pretrain))**
+6. **GPT for Text Generation and GPT for math problem[go here]([htt](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/GPT))**
+7. **Adversarial training (FGM)[go here]([htt](https://github.com/Ricardokevins/Kevinpro-NLP-demo/blob/main/TextClassification/Attack.py))**
+8. **Very Simple and quick Use/Deploy of Seq2Seq-Transformer. Including Several Eamples(Denoise Pretrain, Medical-QuestionAnswering[go here]([htt](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/Transformer))**
+9. **Practical use of Pytorch_Lighting[go here]([htt](https://github.com/Ricardokevins/Kevinpro-NLP-demo/blob/main/TextClassification/LightingMain.py))**
+10. **AMP and Fp16 training for Pytorch[go here]([htt](https://github.com/Ricardokevins/Kevinpro-NLP-demo/blob/main/VAEGenerator/transformerBased.py))**
+11. **Usefully Visualize Toolkit for Attention Map(or Other weighted Matrix[go here]([htt](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/Visualize))**
+
 
 My other open source NLP projects
 
@@ -30,6 +30,10 @@ My other open source NLP projects
 3. **Transformer implement and useful NLP toolkit**：[Ricardokevins/EasyTransformer: Quick start with strong baseline of Bert and Transformer without pretrain (github.com)](https://github.com/Ricardokevins/EasyTransformer)
 
 # What's New ~~
+
+## 2022.1.28
+1. Rebuild the code structure in Transformer. Make Code Easier to Use and deploy
+2. Add Examples: Denoise-Pretrain in Transformer (Easy to use)
 ## 2022.1.16
 1. Update use Seq2Seq Transformer to Modeling Medical QA task   (Tuing on 55w pairs of Chinese Medical QA data) More detail to be seen in README.md of Transformer/MedQAdemo/
 2. Update new Trainer and useful tools
