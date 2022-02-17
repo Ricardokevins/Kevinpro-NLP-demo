@@ -11,8 +11,8 @@ import torch
 import warnings
 warnings.filterwarnings("ignore")
 default_config = DataConfig()
-
-Train = False
+default_config.max_samples = 2000
+Train = True
 if Train:
     model = make_model(7000,7000)
     train_dataset = CharDataset(default_config)
