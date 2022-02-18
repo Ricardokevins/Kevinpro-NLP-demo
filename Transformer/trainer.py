@@ -4,6 +4,9 @@ import torch.nn as nn
 from util import *
 import os
 import torch
+import argparse
+import torch.distributed as dist
+import torch.multiprocessing as mp
 
 class DataConfig:
     def __init__(self):
@@ -290,3 +293,112 @@ class TransformerTrainer:
             #     best_loss = test_loss
             #     self.save_checkpoint()
 
+class TransformerDDPTrainer:
+    def __init__(self, model, train_dataset, test_dataset, config):
+    
+        self.model = model
+        self.train_dataset = train_dataset
+        self.test_dataset = test_dataset
+        self.config = config
+
+        # take over whatever gpus are on the system
+        self.device = 'cpu'
+        # if torch.cuda.is_available():
+        #     self.device = torch.cuda.current_device()
+        #     #self.model.to(self.device)
+        #     self.model = torch.nn.DataParallel(self.model).to(self.device)
+        
+
+    def train(self):
+        import argparse
+        parser = argparse.ArgumentParser(description='PyTorch ImageNet Training')
+        args = parser.parse_args()
+        args.nprocs = torch.cuda.device_count()
+        mp.spawn(self.ddptrain, nprocs=args.nprocs, args=(args.nprocs, args))
+
+    def save_checkpoint(self):
+        # DataParallel wrappers keep raw model object in .module attribute
+        raw_model = self.model.module if hasattr(self.model, "module") else self.model
+        logger.info("saving %s", self.config.ckpt_path)
+        torch.save(raw_model.state_dict(), self.config.ckpt_path)
+
+    def ddptrain(self,local_rank, nprocs, args):
+        args.local_rank = local_rank
+        dist.init_process_group(backend='nccl',
+                            init_method='tcp://127.0.0.1:23456',
+                            world_size=args.nprocs,
+                            rank=local_rank)
+        
+        model, config = self.model, self.config
+        torch.cuda.set_device(local_rank)
+        self.model.cuda(local_rank)
+        self.model = torch.nn.parallel.DistributedDataParallel(self.model, device_ids=[args.local_rank])
+        
+
+        optimizer = torch.optim.AdamW(self.model.parameters(), lr=config.learning_rate, betas=config.betas)
+        crossentropyloss = nn.CrossEntropyLoss().cuda(local_rank)
+
+        def run_epoch(split,local_rank):
+            is_train = split == 'train'
+            
+            model.train(is_train)
+            data = self.train_dataset if is_train else self.test_dataset
+            train_sampler = torch.utils.data.distributed.DistributedSampler(data)
+            train_sampler.set_epoch(epoch)
+            loader = torch.utils.data.DataLoader(data, pin_memory=True,
+                                batch_size=config.batch_size,
+                                num_workers=config.num_workers,
+                                sampler=train_sampler)
+
+
+            losses = []
+            pbar = tqdm(enumerate(loader), total=len(loader)) if is_train else enumerate(loader)
+            for it, (source,decode_input,decode_label) in pbar:
+
+                # place data on the correct device
+                source = source.cuda(local_rank,non_blocking = True)
+                decode_input = decode_input.cuda(local_rank,non_blocking = True)
+                decode_label = decode_label.cuda(local_rank,non_blocking = True)
+                # forward the model
+                with torch.set_grad_enabled(is_train):
+                    dec_logits, enc_self_attns, dec_self_attns, dec_enc_attns = model(source, decode_input)
+                    dec_logits = dec_logits.view(-1, dec_logits.size(-1))
+                    loss = crossentropyloss(dec_logits,decode_label.reshape(-1))
+                    loss = loss.mean() # collapse all losses if they are scattered on multiple gpus
+                    losses.append(loss.item())
+
+                if is_train:
+
+                    # backprop and update the parameters
+                    model.zero_grad()
+                    loss.backward()
+                    torch.nn.utils.clip_grad_norm_(model.parameters(), config.grad_norm_clip)
+                    optimizer.step()
+
+
+                    lr = config.learning_rate
+
+                    # report progress
+
+                    pbar.set_description(f"epoch {epoch+1} iter {it}: train loss {loss.item():.5f}. lr {lr:e}")
+
+            if not is_train:
+                test_loss = float(np.mean(losses))
+                logger.info("test loss: %f", test_loss)
+                return test_loss
+
+        best_loss = float('inf')
+        self.tokens = 0 # counter used for learning rate decay
+        for epoch in range(config.max_epochs):
+            self.save_checkpoint()
+            run_epoch('train',local_rank)
+            if self.test_dataset is not None:
+                test_loss = run_epoch('test')
+
+            # supports early stopping based on the test loss, or just save always if no test set is provided
+            good_model = self.test_dataset is None or test_loss < best_loss
+            #greedy_decoder(model)
+            self.save_checkpoint()
+            # if self.config.ckpt_path is not None and good_model:
+            #     best_loss = test_loss
+            #     self.save_checkpoint()
