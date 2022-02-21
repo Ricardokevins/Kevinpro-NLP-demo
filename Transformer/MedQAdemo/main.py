@@ -12,7 +12,7 @@ import torch
 import warnings
 warnings.filterwarnings("ignore")
 default_config = DataConfig()
-default_config.max_samples = 2000
+#default_config.max_samples = 2000
 Train = True
 #3.31 1.07
 #3.22 0.58
@@ -21,7 +21,7 @@ if __name__=='__main__':
     if Train:
         model = make_model(7000,7000)
         train_dataset = CharDataset(default_config)
-        tconf = TrainerConfig(max_epochs=1 , batch_size=8, learning_rate=2e-4, lr_decay=True, num_workers=20)
+        tconf = TrainerConfig(max_epochs=2 , batch_size=32, learning_rate=2e-4, lr_decay=True, num_workers=20)
         trainer = TransformerDDPTrainer(model, train_dataset, None, tconf)
         #trainer = TransformerTrainer(model, train_dataset, None, tconf)
         trainer.train() 
