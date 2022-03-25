@@ -30,7 +30,8 @@ My other open source NLP projects
 3. **Transformer implement and useful NLP toolkit**：[Ricardokevins/EasyTransformer: Quick start with strong baseline of Bert and Transformer without pretrain (github.com)](https://github.com/Ricardokevins/EasyTransformer)
 
 # What's New ~~
-
+## 2022.3.25
+1. Thanks to [@rattlesnakey](https://github.com/rattlesnakey)'s [Issue(more discussion detail here)](https://github.com/Ricardokevins/Kevinpro-NLP-demo/issues/15). I add Feature in Pretrain Project. Set the Attention Weight of MASK-Token to Zero to prevent MASK-Tokens Self-Attention Each other. You can enable this feature in Transformer.py by setting "self.pretrain=True". PS:The New Feature has not been verified for the time being, and the effect on the pre-training has not been verified. I'll fill in the tests later
 ## 2022.1.28
 1. Rebuild the code structure in Transformer. Make Code Easier to Use and deploy
 2. Add Examples: Denoise-Pretrain in Transformer (Easy to use)

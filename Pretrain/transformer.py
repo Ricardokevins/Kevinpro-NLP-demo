@@ -28,6 +28,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 import math
 PAD = 0
+MASK = 5
 '''
 extract from https://github.com/whr94621/NJUNMT-pytorch
 Aim to get a simple implement of Transformer without pretrain and deploy quickly
@@ -305,12 +306,17 @@ class TransformerEncoder(nn.Module):
         self.pooler = Pooler(d_model)
 
         self.layer_norm = nn.LayerNorm(d_model)
+        self.pretrain = True
 
     def forward(self, src_seq):
         # Word embedding look up
         batch_size, src_len = src_seq.size()
         emb = self.embeddings(src_seq)
         enc_mask = src_seq.detach().eq(PAD)
+        if self.pretrain:
+            mask_token_mask = src_seq.detach().eq(MASK)
+            enc_mask = torch.logical_or(mask_token_mask, enc_mask)
+
         enc_slf_attn_mask = enc_mask.unsqueeze(1).expand(batch_size, src_len, src_len)
         out = emb
 

@@ -1,7 +1,7 @@
 import torch
 import  transformer
-max_length = 80
-max_sample = 1e5
+max_length = 10
+max_sample = 1000
 
 def get_dataset(corpur_path,max_num):
     texts = []
