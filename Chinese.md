@@ -1,9 +1,12 @@
 # NLP
 
-个人的NLP实践demo。部分代码参考了其他开源项目。
-欢迎Star Fork以及PR。有问题发Issue。
+**个人的NLP实践demo。部分代码参考了其他开源项目。**
 
-主要内容（具体见各个项目内部的README说明）
+**欢迎Star Fork以及PR。有问题发Issue。**
+
+**假如项目对你有用的话，欢迎Star。（别光fork不给star哇 (´･ω･`) ）**
+
+**主要内容（具体见各个项目内部的README说明）**
 
 1. **基于多种模型 (BiLSTM,Transformer) 的文本分类  [go here](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/TextClassification)**
 2. **摘要生成 (Pointer Generator NetWork)  [go here](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/PGNSum)**

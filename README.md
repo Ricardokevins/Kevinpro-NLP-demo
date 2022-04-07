@@ -4,6 +4,8 @@
 
 **If you have any question, please comment in Issue**
 
+**If project helps you, welcome Star~ (Please Dont Just Fork without Star (´･ω･`) ）**
+
 [中文版本README](https://github.com/Ricardokevins/Kevinpro-NLP-demo/blob/main/Chinese.md)
 
 # The main content
