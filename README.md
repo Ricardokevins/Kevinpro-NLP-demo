@@ -17,7 +17,7 @@ you can go into each project folder for more details in folder's readme.md insid
 3. **Dialogue Translation (Seq2Seq) to build your own DialogueBot~~  [go here](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/ChatBotEnglish)**
 4. **Use GNN in Text Classification  [go here](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/GNN)**
 5. **Transformer Mask Language Model Pretraining  [go here](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/Pretrain)**
-6. **GPT for Text Generation and GPT for math problem  [go here](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/GPT)**
+6. **GPT for Text Generation and GPT for math problem  [go here](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/GPT)[Source Repo](https://github.com/karpathy/minGPT)**
 7. **Adversarial training (FGM)  [go here](https://github.com/Ricardokevins/Kevinpro-NLP-demo/blob/main/TextClassification/Attack.py)**
 8. **Very Simple and quick Use/Deploy of Seq2Seq-Transformer. Including Several Eamples(Denoise Pretrain, Medical-QuestionAnswering  [go here](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/Transformer)**
 9. **Practical use of Pytorch_Lighting  [go here](https://github.com/Ricardokevins/Kevinpro-NLP-demo/blob/main/TextClassification/LightingMain.py)**
@@ -41,20 +41,9 @@ My other open source NLP projects
 1. Update use Seq2Seq Transformer to Modeling Medical QA task   (Tuing on 55w pairs of Chinese Medical QA data) More detail to be seen in README.md of Transformer/MedQAdemo/
 2. Update new Trainer and useful tools
 3. remove previous implement of Transformer (with some unfixable bugs)
-## 2021.12.17
 
-1. Update Weighted Matrix Visualize Toolkit(eg. used for visualize of Attention Map) implement in Visualize. More Useful toolkit in the future
-2. Update Python comment Code Standards. More formal code practices will be followed in the future.
 
-## 2021.12.10
 
-1. Update Practical use of Pytorch_Lighting, Use Text_classification as Example. Convert the Pytorch to LightningLite. More details in LightingMain.py。
-2. Remove the redundant code
-
-## 2021.12.9
-
-1. update Practical use of Amp(Automatic Mixed Precision). Implement in VAEGenerator, Test on local MX150, Significant improve the training time and  Memory-Usage, More details in Comments at the end of the code
-2. Based the command of Amp, Modified the definition of 1e-9 to inf in model.py
 
 
 
@@ -117,6 +106,24 @@ My other open source NLP projects
 ## 2021.11.20
 
 1. update BM25 and TF-IDF algorithm for quick match of Text.
+
+## 2021.12.10
+
+1. Update Practical use of Pytorch_Lighting, Use Text_classification as Example. Convert the Pytorch to LightningLite. More details in LightingMain.py。
+2. Remove the redundant code
+
+## 2021.12.9
+
+1. update Practical use of Amp(Automatic Mixed Precision). Implement in VAEGenerator, Test on local MX150, Significant improve the training time and  Memory-Usage, More details in Comments at the end of the code
+2. Based the command of Amp, Modified the definition of 1e-9 to inf in model.py
+
+## 2021.12.17
+
+1. Update Weighted Matrix Visualize Toolkit(eg. used for visualize of Attention Map) implement in Visualize. More Useful toolkit in the future
+2. Update Python comment Code Standards. More formal code practices will be followed in the future.
+
+
+
 # 参考
 
 ## BM25
