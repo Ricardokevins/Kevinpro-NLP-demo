@@ -19,7 +19,7 @@
 9. **Pytorch_Lighting实践  [go here](https://github.com/Ricardokevins/Kevinpro-NLP-demo/blob/main/TextClassification/LightingMain.py)**
 10. **Pytorch实现 AMP 和 Fp16 训练  [go here](https://github.com/Ricardokevins/Kevinpro-NLP-demo/blob/main/VAEGenerator/transformerBased.py)**
 11. **便捷好用的带权矩阵可视化，可用于可视化Attenton矩阵  [go here](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/Visualize)**
-
+12. **Diffusion models 在Fashion MNIST上的运用实现 [go here](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/Diffusion)**
 
 其他参考实践
 
@@ -28,6 +28,8 @@
 3. **Transfomer实现和其他部件**：[Ricardokevins/EasyTransformer: Quick start with strong baseline of Bert and Transformer without pretrain (github.com)](https://github.com/Ricardokevins/EasyTransformer)
 
 # 最近更新记录
+## 2022.8.31
+1. 更新了Diffusion model的实验，参考使用了 [tutorial](https://huggingface.co/blog/annotated-diffusion) 的代码。做了一些改变让他可以在本地实际运行。训练的模型以及推理的结果可以见Diffusion/Result2 文件夹.
 ## 2022.3.25
 1. 感谢 [@rattlesnakey](https://github.com/rattlesnakey)的 [Issue(详情于此)](https://github.com/Ricardokevins/Kevinpro-NLP-demo/issues/15). 我在pretrain项目里增加了新特性，把Mask-Token的注意力权重设置为0，避免Mask-Token之间做Self-attention，功能暂时没有经过验证，也没有验证对预训练效果的影响，您可以通过设置Transformer.py里的Self.pretrain为True开启这个功能，后续会在语料上测试。
 ## 2022.1.28

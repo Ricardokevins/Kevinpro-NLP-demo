@@ -23,7 +23,7 @@ you can go into each project folder for more details in folder's readme.md insid
 9. **Practical use of Pytorch_Lighting  [go here](https://github.com/Ricardokevins/Kevinpro-NLP-demo/blob/main/TextClassification/LightingMain.py)**
 10. **AMP and Fp16 training for Pytorch  [go here](https://github.com/Ricardokevins/Kevinpro-NLP-demo/blob/main/VAEGenerator/transformerBased.py)**
 11. **Usefully Visualize Toolkit for Attention Map(or Other weighted Matrix  [go here](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/Visualize)**
-
+12. **Diffusion models implement and application on Fashion MNIST  [go here](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/Diffusion)**
 
 My other open source NLP projects
 
@@ -32,6 +32,8 @@ My other open source NLP projects
 3. **Transformer implement and useful NLP toolkit**：[Ricardokevins/EasyTransformer: Quick start with strong baseline of Bert and Transformer without pretrain (github.com)](https://github.com/Ricardokevins/EasyTransformer)
 
 # What's New ~~
+## 2022.8.31
+1. Update for Diffusion Model. We adopt the code from [tutorial](https://huggingface.co/blog/annotated-diffusion) And made some necessary changes to the code to make it work locally. The practical training model and inference results can be found in the Diffusion/Result2 folder.
 ## 2022.3.25
 1. Thanks to [@rattlesnakey](https://github.com/rattlesnakey)'s [Issue(more discussion detail here)](https://github.com/Ricardokevins/Kevinpro-NLP-demo/issues/15). I add Feature in Pretrain Project. Set the Attention Weight of MASK-Token to Zero to prevent MASK-Tokens Self-Attention Each other. You can enable this feature in Transformer.py by setting "self.pretrain=True". PS:The New Feature has not been verified for the time being, and the effect on the pre-training has not been verified. I'll fill in the tests later
 ## 2022.1.28
