@@ -6,6 +6,8 @@
 
 **If project helps you, welcome Star~ (Please Dont Just Fork without Star (´･ω･`) ）**
 
+**Attention: The code in the repository may come from an open source material, just for my own interest and experiment. May contain bugs and references to other people's code.**
+
 [中文版本README](https://github.com/Ricardokevins/Kevinpro-NLP-demo/blob/main/Chinese.md)
 
 # The main content

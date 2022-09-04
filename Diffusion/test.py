@@ -27,10 +27,24 @@ alphas_cumprod = torch.cumprod(alphas, axis=0)
 alphas_cumprod_prev = F.pad(alphas_cumprod[:-1], (1, 0), value=1.0)
 sqrt_recip_alphas = torch.sqrt(1.0 / alphas)
 
+
 def exists(x):
+    """
+    If x is not None, return True, otherwise return False.
+    
+    :param x: The value to check
+    :return: the value of x if it is not None.
+    """
     return x is not None
 
 def default(val, d):
+    """
+    If the first argument is a value, return it, otherwise return the second argument
+    
+    :param val: The value to check
+    :param d: the default value to return if val is None
+    :return: The value of the first argument if it exists, otherwise the value of the second argument.
+    """
     if exists(val):
         return val
     return d() if isfunction(d) else d
