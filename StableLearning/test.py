@@ -24,7 +24,8 @@ digits = datasets.load_digits()
 
 
 def convert2fake_label(i):
-    return 0 if i > 4 else 1
+    return i
+    #return 0 if i > 4 else 1
 
 
 def count_distribution(data):
@@ -45,7 +46,7 @@ def balance_train_sample(count):
 
 def unbalance_train_sample(count):
     for i in count:
-        count[i] = int(count[i] * 0.8) if i % 2 == 1 else int(count[i] * 0.2)
+        count[i] = int(count[i] * 0.95) if i % 2 == 1 else int(count[i] * 0.05)
     print("AfterSample Distribution",count)
     return count
 
@@ -144,34 +145,73 @@ def decorrelation(x, solver = 'adam', hidden_layer_sizes = (5,5), max_iter = 500
     weights = np.reshape(weights, [n,1])
     return weights
 
+def similarity_weight(x):
+    weights = []
+
+    from scipy.spatial.distance import cosine
+    for i in x:
+        similar = [cosine(i,j) for j in x]
+        # print(similar)
+        # exit()
+        weights.append(sum(similar)/len(similar))
+    weights = np.array(weights)
+    weights /= np.mean(weights)
+    return weights
+
+
+simi_weight = similarity_weight(train_data)
 
 weights = decorrelation(train_data)
-#print(weights)
-print(weights.shape)
 weights = weights.reshape(-1)
 weights_sum = {i: [] for i in range(10)}
 for i,j in zip(weights,origin_label):
     weights_sum[j].append(i)
 for i in range(10):
-    weights_sum[i] = sum(weights_sum[i])/len(weights_sum)
+    print(len(weights_sum[i]))
+    weights_sum[i] = sum(weights_sum[i])/len(weights_sum[i])
+    
 print(weights_sum)
 svc = svm.SVC()  # 支持向量机，SVM
 dt = DecisionTreeClassifier()
 mlp = MLPClassifier()
 
+manual_weight = []
+for i,j in zip(weights,origin_label):
+    if j % 2 == 0:
+        manual_weight.append(0.8)
+    else:
+        manual_weight.append(0.2)
+
+manual_weight = np.array(manual_weight)
 model = mlp
 #model = svc
-#model = LogisticRegression()
-model = dt
-#model.fit(train_data, train_label,sample_weight=weights)
+model = LogisticRegression()
 model.fit(train_data, train_label)
 print('begin to predict……')
 y_pred_model = model.predict(test_data)
 right = sum(i == j for i, j in zip(y_pred_model,test_label))
+print(f"Baseline Total {len(test_label)} Right {right} Acc Ratio {right / len(test_label) * 100}%")
+
+model = LogisticRegression()
+model.fit(train_data, train_label,sample_weight=weights)
+print('DeWeight begin to predict……')
+y_pred_model = model.predict(test_data)
+right = sum(i == j for i, j in zip(y_pred_model,test_label))
 print(f"Total {len(test_label)} Right {right} Acc Ratio {right / len(test_label) * 100}%")
 
+model = LogisticRegression()
+model.fit(train_data, train_label,sample_weight=simi_weight)
+print('SimiWeight begin to predict……')
+y_pred_model = model.predict(test_data)
+right = sum(i == j for i, j in zip(y_pred_model,test_label))
+print(f"Total {len(test_label)} Right {right} Acc Ratio {right / len(test_label) * 100}%")
 
-
+model = LogisticRegression()
+model.fit(train_data, train_label,sample_weight=manual_weight)
+print('Manual begin to predict……')
+y_pred_model = model.predict(test_data)
+right = sum(i == j for i, j in zip(y_pred_model,test_label))
+print(f"Total {len(test_label)} Right {right} Acc Ratio {right / len(test_label) * 100}%")
 
 def visual(train_data,train_label,test_data,test_label):
     import numpy as np
