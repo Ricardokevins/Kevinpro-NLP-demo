@@ -50,6 +50,7 @@ def unbalance_train_sample(count):
     print("AfterSample Distribution",count)
     return count
 
+sample_feature = {}
 def generate_split(data):
     # Over sample data with ood 1,3,5,7,9 90% 
     count = count_distribution(data)
@@ -64,6 +65,9 @@ def generate_split(data):
     test_label = []
     for d,l in zip(data.data,data.target):
         if count[l] > 0: #continue sample
+            #print(d)
+            
+            #sample_feature.append(d[0])
             train_data.append(d)
             train_label.append(convert2fake_label(l))
             count[l] -= 1
@@ -83,7 +87,8 @@ def generate_split(data):
 train_data,train_label,test_data,test_label,origin_label = generate_split(digits)
 
 
-
+print(sample_feature)
+exit()
 
 def column_wise_resampling(x, replacement = False, random_state = 0, **options):
     """

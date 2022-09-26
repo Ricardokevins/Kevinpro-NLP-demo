@@ -99,12 +99,11 @@ def test(dataset,regressor):
     print(RMSE(y_pred,y))
 
 def train(dataset):
-    print(dataset.iloc[:,1:].columns.values.tolist())
-    exit()
+    # print(dataset.iloc[:,1:].columns.values.tolist())
+    # exit()
     X = dataset.iloc[:,1:].values
     y = dataset.iloc[:,0].values
     #splitting dataset into training and testing dataset
-    
     #X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 1/3, random_state = 0)
     
     regressor = LinearRegression()
