@@ -1,4 +1,4 @@
-# NLP
+# Kevinpro的NLP实践项目
 
 **个人的NLP实践demo。部分代码参考了其他开源项目。**
 

@@ -1,5 +1,4 @@
-# NLP
-
+# Kevinpro NLP Demo Project
 **Some Simple implement of Fun NLP algorithm in Pytorch. updating and maintaining**
 
 **If you have any question, please comment in Issue**
@@ -26,6 +25,8 @@ you can go into each project folder for more details in folder's readme.md insid
 10. **AMP and Fp16 training for Pytorch  [go here](https://github.com/Ricardokevins/Kevinpro-NLP-demo/blob/main/VAEGenerator/transformerBased.py)**
 11. **Usefully Visualize Toolkit for Attention Map(or Other weighted Matrix  [go here](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/Visualize)**
 12. **Diffusion models implement and application on Fashion MNIST  [go here](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/Diffusion)**
+13. **Simple Taste of Stable Learning (Building) [go here](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/StableLearning)**
+14. **Simple Taste of Meta Learning (Building) [go here](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/MetaLearning)**
 
 My other open source NLP projects
 
