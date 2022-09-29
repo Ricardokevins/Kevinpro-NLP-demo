@@ -1,4 +1,4 @@
-# Kevinpro NLP Demo Project
+# Kevinpro-NLP-Demo
 **Some Simple implement of Fun NLP algorithm in Pytorch. updating and maintaining**
 
 **If you have any question, please comment in Issue**
