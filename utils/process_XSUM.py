@@ -82,12 +82,12 @@ def _generate_examples(split_path = "/Users/sheshuaijie/Downloads/XSum-TRAINING-
         split_ids = json.load(f)
     split_names = ['train','test','validation']
     split_ids = {k: set(v) for k, v in split_ids.items()}
+
     for split_name in split_names:
         documents = []
         summarys = []
-
-        if not split_ids[split_name]:
-            break
+        print(f"Processing : {split_name}")
+        print(len(split_ids[split_name]))
         for ids in split_ids[split_name]:
             path = f"{data_dir}/{ids}.summary"
             f = open(path,'rb')
@@ -103,10 +103,10 @@ def _generate_examples(split_path = "/Users/sheshuaijie/Downloads/XSum-TRAINING-
             summarys.append(segs[6].strip())
         f_d = open(f"/Users/sheshuaijie/Downloads/XSUM/{split_name}.document", 'w')
         for d in documents:
-            f_d.write(d+'\n')
+            f_d.write(d.replace("\n", "")+'\n')
         f_s = open(f"/Users/sheshuaijie/Downloads/XSUM/{split_name}.summary", 'w')
         for s in summarys:
-            f_s.write(s+'\n')
+            f_s.write(s.replace("\n", "")+'\n')
 
                 # Each file follows below format:
                 # [SN]URL[SN]
