@@ -1,0 +1,269 @@
+[
+  {
+    "": "548",
+    "DocID": "13828600",
+    "Dialogue": "Ollie: Hi , are you in Warsaw\nJane: yes, just back! Btw are you free for diner the 19th?\nOllie: nope!\nJane: and the  18th?\nOllie: nope, we have this party and you must be there, remember?\nJane: oh right! i lost my calendar..  thanks for reminding me\nOllie: we have lunch this week?\nJane: with pleasure!\nOllie: friday?\nJane: ok\nJane: what do you mean \" we don't have any more whisky!\" lol..\nOllie: what!!!\nJane: you just call me and the all thing i heard was that sentence about whisky... what's wrong with you?\nOllie: oh oh... very strange! i have to be carefull may be there is some spy in my mobile! lol\nJane: dont' worry, we'll check on friday.\nOllie: don't forget to bring some sun with you\nJane: I can't wait to be in Morocco..\nOllie: enjoy and see you friday\nJane: sorry Ollie, i'm very busy, i won't have time for lunch  tomorrow, but may be at 6pm after my courses?this trip to Morocco was so nice, but time consuming!\nOllie: ok for tea!\nJane: I'm on my way..\nOllie: tea is ready, did you bring the pastries?\nJane: I already ate them all... see you in a minute\nOllie: ok",
+    "Model": "co-ref bart large",
+    "Summary": "Ollie has a party on the 18th. Jane is in Warsaw. They will have lunch together on Friday at 6 pm.",
+    "Error": "少了人, Ollie这里错了,Jane也去party 和We、you 有关系",
+    "Shifted_Dialogue": "Ollie asked Jane if she was in Warsaw. Jane replied that she was just back and asked Ollie if he was free for dinner on the 19th. Ollie said no. Jane asked about the 18th and Ollie said no again, explaining that they had a party that Jane was supposed to be at. Jane realized she had lost her calendar and thanked Ollie for reminding her. Ollie asked if they could have lunch during the week and Jane agreed. Ollie suggested Friday and Jane said that was okay. Jane then mentioned something about Ollie saying they didn't have any more whisky, which Ollie was confused about. Jane said that was all she heard on the call and asked Ollie what was wrong. Ollie joked that there might be a spy in his phone. Jane reassured him and said they could check on Friday. Ollie told Jane to bring some sun with her and Jane mentioned that she was excited to go to Morocco. Ollie told her to enjoy and said he'd see her on Friday. Jane then said she was very busy and wouldn't have time for lunch, but maybe they could meet at 6pm after her classes. Jane mentioned that the trip to Morocco was nice but time-consuming. Ollie agreed to meet for tea and Jane said she was on her way. Ollie said the tea was ready and asked if Jane had brought pastries. Jane replied that she had already eaten them all and would see Ollie in a minute."
+  },
+  {
+    "": "549",
+    "DocID": "13828600",
+    "Dialogue": "Ollie: Hi , are you in Warsaw\nJane: yes, just back! Btw are you free for diner the 19th?\nOllie: nope!\nJane: and the  18th?\nOllie: nope, we have this party and you must be there, remember?\nJane: oh right! i lost my calendar..  thanks for reminding me\nOllie: we have lunch this week?\nJane: with pleasure!\nOllie: friday?\nJane: ok\nJane: what do you mean \" we don't have any more whisky!\" lol..\nOllie: what!!!\nJane: you just call me and the all thing i heard was that sentence about whisky... what's wrong with you?\nOllie: oh oh... very strange! i have to be carefull may be there is some spy in my mobile! lol\nJane: dont' worry, we'll check on friday.\nOllie: don't forget to bring some sun with you\nJane: I can't wait to be in Morocco..\nOllie: enjoy and see you friday\nJane: sorry Ollie, i'm very busy, i won't have time for lunch  tomorrow, but may be at 6pm after my courses?this trip to Morocco was so nice, but time consuming!\nOllie: ok for tea!\nJane: I'm on my way..\nOllie: tea is ready, did you bring the pastries?\nJane: I already ate them all... see you in a minute\nOllie: ok",
+    "Model": "condigsum bart large",
+    "Summary": "Jane is in Warsaw. Ollie has a party on the 18th. They will have lunch on Friday. Jane will be back from Morocco on the 19th. She won't have time for lunch tomorrow, but they will meet at 6 pm after her courses.",
+    "Error": "少了人, Ollie这里错了,Jane也去party",
+    "Shifted_Dialogue": "Ollie asked Jane if she was in Warsaw. Jane replied that she was just back and asked Ollie if he was free for dinner on the 19th. Ollie said no. Jane asked about the 18th and Ollie said no again, explaining that they had a party that Jane was supposed to be at. Jane realized she had lost her calendar and thanked Ollie for reminding her. Ollie asked if they could have lunch during the week and Jane agreed. Ollie suggested Friday and Jane said that was okay. Jane then mentioned something about Ollie saying they didn't have any more whisky, which Ollie was confused about. Jane said that was all she heard on the call and asked Ollie what was wrong. Ollie joked that there might be a spy in his phone. Jane reassured him and said they could check on Friday. Ollie told Jane to bring some sun with her and Jane mentioned that she was excited to go to Morocco. Ollie told her to enjoy and said he'd see her on Friday. Jane then said she was very busy and wouldn't have time for lunch, but maybe they could meet at 6pm after her classes. Jane mentioned that the trip to Morocco was nice but time-consuming. Ollie agreed to meet for tea and Jane said she was on her way. Ollie said the tea was ready and asked if Jane had brought pastries. Jane replied that she had already eaten them all and would see Ollie in a minute."
+  },
+  {
+    "": "551",
+    "DocID": "13611370",
+    "Dialogue": "Derek: Judy, r you leaving for the weekend?\nJudy: Nah\nDerek: So can you feed my animals on Friday and Saturday?\nJudy: sure, no problem\nDerek: Thank you :) Maybe on Thursday I would give you my keys?\nJudy: Ok\nDerek: Thanks :) Later I will tell you the details :)\nJudy: surely",
+    "Model": "bart_large",
+    "Summary": "Judy will feed Derek's animals on Friday and Saturday. She will also give him his keys on Thursday.",
+    "Error": "不是Thursday Judy给Derek钥匙, 而是Derek在Thursday把钥匙给Judy",
+    "Shifted_Dialogue": "Derek asked Judy if she was leaving for the weekend. Judy replied that she wasn't. Derek asked if she could feed his animals on Friday and Saturday, and Judy agreed. Derek thanked her and asked if he could give her the keys on Thursday. Judy said okay. Derek thanked her again and said he would give her more details later. Judy replied that she would surely listen."
+  },
+  {
+    "": "556",
+    "DocID": "13829773",
+    "Dialogue": "Ola: Hello Kate, sorry for not keeping in touch properly. As expected, we have hardly any connectivity here in Cuba. But we're doing fine and enjoying our trip. How are the things at home?\nKate: At long last! Started to worry. Nothing new happening, if you disregard all that Xmas craze. Momo has recovered from her injury and frolicking again.\nKate: <file_photo>\nKate: Good old Momo! Yes, it is your scarf!\nOla: NO!!! It's one of my favorites! The one from Laos!\nKate: Too late. Momo thinks it belongs to her now. Get yourself a new one. They surely have nice ones there.\nOla: Not at all. Only cheapish cotton blouses with horrible multi-coloured embroidery or some equally horrible crochetted tops. No shawls or scarfs.\nOla: <file_photo>\nKate: Wait a sec!\nKate: <file_photo>\nKate: Isn't it similar?! Mum would probably like it. Why don't you?\nOla: Not a bad idea. But the quality is usually crappy.\nKate: And if you go to some boutique shop or something? Not at a market as in your pics?\nOla: I might try and find some. Would you like one too?\nKate: Not really. And Mum would prefer to be the only one with an authentic Cuban blouse :))\nOla: OK I'll have a look. Greets to everyone at home pls.\nKate: Take care!",
+    "Model": "bart_large",
+    "Summary": "Ola and Momo are in Cuba. Momo has recovered from her injury and is frolicking again. Ola has lost her scarf from Laos. She will buy a new one.",
+    "Error": "多了人,Momo没有去古巴 和We有关",
+    "Shifted_Dialogue": "Ola told Kate that they were having a hard time getting connectivity in Cuba, but they were enjoying the trip. Kate replied that she had started to worry and asked how things were at home. Kate mentioned that Momo had recovered from an injury and was frolicking again, and sent a photo of Momo wearing a scarf. Ola was surprised and said it was one of her favorite scarfs from Laos. Kate told Ola that it was too late, because Momo thought it belonged to her now and told Ola to get a new one. Ola replied that she couldn't find any nice ones in Cuba, only cheap cotton blouses with horrible embroidery or crocheted tops. Kate said she had found a similar scarf and thought their mother might like it. Ola said the quality in Cuba was usually poor, but Kate suggested looking in a boutique shop instead of a market. Ola said she would try to find some and asked if Kate wanted one too. Kate said she didn't really want one, but their mother would probably like to be the only one with an authentic Cuban blouse. Ola agreed to look for one and asked Kate to greet everyone at home. Kate told Ola to take care."
+  },
+  {
+    "": "557",
+    "DocID": "13829773",
+    "Dialogue": "Ola: Hello Kate, sorry for not keeping in touch properly. As expected, we have hardly any connectivity here in Cuba. But we're doing fine and enjoying our trip. How are the things at home?\nKate: At long last! Started to worry. Nothing new happening, if you disregard all that Xmas craze. Momo has recovered from her injury and frolicking again.\nKate: <file_photo>\nKate: Good old Momo! Yes, it is your scarf!\nOla: NO!!! It's one of my favorites! The one from Laos!\nKate: Too late. Momo thinks it belongs to her now. Get yourself a new one. They surely have nice ones there.\nOla: Not at all. Only cheapish cotton blouses with horrible multi-coloured embroidery or some equally horrible crochetted tops. No shawls or scarfs.\nOla: <file_photo>\nKate: Wait a sec!\nKate: <file_photo>\nKate: Isn't it similar?! Mum would probably like it. Why don't you?\nOla: Not a bad idea. But the quality is usually crappy.\nKate: And if you go to some boutique shop or something? Not at a market as in your pics?\nOla: I might try and find some. Would you like one too?\nKate: Not really. And Mum would prefer to be the only one with an authentic Cuban blouse :))\nOla: OK I'll have a look. Greets to everyone at home pls.\nKate: Take care!",
+    "Model": "mv-bart_large",
+    "Summary": "Ola and Momo are on a trip to Cuba. Momo has recovered from her injury and frolicking again. Ola has lost his scarf from Laos. He will look for a new one in a boutique shop.",
+    "Error": "多了人,Momo没有去古巴",
+    "Shifted_Dialogue": "Ola informed Kate that they were having a hard time getting connectivity in Cuba, but they were doing well and enjoying their trip. Kate told Ola that she had been worried and asked how things were at home. Kate mentioned that Momo had recovered from an injury and was frolicking again, and sent a photo of Momo wearing a scarf. Ola was surprised and said it was one of her favorite scarfs from Laos. Kate told Ola that it was too late, because Momo thought it belonged to her now and told Ola to get a new one. Ola replied that she couldn't find any nice ones in Cuba, only cheap cotton blouses with horrible embroidery or crocheted tops. Kate said she had found a similar scarf and thought their mother might like it. Ola said the quality in Cuba was usually poor, but Kate suggested looking in a boutique shop instead of a market. Ola said she would try to find some and asked if Kate wanted one too. Kate said she didn't really want one, but their mother would probably like to be the only one with an authentic Cuban blouse. Ola agreed to look for one and asked Kate to greet everyone at home. Kate told Ola to take care."
+  },
+  {
+    "": "558",
+    "DocID": "13829773",
+    "Dialogue": "Ola: Hello Kate, sorry for not keeping in touch properly. As expected, we have hardly any connectivity here in Cuba. But we're doing fine and enjoying our trip. How are the things at home?\nKate: At long last! Started to worry. Nothing new happening, if you disregard all that Xmas craze. Momo has recovered from her injury and frolicking again.\nKate: <file_photo>\nKate: Good old Momo! Yes, it is your scarf!\nOla: NO!!! It's one of my favorites! The one from Laos!\nKate: Too late. Momo thinks it belongs to her now. Get yourself a new one. They surely have nice ones there.\nOla: Not at all. Only cheapish cotton blouses with horrible multi-coloured embroidery or some equally horrible crochetted tops. No shawls or scarfs.\nOla: <file_photo>\nKate: Wait a sec!\nKate: <file_photo>\nKate: Isn't it similar?! Mum would probably like it. Why don't you?\nOla: Not a bad idea. But the quality is usually crappy.\nKate: And if you go to some boutique shop or something? Not at a market as in your pics?\nOla: I might try and find some. Would you like one too?\nKate: Not really. And Mum would prefer to be the only one with an authentic Cuban blouse :))\nOla: OK I'll have a look. Greets to everyone at home pls.\nKate: Take care!",
+    "Model": "co-ref bart large",
+    "Summary": "Ola and Momo are on a trip in Cuba. Momo has recovered from her injury and is frolicking again. Ola lost her scarf from Laos. She will buy a new one.",
+    "Error": "多了人,Momo没有去古巴",
+    "Shifted_Dialogue": "Ola told Kate that they had been having a hard time getting connectivity in Cuba, but they were doing well and enjoying their trip. Kate replied that she had started to worry and asked how things were at home. Kate mentioned that Momo had recovered from an injury and was frolicking again, and sent a photo of Momo wearing a scarf. Ola was surprised and said it was one of her favorite scarfs from Laos. Kate told Ola that it was too late, because Momo thought it belonged to her now and told Ola to get a new one. Ola replied that she couldn't find any nice ones in Cuba, only cheap cotton blouses with horrible embroidery or crocheted tops. Kate said she had found a similar scarf and thought their mother might like it. Ola said the quality in Cuba was usually poor, but Kate suggested looking in a boutique shop instead of a market. Ola said she would try to find some and asked if Kate wanted one too. Kate said she didn't really want one, but their mother would probably like to be the only one with an authentic Cuban blouse. Ola agreed to look for one and asked Kate to greet everyone at home. Kate told Ola to take care."
+  },
+  {
+    "": "559",
+    "DocID": "13829773",
+    "Dialogue": "Ola: Hello Kate, sorry for not keeping in touch properly. As expected, we have hardly any connectivity here in Cuba. But we're doing fine and enjoying our trip. How are the things at home?\nKate: At long last! Started to worry. Nothing new happening, if you disregard all that Xmas craze. Momo has recovered from her injury and frolicking again.\nKate: <file_photo>\nKate: Good old Momo! Yes, it is your scarf!\nOla: NO!!! It's one of my favorites! The one from Laos!\nKate: Too late. Momo thinks it belongs to her now. Get yourself a new one. They surely have nice ones there.\nOla: Not at all. Only cheapish cotton blouses with horrible multi-coloured embroidery or some equally horrible crochetted tops. No shawls or scarfs.\nOla: <file_photo>\nKate: Wait a sec!\nKate: <file_photo>\nKate: Isn't it similar?! Mum would probably like it. Why don't you?\nOla: Not a bad idea. But the quality is usually crappy.\nKate: And if you go to some boutique shop or something? Not at a market as in your pics?\nOla: I might try and find some. Would you like one too?\nKate: Not really. And Mum would prefer to be the only one with an authentic Cuban blouse :))\nOla: OK I'll have a look. Greets to everyone at home pls.\nKate: Take care!",
+    "Model": "condigsum bart large",
+    "Summary": "Ola and Momo are on a trip to Cuba. Momo has recovered from her injury and frolicking again. Ola has lost her scarf from Laos. She will buy a new one.",
+    "Error": "多了人,Momo没有去古巴",
+    "Shifted_Dialogue": "Ola told Kate that they had been having a hard time getting connectivity in Cuba, but they were doing well and enjoying their trip. Kate replied that she had started to worry and asked how things were at home. Kate mentioned that Momo had recovered from an injury and was frolicking again, and sent a photo of Momo wearing a scarf. Ola was surprised and said it was one of her favorite scarfs from Laos. Kate told Ola that it was too late, because Momo thought it belonged to her now and told Ola to get a new one. Ola replied that she couldn't find any nice ones in Cuba, only cheap cotton blouses with horrible embroidery or crocheted tops. Kate said she had found a similar scarf and thought their mother might like it. Ola said the quality in Cuba was usually poor, but Kate suggested looking in a boutique shop instead of a market. Ola said she would try to find some and asked if Kate wanted one too. Kate said she didn't really want one, but their mother would probably like to be the only one with an authentic Cuban blouse. Ola agreed to look for one and asked Kate to greet everyone at home. Kate told Ola to take care."
+  },
+  {
+    "": "585",
+    "DocID": "13819721",
+    "Dialogue": "Lisa: Is it safe?\nMary: Don't worry. Aquarium is kept in a safe place.\nSarah: He will enjoy it for sure.\nLisa: He was asking for it for ages.\nMary: True, now he is old enough to have it\nSarah: How do we transport that?\nMary: Easy sister, Frank will help us.\nLisa: That's great!\nSarah: I can't wait to see his face.\nLisa: Me too!\nMary: Good teamwork you all.\nSarah: Okay, I will call you later\nLisa: See you",
+    "Model": "human_ref",
+    "Summary": "Frank will help Sarah and Mary transport the aquarium that is a gift for someone.",
+    "Error": "缺少Lisa, 她和Sarah and Mary一起运输 和We有关",
+    "Shifted_Dialogue": "Lisa asked if it was safe. Mary reassured her that the aquarium was kept in a safe place. Sarah added that the person they were talking about would surely enjoy it. Lisa mentioned that the person had been asking for it for a long time and Mary agreed, adding that they were now old enough to have it. Sarah asked how they would transport it and Mary said Frank would help them. Lisa said that was great and Sarah said she couldn't wait to see the person's face. Lisa agreed. Mary praised their teamwork and Sarah said she would call later. Lisa said goodbye."
+  },
+  {
+    "": "588",
+    "DocID": "13819721",
+    "Dialogue": "Lisa: Is it safe?\nMary: Don't worry. Aquarium is kept in a safe place.\nSarah: He will enjoy it for sure.\nLisa: He was asking for it for ages.\nMary: True, now he is old enough to have it\nSarah: How do we transport that?\nMary: Easy sister, Frank will help us.\nLisa: That's great!\nSarah: I can't wait to see his face.\nLisa: Me too!\nMary: Good teamwork you all.\nSarah: Okay, I will call you later\nLisa: See you",
+    "Model": "co-ref bart large",
+    "Summary": "Frank will help Mary and Sarah transport the Aquarium.",
+    "Error": "缺少Lisa, 她和Sarah and Mary一起运输",
+    "Shifted_Dialogue": "Lisa asked if it was safe. Mary reassured her that the aquarium was kept in a safe place. Sarah added that the person they were talking about would surely enjoy it. Lisa mentioned that the person had been asking for it for a long time and Mary agreed, adding that they were now old enough to have it. Sarah asked how they would transport it and Mary said Frank would help them. Lisa said that was great and Sarah said she couldn't wait to see the person's face. Lisa agreed. Mary praised their teamwork and Sarah said she would call later. Lisa said goodbye."
+  },
+  {
+    "": "589",
+    "DocID": "13819721",
+    "Dialogue": "Lisa: Is it safe?\nMary: Don't worry. Aquarium is kept in a safe place.\nSarah: He will enjoy it for sure.\nLisa: He was asking for it for ages.\nMary: True, now he is old enough to have it\nSarah: How do we transport that?\nMary: Easy sister, Frank will help us.\nLisa: That's great!\nSarah: I can't wait to see his face.\nLisa: Me too!\nMary: Good teamwork you all.\nSarah: Okay, I will call you later\nLisa: See you",
+    "Model": "condigsum bart large",
+    "Summary": "Lisa, Sarah and Mary are going to take their son to the Aquarium. Frank will help them.",
+    "Error": "事件错误，不是带儿子去水族馆, 而是把鱼缸带给某人",
+    "Shifted_Dialogue": "Lisa asked if it was safe. Mary reassured her that the aquarium was kept in a safe place. Sarah added that the person they were talking about would surely enjoy it. Lisa mentioned that the person had been asking for it for a long time and Mary agreed, adding that they were now old enough to have it. Sarah asked how they would transport it and Mary said Frank would help them. Lisa said that was great and Sarah said she couldn't wait to see the person's face. Lisa agreed. Mary praised their teamwork and Sarah said she would call later. Lisa said goodbye."
+  },
+  {
+    "": "592",
+    "DocID": "13681079",
+    "Dialogue": "Dinny: can you take your dog away before i come?\nTerry: are you afraid?\nDinny: a little\nTerry: ok than",
+    "Model": "mv-bart_large",
+    "Summary": "Dinny will take Terry's dog away before he comes.",
+    "Error": "人物错误, 是Terry带走自己的狗,远离Dinny 和you有关",
+    "Shifted_Dialogue": "Dinny asked Terry if he could take his dog away before Dinny arrived. Terry asked if Dinny was afraid and Dinny said a little. Terry agreed to take the dog away."
+  },
+  {
+    "": "597",
+    "DocID": "13715824",
+    "Dialogue": "Nancy: Yeah, but u can also read the news online ;)\nPhil: I know, but imagine - ur keen on technology and u get all the news in one place. Then u can choose what to read and what not.\nNancy: Sounds sensible. Does it have something 4 fashion?\nPhil: Probably so. Not sure, though.\nNancy: How about u, Vic?\nVic: I still prefer Facebook. Had Twitter once, but the interaction with others is nothing compared with Facebook.\nPhil: Well, it's intended in a completely different way. \nVic: What do u mean?\nPhil: IMO, Twitter is not for interacting like on Facebook, but for getting news fast and from reliable, more or less, sources. U can follow anyone and anyone can follow u.\nVic: Still, on Facebook I can share stuff with my friends, join groups and talk about things that interest me. And I don't have to limit myself to 140 characters.\nPhil: 280. Still, a downside. OTOH, if ppl were able to write as much as they wanted, Twitted would get as cluttered as Facebook.\nNancy: So no one uses 4 example Instagram?\nVic: I do. \nPhil: Not 4 me. I don't post that many pictures online. \nNancy: But u can follow ppl and see what they're doing or offering. There are also companies on Instagram.\nPhil: I know, but I'm more interested in news and gossip than seeing someone post a picture of their breakfast. \nVic: That's not all ppl post on Instagram!\nPhil: So, what else?\nVic: Depends on ur interest. I, for one, like to observe all the fitness accounts :)\nPhil: And does this motivate u to train?\nVic: No, but it gives me hints what to do and what not. \nNancy: What do u think about Tumblr?\nPhil: What?\nVic: Heard about it, but never had an account.\nNancy: It's a microblogging website. U can post blog entries, pictures and basically everything u want there. And ppl can observe u!\nPhil: Don't have that much time to write a blog.\nVic: Me neither. \nPhil: Nancy, y do u ask these questions? ;)\nNancy: I have my reasons ;)",
+    "Model": "mv-bart_large",
+    "Summary": "Phil and Vic prefer Facebook to Twitter. Vic had an account on Twitter once, but he prefers Facebook. Vic has never had Tumblr.",
+    "Shifted_Dialogue": "Nancy told Phil that he could also read the news online. Phil said he knows but he likes the idea of getting all the news in one place and being able to choose what to read and what not. Nancy said it sounded sensible and asked if it had something for fashion. Phil said probably but he wasn't sure. Nancy asked Vic what he thinks and Vic said he still prefers Facebook because he can share stuff with his friends, join groups, and talk about things that interest him, and he doesn't have to limit himself to 140 characters. Phil said Twitter is intended in a completely different way and is meant for getting news fast and from reliable sources, and anyone can follow anyone else. Vic said that on Facebook he can interact with others, but on Twitter the interaction is not as good. Phil said that if people were able to write as much as they want on Twitter, it would get cluttered like Facebook. Nancy asked if anyone uses Instagram and Vic said he does, but Phil said he's not interested in posting pictures online. Nancy said on Instagram you can follow people and see what they're doing or offering and there are also companies on the platform. Phil said he's more interested in news and gossip than seeing someone post a picture of their breakfast. Vic said not everyone posts pictures of their breakfast on Instagram and it depends on your interests. Phil asked Vic if he gets motivated to train from looking at fitness accounts on Instagram and Vic said no but it gives him hints of what to do and what not to do. Nancy asked about Tumblr and Phil and Vic said they've heard of it but never had an account. Nancy said Tumblr is a microblogging website where you can post blog entries, pictures, and anything you want and people can observe you. Phil said he doesn't have time to write a blog and Vic said he doesn't either. Phil asked Nancy why she was asking these questions and Nancy said she had her reasons."
+  },
+  {
+    "": "598",
+    "DocID": "13715824",
+    "Dialogue": "Nancy: Yeah, but u can also read the news online ;)\nPhil: I know, but imagine - ur keen on technology and u get all the news in one place. Then u can choose what to read and what not.\nNancy: Sounds sensible. Does it have something 4 fashion?\nPhil: Probably so. Not sure, though.\nNancy: How about u, Vic?\nVic: I still prefer Facebook. Had Twitter once, but the interaction with others is nothing compared with Facebook.\nPhil: Well, it's intended in a completely different way. \nVic: What do u mean?\nPhil: IMO, Twitter is not for interacting like on Facebook, but for getting news fast and from reliable, more or less, sources. U can follow anyone and anyone can follow u.\nVic: Still, on Facebook I can share stuff with my friends, join groups and talk about things that interest me. And I don't have to limit myself to 140 characters.\nPhil: 280. Still, a downside. OTOH, if ppl were able to write as much as they wanted, Twitted would get as cluttered as Facebook.\nNancy: So no one uses 4 example Instagram?\nVic: I do. \nPhil: Not 4 me. I don't post that many pictures online. \nNancy: But u can follow ppl and see what they're doing or offering. There are also companies on Instagram.\nPhil: I know, but I'm more interested in news and gossip than seeing someone post a picture of their breakfast. \nVic: That's not all ppl post on Instagram!\nPhil: So, what else?\nVic: Depends on ur interest. I, for one, like to observe all the fitness accounts :)\nPhil: And does this motivate u to train?\nVic: No, but it gives me hints what to do and what not. \nNancy: What do u think about Tumblr?\nPhil: What?\nVic: Heard about it, but never had an account.\nNancy: It's a microblogging website. U can post blog entries, pictures and basically everything u want there. And ppl can observe u!\nPhil: Don't have that much time to write a blog.\nVic: Me neither. \nPhil: Nancy, y do u ask these questions? ;)\nNancy: I have my reasons ;)",
+    "Model": "co-ref bart large",
+    "Summary": "Phil prefers Facebook. Vic prefers Twitter. Vic has never had an account on Tumblr. Vic and Phil don't have time to write a blog.",
+    "Error": "人物错误, Vic更喜欢 Facebook    和I有关 I still prefer",
+    "Shifted_Dialogue": "Nancy asked if it was possible to read the news online. Phil responded that it was possible, but it was better to get all the news in one place and choose what to read. Nancy asked if the website had anything related to fashion and Phil replied that it probably did but he was not sure. Nancy asked Vic about his preference and he responded that he preferred Facebook. Phil commented that Twitter was intended for getting news from reliable sources and not for interacting like on Facebook. Vic added that on Facebook, he could share things with friends, join groups, and talk about things that interest him without being limited to 140 characters. Nancy asked if anyone used Instagram and Vic responded that he did. Phil said he was not interested in Instagram because he was more interested in news and gossip than seeing pictures of someone's breakfast. Vic mentioned that people post more than just pictures of their breakfast on Instagram and it depends on one's interests. Phil asked Vic if looking at fitness accounts on Instagram motivated him to train and Vic said it did not but it gave him hints on what to do and not do. Nancy asked about Tumblr and Phil and Vic said they had heard of it but had never had an account. Nancy explained that Tumblr is a microblogging website where users can post blog entries, pictures, and other things and be observed by others. Phil mentioned that he did not have the time to write a blog and Vic said he did not either. Phil asked Nancy why she was asking these questions and Nancy said she had her reasons."
+  },
+  {
+    "": "625",
+    "DocID": "13865481",
+    "Dialogue": "May: Just received a text from Harry he'll be late\nMichael: It's good for us, Vanessa and I are still on our way and Peter's stuck in a traffic\nMay: Probably the same traffic Harry's stuck in ;/\nPeter: There's been an accident, I'm too far away to see what exactly happened but it doesn't look good\nMay: How long may it take? Half of the guests is already here\nVanessa: God knows, Michael's driving if you can call this driving...\nPeter: They're saying that there was a serious accident, I really don't know how long it will take\nMay: Harry just called, he's in the same traffic as you\nVanessa: It'll be a hell of a birthday party ;)\nPeter: It'll be easier if you all come and join us here\nMay: Hahaha, very funny\nMay: We'll wait for you, but better be here before Harry\nVanessa: You need to stall Harry then because we're all probably behind him\nPeter: Fyi, we haven't moved an inch in a while now",
+    "Model": "human_ref",
+    "Summary": "Henry and Peter will be late for a birthday party. Michael and Vanessa are on their way. There was a serious accident, and Peter has no idea when they will manage to arrive. Henry will probably come before Peter.",
+    "Shifted_Dialogue": "Unusable response produced by ChatGPT, maybe its unavailable."
+  },
+  {
+    "": "627",
+    "DocID": "13865481",
+    "Dialogue": "May: Just received a text from Harry he'll be late\nMichael: It's good for us, Vanessa and I are still on our way and Peter's stuck in a traffic\nMay: Probably the same traffic Harry's stuck in ;/\nPeter: There's been an accident, I'm too far away to see what exactly happened but it doesn't look good\nMay: How long may it take? Half of the guests is already here\nVanessa: God knows, Michael's driving if you can call this driving...\nPeter: They're saying that there was a serious accident, I really don't know how long it will take\nMay: Harry just called, he's in the same traffic as you\nVanessa: It'll be a hell of a birthday party ;)\nPeter: It'll be easier if you all come and join us here\nMay: Hahaha, very funny\nMay: We'll wait for you, but better be here before Harry\nVanessa: You need to stall Harry then because we're all probably behind him\nPeter: Fyi, we haven't moved an inch in a while now",
+    "Model": "mv-bart_large",
+    "Summary": "May, Michael, Vanessa and Peter are on their way to the birthday party. Half of the guests are already there. Peter is stuck in a traffic. Harry will be late.",
+    "Error": "多了人, May不在路上,已经到了 和I有关？当成We了？",
+    "Shifted_Dialogue": "Unusable response produced by ChatGPT, maybe its unavailable."
+  },
+  {
+    "": "643",
+    "DocID": "13730597",
+    "Dialogue": "Amelia: What is your favourite colour?\nEmily: Blue, why?\nAmelia: I can't tell you\nEmily: A surprise? =)\nAmelia: Sort of... Can't tell you anything more\nAmelia: Sorry \nEmily: I'm super curious",
+    "Model": "co-ref bart large",
+    "Summary": "Amelia's favourite colour is blue.",
+    "Error": "人物错误, Emily喜欢的颜色是blue,Amelia喜欢的颜色未知",
+    "Shifted_Dialogue": "Unusable response produced by ChatGPT, maybe its unavailable."
+  },
+  {
+    "": "644",
+    "DocID": "13730597",
+    "Dialogue": "Amelia: What is your favourite colour?\nEmily: Blue, why?\nAmelia: I can't tell you\nEmily: A surprise? =)\nAmelia: Sort of... Can't tell you anything more\nAmelia: Sorry \nEmily: I'm super curious",
+    "Model": "condigsum bart large",
+    "Summary": "Amelia's favourite colour is blue.",
+    "Error": "人物错误, Emily喜欢的颜色是blue,Amelia喜欢的颜色未知",
+    "Shifted_Dialogue": "Unusable response produced by ChatGPT, maybe its unavailable."
+  },
+  {
+    "": "663",
+    "DocID": "13864469",
+    "Dialogue": "Mia: God, he keeps talking about the stupid wall\nJennifer: I think he's just senile\nKarine: unfortunately it's much more\nKarine: this populist strategy to scare people with a minority\nKarine: and then present himself as the only savior\nPeter: Karine is right, I think he's not as senile and stupid as we would like to believe\nMia: so it's even worse - he's pure evil\nPeter: possibly yes\nKarine: I really think so, because it's not only about politics anymore\nKarine: he is destroying the Earth\nKarine: trying to shake the world's order\nJennifer: but he's also quite stupid\nJennifer: and the dangerous thing is his self confidence\nJennifer: he's persistence \nJennifer: and ignorance\nKarine: but we have a chance to change it\nKarine: maybe Trump will be over soon?\nMia: we will see\nMia: but we should do anything to win the next elections\nKarine: everything!",
+    "Model": "co-ref bart large",
+    "Summary": "Mia, Jennifer and Peter are worried about Trump.",
+    "Error": "人名少了，四个人都看他不爽",
+    "Shifted_Dialogue": "Unusable response produced by ChatGPT, maybe its unavailable."
+  },
+  {
+    "": "677",
+    "DocID": "13727809",
+    "Dialogue": "Matt: Hey\nMatt: I got my ticket for Dawid Podsiadlo!!!\nMatt: So stoked!\nThomas: Whooaa that's great!!\nMatt: I will see you there then! \nThomas: Yes for sure\nThomas: Remind me before \nThomas: Like the day before k? \nMatt: For sure \nMatt: Who you're going with \nThomas: by myself for now\nThomas: I meant until now haha\nMatt: Right on \nMatt: I am so stoked tho\nThomas: Me too \nMatt: I might ask a few more people if they're coming ;) \nThomas: Maria was interested I think \nThomas: But I am not too sure\nThomas: i will ask her",
+    "Model": "mv-bart_large",
+    "Summary": "Matt got a ticket for Dawid Podsiadlo. He will see Thomas and Maria there. Maria might come.",
+    "Error": "多了人, Maria不一定去",
+    "Shifted_Dialogue": "Unusable response produced by ChatGPT, maybe its unavailable."
+  },
+  {
+    "": "679",
+    "DocID": "13727809",
+    "Dialogue": "Matt: Hey\nMatt: I got my ticket for Dawid Podsiadlo!!!\nMatt: So stoked!\nThomas: Whooaa that's great!!\nMatt: I will see you there then! \nThomas: Yes for sure\nThomas: Remind me before \nThomas: Like the day before k? \nMatt: For sure \nMatt: Who you're going with \nThomas: by myself for now\nThomas: I meant until now haha\nMatt: Right on \nMatt: I am so stoked tho\nThomas: Me too \nMatt: I might ask a few more people if they're coming ;) \nThomas: Maria was interested I think \nThomas: But I am not too sure\nThomas: i will ask her",
+    "Model": "condigsum bart large",
+    "Summary": "Matt got a ticket for Dawid Podsiadlo. He will see Thomas and Maria there.",
+    "Error": "多了人, Maria不一定去",
+    "Shifted_Dialogue": "Unusable response produced by ChatGPT, maybe its unavailable."
+  },
+  {
+    "": "697",
+    "DocID": "13727716",
+    "Dialogue": "Aude: Hi Susie, how is Ted this morning? Did you find plasters?\nSusie: yes. He kept them till this morning after his shower.\nAude: he must look sexy whith them... lol\nSusie: a  memory from  Poland!",
+    "Model": "mv-bart_large",
+    "Summary": "Ted found plasters and kept them till this morning after his shower.",
+    "Error": "(可能)人物错误, 膏药是Susie找的",
+    "Shifted_Dialogue": "Unusable response produced by ChatGPT, maybe its unavailable."
+  },
+  {
+    "": "698",
+    "DocID": "13727716",
+    "Dialogue": "Aude: Hi Susie, how is Ted this morning? Did you find plasters?\nSusie: yes. He kept them till this morning after his shower.\nAude: he must look sexy whith them... lol\nSusie: a  memory from  Poland!",
+    "Model": "co-ref bart large",
+    "Summary": "Ted found plasters and kept them till this morning after his shower. Susie and Aude think he looks sexy with them.",
+    "Error": "(可能)人物错误, 膏药是Susie找的",
+    "Shifted_Dialogue": "Unusable response produced by ChatGPT, maybe its unavailable."
+  },
+  {
+    "": "699",
+    "DocID": "13727716",
+    "Dialogue": "Aude: Hi Susie, how is Ted this morning? Did you find plasters?\nSusie: yes. He kept them till this morning after his shower.\nAude: he must look sexy whith them... lol\nSusie: a  memory from  Poland!",
+    "Model": "condigsum bart large",
+    "Summary": "Ted found plasters and kept them till this morning after his shower.",
+    "Error": "(可能)人物错误, 膏药是Susie找的",
+    "Shifted_Dialogue": "Unusable response produced by ChatGPT, maybe its unavailable."
+  },
+  {
+    "": "711",
+    "DocID": "13864453",
+    "Dialogue": "Kyle: yo yo, call me plz when you have a minute to spare\nKyle: gotta tell ya sth\nLily: 10 mins tops\nMary: facetime?\nKyle: yeah alright",
+    "Model": "bart_large",
+    "Summary": "Lily will call Kyle in 10 minutes. Mary will facetime Kyle.",
+    "Error": "两个人都应该call他",
+    "Shifted_Dialogue": "Unusable response produced by ChatGPT, maybe its unavailable."
+  },
+  {
+    "": "712",
+    "DocID": "13864453",
+    "Dialogue": "Kyle: yo yo, call me plz when you have a minute to spare\nKyle: gotta tell ya sth\nLily: 10 mins tops\nMary: facetime?\nKyle: yeah alright",
+    "Model": "mv-bart_large",
+    "Summary": "Lily will call Kyle in 10 minutes. Mary will Facetime him.",
+    "Error": "两个人都应该call他",
+    "Shifted_Dialogue": "Unusable response produced by ChatGPT, maybe its unavailable."
+  },
+  {
+    "": "713",
+    "DocID": "13864453",
+    "Dialogue": "Kyle: yo yo, call me plz when you have a minute to spare\nKyle: gotta tell ya sth\nLily: 10 mins tops\nMary: facetime?\nKyle: yeah alright",
+    "Model": "co-ref bart large",
+    "Summary": "Lily will call Kyle in 10 minutes.",
+    "Shifted_Dialogue": "Unusable response produced by ChatGPT, maybe its unavailable."
+  },
+  {
+    "": "715",
+    "DocID": "13813401",
+    "Dialogue": "Piper: When is the payment expected?\nBryan: I have asked my manager to send the payment\nPiper: When would he send it to me?\nBryan: He will send you tonight\nPiper: I would be waiting\nBryan: Sure, Client liked your work\nPiper: Hope to work with you long term",
+    "Model": "human_ref",
+    "Summary": "Piper will get paid tonight. Client liked Piper's work and wants to work with her on a long-term basis.",
+    "Error": "人物错误, 不是client希望和Piper长期工作,是Piper希望和Bryan长期工作",
+    "Shifted_Dialogue": "Unusable response produced by ChatGPT, maybe its unavailable."
+  },
+  {
+    "": "738",
+    "DocID": "13611426",
+    "Dialogue": "Poppy: Yeah. I definitely prefer Lisbon\nHarry: Yeah me too, principally the night\nPoppy: To party?\nHarry: Yup\nPoppy: I don't like parties. They make me tired\nHarry: Really?!\nPoppy: I don't like crowd, drunk people\nHarry: Oh OK. It makes sense. That's the worst part of it. What you like to do for having fun?\nPoppy: Travelling. Sightseeing\nHarry: For sure that's on the top of my list too",
+    "Model": "co-ref bart large",
+    "Summary": "Poppy and Harry don't like parties. They prefer travelling and sightseeing.",
+    "Error": "多了人, Harry是喜欢party的",
+    "Shifted_Dialogue": "Unusable response produced by ChatGPT, maybe its unavailable."
+  },
+  {
+    "": "746",
+    "DocID": "13829937",
+    "Dialogue": "Nathan: <file_video>\nAaron: OMG!!! \nAaron: \nAaron: looool\nAaron: do you know her mate? \nAaron: my cat's face looks like that when he's taking a dump..\nAaron: <file_gif>\nAaron: the angels must be weeping  \nAaron: <file_gif>\nAaron: <file_gif>\nNathan: Hahahaha\nNathan: She's having a spiritual moment \nNathan: No clue mate, Dan sent it over\nNathan: A tragedy to say the least \nAaron: <file_gif>\nAaron: looking for Jesus\nNathan: \nAaron: hilarious..hahahaha",
+    "Model": "bart_large",
+    "Summary": "Dan sent Aaron a video of a cat taking a dump.",
+    "Error": "事实错误, 发送的不是猫拉屎的视频",
+    "Shifted_Dialogue": "Unusable response produced by ChatGPT, maybe its unavailable."
+  },
+  {
+    "": "747",
+    "DocID": "13829937",
+    "Dialogue": "Nathan: <file_video>\nAaron: OMG!!! \nAaron: \nAaron: looool\nAaron: do you know her mate? \nAaron: my cat's face looks like that when he's taking a dump..\nAaron: <file_gif>\nAaron: the angels must be weeping  \nAaron: <file_gif>\nAaron: <file_gif>\nNathan: Hahahaha\nNathan: She's having a spiritual moment \nNathan: No clue mate, Dan sent it over\nNathan: A tragedy to say the least \nAaron: <file_gif>\nAaron: looking for Jesus\nNathan: \nAaron: hilarious..hahahaha",
+    "Model": "mv-bart_large",
+    "Summary": "Nathan and Dan sent Aaron a video of a woman having a spiritual moment.",
+    "Error": "多了人, Dan没有发送给Aaron",
+    "Shifted_Dialogue": "Unusable response produced by ChatGPT, maybe its unavailable."
+  }
+]
