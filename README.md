@@ -27,6 +27,8 @@ you can go into each project folder for more details in folder's readme.md insid
 12. **Diffusion models implement and application on Fashion MNIST  [go here](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/Diffusion)**
 13. **Simple Taste of Stable Learning (Building) [go here](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/StableLearning)**
 14. **Simple Taste of Meta Learning (Building) [go here](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/MetaLearning)**
+15. **Simple Demo of Large Langauge model inference [go here](https://github.com/Ricardokevins/Kevinpro-NLP-demo/tree/main/LLM)**
+
 
 My other open source NLP projects
 
@@ -35,6 +37,10 @@ My other open source NLP projects
 3. **Transformer implement and useful NLP toolkit**：[Ricardokevins/EasyTransformer: Quick start with strong baseline of Bert and Transformer without pretrain (github.com)](https://github.com/Ricardokevins/EasyTransformer)
 
 # What's New ~~
+## 2023.3.27
+1. Update simple demo about inference process of Large Language model. Will Update more in the future.
+
+
 ## 2022.8.31
 1. Update for Diffusion Model. We adopt the code from [tutorial](https://huggingface.co/blog/annotated-diffusion) And made some necessary changes to the code to make it work locally. The practical training model and inference results can be found in the Diffusion/Result2 folder.
 ## 2022.3.25

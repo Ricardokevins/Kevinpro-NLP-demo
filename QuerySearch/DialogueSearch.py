@@ -112,15 +112,22 @@ class BM25_Model(object):
         #     print(" ".join(i))
         return score_list
 
-path = "/Users/sheshuaijie/Desktop/workspace/Data/Data/SAMSum/train.json"
+path = "/Users/sheshuaijie/Desktop/RearchSpace/Data/Data/SAMSum/train.json"
 import json
 f = open(path,'r')
 data = json.load(f)
 f.close()
 
+import string
+punctuation_string = string.punctuation
+def re_punctuation(stri):
+    for i in punctuation_string:
+        stri = stri.replace(i, ' ')
+    return stri
+
 def return_biturn(turns):
     biturns = []
-    for i in range(0,len(turns)-1,2):
+    for i in range(0,len(turns)-1):
         biturns.append(turns[i]+turns[i+1])
     return biturns
 
@@ -129,7 +136,12 @@ for i in range(len(data)):
     dialogue = data[i]['dialogue']
     turns = dialogue.split('\n')
     turns = [i.strip()[len(i.split(":")[0])+2:] for i in turns]
+    turns = [re_punctuation(i) for i in turns]
+
     turns = [i.split(" ") for i in turns]
+    turns = [[j for j in i if len(j)!=0] for i in turns]
+    # print(turns)
+    # exit()
     all_tokens = []
     biturn = return_biturn(turns)
     Document_Features.extend(biturn)
@@ -143,7 +155,7 @@ model = TF_IDF_Model(Document_Features)
 model2 = BM25_Model(Document_Features)
 
 def getTopK(t):
-    k = 20
+    k = 30
     max_index = []
     for _ in range(k):
         number = max(t)
@@ -153,7 +165,7 @@ def getTopK(t):
     return max_index
 
 
-f = open("/Users/sheshuaijie/Desktop/workspace/Data/Data/SAMSum/val.json",'r')
+f = open("/Users/sheshuaijie/Desktop/RearchSpace/Data/Data/SAMSum/val.json",'r')
 testdata = json.load(f)
 dialogue = testdata[1]['dialogue']
 turns = dialogue.split('\n')
@@ -177,18 +189,63 @@ input_query = []
 #input_query = "Do you want some? Sure".split(" ")
 #input_query = "Have you got any homework for tomorrow? no dad".split(" ")
 #input_query = "What did you plan on doing?".split(" ")
-#input_query = "are you in Warsaw? yes, just back!".split(" ")
-#nput_query = 'do you have Betty\'s number? Lemme check'.split(" ")
-input_query = " It's good for us, Vanessa and I are still on our way and Peter's stuck in a traffic".split(" ")
-score_list = model2.get_documents_score(input_query)
+input_query = "are you in Warsaw? yes, just back!"
+#input_query = 'do you have Betty\'s number? Lemme check'.split(" ")
+#input_query = " It's good for us, Vanessa and I are still on our way and Peter's stuck in a traffic".split(" ")
+#input_query = "can you take your dog away before i come?".split(" ")
+input_query = "Yeah. I definitely prefer Lisbon Yeah me too"
+
+input_query = re_punctuation(input_query)
+input_query_token = input_query.split(" ")
+input_query_token = [j for j in input_query_token if len(j)!=0]
+print(input_query)
+score_list = model2.get_documents_score(input_query_token)
+#score_list = model2.get_documents_score(input_query)
 pre_score_list = score_list.copy()
 best = getTopK(score_list)
+
+
+stop_words = []
+f = open('/Users/sheshuaijie/Downloads/stop_words_english.txt','r')
+lines = f.readlines()
+stop_words = [i.strip() for i in lines]
+
+onegram_freq = {}
+twogram_freq = {}
 for i in best:
     #print(data[i]['summary'])
     print(" ".join(Document_Features[i]))
-    print(pre_score_list[i])
+    TwoGram = []
+    for _ in range(len(Document_Features[i])-1):
+        twogram = Document_Features[i][_] + " " + Document_Features[i][_+1]
+        twogram_freq[twogram] = twogram_freq.get(twogram,0) + 1
+    
+    for _ in range(len(Document_Features[i])):
+        #twogram = Document_Features[i][_] + " " + Document_Features[i][_+1]
+        onegram = Document_Features[i][_]
+        onegram_freq[onegram] = onegram_freq.get(onegram,0) + 1
+    #print(pre_score_list[i])
 
 
+one_gram_sort_result = sorted(onegram_freq.items(), key = lambda kv:(kv[1], kv[0]),reverse=True)[:30]
+two_gram_sort_result = sorted(twogram_freq.items(), key = lambda kv:(kv[1], kv[0]),reverse=True)[:30]
+
+freq_one_gram = [i[0] for i in one_gram_sort_result]
+pattern = []
+for i in input_query_token:
+    if i in freq_one_gram:
+        pattern.append(i)
+    else:
+        pattern.append('[UNK]')
+
+
+print("============================================")
+print(input_query)
+print(" ".join(pattern))
+# for i,j in zip(one_gram_sort_result,two_gram_sort_result):
+#     # if i[0] in stop_words:
+#     #     continue
+#     print(i,j)
 # for i in tqdm(range(len(lines))):
 #     data_dict = json.loads(lines[i])
 #     score_list = model2.get_documents_score(data_dict['feature'])
